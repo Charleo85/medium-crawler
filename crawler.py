@@ -36,9 +36,20 @@ def analyze(url):
         if regex.search(href):
             link, uid = concat(href)
             if not link or not uid: continue
-            if uid in d: continue
+            if uid in d:
+                pack = d[uid]
+                if pack["timestamp"] == 0: continue #must be on queue still
+                elif (time.time()-d[uid]["timestamp"])>172800: # if crawled more than two day ago we can crawl again
+                    pack["timestamp"] = 0 #put on queue
+                    d[uid] = pack
+                    q.put(uid)
+                continue
             else:
-                d[uid] = link
+                pack = {}
+                pack["url"] = link
+                pack["timestamp"] = 0 #must be on queue still
+                pack["pk"] = -1 #pk not assigned yet
+                d[uid] = pack
                 q.put(uid)
         else:
             continue
@@ -154,11 +165,20 @@ if __name__ == '__main__':
             while not q.empty():
                 time.sleep(10)
                 uid = q.get()
-                analyze(d[uid])
-                parse(d[uid],pk,uid)
+                d[uid]["timestamp"] = time.time() #give a timestamp that crawled
+                url = d[uid]["url"]
+                if d[uid]["pk"] == -1:  # first time crawl
+                    d[uid]["pk"] = pk
+                    analyze(url)
+                    parse(url,pk,uid)
+                    pk += 1
+                else: # crawl again
+                    analyze(url)
+                    stored_pk = d[uid]["pk"]
+                    parse(url,stored_pk,uid, False)
+
                 sys.stdout.flush()
                 sys.stderr.flush()
-                pk += 1
                 if pk%1000 == 0:
                     create_directory(str(pk//1000))
 

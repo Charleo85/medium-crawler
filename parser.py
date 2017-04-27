@@ -1,6 +1,6 @@
 from lxml import html
 from lxml import etree
-import requests, re, json, random, sys
+import requests, re, json, random, sys, os
 
 def write_json(filename, data, pk):
     output = open(filename, 'w', encoding='utf-8')
@@ -162,7 +162,8 @@ def parse_article(page, url, count, pk):
             article_name = tree.xpath('//h1/*/text()')[0]
         except:
             print("bad format cannot parse the title: "+url, file=sys.stderr)
-            return
+            article_name = ""
+            # return
 
     try:
         author = tree.xpath('//a[@class="link link link--darken link--darker u-baseColor--link"]/text()')[0]
@@ -225,9 +226,7 @@ def parse_uid(href):
         if (href[n-1-i] == '-'):
             return href[n-i:n]
 
-
-
-def parse(href, pk, id=None):
+def parse(href, pk, id=None, first=True):
     if not id:
         uid = parse_uid(href)
     else:
@@ -237,8 +236,19 @@ def parse(href, pk, id=None):
     except:
         return
     write_html('cache/html/'+str(pk//1000)+'/'+str(pk)+"_"+ str(uid) +".html", page, pk)
+
+    if not first:
+        # try:
+        os.system('rm data/*/'+str(pk//1000)+'/'+str(pk)+'_*')
+        os.system('rm data/article/'+str(pk//1000)+'/'+str(pk)+'.json')
+        print("again")
+        # except:
+        #     print("fail to rm", file=sys.stderr)
+        #     return
+
     count = parse_comment(page, uid, pk, href)
-    if count: parse_article(page, href, count, pk)
+    if count:
+        parse_article(page, href, count, pk)
     # parse_image(page, href, count, pk)
 
 
