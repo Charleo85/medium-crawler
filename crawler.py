@@ -43,6 +43,45 @@ def analyze(url):
         else:
             continue
 
+# def getArticles():
+#     global q
+#     global s
+#     global t
+#     try:
+#         resp = requests.get(
+#             url="https://medium.com/_/api/topics/9d34e48ecf94/stream",
+#             params={
+#                 "limit": "1000",
+#             },timeout=60
+#         )
+#     except requests.exceptions.RequestException:
+#         print('topic stream Request failed')
+#
+#     resp_data = json.loads(resp.content.decode('utf-8')[16:])
+#
+#     if (resp_data['success']):
+#         try:
+#             article_data=resp_data['payload']['references']['Post']
+#         except:
+#             print("comment key error with url: "+url, file=sys.stderr)
+#             return None
+#
+#         for key, value in article_data.items():
+#             if key in d:
+#                 continue
+#             try:
+#                 url = value['uniqueSlug']
+#             except:
+#                 print("id key error with url: "+url, file=sys.stderr)
+#                 continue
+#             try:
+#                 domain = value['domain']
+#             except:
+#                 domain = "medium.com"
+
+
+
+
 def loadvaribles():
     try:
         f1 = open('cache/variable/queue.pckl', 'rb')
@@ -94,9 +133,9 @@ if __name__ == '__main__':
     l, t, d, pk = loadvaribles()
     q = queue.Queue()
     if not d:
-        d = {}
+        d = {} #dictionary of uid and url
         pk = 1
-        t = []
+        t = [] #topic list to crawl
     else:
         for item in l:
             q.put(item)
@@ -107,6 +146,7 @@ if __name__ == '__main__':
         t.append('https://medium.com/topic/editors-picks')
         t.append('https://medium.com/topic/world')
         t.append('https://medium.com/topic/future')
+        # getArticles()
 
         while len(t) > 0:
             analyze(t.pop())

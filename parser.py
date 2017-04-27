@@ -157,11 +157,19 @@ def parse_article(page, url, count, pk):
     print(url)
     try:
         article_name = tree.xpath('//h1/text()')[0]
+    except:
+        try:
+            article_name = tree.xpath('//h1/*/text()')[0]
+        except:
+            print("bad format cannot parse the title: "+url, file=sys.stderr)
+            return
+
+    try:
         author = tree.xpath('//a[@class="link link link--darken link--darker u-baseColor--link"]/text()')[0]
         tags = tree.xpath('//ul[@class="tags tags--postTags tags--borderless"]')[0]
         timestamp = tree.xpath('//time/text()')[0]
     except:
-        print("bad format cannot parse the article"+url, file=sys.stderr)
+        print("bad format cannot parse the article: "+url, file=sys.stderr)
         return
 
     art = {
@@ -240,4 +248,4 @@ if __name__ == '__main__':
     else:
         # parse("https://medium.com/tag/artificial-intelligence", 0)
         # parse("https://medium.freecodecamp.com/big-picture-machine-learning-classifying-text-with-neural-networks-and-tensorflow-d94036ac2274", 0)
-        parse("https://medium.com/the-year-of-the-looking-glass/books-that-changed-my-perspective-502c25baeeaa", 0) #815
+        parse("https://thedevelopmentset.com/silicon-valley-needs-to-stop-pimping-out-patients-to-alleviate-white-guilt-bc94b4a17885", 0) #815
