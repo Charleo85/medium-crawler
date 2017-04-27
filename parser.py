@@ -167,6 +167,14 @@ def parse_article(page, url, count, pk):
 
     try:
         author = tree.xpath('//a[@class="link link link--darken link--darker u-baseColor--link"]/text()')[0]
+    except:
+        try:
+            author = tree.xpath('//span[starts-with(@class,"link link--darken link--darker")]/text()')[0]
+        except:
+            print("bad format cannot parse the author: "+url, file=sys.stderr)
+            author = ""
+
+    try:
         tags = tree.xpath('//ul[@class="tags tags--postTags tags--borderless"]')[0]
         timestamp = tree.xpath('//time/text()')[0]
     except:
@@ -182,8 +190,17 @@ def parse_article(page, url, count, pk):
         'sentences': [],
         'content': '',
         'tag': [],
+        # 'highlights': [],
         'child': ''
     }
+
+    # try:
+    #     highlights = tree.xpath('//span[starts-with(@class,"markup--quote")]/text()')
+    #     print(highlights)
+    #     for high in highlights:
+    #         art['highlights'].append(high)
+    # except:
+    #     pass
 
     for tag in tags.xpath('./*/a/text()'):
         art['tag'].append(tag)
@@ -258,4 +275,4 @@ if __name__ == '__main__':
     else:
         # parse("https://medium.com/tag/artificial-intelligence", 0)
         # parse("https://medium.freecodecamp.com/big-picture-machine-learning-classifying-text-with-neural-networks-and-tensorflow-d94036ac2274", 0)
-        parse("https://thedevelopmentset.com/silicon-valley-needs-to-stop-pimping-out-patients-to-alleviate-white-guilt-bc94b4a17885", 0) #815
+        parse("https://backchannel.com/i-work-i-swear-a649e0eb697d", 0) #815
