@@ -144,6 +144,7 @@ if __name__ == '__main__':
     l, t, d, pk = loadvaribles()
     q = queue.Queue()
     if not d:
+        print("variable caches not found", file=sys.stderr)
         d = {} #dictionary of uid and url
         pk = 1
         t = [] #topic list to crawl
