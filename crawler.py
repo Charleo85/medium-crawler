@@ -127,6 +127,11 @@ def savevariable(q, t, d, pk):
     pickle.dump(pk, f)
     f.close()
 
+def checkpk(pk):
+    os.system("echo 'checking PK......' ")
+    os.system("ls cache/html/"+str(pk//1000)+"/ | grep '"+str(pk)+"_*.html' ")
+
+
 def create_directory(n):
     os.system('mkdir cache/html/'+n+'/')
     os.system('mkdir cache/json/'+n+'/')
@@ -150,8 +155,10 @@ if __name__ == '__main__':
         pk = 1
         t = [] #topic list to crawl
     else:
+        checkpk(pk)
         for item in l:
             q.put(item)
+
 
     while True: #sleep for a while and load updates
         t.append('https://medium.com')
@@ -165,7 +172,7 @@ if __name__ == '__main__':
             analyze(t.pop())
 
             while not q.empty():
-                time.sleep(10)
+                time.sleep(1)
                 uid = q.get()
                 d[uid]["timestamp"] = time.time() #give a timestamp that crawled
                 url = d[uid]["url"]
