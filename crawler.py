@@ -127,6 +127,12 @@ def savevariable(q, t, d, pk):
     pickle.dump(pk, f)
     f.close()
 
+def savepk(pk):
+    f = open('cache/variable/pk.pckl', 'wb')
+    pickle.dump(pk, f)
+    f.close()
+
+
 def checkpk(pk):
     os.system("echo 'checking PK......' ")
     os.system("ls cache/html/"+str(pk//1000)+"/ | grep '"+str(pk)+"_*.html' ")
@@ -155,6 +161,7 @@ if __name__ == '__main__':
         pk = 1
         t = [] #topic list to crawl
     else:
+        print(pk)
         checkpk(pk)
         for item in l:
             q.put(item)
@@ -169,9 +176,11 @@ if __name__ == '__main__':
         # getArticles()
 
         while len(t) > 0:
+            savepk(pk)
             analyze(t.pop())
 
             while not q.empty():
+                savepk(pk)
                 time.sleep(1)
                 uid = q.get()
                 d[uid]["timestamp"] = time.time() #give a timestamp that crawled
@@ -192,6 +201,6 @@ if __name__ == '__main__':
                     create_directory(str(pk//1000))
 
                 savevariable(list(q.queue), t, d, pk)
-                
+
         print("falling sleep...", file=sys.stderr)
         sleep(60*10) # wait ten minutes to restart
