@@ -192,5 +192,6 @@ if __name__ == '__main__':
                     create_directory(str(pk//1000))
 
                 savevariable(list(q.queue), t, d, pk)
-
+                
+        print("falling sleep...", file=sys.stderr)
         sleep(60*10) # wait ten minutes to restart
