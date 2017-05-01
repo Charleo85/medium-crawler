@@ -100,6 +100,7 @@ def loadvaribles():
         f3 = open('cache/variable/pk.pckl', 'rb')
         f4 = open('cache/variable/topic.pckl', 'rb')
     except FileNotFoundError:
+        print("variable file not found", file=sys.stderr)
         return None, None, None, None
     q = pickle.load(f1)
     f1.close()
