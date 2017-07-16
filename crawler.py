@@ -181,7 +181,7 @@ if __name__ == '__main__':
 
             while not q.empty():
                 savepk(pk)
-                time.sleep(1)
+                time.sleep(10)
                 uid = q.get()
                 d[uid]["timestamp"] = time.time() #give a timestamp that crawled
                 url = d[uid]["url"]

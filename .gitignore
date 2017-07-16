@@ -90,3 +90,7 @@ ENV/
 
 # mac directory
 .DS_Store
+
+# data files
+cache/*
+data/*
