@@ -100,7 +100,8 @@ def loadvaribles():
         f3 = open('cache/variable/pk.pckl', 'rb')
     except FileNotFoundError:
         print("variable file not found", file=sys.stderr)
-        return None, None, None, None
+        input("Are your sure you want to initalize everything?")
+        return None, None, None
     q = pickle.load(f1)
     f1.close()
     d = pickle.load(f2)
