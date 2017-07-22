@@ -98,7 +98,6 @@ def loadvaribles():
         f1 = open('cache/variable/queue.pckl', 'rb')
         f2 = open('cache/variable/dict.pckl', 'rb')
         f3 = open('cache/variable/pk.pckl', 'rb')
-        f4 = open('cache/variable/topic.pckl', 'rb')
     except FileNotFoundError:
         print("variable file not found", file=sys.stderr)
         return None, None, None, None
@@ -108,17 +107,12 @@ def loadvaribles():
     f2.close()
     pk = pickle.load(f3)
     f3.close()
-    t = pickle.load(f4)
-    f4.close()
-    return q, t, d, pk
+    return q, d, pk
 
 
-def savevariable(q, t, d, pk):
+def savevariable(q, d, pk):
     f = open('cache/variable/queue.pckl', 'wb')
     pickle.dump(q, f)
-    f.close()
-    f = open('cache/variable/topic.pckl', 'wb')
-    pickle.dump(t, f)
     f.close()
     f = open('cache/variable/dict.pckl', 'wb')
     pickle.dump(d, f)
@@ -153,18 +147,19 @@ if __name__ == '__main__':
     sys.stderr = open('cache/logs/'+logtime+'/error.log', 'w')
     create_directory(str(0))
 
-    l, t, d, pk = loadvaribles()
+    l, d, pk = loadvaribles()
     q = queue.Queue()
     if not d:
         print("variable caches not found", file=sys.stderr)
         d = {} #dictionary of uid and url
         pk = 1
-        t = [] #topic list to crawl
     else:
         print(pk)
         checkpk(pk)
         for item in l:
             q.put(item)
+
+    t = [] #topic list to crawl
 
 
     while True: #sleep for a while and load updates
@@ -200,7 +195,7 @@ if __name__ == '__main__':
                 if pk%1000 == 0:
                     create_directory(str(pk//1000))
 
-                savevariable(list(q.queue), t, d, pk)
+                savevariable(list(q.queue), d, pk)
 
         print("falling sleep...", file=sys.stderr)
         sleep(60*10) # wait ten minutes to restart
