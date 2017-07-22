@@ -100,7 +100,10 @@ def loadvaribles():
         f3 = open('cache/variable/pk.pckl', 'rb')
     except FileNotFoundError:
         print("variable file not found", file=sys.stderr)
-        input("Are your sure you want to initalize everything?")
+        ans = input("Are your sure you want to initalize everything?(y/n)")
+        if ans != 'y':
+            sys.exit()
+        else
         return None, None, None
     q = pickle.load(f1)
     f1.close()
@@ -142,10 +145,7 @@ def create_directory(n):
 
 
 if __name__ == '__main__':
-    logtime = str(time.time())
-    os.system('mkdir cache/logs/'+logtime+'/')
-    sys.stdout = open('cache/logs/'+logtime+'/std.log', 'w')
-    sys.stderr = open('cache/logs/'+logtime+'/error.log', 'w')
+
     create_directory(str(0))
 
     l, d, pk = loadvaribles()
@@ -161,7 +161,11 @@ if __name__ == '__main__':
             q.put(item)
 
     t = [] #topic list to crawl
-
+    
+    logtime = str(time.time())
+    os.system('mkdir cache/logs/'+logtime+'/')
+    sys.stdout = open('cache/logs/'+logtime+'/std.log', 'w')
+    sys.stderr = open('cache/logs/'+logtime+'/error.log', 'w')
 
     while True: #sleep for a while and load updates
         t.append('https://medium.com')
