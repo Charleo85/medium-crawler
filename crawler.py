@@ -103,7 +103,6 @@ def loadvaribles():
         ans = input("Are your sure you want to initalize everything?(y/n)")
         if ans != 'y':
             sys.exit()
-        else
         return None, None, None
     q = pickle.load(f1)
     f1.close()
