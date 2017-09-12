@@ -19,11 +19,11 @@ def createAuthorTable():
 		conn = psycopg2.connect(**params)
 
 		cur = conn.cursor()
-		print "creating author table...."
+		print("creating author table....")
 
 		# for command in commands:
 		cur.execute(command)
-		print "after creating sentence table...."
+		print("after creating sentence table....")
 
 		cur.close()
 
@@ -54,11 +54,11 @@ def insertAuthor(authorName, authorMediumID):
 		conn = psycopg2.connect(**params)
 
 		cur = conn.cursor()
-		print "before inserting into author table...."
+		print("before inserting into author table....")
 
 		# for command in commands:
 		cur.execute(command, (commentName, commentContent, authorID, commentTime, numLikes, corrStnID, articleID, ))
-		print "after inserting into author table...."
+		print("after inserting into author table....")
 
 		authorID = cur.fetchone()[0]
 
@@ -85,11 +85,11 @@ def existAuthor(authorName):
 		conn = psycopg2.connect(**params)
 
 		cur = conn.cursor()
-		print "before inserting into author table...."
+		print("before inserting into author table....")
 
 		# for command in commands:
 		cur.execute(command, (authorName, ))
-		print "after inserting into author table...."
+		print("after inserting into author table....")
 
 		existFlag = cur.fetchone()[0]
 
@@ -121,11 +121,11 @@ def queryAuthorIDbyAuthorName(authorName):
 		conn = psycopg2.connect(**params)
 
 		cur = conn.cursor()
-		print "creating sentence table...."
+		print("creating sentence table....")
 
 		# for command in commands:
 		cur.execute(command, (authorName,))
-		print "after creating sentence table...."
+		print("after creating sentence table....")
 
 		authorID = cur.fetchone()[0]
 

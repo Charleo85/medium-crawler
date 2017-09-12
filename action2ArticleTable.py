@@ -24,11 +24,11 @@ def createArticleTable():
 		conn = psycopg2.connect(**params)
 
 		cur = conn.cursor()
-		print "creating article table...."
+		print("creating article table....")
 
 		# for command in commands:
 		cur.execute(command)
-		print "after creating article table...."
+		print("after creating article table....")
 
 		cur.close()
 
@@ -64,11 +64,11 @@ def insertArticle(articleName, articleTitle, articleContent, authorID, tag, arti
 		conn = psycopg2.connect(**params)
 
 		cur = conn.cursor()
-		print "before inserting into article table...."
+		print("before inserting into article table....")
 
 		# for command in commands:
 		cur.execute(command, (articleName, articleTitle, articleContent, authorID, tag, articleTime, numberLikes, ))
-		print "after inserting into article table...."
+		print("after inserting into article table....")
 
 		articleID = cur.fetchone()[0]
 
@@ -100,11 +100,11 @@ def queryArticleIDbyArticleName(articleName):
 		conn = psycopg2.connect(**params)
 
 		cur = conn.cursor()
-		print "creating sentence table...."
+		print("creating sentence table....")
 
 		# for command in commands:
 		cur.execute(command, (authorName,))
-		print "after creating sentence table...."
+		print("after creating sentence table....")
 
 		articleID = cur.fetchone()[0]
 
