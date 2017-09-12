@@ -5,8 +5,6 @@ def config(filename="database.ini", section="postgresql"):
 	parser = ConfigParser()
 	parser.read(filename)
 
-	print "sections\t", parser.sections()
-
 	db = {}
 
 	if parser.has_section(section):

@@ -15,7 +15,7 @@ authorExistFlag = existAuthor(authorName)
 authorID = -1
 
 if authorExistFlag:
-	print "exist author\t", authorName
+	print("exist author\t", authorName)
 	authorID = queryAuthorIDbyAuthorName(authorName)
 else:
 	authorID = insertAuthor(authorName, authorMediumID)
