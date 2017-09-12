@@ -103,7 +103,7 @@ def loadvaribles():
         ans = input("Are your sure you want to initalize everything?(y/n)")
         if ans != 'y':
             sys.exit()
-        else
+
         return None, None, None
     q = pickle.load(f1)
     f1.close()
@@ -161,7 +161,7 @@ if __name__ == '__main__':
             q.put(item)
 
     t = [] #topic list to crawl
-    
+
     logtime = str(time.time())
     os.system('mkdir cache/logs/'+logtime+'/')
     sys.stdout = open('cache/logs/'+logtime+'/std.log', 'w')
