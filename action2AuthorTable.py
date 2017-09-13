@@ -105,12 +105,12 @@ def existAuthor(authorName):
 		if conn is not None:
 			conn.close()
 
-def queryAuthorIDbyAuthorName(authorName):
+def queryAuthorIDbyMediumID(MediumID):
 	command = ("""
 		SELECT
-			authorID 
+			authorID
 		FROM author
-		WHERE authorName = %s		
+		WHERE authorMediumID = %s
 		)
 		""")
 
@@ -124,7 +124,7 @@ def queryAuthorIDbyAuthorName(authorName):
 		print("creating sentence table....")
 
 		# for command in commands:
-		cur.execute(command, (authorName,))
+		cur.execute(command, (MediumID,))
 		print("after creating sentence table....")
 
 		authorID = cur.fetchone()[0]

@@ -163,9 +163,9 @@ if __name__ == '__main__':
     t = [] #topic list to crawl
 
     logtime = str(time.time())
-    os.system('mkdir cache/logs/'+logtime+'/')
-    sys.stdout = open('cache/logs/'+logtime+'/std.log', 'w')
-    sys.stderr = open('cache/logs/'+logtime+'/error.log', 'w')
+    # os.system('mkdir cache/logs/'+logtime+'/')
+    # sys.stdout = open('cache/logs/'+logtime+'/std.log', 'w')
+    # sys.stderr = open('cache/logs/'+logtime+'/error.log', 'w')
 
     while True: #sleep for a while and load updates
         t.append('https://medium.com')

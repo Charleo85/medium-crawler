@@ -1,6 +1,7 @@
 from lxml import html
 from lxml import etree
 import requests, re, json, random, sys, os
+from insert2DB import *
 
 def write_json(filename, data, pk):
     output = open(filename, 'w', encoding='utf-8')
@@ -48,6 +49,7 @@ def parse_comment(page, uid, pk, url):
 
         count = 0
         commment_dict = {}
+        comment_map = {}
         # parse all comments
         for key, value in comm_data.items():
             count += 1
@@ -99,7 +101,18 @@ def parse_comment(page, uid, pk, url):
                 'name': str(pk) + '_' + str(count),
                 'parent': str(pk)
             }
-            json_f = 'data/comment/' +str(pk//1000)+'/'+ comm_dict['name'] + '.json'
+            comment_map = {
+                comment_id: {
+                    'content': comment,
+                    'creatorid': creator_id,
+                    'authorMediumID': username,
+                    'time': timestamp,
+                    'corrStnID': '',
+                    'articleMediumID':uid
+                }
+            }
+            print(comment_id)
+            json_f = 'data/comment/' + str(pk//1000) +'/'+ comm_dict['name'] + '.json'
             write_json(json_f, comm_dict, pk)
 
         # parse quote
@@ -144,15 +157,20 @@ def parse_comment(page, uid, pk, url):
                     'name': str(pk) + '_' + str(quote_count),
                     'parent': str(pk)
                 }
+                comment_map[comment_id]['corrStnName'] = sentence_id
+
                 json_f = 'data/truth/' +str(pk//1000)+'/'+ quote_dict['name'] + '.json'
                 write_json(json_f, quote_dict, pk)
+
+        for _, commentObj in comment_map.items():
+            saveComment(commentObj)
 
         return count
     else:
         print("bad request with url: "+url, file=sys.stderr)
 
 
-def parse_article(page, url, count, pk):
+def parse_article(page, url, count, pk, uid):
     tree = html.fromstring(page.content.decode('utf-8'))
     print(url)
     try:
@@ -181,6 +199,7 @@ def parse_article(page, url, count, pk):
         print("bad format cannot parse the article: "+url, file=sys.stderr)
         return
 
+
     art = {
         'name': str(pk),
         'parent': '',
@@ -205,23 +224,37 @@ def parse_article(page, url, count, pk):
     for tag in tags.xpath('./*/a/text()'):
         art['tag'].append(tag)
 
+    saveAuthor({
+        'name': author,
+        'mediumID': '' #to parse
+    })
+    saveArticle({
+        'mediumID': uid,
+        'authorMediumID': '', #to parse
+        'content' : '', # to remove
+        'title': article_name,
+        'time': timestamp,
+        'tag': art['tag'],
+        'numberLikes': -1
+    })
+
     section = tree.xpath('//section/div[@class="section-content"]')
     # print(len(section))
 
     for sec in section:
         # body = sec.xpath('./div[@class="section-inner sectionLayout--insetColumn"]/*')
         body = sec.xpath('./div[starts-with(@class,"section-inner")]/*')
-        art = parse_para(art, body)
+        art = parse_para(art, body, uid)
 
     for i in range(1, count+1):
         art['child'] += str(pk) + '_' + str(i)
         if i != count: art['child'] += '\t'
 
-
     write_json('data/article/'+str(pk//1000)+'/'+str(pk) + '.json', art, pk)
-    # return len(art['sentences'])
 
-def parse_para(art, body):
+
+
+def parse_para(art, body, uid):
     for para in body:
         sentence = para.text_content()
         try:
@@ -234,6 +267,12 @@ def parse_para(art, body):
         if sentence == "" or not key: continue
         art['sentences'].append({key : sentence})
         art['content'] += sentence + ' '
+
+        saveSentence({
+            'content': sentence,
+            'id': key,
+            'articleMediumID': uid
+        })
 
     return art
 
@@ -265,7 +304,7 @@ def parse(href, pk, id=None, first=True):
 
     count = parse_comment(page, uid, pk, href)
     if count:
-        parse_article(page, href, count, pk)
+        parse_article(page, href, count, pk, uid)
     # parse_image(page, href, count, pk)
 
 
