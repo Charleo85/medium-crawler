@@ -1,5 +1,5 @@
 import psycopg2
-
+import datetime, sys, time
 from config import config
 from action2AuthorTable import *
 from action2ArticleTable import *
@@ -39,8 +39,8 @@ def saveArticle(article):
 	tag = article['tag']
 	numberLikes = article['numberLikes']
 	### the format of time is "1999-01-08 04:05:06"
-	articleTime = article['time']
-
+	unixtime = time.mktime(time.strptime(article['time'], '%Y-%m-%dT%H:%M:%S.%fZ'))
+	articleTime = datetime.datetime.fromtimestamp(int(unixtime)).strftime('%Y-%m-%d %H:%M:%S')
 	#author name not unique??? query by mediumid
 	authorID = queryAuthorIDbyMediumID(authorMediumID)
 
@@ -60,7 +60,7 @@ def saveComment(comment):
 	commentName = ''
 	commentContent = comment['content']
 	authorMediumID = comment['authorMediumID']
-	commentTime = comment['time']
+	commentTime = datetime.datetime.fromtimestamp(int(comment['time'])/1000).strftime('%Y-%m-%d %H:%M:%S')
 	numLikes = -1
 	corrStnID = comment['corrStnID']
 	articleMediumID = comment['articleMediumID']
