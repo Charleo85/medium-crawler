@@ -292,5 +292,5 @@ if __name__ == '__main__':
         # parse("https://medium.com/tag/artificial-intelligence", 0)
         # parse("https://medium.freecodecamp.com/big-picture-machine-learning-classifying-text-with-neural-networks-and-tensorflow-d94036ac2274", 0)
         # parse("https://backchannel.com/i-work-i-swear-a649e0eb697d", 0) #815
-        insert2DB.initdb()
+        initdb()
         parse("https://medium.com/@meagle/understanding-87566abcfb7a", 0)
