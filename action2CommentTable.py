@@ -47,7 +47,7 @@ def insertComment(commentName, commentContent, authorID, commentTime, numLikes, 
 			commentContent,
 			authorID,
 			commentTime,
-			numLikes,
+			numberLikes,
 			corrStnID,
 			articleID
 		)
