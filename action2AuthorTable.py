@@ -112,7 +112,6 @@ def queryAuthorIDbyMediumID(MediumID):
 			authorID
 		FROM author
 		WHERE authorMediumID = %s
-		)
 		VALUES(
 		%s )""")
 
