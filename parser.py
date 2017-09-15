@@ -175,7 +175,7 @@ def parse_article(page, url, count, pk, uid):
 
     try:
         tags = tree.xpath('//ul[@class="tags tags--postTags tags--borderless"]')[0]
-        timestamp = tree.xpath('//time/text()')[0]
+        timestamp = tree.xpath('//time/@datatime')[0]
     except:
         print("bad format cannot parse the article: "+url, file=sys.stderr)
         return
