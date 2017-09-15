@@ -57,11 +57,11 @@ def saveComment(comment):
 	authorMediumID = comment['authorMediumID']
 	commentTime = comment['time']
 	numLikes = -1
-	corrStnName = comment['corrStnName']
+	corrStnID = comment['corrStnID']
 	articleMediumID = comment['articleMediumID']
 
 	authorID = queryAuthorIDbyMediumID(authorMediumID)
-	corrStnID = queryStnIDbyStnName(corrStnName)
+	# corrStnID = queryStnIDbyStnName(corrStnName)
 	articleID = queryArticleIDbyMediumID(articleMediumID)
 
 	insertComment(commentName, commentContent, authorID, commentTime, numLikes, corrStnID, articleID)
