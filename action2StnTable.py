@@ -41,7 +41,7 @@ def insertSTN(stnName, articleID, stnContent):
 		INSERT INTO stn (
 			stnName,
 			articleID,
-			stnContent
+			content
 		)
 		VALUES(
 		%s, %s, %s)
