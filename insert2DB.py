@@ -7,10 +7,10 @@ from action2StnTable import *
 from action2CommentTable import *
 
 def initdb():
-	action2AuthorTable.createAuthorTable
-	action2StnTable.createSTNTable
-	action2CommentTable.createCommentTable
-	action2AuthorTable.createArticleTable
+	createAuthorTable()
+	createSTNTable()
+	createCommentTable()
+	createArticleTable()
 
 ###insert author if not exist into the author table
 def saveAuthor(author):
