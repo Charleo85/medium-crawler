@@ -2,7 +2,7 @@ import sys, os, time, requests, queue, re
 import pickle
 from lxml import html
 from parser import parse
-
+from action2ArticleTable import queryArticleIDbyMediumID
 
 def concat(href):
     n = len(href)
@@ -17,7 +17,6 @@ def concat(href):
 
 def analyze(url):
     global q
-    global s
     global t
     try:
         page = requests.get(url, allow_redirects=True, timeout=1)
@@ -90,82 +89,15 @@ def analyze(url):
 #             except:
 #                 domain = "medium.com"
 
-
-
-
-def loadvaribles():
-    try:
-        f1 = open('cache/variable/queue.pckl', 'rb')
-        f2 = open('cache/variable/dict.pckl', 'rb')
-        f3 = open('cache/variable/pk.pckl', 'rb')
-    except FileNotFoundError:
-        print("variable file not found", file=sys.stderr)
-        ans = input("Are your sure you want to initalize everything?(y/n)")
-        if ans != 'y':
-            sys.exit()
-        else
-        return None, None, None
-    q = pickle.load(f1)
-    f1.close()
-    d = pickle.load(f2)
-    f2.close()
-    pk = pickle.load(f3)
-    f3.close()
-    return q, d, pk
-
-
-def savevariable(q, d, pk):
-    f = open('cache/variable/queue.pckl', 'wb')
-    pickle.dump(q, f)
-    f.close()
-    f = open('cache/variable/dict.pckl', 'wb')
-    pickle.dump(d, f)
-    f.close()
-    f = open('cache/variable/pk.pckl', 'wb')
-    pickle.dump(pk, f)
-    f.close()
-
-def savepk(pk):
-    f = open('cache/variable/pk.pckl', 'wb')
-    pickle.dump(pk, f)
-    f.close()
-
-
-def checkpk(pk):
-    os.system("echo 'checking PK......' ")
-    os.system("ls cache/html/"+str(pk//1000)+"/ | grep '"+str(pk)+"_*.html' ")
-
-
-def create_directory(n):
-    os.system('mkdir cache/html/'+n+'/')
-    os.system('mkdir cache/json/'+n+'/')
-    os.system('mkdir data/article/'+n+'/')
-    os.system('mkdir data/comment/'+n+'/')
-    os.system('mkdir data/truth/'+n+'/')
-
-
 if __name__ == '__main__':
 
-    create_directory(str(0))
-
-    l, d, pk = loadvaribles()
-    q = queue.Queue()
-    if not d:
-        print("variable caches not found", file=sys.stderr)
-        d = {} #dictionary of uid and url
-        pk = 1
-    else:
-        print(pk)
-        checkpk(pk)
-        for item in l:
-            q.put(item)
-
+    q = queue.Queue() #uid queue to analyze
     t = [] #topic list to crawl
-    
+
     logtime = str(time.time())
-    os.system('mkdir cache/logs/'+logtime+'/')
-    sys.stdout = open('cache/logs/'+logtime+'/std.log', 'w')
-    sys.stderr = open('cache/logs/'+logtime+'/error.log', 'w')
+    # os.system('mkdir cache/logs/'+logtime+'/')
+    # sys.stdout = open('cache/logs/'+logtime+'/std.log', 'w')
+    # sys.stderr = open('cache/logs/'+logtime+'/error.log', 'w')
 
     while True: #sleep for a while and load updates
         t.append('https://medium.com')
@@ -176,31 +108,26 @@ if __name__ == '__main__':
         # getArticles()
 
         while len(t) > 0:
-            savepk(pk)
             analyze(t.pop())
 
             while not q.empty():
-                savepk(pk)
                 time.sleep(10)
                 uid = q.get()
+
+                queryArticleIDbyMediumID(uid)
                 d[uid]["timestamp"] = time.time() #give a timestamp that crawled
                 url = d[uid]["url"]
                 if d[uid]["pk"] == -1:  # first time crawl
                     d[uid]["pk"] = pk
                     analyze(url)
                     parse(url,pk,uid)
-                    pk += 1
                 else: # crawl again
                     analyze(url)
                     stored_pk = d[uid]["pk"]
                     parse(url,stored_pk,uid, False)
 
-                sys.stdout.flush()
-                sys.stderr.flush()
-                if pk%1000 == 0:
-                    create_directory(str(pk//1000))
-
-                savevariable(list(q.queue), d, pk)
+                # sys.stdout.flush()
+                # sys.stderr.flush()
 
         print("falling sleep...", file=sys.stderr)
         sleep(60*10) # wait ten minutes to restart

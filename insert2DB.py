@@ -2,62 +2,71 @@ import psycopg2
 
 from config import config
 from action2AuthorTable import *
-
 from action2ArticleTable import *
 from action2StnTable import *
 from action2CommentTable import *
 
+def initdb():
+	createAuthorTable()
+	createSTNTable()
+	createCommentTable()
+	createArticleTable()
+
 ###insert author if not exist into the author table
-authorName = 
-authorMediumID = 
+def saveAuthor(author):
+	authorName = author['name']
+	authorMediumID = author['mediumID']
 
-authorExistFlag = existAuthor(authorName)
-authorID = -1
+	authorExistFlag = existAuthor(authorName)
+	authorID = -1
 
-if authorExistFlag:
-	print("exist author\t", authorName)
-	authorID = queryAuthorIDbyAuthorName(authorName)
-else:
-	authorID = insertAuthor(authorName, authorMediumID)
+	if authorExistFlag:
+		print("exist author\t", authorName)
+		# what's the need for queryAuthorIDbyAuthorName
+		authorID = queryAuthorIDbyAuthorName(authorName)
+	else:
+		authorID = insertAuthor(authorName, authorMediumID)
 
 
 ####insert article into article table
-articleName = 
-articleTitle = 
-articleContent = 
-authorName = 
-tag = 
+def saveArticle(article):
+	authorMediumID = article['authorMediumID']
+	# authorName = article['author']
 
-### the format of time is "1999-01-08 04:05:06" 
-articleTime = 
-numberLikes =
+	articleMediumID = article['mediumID']
+	articleTitle = article['title']
+	articleContent = article['content']
+	tag = article['tag']
+	numberLikes = article['numberLikes']
+	### the format of time is "1999-01-08 04:05:06"
+	articleTime = article['time']
 
-authorID = queryAuthorIDbyAuthorName(authorName)
+	#author name not unique??? query by mediumid
+	authorID = queryAuthorIDbyMediumID(authorMediumID)
 
-articleID = insertArticle(articleName, articleTitle, articleContent, authorID, tag, articleTime, numberLikes)
+	articleID = insertArticle(articleMediumID, articleTitle, articleContent, authorID, tag, articleTime, numberLikes)
 
 
 ###insert sentence into stn table
-stnName = 
-articleName = 
-stnContent = 
-
-articleID = queryArticleIDbyArticleName(articleName)
-
-stnID = insertSTN(stnName, articleID, stnContent)
+def saveSentence(sentence):
+	stnName = sentence['id']
+	stnContent = sentence['content']
+	articleMediumID = sentence['articleMediumID']
+	articleID = queryArticleIDbyMediumID(articleMediumID)
+	stnID = insertSTN(stnName, articleID, stnContent)
 
 ###insert comment into comment table
+def saveComment(comment):
+	commentName = ''
+	commentContent = comment['content']
+	authorMediumID = comment['authorMediumID']
+	commentTime = comment['time']
+	numLikes = -1
+	corrStnID = comment['corrStnID']
+	articleMediumID = comment['articleMediumID']
 
-commentName = 
-commentContent = 
-authorName = 
-commentTime = 
-numLikes = 
-corrStnName = 
-articleName = 
+	authorID = queryAuthorIDbyMediumID(authorMediumID)
+	# corrStnID = queryStnIDbyStnName(corrStnName)
+	articleID = queryArticleIDbyMediumID(articleMediumID)
 
-authorID = queryAuthorIDbyAuthorName(authorName)
-corrStnID = queryStnIDbyStnName(corrStnName)
-articleID = queryArticleIDbyArticleName(articleName)
-
-insertComment(commentName, commentContent, authorID, commentTime, numLikes, corrStnID, articleID)
+	insertComment(commentName, commentContent, authorID, commentTime, numLikes, corrStnID, articleID)

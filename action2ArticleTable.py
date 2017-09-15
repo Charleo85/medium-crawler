@@ -7,7 +7,7 @@ def createArticleTable():
 	command = ("""
 		CREATE TABLE article (
 			articleID SERIAL PRIMARY KEY,
-			articleName text,
+			articleMediumID text,
 			articleTitle text,
 			articleContent text,
 			authorID int,
@@ -40,10 +40,10 @@ def createArticleTable():
 		if conn is not None:
 			conn.close()
 
-def insertArticle(articleName, articleTitle, articleContent, authorID, tag, articleTime, numberLikes):
+def insertArticle(articleMediumID, articleTitle, articleContent, authorID, tag, articleTime, numberLikes):
 	command = ("""
 		INSERT INTO article (
-			articleName,
+			articleMediumID,
 			articleTitle,
 			articleContent,
 			authorID,
@@ -67,7 +67,7 @@ def insertArticle(articleName, articleTitle, articleContent, authorID, tag, arti
 		print("before inserting into article table....")
 
 		# for command in commands:
-		cur.execute(command, (articleName, articleTitle, articleContent, authorID, tag, articleTime, numberLikes, ))
+		cur.execute(command, (articleMediumID, articleTitle, articleContent, authorID, tag, articleTime, numberLikes, ))
 		print("after inserting into article table....")
 
 		articleID = cur.fetchone()[0]
@@ -84,12 +84,12 @@ def insertArticle(articleName, articleTitle, articleContent, authorID, tag, arti
 		if conn is not None:
 			conn.close()
 
-def queryArticleIDbyArticleName(articleName):
+def queryArticleIDbyMediumID(mediumID):
 	command = ("""
 		SELECT
-			articleID 
+			articleID
 		FROM article
-		WHERE articleName = %s		
+		WHERE mediumID = %s
 		)
 		""")
 
@@ -103,7 +103,7 @@ def queryArticleIDbyArticleName(articleName):
 		print("creating sentence table....")
 
 		# for command in commands:
-		cur.execute(command, (authorName,))
+		cur.execute(command, (mediumID,))
 		print("after creating sentence table....")
 
 		articleID = cur.fetchone()[0]

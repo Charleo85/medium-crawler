@@ -1,16 +1,7 @@
 from lxml import html
 from lxml import etree
 import requests, re, json, random, sys, os
-
-def write_json(filename, data, pk):
-    output = open(filename, 'w', encoding='utf-8')
-    output.write(json.dumps(data))
-    output.close()
-
-def write_html(filename, data, pk):
-    output = open(filename, 'w', encoding='utf-8')
-    output.write(data.content.decode('utf-8'))
-    output.close()
+from insert2DB import *
 
 def parse_fullcomment(href):
     try:
@@ -36,7 +27,6 @@ def parse_comment(page, uid, pk, url):
         return
     print(uid)
     resp_data = json.loads(resp.content.decode('utf-8')[16:])
-    write_json('cache/json/'+str(pk//1000)+'/'+str(pk) +"_"+ str(uid)+'.json', resp_data, pk)
 
     if (resp_data['success']):
         try:
@@ -48,6 +38,7 @@ def parse_comment(page, uid, pk, url):
 
         count = 0
         commment_dict = {}
+        comment_map = {}
         # parse all comments
         for key, value in comm_data.items():
             count += 1
@@ -88,19 +79,26 @@ def parse_comment(page, uid, pk, url):
             if media_id != '': #assume one media_id only to one sentences
                 commment_dict[media_id] = comment_id
 
-            comm_dict = {
-                'content': comment,
-                'child': '',
-                'title': '',
-                'id': comment_id,
-                'creatorid': creator_id,
-                'username': username,
-                'timestamp': timestamp,
-                'name': str(pk) + '_' + str(count),
-                'parent': str(pk)
+            # comm_dict = {
+            #     'content': comment,
+            #     'child': '',
+            #     'title': '',
+            #     'id': comment_id,
+            #     'creatorid': creator_id,
+            #     'username': username,
+            #     'timestamp': timestamp,
+            #     'name': str(pk) + '_' + str(count),
+            #     'parent': str(pk)
+            # }
+            comment_map[comment_id] = {
+                    'content': comment,
+                    'creatorid': creator_id,
+                    'authorMediumID': username,
+                    'time': timestamp,
+                    'corrStnID': '',
+                    'articleMediumID':uid
             }
-            json_f = 'data/comment/' +str(pk//1000)+'/'+ comm_dict['name'] + '.json'
-            write_json(json_f, comm_dict, pk)
+            # print(comment_id)
 
         # parse quote
         # value['inResponseToMediaResourceId'] matches value['MediaResource'][key]
@@ -134,25 +132,27 @@ def parse_comment(page, uid, pk, url):
                 for comm_para in comment_paras:
                     comment+=comm_para['text']
 
-                quote_dict = {
-                    'content': comment, #match sentence piece
-                    'child': '',
-                    'title': '',
-                    'sentenceid': sentence_id,
-                    'commentid': comment_id,
-                    'creatorid': creator_id,
-                    'name': str(pk) + '_' + str(quote_count),
-                    'parent': str(pk)
-                }
-                json_f = 'data/truth/' +str(pk//1000)+'/'+ quote_dict['name'] + '.json'
-                write_json(json_f, quote_dict, pk)
+                # quote_dict = {
+                #     'content': comment, #match sentence piece
+                #     'child': '',
+                #     'title': '',
+                #     'sentenceid': sentence_id,
+                #     'commentid': comment_id,
+                #     'creatorid': creator_id,
+                #     'name': str(pk) + '_' + str(quote_count),
+                #     'parent': str(pk)
+                # }
+                comment_map[comment_id]['corrStnID'] = sentence_id
+
+        for _, commentObj in comment_map.items():
+            saveComment(commentObj)
 
         return count
     else:
         print("bad request with url: "+url, file=sys.stderr)
 
 
-def parse_article(page, url, count, pk):
+def parse_article(page, url, count, pk, uid):
     tree = html.fromstring(page.content.decode('utf-8'))
     print(url)
     try:
@@ -163,7 +163,6 @@ def parse_article(page, url, count, pk):
         except:
             print("bad format cannot parse the title: "+url, file=sys.stderr)
             article_name = ""
-            # return
 
     try:
         author = tree.xpath('//a[@class="link link link--darken link--darker u-baseColor--link"]/text()')[0]
@@ -180,6 +179,7 @@ def parse_article(page, url, count, pk):
     except:
         print("bad format cannot parse the article: "+url, file=sys.stderr)
         return
+
 
     art = {
         'name': str(pk),
@@ -205,23 +205,34 @@ def parse_article(page, url, count, pk):
     for tag in tags.xpath('./*/a/text()'):
         art['tag'].append(tag)
 
+    saveAuthor({
+        'name': author,
+        'mediumID': '' #to parse
+    })
+    saveArticle({
+        'mediumID': uid,
+        'authorMediumID': '', #to parse
+        'content' : '', # to remove
+        'title': article_name,
+        'time': timestamp,
+        'tag': art['tag'],
+        'numberLikes': -1
+    })
+
     section = tree.xpath('//section/div[@class="section-content"]')
     # print(len(section))
 
     for sec in section:
         # body = sec.xpath('./div[@class="section-inner sectionLayout--insetColumn"]/*')
         body = sec.xpath('./div[starts-with(@class,"section-inner")]/*')
-        art = parse_para(art, body)
+        art = parse_para(art, body, uid)
 
     for i in range(1, count+1):
         art['child'] += str(pk) + '_' + str(i)
         if i != count: art['child'] += '\t'
 
 
-    write_json('data/article/'+str(pk//1000)+'/'+str(pk) + '.json', art, pk)
-    # return len(art['sentences'])
-
-def parse_para(art, body):
+def parse_para(art, body, uid):
     for para in body:
         sentence = para.text_content()
         try:
@@ -229,11 +240,17 @@ def parse_para(art, body):
         except:
             # print("no id in tag"+str(pk), file=sys.stderr)
             sub_body = para.xpath('./*')
-            art = parse_para(art, sub_body)
+            art = parse_para(art, sub_body, uid)
             continue
         if sentence == "" or not key: continue
         art['sentences'].append({key : sentence})
         art['content'] += sentence + ' '
+
+        saveSentence({
+            'content': sentence,
+            'id': key,
+            'articleMediumID': uid
+        })
 
     return art
 
@@ -252,7 +269,6 @@ def parse(href, pk, id=None, first=True):
         page = requests.get(href, allow_redirects=True, timeout=1)
     except:
         return
-    write_html('cache/html/'+str(pk//1000)+'/'+str(pk)+"_"+ str(uid) +".html", page, pk)
 
     if not first:
         # try:
@@ -265,7 +281,7 @@ def parse(href, pk, id=None, first=True):
 
     count = parse_comment(page, uid, pk, href)
     if count:
-        parse_article(page, href, count, pk)
+        parse_article(page, href, count, pk, uid)
     # parse_image(page, href, count, pk)
 
 
@@ -275,4 +291,6 @@ if __name__ == '__main__':
     else:
         # parse("https://medium.com/tag/artificial-intelligence", 0)
         # parse("https://medium.freecodecamp.com/big-picture-machine-learning-classifying-text-with-neural-networks-and-tensorflow-d94036ac2274", 0)
-        parse("https://backchannel.com/i-work-i-swear-a649e0eb697d", 0) #815
+        # parse("https://backchannel.com/i-work-i-swear-a649e0eb697d", 0) #815
+        initdb()
+        parse("https://medium.com/@meagle/understanding-87566abcfb7a", 0)
