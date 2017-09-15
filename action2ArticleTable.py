@@ -89,7 +89,7 @@ def queryArticleIDbyMediumID(mediumID):
 		SELECT
 			articleID
 		FROM article
-		WHERE mediumID = %s
+		WHERE articleMediumID = %s
 		)
 		VALUES(
 		%s )
