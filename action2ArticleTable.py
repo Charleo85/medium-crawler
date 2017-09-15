@@ -91,6 +91,8 @@ def queryArticleIDbyMediumID(mediumID):
 		FROM article
 		WHERE mediumID = %s
 		)
+		VALUES(
+		%s )
 		""")
 
 	conn = None
@@ -100,11 +102,11 @@ def queryArticleIDbyMediumID(mediumID):
 		conn = psycopg2.connect(**params)
 
 		cur = conn.cursor()
-		print("creating sentence table....")
+		print("querying article table....")
 
 		# for command in commands:
 		cur.execute(command, (mediumID,))
-		print("after creating sentence table....")
+		print("after querying article table....")
 
 		articleID = cur.fetchone()[0]
 

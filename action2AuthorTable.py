@@ -76,7 +76,8 @@ def insertAuthor(authorName, authorMediumID):
 
 def existAuthor(authorName):
 	command = ("""
-		select exists(select 1 from author where authorName=%s)""")
+		select exists(select 1 from author where authorName=%s)VALUES(
+		%s)""")
 
 	conn = None
 	try:
@@ -85,11 +86,11 @@ def existAuthor(authorName):
 		conn = psycopg2.connect(**params)
 
 		cur = conn.cursor()
-		print("before inserting into author table....")
+		print("exist author in the author table....")
 
 		# for command in commands:
 		cur.execute(command, (authorName, ))
-		print("after inserting into author table....")
+		print("after existing author in the table....")
 
 		existFlag = cur.fetchone()[0]
 
@@ -112,7 +113,8 @@ def queryAuthorIDbyMediumID(MediumID):
 		FROM author
 		WHERE authorMediumID = %s
 		)
-		""")
+		VALUES(
+		%s )""")
 
 	conn = None
 	try:
@@ -121,11 +123,11 @@ def queryAuthorIDbyMediumID(MediumID):
 		conn = psycopg2.connect(**params)
 
 		cur = conn.cursor()
-		print("creating sentence table....")
+		print("queryAuthorIDbyMediumID....")
 
 		# for command in commands:
 		cur.execute(command, (MediumID,))
-		print("after creating sentence table....")
+		print("after queryAuthorIDbyMediumID....")
 
 		authorID = cur.fetchone()[0]
 

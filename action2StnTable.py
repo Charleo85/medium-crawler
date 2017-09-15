@@ -77,13 +77,17 @@ def insertSTN(stnName, articleID, stnContent):
 			conn.close()
 
 def queryStnIDbyStnName(stnName):
+
 	command = ("""
 		SELECT
 			stnID 
 		FROM stn
 		WHERE stnName = %s
 		)
+		VALUES(
+		%s )
 		""")
+
 
 	conn = None
 	try:
@@ -92,11 +96,11 @@ def queryStnIDbyStnName(stnName):
 		conn = psycopg2.connect(**params)
 
 		cur = conn.cursor()
-		print("creating sentence table....")
+		print("querying sentence table....")
 
 		# for command in commands:
 		cur.execute(command, (stnName,))
-		print("after creating sentence table....")
+		print("after querying sentence table....")
 
 		stnID = cur.fetchone()[0]
 
