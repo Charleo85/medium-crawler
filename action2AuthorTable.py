@@ -76,8 +76,7 @@ def insertAuthor(authorName, authorMediumID):
 
 def existAuthor(authorName):
 	command = ("""
-		select exists(select 1 from author where authorName=%s)VALUES(
-		%s)""")
+		select exists(select 1 from author where authorName=%s)""")
 
 	conn = None
 	try:

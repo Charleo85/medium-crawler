@@ -83,9 +83,6 @@ def queryStnIDbyStnName(stnName):
 			stnID 
 		FROM stn
 		WHERE stnName = %s
-		
-		VALUES(
-		%s )
 		""")
 
 

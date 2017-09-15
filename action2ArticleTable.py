@@ -90,8 +90,6 @@ def queryArticleIDbyMediumID(mediumID):
 			articleID
 		FROM article
 		WHERE articleMediumID = %s
-		
-		VALUES(%s )
 		""")
 
 	conn = None
