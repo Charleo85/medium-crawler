@@ -2,10 +2,15 @@ import psycopg2
 
 from config import config
 from action2AuthorTable import *
-
 from action2ArticleTable import *
 from action2StnTable import *
 from action2CommentTable import *
+
+def initdb():
+	action2AuthorTable.createAuthorTable
+	action2StnTable.createSTNTable
+	action2CommentTable.createCommentTable
+	action2AuthorTable.createArticleTable
 
 ###insert author if not exist into the author table
 def saveAuthor(author):

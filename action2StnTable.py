@@ -9,7 +9,7 @@ def createSTNTable():
 			stnID SERIAL PRIMARY KEY,
 			stnName varchar(300),
 			articleID int,
-			content text			
+			content text
 		)
 		""")
 
@@ -81,7 +81,7 @@ def queryStnIDbyStnName(stnName):
 		SELECT
 			stnID 
 		FROM stn
-		WHERE stnName = %s		
+		WHERE stnName = %s
 		)
 		""")
 
