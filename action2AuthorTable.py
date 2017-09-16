@@ -112,8 +112,7 @@ def queryAuthorIDbyMediumID(MediumID):
 			authorID
 		FROM author
 		WHERE authorMediumID = %s
-		VALUES(
-		%s )""")
+		""")
 
 	conn = None
 	try:
@@ -127,8 +126,7 @@ def queryAuthorIDbyMediumID(MediumID):
 		# for command in commands:
 		cur.execute(command, (MediumID,))
 		print("after queryAuthorIDbyMediumID....")
-		fetchResult = cur.fetchone()
-		print("====", fetchResult)
+
 		authorID = 0 #cur.fetchone()[0]
 
 		cur.close()
