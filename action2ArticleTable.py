@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-import psycopg2
+import psycopg2,sys
 
 from config import config
 
@@ -65,7 +65,8 @@ def insertArticle(articleMediumID, articleTitle, articleContent, authorID, tag, 
 
 		cur = conn.cursor()
 		print("before inserting into article table....")
-
+		print("inserting into article:", file=sys.stderr)
+		print(articleMediumID, articleTitle, articleContent, authorID, tag, articleTime, numberLikes, sep=", ", file=sys.stderr)
 		# for command in commands:
 		cur.execute(command, (articleMediumID, articleTitle, articleContent, authorID, tag, articleTime, numberLikes, ))
 		print("after inserting into article table....")

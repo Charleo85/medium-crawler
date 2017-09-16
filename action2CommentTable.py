@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-import psycopg2
+import psycopg2,sys
 
 from config import config
 

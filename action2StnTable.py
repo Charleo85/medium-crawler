@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-import psycopg2
+import psycopg2,sys
 
 from config import config
 
@@ -80,7 +80,7 @@ def queryStnIDbyStnName(stnName):
 
 	command = ("""
 		SELECT
-			stnID 
+			stnID
 		FROM stn
 		WHERE stnName = %s
 		""")
@@ -94,7 +94,8 @@ def queryStnIDbyStnName(stnName):
 
 		cur = conn.cursor()
 		print("querying sentence table....")
-
+		print("inserting into sentence:", file=sys.stderr)
+		print(commentName, commentContent, authorID, commentTime, numLikes, corrStnID, articleID, sep=", ", file=sys.stderr)
 		# for command in commands:
 		cur.execute(command, (stnName,))
 		print("after querying sentence table....")

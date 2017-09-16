@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-import psycopg2
+import psycopg2,sys
 
 from config import config
 
@@ -55,7 +55,8 @@ def insertAuthor(authorName, authorMediumID):
 
 		cur = conn.cursor()
 		print("before inserting into author table....")
-
+		print("inserting into author:", file=sys.stderr)
+		print(commentName, commentContent, authorID, commentTime, numLikes, corrStnID, articleID, sep=", ", file=sys.stderr)
 		# for command in commands:
 		cur.execute(command, (commentName, commentContent, authorID, commentTime, numLikes, corrStnID, articleID, ))
 		print("after inserting into author table....")
