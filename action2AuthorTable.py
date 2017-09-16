@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-import psycopg2
+import psycopg2,sys
 
 from config import config
 
@@ -19,11 +19,11 @@ def createAuthorTable():
 		conn = psycopg2.connect(**params)
 
 		cur = conn.cursor()
-		print("creating author table....")
+		# print("creating author table....")
 
 		# for command in commands:
 		cur.execute(command)
-		print("after creating sentence table....")
+		# print("after creating sentence table....")
 
 		cur.close()
 
@@ -54,11 +54,12 @@ def insertAuthor(authorName, authorMediumID):
 		conn = psycopg2.connect(**params)
 
 		cur = conn.cursor()
-		print("before inserting into author table....")
-
+		# print("before inserting into author table....")
+		# print("inserting into author:", file=sys.stderr)
+		# print(authorName, authorMediumID, sep=", ", file=sys.stderr)
 		# for command in commands:
-		cur.execute(command, (commentName, commentContent, authorID, commentTime, numLikes, corrStnID, articleID, ))
-		print("after inserting into author table....")
+		cur.execute(command, (authorName, authorMediumID, ))
+		# print("after inserting into author table....")
 
 		authorID = cur.fetchone()[0]
 
@@ -74,9 +75,9 @@ def insertAuthor(authorName, authorMediumID):
 		if conn is not None:
 			conn.close()
 
-def existAuthor(authorName):
+def existAuthor(authorMediumID):
 	command = ("""
-		select exists(select 1 from author where authorName=%s)""")
+		select exists(select 1 from author where authorMediumID=%s)""")
 
 	conn = None
 	try:
@@ -85,11 +86,11 @@ def existAuthor(authorName):
 		conn = psycopg2.connect(**params)
 
 		cur = conn.cursor()
-		print("exist author in the author table....")
+		# print("exist author in the author table....")
 
 		# for command in commands:
-		cur.execute(command, (authorName, ))
-		print("after existing author in the table....")
+		cur.execute(command, (authorMediumID, ))
+		# print("after existing author in the table....")
 
 		existFlag = cur.fetchone()[0]
 
@@ -111,8 +112,7 @@ def queryAuthorIDbyMediumID(MediumID):
 			authorID
 		FROM author
 		WHERE authorMediumID = %s
-		VALUES(
-		%s )""")
+		""")
 
 	conn = None
 	try:
@@ -121,13 +121,13 @@ def queryAuthorIDbyMediumID(MediumID):
 		conn = psycopg2.connect(**params)
 
 		cur = conn.cursor()
-		print("queryAuthorIDbyMediumID....")
+		# print("queryAuthorIDbyMediumID....")
 
 		# for command in commands:
 		cur.execute(command, (MediumID,))
-		print("after queryAuthorIDbyMediumID....")
+		# print("after queryAuthorIDbyMediumID....")
 
-		authorID = cur.fetchone()[0]
+		authorID = 0 #cur.fetchone()[0]
 
 		cur.close()
 

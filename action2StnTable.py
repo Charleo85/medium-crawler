@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-import psycopg2
+import psycopg2,sys
 
 from config import config
 
@@ -20,11 +20,11 @@ def createSTNTable():
 		conn = psycopg2.connect(**params)
 
 		cur = conn.cursor()
-		print("creating sentence table....")
+		# print("creating sentence table....")
 
 		# for command in commands:
 		cur.execute(command)
-		print("after creating sentence table....")
+		# print("after creating sentence table....")
 
 		cur.close()
 
@@ -56,11 +56,11 @@ def insertSTN(stnName, articleID, stnContent):
 		conn = psycopg2.connect(**params)
 
 		cur = conn.cursor()
-		print("before inserting into article table....")
+		# print("before inserting into article table....")
 
 		# for command in commands:
 		cur.execute(command, (stnName, articleID, stnContent, ))
-		print("after inserting into article table....")
+		# print("after inserting into article table....")
 
 		stnID = cur.fetchone()[0]
 
@@ -80,7 +80,7 @@ def queryStnIDbyStnName(stnName):
 
 	command = ("""
 		SELECT
-			stnID 
+			stnID
 		FROM stn
 		WHERE stnName = %s
 		""")
@@ -93,11 +93,12 @@ def queryStnIDbyStnName(stnName):
 		conn = psycopg2.connect(**params)
 
 		cur = conn.cursor()
-		print("querying sentence table....")
-
+		# print("querying sentence table....")
+		# print("inserting into sentence:", file=sys.stderr)
+		# print(commentName, commentContent, authorID, commentTime, numLikes, corrStnID, articleID, sep=", ", file=sys.stderr)
 		# for command in commands:
 		cur.execute(command, (stnName,))
-		print("after querying sentence table....")
+		# print("after querying sentence table....")
 
 		stnID = cur.fetchone()[0]
 

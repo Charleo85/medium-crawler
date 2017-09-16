@@ -17,13 +17,11 @@ def saveAuthor(author):
 	authorName = author['name']
 	authorMediumID = author['mediumID']
 
-	authorExistFlag = existAuthor(authorName)
-	authorID = -1
+	authorExistFlag = existAuthor(authorMediumID)
 
 	if authorExistFlag:
 		print("exist author\t", authorName)
-		# what's the need for queryAuthorIDbyAuthorName
-		authorID = queryAuthorIDbyAuthorName(authorName)
+		authorID = queryAuthorIDbyMediumID(authorMediumID)
 	else:
 		authorID = insertAuthor(authorName, authorMediumID)
 

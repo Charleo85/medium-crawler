@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-import psycopg2
+import psycopg2,sys
 
 from config import config
 
@@ -24,11 +24,11 @@ def createArticleTable():
 		conn = psycopg2.connect(**params)
 
 		cur = conn.cursor()
-		print("creating article table....")
+		# print("creating article table....")
 
 		# for command in commands:
 		cur.execute(command)
-		print("after creating article table....")
+		# print("after creating article table....")
 
 		cur.close()
 
@@ -64,11 +64,12 @@ def insertArticle(articleMediumID, articleTitle, articleContent, authorID, tag, 
 		conn = psycopg2.connect(**params)
 
 		cur = conn.cursor()
-		print("before inserting into article table....")
-
+		# print("before inserting into article table....")
+		# print("inserting into article:", file=sys.stderr)
+		# print(articleMediumID, articleTitle, articleContent, authorID, tag, articleTime, numberLikes, sep=", ", file=sys.stderr)
 		# for command in commands:
 		cur.execute(command, (articleMediumID, articleTitle, articleContent, authorID, tag, articleTime, numberLikes, ))
-		print("after inserting into article table....")
+		# print("after inserting into article table....")
 
 		articleID = cur.fetchone()[0]
 
@@ -99,11 +100,11 @@ def queryArticleIDbyMediumID(mediumID):
 		conn = psycopg2.connect(**params)
 
 		cur = conn.cursor()
-		print("querying article table....")
+		# print("querying article table....")
 
 		# for command in commands:
 		cur.execute(command, (mediumID,))
-		print("after querying article table....")
+		# print("after querying article table....")
 
 		articleID = cur.fetchone()[0]
 

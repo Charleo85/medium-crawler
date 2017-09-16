@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-import psycopg2
+import psycopg2,sys
 
 from config import config
 
@@ -24,11 +24,11 @@ def createCommentTable():
 		conn = psycopg2.connect(**params)
 
 		cur = conn.cursor()
-		print("creating comment table....")
+		# print("creating comment table....")
 
 		# for command in commands:
 		cur.execute(command)
-		print("after creating comment table....")
+		# print("after creating comment table....")
 
 		cur.close()
 
@@ -64,11 +64,12 @@ def insertComment(commentName, commentContent, authorID, commentTime, numLikes, 
 		conn = psycopg2.connect(**params)
 
 		cur = conn.cursor()
-		print("before inserting into comment table....")
-
+		# print("before inserting into comment table....")
+		# print("inserting into comment:", file=sys.stderr)
+		# print(commentName, commentContent, authorID, commentTime, numLikes, corrStnID, articleID, sep=", ", file=sys.stderr)
 		# for command in commands:
 		cur.execute(command, (commentName, commentContent, authorID, commentTime, numLikes, corrStnID, articleID, ))
-		print("after inserting into comment table....")
+		# print("after inserting into comment table....")
 
 		commentID = cur.fetchone()[0]
 
@@ -83,4 +84,3 @@ def insertComment(commentName, commentContent, authorID, commentTime, numLikes, 
 	finally:
 		if conn is not None:
 			conn.close()
-
