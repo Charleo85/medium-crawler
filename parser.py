@@ -234,9 +234,9 @@ def parse_article(page, url, count, pk, uid):
         body = sec.xpath('./div[starts-with(@class,"section-inner")]/*')
         art = parse_para(art, body, uid)
 
-    for i in range(1, count+1):
-        art['child'] += str(pk) + '_' + str(i)
-        if i != count: art['child'] += '\t'
+    # for i in range(1, count+1):
+    #     art['child'] += str(pk) + '_' + str(i)
+    #     if i != count: art['child'] += '\t'
 
 
 def parse_para(art, body, uid):
