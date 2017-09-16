@@ -56,9 +56,9 @@ def insertAuthor(authorName, authorMediumID):
 		cur = conn.cursor()
 		print("before inserting into author table....")
 		print("inserting into author:", file=sys.stderr)
-		print(commentName, commentContent, authorID, commentTime, numLikes, corrStnID, articleID, sep=", ", file=sys.stderr)
+		print(authorName, authorMediumID, sep=", ", file=sys.stderr)
 		# for command in commands:
-		cur.execute(command, (commentName, commentContent, authorID, commentTime, numLikes, corrStnID, articleID, ))
+		cur.execute(command, (authorName, authorMediumID, ))
 		print("after inserting into author table....")
 
 		authorID = cur.fetchone()[0]
