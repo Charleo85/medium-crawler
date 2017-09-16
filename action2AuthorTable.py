@@ -54,7 +54,7 @@ def insertAuthor(authorName, authorMediumID):
 		conn = psycopg2.connect(**params)
 
 		cur = conn.cursor()
-		a("before inserting into author table....")
+		# print("before inserting into author table....")
 		# print("inserting into author:", file=sys.stderr)
 		# print(authorName, authorMediumID, sep=", ", file=sys.stderr)
 		# for command in commands:
