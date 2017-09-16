@@ -18,7 +18,6 @@ def saveAuthor(author):
 	authorMediumID = 'mediumID'#author['mediumID']
 
 	authorExistFlag = existAuthor(authorMediumID)
-	authorID = -1
 
 	if authorExistFlag:
 		print("exist author\t", authorName)

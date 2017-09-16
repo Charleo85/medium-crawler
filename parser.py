@@ -171,9 +171,11 @@ def parse_article(page, url, count, pk, uid):
 
     try:
         author = tree.xpath('//a[@class="link link link--darken link--darker u-baseColor--link"]/text()')[0]
+        authorMediumID = tree.xpath('//a[@class="link link link--darken link--darker u-baseColor--link"]/@data-user-id')[0]
     except:
         try:
             author = tree.xpath('//span[starts-with(@class,"link link--darken link--darker")]/text()')[0]
+            authorMediumID = tree.xpath('//span[starts-with(@class,"link link--darken link--darker")]/@data-user-id')[0]
         except:
             print("bad format cannot parse the author: "+url, file=sys.stderr)
             author = ""
@@ -212,7 +214,7 @@ def parse_article(page, url, count, pk, uid):
 
     saveAuthor({
         'name': author,
-        'mediumID': '' #to parse
+        'mediumID': authorMediumID
     })
     saveArticle({
         'mediumID': uid,

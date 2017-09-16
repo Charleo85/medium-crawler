@@ -19,11 +19,11 @@ def createAuthorTable():
 		conn = psycopg2.connect(**params)
 
 		cur = conn.cursor()
-		print("creating author table....")
+		# print("creating author table....")
 
 		# for command in commands:
 		cur.execute(command)
-		print("after creating sentence table....")
+		# print("after creating sentence table....")
 
 		cur.close()
 
@@ -54,12 +54,12 @@ def insertAuthor(authorName, authorMediumID):
 		conn = psycopg2.connect(**params)
 
 		cur = conn.cursor()
-		print("before inserting into author table....")
-		print("inserting into author:", file=sys.stderr)
-		print(authorName, authorMediumID, sep=", ", file=sys.stderr)
+		# print("before inserting into author table....")
+		# print("inserting into author:", file=sys.stderr)
+		# print(authorName, authorMediumID, sep=", ", file=sys.stderr)
 		# for command in commands:
 		cur.execute(command, (authorName, authorMediumID, ))
-		print("after inserting into author table....")
+		# print("after inserting into author table....")
 
 		authorID = cur.fetchone()[0]
 
@@ -86,11 +86,11 @@ def existAuthor(authorMediumID):
 		conn = psycopg2.connect(**params)
 
 		cur = conn.cursor()
-		print("exist author in the author table....")
+		# print("exist author in the author table....")
 
 		# for command in commands:
 		cur.execute(command, (authorMediumID, ))
-		print("after existing author in the table....")
+		# print("after existing author in the table....")
 
 		existFlag = cur.fetchone()[0]
 
@@ -121,11 +121,11 @@ def queryAuthorIDbyMediumID(MediumID):
 		conn = psycopg2.connect(**params)
 
 		cur = conn.cursor()
-		print("queryAuthorIDbyMediumID....")
+		# print("queryAuthorIDbyMediumID....")
 
 		# for command in commands:
 		cur.execute(command, (MediumID,))
-		print("after queryAuthorIDbyMediumID....")
+		# print("after queryAuthorIDbyMediumID....")
 
 		authorID = 0 #cur.fetchone()[0]
 
