@@ -157,7 +157,7 @@ def parse_comment(page, uid, pk, url):
         print("bad request with url: "+url, file=sys.stderr)
 
 
-def parse_article(page, url, count, pk, uid):
+def parse_article(page, url, pk, uid):
     tree = html.fromstring(page.content.decode('utf-8'))
     # print(url)
     try:
@@ -286,7 +286,7 @@ def parse(href, pk, id=None, first=True):
         #     print("fail to rm", file=sys.stderr)
         #     return
 
-    parse_article(page, href, count, pk, uid)
+    parse_article(page, href, pk, uid)
     parse_comment(page, uid, pk, href)
     # parse_image(page, href, count, pk)
 
