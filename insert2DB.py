@@ -15,7 +15,7 @@ def initdb():
 ###insert author if not exist into the author table
 def saveAuthor(author):
 	authorName = author['name']
-	authorMediumID = 'mediumID'#author['mediumID']
+	authorMediumID = author['mediumID']
 
 	authorExistFlag = existAuthor(authorMediumID)
 
