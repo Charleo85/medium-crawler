@@ -75,9 +75,9 @@ def insertAuthor(authorName, authorMediumID):
 		if conn is not None:
 			conn.close()
 
-def existAuthor(authorName):
+def existAuthor(authorMediumID):
 	command = ("""
-		select exists(select 1 from author where authorName=%s)""")
+		select exists(select 1 from author where authorMediumID=%s)""")
 
 	conn = None
 	try:
@@ -89,7 +89,7 @@ def existAuthor(authorName):
 		print("exist author in the author table....")
 
 		# for command in commands:
-		cur.execute(command, (authorName, ))
+		cur.execute(command, (authorMediumID, ))
 		print("after existing author in the table....")
 
 		existFlag = cur.fetchone()[0]

@@ -15,15 +15,14 @@ def initdb():
 ###insert author if not exist into the author table
 def saveAuthor(author):
 	authorName = author['name']
-	authorMediumID = author['mediumID']
+	authorMediumID = 'mediumID'#author['mediumID']
 
-	authorExistFlag = existAuthor(authorName)
+	authorExistFlag = existAuthor(authorMediumID)
 	authorID = -1
 
 	if authorExistFlag:
 		print("exist author\t", authorName)
-		# what's the need for queryAuthorIDbyAuthorName
-		authorID = queryAuthorIDbyAuthorName(authorName)
+		authorID = queryAuthorIDbyMediumID(authorMediumID)
 	else:
 		authorID = insertAuthor(authorName, authorMediumID)
 
