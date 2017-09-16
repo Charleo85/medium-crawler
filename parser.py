@@ -286,9 +286,8 @@ def parse(href, pk, id=None, first=True):
         #     print("fail to rm", file=sys.stderr)
         #     return
 
-    count = parse_comment(page, uid, pk, href)
-    if count:
-        parse_article(page, href, count, pk, uid)
+    parse_article(page, href, count, pk, uid)
+    parse_comment(page, uid, pk, href)
     # parse_image(page, href, count, pk)
 
 
