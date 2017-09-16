@@ -127,8 +127,9 @@ def queryAuthorIDbyMediumID(MediumID):
 		# for command in commands:
 		cur.execute(command, (MediumID,))
 		print("after queryAuthorIDbyMediumID....")
-
-		authorID = cur.fetchone()[0]
+		fetchResult = cur.fetchone()
+		print(fetchResult, file=sys.stderr)
+		authorID = 0 #cur.fetchone()[0]
 
 		cur.close()
 
