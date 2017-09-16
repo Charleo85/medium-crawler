@@ -3,6 +3,11 @@ from lxml import etree
 import requests, re, json, random, sys, os
 from insert2DB import *
 
+def write_html(filename, data, pk):
+    output = open(filename, 'w', encoding='utf-8')
+    output.write(data.content.decode('utf-8'))
+    output.close()
+
 def parse_fullcomment(href):
     try:
         page = requests.get(href, allow_redirects=True, timeout=1)
@@ -154,7 +159,7 @@ def parse_comment(page, uid, pk, url):
 
 def parse_article(page, url, count, pk, uid):
     tree = html.fromstring(page.content.decode('utf-8'))
-    print(url)
+    # print(url)
     try:
         article_name = tree.xpath('//h1/text()')[0]
     except:
@@ -175,7 +180,7 @@ def parse_article(page, url, count, pk, uid):
 
     try:
         tags = tree.xpath('//ul[@class="tags tags--postTags tags--borderless"]')[0]
-        timestamp = tree.xpath('//time/@datatime')[0]
+        timestamp = tree.xpath('//time/@datetime')[0]
     except:
         print("bad format cannot parse the article: "+url, file=sys.stderr)
         return
@@ -269,7 +274,7 @@ def parse(href, pk, id=None, first=True):
         page = requests.get(href, allow_redirects=True, timeout=1)
     except:
         return
-
+    # write_html("sample.html", page, pk)
     if not first:
         # try:
         os.system('rm data/*/'+str(pk//1000)+'/'+str(pk)+'_*')
@@ -292,5 +297,7 @@ if __name__ == '__main__':
         # parse("https://medium.com/tag/artificial-intelligence", 0)
         # parse("https://medium.freecodecamp.com/big-picture-machine-learning-classifying-text-with-neural-networks-and-tensorflow-d94036ac2274", 0)
         # parse("https://backchannel.com/i-work-i-swear-a649e0eb697d", 0) #815
+        # sys.stdout = open('cache/logs/'+logtime+'/std.log', 'w')
+        sys.stderr = open('output.txt', 'w')
         initdb()
         parse("https://medium.com/@meagle/understanding-87566abcfb7a", 0)
