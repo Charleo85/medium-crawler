@@ -57,7 +57,7 @@ def parse_comment(page, uid, url, articleID=None):
             allow_redirects=True, timeout=1
         )
     except:
-        print("Cannot make comment requests", file=sys.stderr)
+        print("Cannot make comment requests" % uid, file=sys.stderr)
         return
     # print(uid)
     resp_data = json.loads(resp.content.decode('utf-8')[16:])
