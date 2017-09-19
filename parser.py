@@ -30,7 +30,7 @@ def convert_count(text):
     elif unit == 'B':
         return int(float(text[:-1])*1000000000)
     return int(text)
-pattern = re.compile(r'https:\/\/[\s\S]+\/@([\w]+)\?source=[\s\S]+')
+pattern = re.compile(r'https:\/\/[\s\S]+\/@(.+)\?source=[\s\S]+')
 def matchUsername(url):
     m = re.match(pattern, url)
     return m.group(1)
@@ -183,22 +183,24 @@ def parse_article(page, url, uid, articleID=None):
             print("bad format cannot parse the title: "+url, file=sys.stderr)
             article_name = ""
 
+    authorNode = tree.xpath('//*[starts-with(@class,"link link link--darken link--darker")]')[0]
+    authorName = authorNode.xpath('./text()')[0]
+    authorMediumID = authorNode.xpath('./@data-user-id')[0]
+    username = matchUsername(authorNode.xpath('./@href')[0])
+    print(username)
+    bioNode = tree.xpath('//*[starts-with(@class,"postMetaInline u-noWrapWithEllipsis")]/text()')
+    if bioNode:
+        bio = bioNode[0]
+    else:
+        bio = ''
+    authorID = saveAuthor({
+        'name': authorName,
+        'mediumID': authorMediumID,
+        'username': username,
+        'bio': bio
+    })
     try:
-        authorNode = tree.xpath('//*[starts-with(@class,"link link link--darken link--darker")]')[0]
-        authorName = authorNode.xpath('./text()')[0]
-        authorMediumID = authorNode.xpath('./@data-user-id')[0]
-        username = matchUsername(authorNode.xpath('./@href')[0])
-        bioNode = tree.xpath('//*[starts-with(@class,"postMetaInline u-noWrapWithEllipsis")]/text()')
-        if bioNode:
-            bio = bioNode[0]
-        else:
-            bio = ''
-        authorID = saveAuthor({
-            'name': authorName,
-            'mediumID': authorMediumID,
-            'username': username,
-            'bio': bio
-        })
+        pass
     except:
         print("bad format cannot parse the author: "+url, file=sys.stderr)
         return False
@@ -302,4 +304,4 @@ if __name__ == '__main__':
 
         # sys.stderr = open('output.txt', 'w')
         initdb()
-        parse("https://medium.com/@Joeofiowa/life-lessons-in-a-five-gallon-bucket-what-my-grandpa-taught-me-a89cfc1fbb0b")
+        parse("https://medium.com/@elliot.nichols.writer/the-case-against-the-iphone-cddc3e0807f1")
