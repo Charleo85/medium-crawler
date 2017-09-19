@@ -183,24 +183,23 @@ def parse_article(page, url, uid, articleID=None):
             print("bad format cannot parse the title: "+url, file=sys.stderr)
             article_name = ""
 
-    authorNode = tree.xpath('//*[starts-with(@class,"link link link--darken link--darker")]')[0]
-    authorName = authorNode.xpath('./text()')[0]
-    authorMediumID = authorNode.xpath('./@data-user-id')[0]
-    username = matchUsername(authorNode.xpath('./@href')[0])
-    print(username)
-    bioNode = tree.xpath('//*[starts-with(@class,"postMetaInline u-noWrapWithEllipsis")]/text()')
-    if bioNode:
-        bio = bioNode[0]
-    else:
-        bio = ''
-    authorID = saveAuthor({
-        'name': authorName,
-        'mediumID': authorMediumID,
-        'username': username,
-        'bio': bio
-    })
     try:
-        pass
+        authorNode = tree.xpath('//*[starts-with(@class,"link link link--darken link--darker")]')[0]
+        authorName = authorNode.xpath('./text()')[0]
+        authorMediumID = authorNode.xpath('./@data-user-id')[0]
+        username = matchUsername(authorNode.xpath('./@href')[0])
+        print(username)
+        bioNode = tree.xpath('//*[starts-with(@class,"postMetaInline u-noWrapWithEllipsis")]/text()')
+        if bioNode:
+            bio = bioNode[0]
+        else:
+            bio = ''
+        authorID = saveAuthor({
+            'name': authorName,
+            'mediumID': authorMediumID,
+            'username': username,
+            'bio': bio
+        })
     except:
         print("bad format cannot parse the author: "+url, file=sys.stderr)
         return False
