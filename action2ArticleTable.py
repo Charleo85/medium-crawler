@@ -114,13 +114,9 @@ def updateArticle(articleMediumID, articleTitle, articleContent, authorID, tag, 
 		cur.execute(command, (articleMediumID, articleTitle, articleContent, authorID, tag, articleTime, numberLikes, articleID, ))
 		# print("after inserting into article table....")
 
-		articleID = cur.fetchone()[0]
-
 		cur.close()
 
 		conn.commit()
-
-		return articleID
 
 	except(Exception, psycopg2.DatabaseError) as error:
 		print(error, file=sys.stderr)
