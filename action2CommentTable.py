@@ -35,7 +35,7 @@ def createCommentTable():
 		conn.commit()
 
 	except(Exception, psycopg2.DatabaseError) as error:
-		print(error)
+		print(error, file=sys.stderr)
 	finally:
 		if conn is not None:
 			conn.close()
@@ -80,7 +80,7 @@ def insertComment(commentName, commentContent, authorID, commentTime, numberLike
 		return commentID
 
 	except(Exception, psycopg2.DatabaseError) as error:
-		print(error)
+		print(error, file=sys.stderr)
 	finally:
 		if conn is not None:
 			conn.close()

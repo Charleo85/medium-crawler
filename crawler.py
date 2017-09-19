@@ -102,10 +102,10 @@ if __name__ == '__main__':
     q = queue.Queue() #uid queue to analyze
     t = [] #topic list to crawl
 
-    # logtime = str(time.time())
-    # os.system('mkdir cache/logs/'+logtime+'/')
-    # sys.stdout = open('cache/logs/'+logtime+'/std.log', 'w')
-    # sys.stderr = open('cache/logs/'+logtime+'/error.log', 'w')
+    logtime = str(time.time())
+    os.system('mkdir logs/'+logtime+'/')
+    sys.stdout = open('logs/'+logtime+'/std.log', 'w')
+    sys.stderr = open('logs/'+logtime+'/error.log', 'w')
 
     while True: #sleep for a while and load updates
         t.append('https://medium.com')
@@ -132,8 +132,8 @@ if __name__ == '__main__':
                 #     stored_pk = d[uid]["pk"]
                 #     parse(url,stored_pk,uid, False)
 
-                # sys.stdout.flush()
-                # sys.stderr.flush()
+                sys.stdout.flush()
+                sys.stderr.flush()
 
         # print("falling sleep...", file=sys.stderr)
         # sleep(60*10) # wait ten minutes to restart

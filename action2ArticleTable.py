@@ -36,7 +36,7 @@ def createArticleTable():
 		conn.commit()
 
 	except(Exception, psycopg2.DatabaseError) as error:
-		print(error)
+		print(error, file=sys.stderr)
 	finally:
 		if conn is not None:
 			conn.close()
@@ -81,7 +81,7 @@ def insertArticle(articleMediumID, articleTitle="", articleContent="", authorID=
 		return articleID
 
 	except(Exception, psycopg2.DatabaseError) as error:
-		print(error)
+		print(error, file=sys.stderr)
 	finally:
 		if conn is not None:
 			conn.close()
@@ -123,7 +123,7 @@ def updateArticle(articleMediumID, articleTitle, articleContent, authorID, tag, 
 		return articleID
 
 	except(Exception, psycopg2.DatabaseError) as error:
-		print(error)
+		print(error, file=sys.stderr)
 	finally:
 		if conn is not None:
 			conn.close()
@@ -158,7 +158,7 @@ def queryArticleIDbyMediumID(mediumID):
 		return articleID
 
 	except(Exception, psycopg2.DatabaseError) as error:
-		print(error)
+		print(error, file=sys.stderr)
 	finally:
 		if conn is not None:
 			conn.close()
@@ -189,7 +189,7 @@ def existArticle(mediumID):
 		return existFlag
 
 	except(Exception, psycopg2.DatabaseError) as error:
-		print(error)
+		print(error, file=sys.stderr)
 	finally:
 		if conn is not None:
 			conn.close()

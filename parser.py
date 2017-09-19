@@ -3,12 +3,12 @@ from lxml import etree
 import requests, re, json, random, sys, os
 from insert2DB import *
 
-def write_html(filename, data):
+def write_html(data, filename='sample.html'):
     output = open(filename, 'w', encoding='utf-8')
     output.write(data.content.decode('utf-8'))
     output.close()
 
-def write_json(filename, data):
+def write_json(data, filename='sample.json'):
     output = open(filename, 'w', encoding='utf-8')
     output.write(json.dumps(data))
     output.close()
@@ -57,11 +57,10 @@ def parse_comment(page, uid, url, articleID=None):
             allow_redirects=True, timeout=1
         )
     except:
-        print("Cannot make comment requests")
+        print("Cannot make comment requests", file=sys.stderr)
         return
     # print(uid)
     resp_data = json.loads(resp.content.decode('utf-8')[16:])
-    write_json('sample.json', resp_data)
 
     if (resp_data['success']):
         try:
@@ -279,7 +278,6 @@ def parse(href, id=None, articleID=None):
         page = requests.get(href, allow_redirects=True, timeout=1)
     except:
         return
-    # write_html("sample.html", page, pk)
     # if not first:
     #     # try:
     #     os.system('rm data/*/'+str(pk//1000)+'/'+str(pk)+'_*')

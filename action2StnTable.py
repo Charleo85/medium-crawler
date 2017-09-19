@@ -31,7 +31,7 @@ def createSTNTable():
 		conn.commit()
 
 	except(Exception, psycopg2.DatabaseError) as error:
-		print(error)
+		print(error, file=sys.stderr)
 	finally:
 		if conn is not None:
 			conn.close()
@@ -71,7 +71,7 @@ def insertSTN(stnName, articleID, stnContent):
 		return stnID
 
 	except(Exception, psycopg2.DatabaseError) as error:
-		print(error)
+		print(error, file=sys.stderr)
 	finally:
 		if conn is not None:
 			conn.close()
@@ -102,7 +102,7 @@ def queryStnIDbyStnName(stnName):
 
 		stnID = cur.fetchone()
 		if stn is None:
-			print("no stn fetched")
+			print("no stn fetched" % stnName)
 			return
 		cur.close()
 
@@ -111,7 +111,7 @@ def queryStnIDbyStnName(stnName):
 		return stnID[0]
 
 	except(Exception, psycopg2.DatabaseError) as error:
-		print(error)
+		print(error, file=sys.stderr)
 	finally:
 		if conn is not None:
 			conn.close()

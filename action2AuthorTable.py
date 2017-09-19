@@ -32,7 +32,7 @@ def createAuthorTable():
 		conn.commit()
 
 	except(Exception, psycopg2.DatabaseError) as error:
-		print(error)
+		print(error, file=sys.stderr)
 	finally:
 		if conn is not None:
 			conn.close()
@@ -74,7 +74,7 @@ def insertAuthor(authorName, authorMediumID, authorUserName, bio):
 		return authorID
 
 	except(Exception, psycopg2.DatabaseError) as error:
-		print(error)
+		print(error, file=sys.stderr)
 	finally:
 		if conn is not None:
 			conn.close()
@@ -105,7 +105,7 @@ def existAuthor(authorMediumID):
 		return existFlag
 
 	except(Exception, psycopg2.DatabaseError) as error:
-		print(error)
+		print(error, file=sys.stderr)
 	finally:
 		if conn is not None:
 			conn.close()
@@ -143,7 +143,7 @@ def queryAuthorIDbyMediumID(MediumID):
 		return authorID[0]
 
 	except(Exception, psycopg2.DatabaseError) as error:
-		print(error)
+		print(error, file=sys.stderr)
 	finally:
 		if conn is not None:
 			conn.close()
