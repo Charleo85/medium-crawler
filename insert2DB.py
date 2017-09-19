@@ -6,6 +6,7 @@ from action2ArticleTable import *
 from action2StnTable import *
 from action2CommentTable import *
 
+
 def initdb():
 	createAuthorTable()
 	createSTNTable()
@@ -16,18 +17,20 @@ def initdb():
 def saveAuthor(author):
 	authorName = author['name']
 	authorMediumID = author['mediumID']
+	username = author['username']
+	bio = author['bio']
 
 	authorExistFlag = existAuthor(authorMediumID)
 
-	if authorExistFlag:
-		print("exist author\t", authorName)
-		authorID = queryAuthorIDbyMediumID(authorMediumID)
-	else:
-		authorID = insertAuthor(authorName, authorMediumID)
+	if not authorExistFlag:
+		authorID = insertAuthor(authorName, authorMediumID, username, bio)
 
+
+	# # print("exist author\t", authorName)
+	# authorID = queryAuthorIDbyMediumID(authorMediumID)
 
 ####insert article into article table
-def saveArticle(article):
+def saveArticle(article, articleID=None, authorID=None):
 	authorMediumID = article['authorMediumID']
 	# authorName = article['author']
 
@@ -36,21 +39,28 @@ def saveArticle(article):
 	articleContent = article['content']
 	tag = article['tag']
 	numberLikes = article['numberLikes']
-	### the format of time is "1999-01-08 04:05:06"
-	unixtime = time.mktime(time.strptime(article['time'], '%Y-%m-%dT%H:%M:%S.%fZ'))
-	articleTime = datetime.datetime.fromtimestamp(int(unixtime)).strftime('%Y-%m-%d %H:%M:%S')
-	#author name not unique??? query by mediumid
-	authorID = queryAuthorIDbyMediumID(authorMediumID)
+	articleTime = article['time']
 
-	articleID = insertArticle(articleMediumID, articleTitle, articleContent, authorID, tag, articleTime, numberLikes)
+	if authorID is None:
+		authorID = queryAuthorIDbyMediumID(authorMediumID)
 
+	if articleID:
+		updateArticle(articleMediumID, articleTitle, articleContent, authorID, tag, articleTime, numberLikes, articleID)
+	else:
+		articleID = insertArticle(articleMediumID, articleTitle, articleContent, authorID, tag, articleTime, numberLikes)
+
+
+def saveSratchArticle(articleMediumID):
+	articleID = insertArticle(articleMediumID)
+	return articleID
 
 ###insert sentence into stn table
-def saveSentence(sentence):
+def saveSentence(sentence, articleID=None):
 	stnName = sentence['id']
 	stnContent = sentence['content']
 	articleMediumID = sentence['articleMediumID']
-	articleID = queryArticleIDbyMediumID(articleMediumID)
+	if articleID is None:
+		articleID = queryArticleIDbyMediumID(articleMediumID)
 	stnID = insertSTN(stnName, articleID, stnContent)
 
 ###insert comment into comment table
@@ -58,13 +68,12 @@ def saveComment(comment):
 	commentName = ''
 	commentContent = comment['content']
 	authorMediumID = comment['authorMediumID']
-	commentTime = datetime.datetime.fromtimestamp(int(comment['time'])/1000).strftime('%Y-%m-%d %H:%M:%S')
-	numLikes = -1
+	commentTime = comment['time']
+	numberLikes = -1
 	corrStnID = comment['corrStnID']
 	articleMediumID = comment['articleMediumID']
 
 	authorID = queryAuthorIDbyMediumID(authorMediumID)
-	# corrStnID = queryStnIDbyStnName(corrStnName)
 	articleID = queryArticleIDbyMediumID(articleMediumID)
 
-	insertComment(commentName, commentContent, authorID, commentTime, numLikes, corrStnID, articleID)
+	insertComment(commentName, commentContent, authorID, commentTime, numberLikes, corrStnID, articleID)

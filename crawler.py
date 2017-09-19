@@ -2,7 +2,8 @@ import sys, os, time, requests, queue, re
 import pickle
 from lxml import html
 from parser import parse
-from action2ArticleTable import queryArticleIDbyMediumID
+from action2ArticleTable import existArticle
+from insert2DB import *
 
 def concat(href):
     n = len(href)
@@ -15,6 +16,9 @@ def concat(href):
                     return href, href[m-j: m]
     return None, None
 
+regex = re.compile(r'https:\/\/[\s\S]+-[\w]{12}\?source=[\s\S]+')
+re_tag = re.compile(r'https:\/\/[\w|.]+\/[tag|topic|tagged]\/[\s\S]+')
+
 def analyze(url):
     global q
     global t
@@ -25,8 +29,6 @@ def analyze(url):
     tree = html.fromstring(page.content.decode('utf-8'))
 
     all_links = tree.xpath('//a/@href')
-    regex = re.compile(r'https:\/\/[\s\S]+-[\w]{12}\?source=[\s\S]+')
-    re_tag = re.compile(r'https:\/\/[\w|.]+\/(tag|topic|tagged)\/[\s\S]+')
 
     for href in all_links:
         if re_tag.search(href):
@@ -35,21 +37,26 @@ def analyze(url):
         if regex.search(href):
             link, uid = concat(href)
             if not link or not uid: continue
-            if uid in d:
-                pack = d[uid]
-                if pack["timestamp"] == 0: continue #must be on queue still
-                elif (time.time()-d[uid]["timestamp"])>172800: # if crawled more than two day ago we can crawl again
-                    pack["timestamp"] = 0 #put on queue
-                    d[uid] = pack
-                    q.put(uid)
+            if existArticle(uid):
                 continue
             else:
-                pack = {}
-                pack["url"] = link
-                pack["timestamp"] = 0 #must be on queue still
-                pack["pk"] = -1 #pk not assigned yet
-                d[uid] = pack
-                q.put(uid)
+                articleID = saveSratchArticle(uid);
+                q.put((uid, link, articleID))
+            # if uid in d:
+            #     pack = d[uid]
+            #     if pack["timestamp"] == 0: continue #must be on queue still
+            #     elif (time.time()-d[uid]["timestamp"])>172800: # if crawled more than two day ago we can crawl again
+            #         pack["timestamp"] = 0 #put on queue
+            #         d[uid] = pack
+            #         q.put(uid)
+            #     continue
+            # else:
+            #     pack = {}
+            #     pack["url"] = link
+            #     pack["timestamp"] = 0 #must be on queue still
+            #     pack["pk"] = -1 #pk not assigned yet
+            #     d[uid] = pack
+            #     q.put(uid)
         else:
             continue
 
@@ -90,11 +97,12 @@ def analyze(url):
 #                 domain = "medium.com"
 
 if __name__ == '__main__':
+    initdb()
 
     q = queue.Queue() #uid queue to analyze
     t = [] #topic list to crawl
 
-    logtime = str(time.time())
+    # logtime = str(time.time())
     # os.system('mkdir cache/logs/'+logtime+'/')
     # sys.stdout = open('cache/logs/'+logtime+'/std.log', 'w')
     # sys.stderr = open('cache/logs/'+logtime+'/error.log', 'w')
@@ -105,29 +113,27 @@ if __name__ == '__main__':
         t.append('https://medium.com/topic/editors-picks')
         t.append('https://medium.com/topic/world')
         t.append('https://medium.com/topic/future')
-        # getArticles()
 
         while len(t) > 0:
             analyze(t.pop())
 
             while not q.empty():
                 time.sleep(10)
-                uid = q.get()
-
-                queryArticleIDbyMediumID(uid)
-                d[uid]["timestamp"] = time.time() #give a timestamp that crawled
-                url = d[uid]["url"]
-                if d[uid]["pk"] == -1:  # first time crawl
-                    d[uid]["pk"] = pk
-                    analyze(url)
-                    parse(url,pk,uid)
-                else: # crawl again
-                    analyze(url)
-                    stored_pk = d[uid]["pk"]
-                    parse(url,stored_pk,uid, False)
+                uid, url, articleID = q.get()
+                parse(url, uid, articleID)
+                # d[uid]["timestamp"] = time.time() #give a timestamp that crawled
+                # url = d[uid]["url"]
+                # if d[uid]["pk"] == -1:  # first time crawl
+                #     d[uid]["pk"] = pk
+                #     analyze(url)
+                #     parse(url,pk,uid)
+                # else: # crawl again
+                #     analyze(url)
+                #     stored_pk = d[uid]["pk"]
+                #     parse(url,stored_pk,uid, False)
 
                 # sys.stdout.flush()
                 # sys.stderr.flush()
 
-        print("falling sleep...", file=sys.stderr)
-        sleep(60*10) # wait ten minutes to restart
+        # print("falling sleep...", file=sys.stderr)
+        # sleep(60*10) # wait ten minutes to restart

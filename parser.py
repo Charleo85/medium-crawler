@@ -3,10 +3,38 @@ from lxml import etree
 import requests, re, json, random, sys, os
 from insert2DB import *
 
-def write_html(filename, data, pk):
+def write_html(filename, data):
     output = open(filename, 'w', encoding='utf-8')
     output.write(data.content.decode('utf-8'))
     output.close()
+
+def write_json(filename, data):
+    output = open(filename, 'w', encoding='utf-8')
+    output.write(json.dumps(data))
+    output.close()
+
+### the format of time is "1999-01-08 04:05:06"
+def convert_unixtime(unixtime):
+    return datetime.datetime.fromtimestamp(int(unixtime)/1000).strftime('%Y-%m-%d %H:%M:%S')
+
+def convert_utctime(utctime):
+	unixtime = time.mktime(time.strptime(utctime, '%Y-%m-%dT%H:%M:%S.%fZ'))
+	return datetime.datetime.fromtimestamp(int(unixtime)).strftime('%Y-%m-%d %H:%M:%S')
+
+def convert_count(text):
+    unit = text[-1:]
+    if unit == 'K':
+        return int(float(text[:-1])*1000)
+    elif unit == 'M':
+        return int(float(text[:-1])*1000000)
+    elif unit == 'B':
+        return int(float(text[:-1])*1000000000)
+    return int(text)
+pattern = re.compile(r'https:\/\/[\s\S]+\/@([\w]+)\?source=[\s\S]+')
+def matchUsername(url):
+    m = re.match(pattern, url)
+    return m.group(1)
+
 
 def parse_fullcomment(href):
     try:
@@ -22,16 +50,18 @@ def parse_fullcomment(href):
         content += sentence + ' '
     return content
 
-def parse_comment(page, uid, pk, url):
+def parse_comment(page, uid, url, articleID=None):
     try:
         resp = requests.get(
             url="https://medium.com/_/api/posts/"+uid+"/responsesStream",
             allow_redirects=True, timeout=1
         )
     except:
+        print("Cannot make comment requests")
         return
-    print(uid)
+    # print(uid)
     resp_data = json.loads(resp.content.decode('utf-8')[16:])
+    write_json('sample.json', resp_data)
 
     if (resp_data['success']):
         try:
@@ -58,7 +88,7 @@ def parse_comment(page, uid, pk, url):
                 comment_id = value['id']
                 creator_id = value['creatorId']
                 media_id = value['inResponseToMediaResourceId']
-                timestamp = value['latestPublishedAt']
+                timestamp = convert_unixtime(value['latestPublishedAt'])
             except:
                 print("id key error with url: "+url, file=sys.stderr)
                 count-=1
@@ -70,11 +100,16 @@ def parse_comment(page, uid, pk, url):
 
             try:
                 username = user_data[creator_id]['username']
+                saveAuthor({
+                    'name': user_data[creator_id]['name'],
+                    'mediumID': creator_id,
+                    'username': username,
+                    'bio': user_data[creator_id]['bio']
+                })
             except:
                 return None
 
             if comment_full:
-                # print(comment_id)
                 for comm_para in comment_paras:
                     comment+=comm_para['text']
             else:
@@ -84,70 +119,50 @@ def parse_comment(page, uid, pk, url):
             if media_id != '': #assume one media_id only to one sentences
                 commment_dict[media_id] = comment_id
 
-            # comm_dict = {
-            #     'content': comment,
-            #     'child': '',
-            #     'title': '',
-            #     'id': comment_id,
-            #     'creatorid': creator_id,
-            #     'username': username,
-            #     'timestamp': timestamp,
-            #     'name': str(pk) + '_' + str(count),
-            #     'parent': str(pk)
-            # }
             comment_map[comment_id] = {
                     'content': comment,
-                    'creatorid': creator_id,
-                    'authorMediumID': username,
+                    'authorMediumID': creator_id,
                     'time': timestamp,
                     'corrStnID': '',
                     'articleMediumID':uid
             }
-            # print(comment_id)
 
         # parse quote
         # value['inResponseToMediaResourceId'] matches value['MediaResource'][key]
         # "mediumQuote" not none
-        quote_count = 0
+        quote_count=0
+        quote_data=None
+        media_data=None
         try:
-            quote_data=resp_data['payload']['references']['Quote']
             media_data=resp_data['payload']['references']['MediaResource']
+            quote_data=resp_data['payload']['references']['Quote']
         except KeyError:
-            print("quote key error with url: "+url, file=sys.stderr)
-            return count
+            # print("no quote: "+url, file=sys.stderr)
+            pass
 
-        for mediaResourceId, media in media_data.items():
-            if 'mediumQuote' in media:
-                quote_count += 1
-                media_id = str(mediaResourceId)
-                comment_id = commment_dict.get(media_id)
+        if media_data and quote_data:
+            for mediaResourceId, media in media_data.items():
+                if 'mediumQuote' in media:
+                    quote_count += 1
+                    media_id = str(mediaResourceId)
+                    comment_id = commment_dict.get(media_id)
 
-                quote_id = media['mediumQuote']['quoteId']
-                quote = quote_data[quote_id]
-                creator_id = ''
-                comment = ''
-                sentence_id = ''
-                try:
-                    comment_paras = quote['paragraphs']
-                    sentence_id = quote['paragraphs'][0]['name']
-                    creator_id = quote['userId']
-                except:
-                    print("id key error with url: "+url, file=sys.stderr)
+                    quote_id = media['mediumQuote']['quoteId']
+                    quote = quote_data[quote_id]
+                    creator_id = ''
+                    comment = ''
+                    sentence_id = ''
+                    try:
+                        comment_paras = quote['paragraphs']
+                        sentence_id = quote['paragraphs'][0]['name']
+                        creator_id = quote['userId']
+                    except:
+                        print("id key error with url: "+url, file=sys.stderr)
 
-                for comm_para in comment_paras:
-                    comment+=comm_para['text']
+                    for comm_para in comment_paras:
+                        comment+=comm_para['text']
 
-                # quote_dict = {
-                #     'content': comment, #match sentence piece
-                #     'child': '',
-                #     'title': '',
-                #     'sentenceid': sentence_id,
-                #     'commentid': comment_id,
-                #     'creatorid': creator_id,
-                #     'name': str(pk) + '_' + str(quote_count),
-                #     'parent': str(pk)
-                # }
-                comment_map[comment_id]['corrStnID'] = sentence_id
+                    comment_map[comment_id]['corrStnID'] = sentence_id
 
         for _, commentObj in comment_map.items():
             saveComment(commentObj)
@@ -157,9 +172,9 @@ def parse_comment(page, uid, pk, url):
         print("bad request with url: "+url, file=sys.stderr)
 
 
-def parse_article(page, url, pk, uid):
+def parse_article(page, url, uid, articleID=None):
     tree = html.fromstring(page.content.decode('utf-8'))
-    # print(url)
+
     try:
         article_name = tree.xpath('//h1/text()')[0]
     except:
@@ -169,37 +184,39 @@ def parse_article(page, url, pk, uid):
             print("bad format cannot parse the title: "+url, file=sys.stderr)
             article_name = ""
 
-    try:
-        author = tree.xpath('//a[@class="link link link--darken link--darker u-baseColor--link"]/text()')[0]
-        authorMediumID = tree.xpath('//a[@class="link link link--darken link--darker u-baseColor--link"]/@data-user-id')[0]
-    except:
-        try:
-            author = tree.xpath('//span[starts-with(@class,"link link--darken link--darker")]/text()')[0]
-            authorMediumID = tree.xpath('//span[starts-with(@class,"link link--darken link--darker")]/@data-user-id')[0]
-        except:
-            print("bad format cannot parse the author: "+url, file=sys.stderr)
-            author = ""
+    authorNode = tree.xpath('//*[starts-with(@class,"link link link--darken link--darker")]')[0]
+    authorName = authorNode.xpath('./text()')[0]
+    authorMediumID = authorNode.xpath('./@data-user-id')[0]
+    username = matchUsername(authorNode.xpath('./@href')[0])
+    bioNode = tree.xpath('//*[starts-with(@class,"postMetaInline u-noWrapWithEllipsis")]/text()')
+    if bioNode:
+        bio = bioNode[0]
+    else:
+        bio = ''
+    authorID = saveAuthor({
+        'name': authorName,
+        'mediumID': authorMediumID,
+        'username': username,
+        'bio': bio
+    })
+    # try:
+    #
+    # except:
+    #     print("bad format cannot parse the author: "+url, file=sys.stderr)
+    #     return False
 
-    try:
-        tags = tree.xpath('//ul[@class="tags tags--postTags tags--borderless"]')[0]
-        timestamp = tree.xpath('//time/@datetime')[0]
-    except:
-        print("bad format cannot parse the article: "+url, file=sys.stderr)
-        return
+    tags = tree.xpath('//ul[@class="tags tags--postTags tags--borderless"]')[0]
+    timestamp = convert_utctime(tree.xpath('//time/@datetime')[0])
+    numberLikes = convert_count(tree.xpath('//button[@data-action="show-recommends"]/text()')[0])
+    # try:
+    #
+    # except:
+    #     print("bad format cannot parse the article: "+url, file=sys.stderr)
+    #     return False
 
-
-    art = {
-        'name': str(pk),
-        'parent': '',
-        'title': article_name,
-        'timestamp': timestamp,
-        'author': author,
-        'sentences': [],
-        'content': '',
-        'tag': [],
-        # 'highlights': [],
-        'child': ''
-    }
+    tags_arr = []
+    for tag in tags.xpath('./*/a/text()'):
+        tags_arr.append(tag)
 
     # try:
     #     highlights = tree.xpath('//span[starts-with(@class,"markup--quote")]/text()')
@@ -209,57 +226,43 @@ def parse_article(page, url, pk, uid):
     # except:
     #     pass
 
-    for tag in tags.xpath('./*/a/text()'):
-        art['tag'].append(tag)
-
-    saveAuthor({
-        'name': author,
-        'mediumID': authorMediumID
-    })
     saveArticle({
         'mediumID': uid,
-        'authorMediumID': '', #to parse
+        'authorMediumID': authorMediumID,
         'content' : '', # to remove
         'title': article_name,
         'time': timestamp,
-        'tag': art['tag'],
-        'numberLikes': -1
-    })
+        'tag': tags_arr,
+        'numberLikes': numberLikes
+    }, articleID, authorID)
 
     section = tree.xpath('//section/div[@class="section-content"]')
-    # print(len(section))
-
     for sec in section:
-        # body = sec.xpath('./div[@class="section-inner sectionLayout--insetColumn"]/*')
         body = sec.xpath('./div[starts-with(@class,"section-inner")]/*')
-        art = parse_para(art, body, uid)
+        parse_para(body, uid, articleID)
 
-    # for i in range(1, count+1):
-    #     art['child'] += str(pk) + '_' + str(i)
-    #     if i != count: art['child'] += '\t'
+    return True;
 
 
-def parse_para(art, body, uid):
+def parse_para(body, uid, articleID):
     for para in body:
         sentence = para.text_content()
         try:
             key = para.xpath('@id')[0]
         except:
-            # print("no id in tag"+str(pk), file=sys.stderr)
             sub_body = para.xpath('./*')
-            art = parse_para(art, sub_body, uid)
+            parse_para(sub_body, uid, articleID)
             continue
         if sentence == "" or not key: continue
-        art['sentences'].append({key : sentence})
-        art['content'] += sentence + ' '
+        # art['sentences'].append({key : sentence})
+        # art['content'] += sentence + ' '
 
         saveSentence({
             'content': sentence,
             'id': key,
             'articleMediumID': uid
-        })
+        }, articleID)
 
-    return art
 
 def parse_uid(href):
     n = len(href)
@@ -267,7 +270,7 @@ def parse_uid(href):
         if (href[n-1-i] == '-'):
             return href[n-i:n]
 
-def parse(href, pk, id=None, first=True):
+def parse(href, id=None, articleID=None):
     if not id:
         uid = parse_uid(href)
     else:
@@ -277,17 +280,17 @@ def parse(href, pk, id=None, first=True):
     except:
         return
     # write_html("sample.html", page, pk)
-    if not first:
-        # try:
-        os.system('rm data/*/'+str(pk//1000)+'/'+str(pk)+'_*')
-        os.system('rm data/article/'+str(pk//1000)+'/'+str(pk)+'.json')
-        print("again")
-        # except:
-        #     print("fail to rm", file=sys.stderr)
-        #     return
+    # if not first:
+    #     # try:
+    #     os.system('rm data/*/'+str(pk//1000)+'/'+str(pk)+'_*')
+    #     os.system('rm data/article/'+str(pk//1000)+'/'+str(pk)+'.json')
+    #     print("again")
+    #     # except:
+    #     #     print("fail to rm", file=sys.stderr)
+    #     #     return
 
-    parse_article(page, href, pk, uid)
-    parse_comment(page, uid, pk, href)
+    if parse_article(page, href, uid, articleID):
+        parse_comment(page, uid, href, articleID)
     # parse_image(page, href, count, pk)
 
 
@@ -299,6 +302,7 @@ if __name__ == '__main__':
         # parse("https://medium.freecodecamp.com/big-picture-machine-learning-classifying-text-with-neural-networks-and-tensorflow-d94036ac2274", 0)
         # parse("https://backchannel.com/i-work-i-swear-a649e0eb697d", 0) #815
         # sys.stdout = open('cache/logs/'+logtime+'/std.log', 'w')
-        sys.stderr = open('output.txt', 'w')
+
+        # sys.stderr = open('output.txt', 'w')
         initdb()
-        parse("https://medium.com/@meagle/understanding-87566abcfb7a", 0)
+        parse("https://medium.com/@Joeofiowa/life-lessons-in-a-five-gallon-bucket-what-my-grandpa-taught-me-a89cfc1fbb0b")

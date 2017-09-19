@@ -40,7 +40,7 @@ def createCommentTable():
 		if conn is not None:
 			conn.close()
 
-def insertComment(commentName, commentContent, authorID, commentTime, numLikes, corrStnID, articleID):
+def insertComment(commentName, commentContent, authorID, commentTime, numberLikes, corrStnID, articleID):
 	command = ("""
 		INSERT INTO comment (
 			commentName,
@@ -68,7 +68,7 @@ def insertComment(commentName, commentContent, authorID, commentTime, numLikes, 
 		# print("inserting into comment:", file=sys.stderr)
 		# print(commentName, commentContent, authorID, commentTime, numLikes, corrStnID, articleID, sep=", ", file=sys.stderr)
 		# for command in commands:
-		cur.execute(command, (commentName, commentContent, authorID, commentTime, numLikes, corrStnID, articleID, ))
+		cur.execute(command, (commentName, commentContent, authorID, commentTime, numberLikes, corrStnID, articleID, ))
 		# print("after inserting into comment table....")
 
 		commentID = cur.fetchone()[0]

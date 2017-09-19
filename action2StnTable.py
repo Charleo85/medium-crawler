@@ -100,13 +100,15 @@ def queryStnIDbyStnName(stnName):
 		cur.execute(command, (stnName,))
 		# print("after querying sentence table....")
 
-		stnID = cur.fetchone()[0]
-
+		stnID = cur.fetchone()
+		if stn is None:
+			print("no stn fetched")
+			return
 		cur.close()
 
 		conn.commit()
 
-		return stnID
+		return stnID[0]
 
 	except(Exception, psycopg2.DatabaseError) as error:
 		print(error)

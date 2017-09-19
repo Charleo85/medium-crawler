@@ -8,7 +8,9 @@ def createAuthorTable():
 		CREATE TABLE author (
 			authorID SERIAL PRIMARY KEY,
 			authorName varchar(300),
-			authorMediumID varchar(300)
+			authorMediumID varchar(300),
+			authorUserName varchar(300),
+			bio text
 		)
 		""")
 
@@ -35,14 +37,16 @@ def createAuthorTable():
 		if conn is not None:
 			conn.close()
 
-def insertAuthor(authorName, authorMediumID):
+def insertAuthor(authorName, authorMediumID, authorUserName, bio):
 	command = ("""
 		INSERT INTO author (
 			authorName,
-			authorMediumID
+			authorMediumID,
+			authorUserName,
+			bio
 		)
 		VALUES(
-		%s, %s)
+		%s, %s, %s, %s)
 
 		RETURNING authorID;
 		""")
@@ -58,7 +62,7 @@ def insertAuthor(authorName, authorMediumID):
 		# print("inserting into author:", file=sys.stderr)
 		# print(authorName, authorMediumID, sep=", ", file=sys.stderr)
 		# for command in commands:
-		cur.execute(command, (authorName, authorMediumID, ))
+		cur.execute(command, (authorName, authorMediumID, authorUserName, bio, ))
 		# print("after inserting into author table....")
 
 		authorID = cur.fetchone()[0]
@@ -127,13 +131,16 @@ def queryAuthorIDbyMediumID(MediumID):
 		cur.execute(command, (MediumID,))
 		# print("after queryAuthorIDbyMediumID....")
 
-		authorID = 0 #cur.fetchone()[0]
+		authorID = cur.fetchone()
+		if authorID is None:
+			print("no author fetched" % MediumID)
+			return
 
 		cur.close()
 
 		conn.commit()
 
-		return authorID
+		return authorID[0]
 
 	except(Exception, psycopg2.DatabaseError) as error:
 		print(error)
