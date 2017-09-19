@@ -183,35 +183,34 @@ def parse_article(page, url, uid, articleID=None):
             print("bad format cannot parse the title: "+url, file=sys.stderr)
             article_name = ""
 
-    authorNode = tree.xpath('//*[starts-with(@class,"link link link--darken link--darker")]')[0]
-    authorName = authorNode.xpath('./text()')[0]
-    authorMediumID = authorNode.xpath('./@data-user-id')[0]
-    username = matchUsername(authorNode.xpath('./@href')[0])
-    bioNode = tree.xpath('//*[starts-with(@class,"postMetaInline u-noWrapWithEllipsis")]/text()')
-    if bioNode:
-        bio = bioNode[0]
-    else:
-        bio = ''
-    authorID = saveAuthor({
-        'name': authorName,
-        'mediumID': authorMediumID,
-        'username': username,
-        'bio': bio
-    })
-    # try:
-    #
-    # except:
-    #     print("bad format cannot parse the author: "+url, file=sys.stderr)
-    #     return False
+    try:
+        authorNode = tree.xpath('//*[starts-with(@class,"link link link--darken link--darker")]')[0]
+        authorName = authorNode.xpath('./text()')[0]
+        authorMediumID = authorNode.xpath('./@data-user-id')[0]
+        username = matchUsername(authorNode.xpath('./@href')[0])
+        bioNode = tree.xpath('//*[starts-with(@class,"postMetaInline u-noWrapWithEllipsis")]/text()')
+        if bioNode:
+            bio = bioNode[0]
+        else:
+            bio = ''
+        authorID = saveAuthor({
+            'name': authorName,
+            'mediumID': authorMediumID,
+            'username': username,
+            'bio': bio
+        })
+    except:
+        print("bad format cannot parse the author: "+url, file=sys.stderr)
+        return False
 
-    tags = tree.xpath('//ul[@class="tags tags--postTags tags--borderless"]')[0]
-    timestamp = convert_utctime(tree.xpath('//time/@datetime')[0])
-    numberLikes = convert_count(tree.xpath('//button[@data-action="show-recommends"]/text()')[0])
-    # try:
-    #
-    # except:
-    #     print("bad format cannot parse the article: "+url, file=sys.stderr)
-    #     return False
+
+    try:
+        tags = tree.xpath('//ul[@class="tags tags--postTags tags--borderless"]')[0]
+        timestamp = convert_utctime(tree.xpath('//time/@datetime')[0])
+        numberLikes = convert_count(tree.xpath('//button[@data-action="show-recommends"]/text()')[0])
+    except:
+        print("bad format cannot parse the article: "+url, file=sys.stderr)
+        return False
 
     tags_arr = []
     for tag in tags.xpath('./*/a/text()'):

@@ -103,7 +103,7 @@ if __name__ == '__main__':
     t = [] #topic list to crawl
 
     logtime = str(time.time())
-    os.system('mkdir logs/'+logtime+'/')
+    os.system('mkdir -p logs/'+logtime+'/')
     sys.stdout = open('logs/'+logtime+'/std.log', 'w')
     sys.stderr = open('logs/'+logtime+'/error.log', 'w')
 
