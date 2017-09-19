@@ -180,15 +180,19 @@ def parse_article(page, url, uid, articleID=None):
         try:
             article_name = tree.xpath('//h1/*/text()')[0]
         except:
-            print("bad format cannot parse the title: "+url, file=sys.stderr)
-            article_name = ""
+            try:
+                article_name = tree.xpath('//p[@class="graf graf--p graf--leading"]/*/text()')[0]
+                # print(article_name)
+            except:
+                print("bad format cannot parse the title: "+url, file=sys.stderr)
+                article_name = ""
 
     try:
         authorNode = tree.xpath('//*[starts-with(@class,"link link link--darken link--darker")]')[0]
         authorName = authorNode.xpath('./text()')[0]
         authorMediumID = authorNode.xpath('./@data-user-id')[0]
         username = matchUsername(authorNode.xpath('./@href')[0])
-        print(username)
+        # print(username)
         bioNode = tree.xpath('//*[starts-with(@class,"postMetaInline u-noWrapWithEllipsis")]/text()')
         if bioNode:
             bio = bioNode[0]
@@ -303,4 +307,4 @@ if __name__ == '__main__':
 
         # sys.stderr = open('output.txt', 'w')
         initdb()
-        parse("https://medium.com/@elliot.nichols.writer/the-case-against-the-iphone-cddc3e0807f1")
+        parse("https://healthcareinamerica.us/storing-medical-records-on-the-ethereum-blockchain-e088f19c9fca")
