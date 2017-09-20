@@ -54,7 +54,7 @@ def parse_comment(page, uid, url, articleID=None):
     try:
         resp = requests.get(
             url="https://medium.com/_/api/posts/"+uid+"/responsesStream",
-            allow_redirects=True, timeout=1
+            allow_redirects=True, timeout=10
         )
     except:
         print("Cannot make comment requests" % uid, file=sys.stderr)
