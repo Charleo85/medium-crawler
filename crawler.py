@@ -19,14 +19,16 @@ def concat(href):
 regex = re.compile(r'https:\/\/[\s\S]+-[\w]{12}\?source=[\s\S]+')
 re_tag = re.compile(r'https:\/\/[\w|.]+\/[tag|topic|tagged]\/[\s\S]+')
 
-def analyze(url):
+def analyze(url, tree=None):
     global q
     global t
-    try:
-        page = requests.get(url, allow_redirects=True, timeout=1)
-    except:
-        return
-    tree = html.fromstring(page.content.decode('utf-8'))
+
+    if tree is None:
+        try:
+            page = requests.get(url, allow_redirects=True, timeout=1)
+        except:
+            return
+        tree = html.fromstring(page.content.decode('utf-8'))
 
     all_links = tree.xpath('//a/@href')
 
@@ -59,6 +61,8 @@ def analyze(url):
             #     q.put(uid)
         else:
             continue
+
+    return tree
 
 # def getArticles():
 #     global q
@@ -120,7 +124,8 @@ if __name__ == '__main__':
             while not q.empty():
                 time.sleep(10)
                 uid, url, articleID = q.get()
-                parse(url, uid, articleID)
+                tree = analyze(url)
+                parse(url, uid, articleID, tree)
                 # d[uid]["timestamp"] = time.time() #give a timestamp that crawled
                 # url = d[uid]["url"]
                 # if d[uid]["pk"] == -1:  # first time crawl

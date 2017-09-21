@@ -50,7 +50,7 @@ def parse_fullcomment(href):
         content += sentence + ' '
     return content
 
-def parse_comment(page, uid, url, articleID=None):
+def parse_comment(uid, url, articleID=None):
     try:
         resp = requests.get(
             url="https://medium.com/_/api/posts/"+uid+"/responsesStream",
@@ -171,8 +171,7 @@ def parse_comment(page, uid, url, articleID=None):
         print("bad request with url: "+url, file=sys.stderr)
 
 
-def parse_article(page, url, uid, articleID=None):
-    tree = html.fromstring(page.content.decode('utf-8'))
+def parse_article(tree, url, uid, articleID=None):
 
     try:
         article_name = tree.xpath('//h1/text()')[0]
@@ -273,15 +272,18 @@ def parse_uid(href):
         if (href[n-1-i] == '-'):
             return href[n-i:n]
 
-def parse(href, id=None, articleID=None):
+def parse(href, id=None, articleID=None, tree=None):
     if not id:
         uid = parse_uid(href)
     else:
         uid = id
-    try:
-        page = requests.get(href, allow_redirects=True, timeout=1)
-    except:
-        return
+    if tree is None:
+        try:
+            page = requests.get(href, allow_redirects=True, timeout=1)
+            tree = html.fromstring(page.content.decode('utf-8'))
+        except:
+            return None
+    
     # if not first:
     #     # try:
     #     os.system('rm data/*/'+str(pk//1000)+'/'+str(pk)+'_*')
@@ -291,8 +293,9 @@ def parse(href, id=None, articleID=None):
     #     #     print("fail to rm", file=sys.stderr)
     #     #     return
 
-    if parse_article(page, href, uid, articleID):
-        parse_comment(page, uid, href, articleID)
+    if parse_article(tree, href, uid, articleID):
+        parse_comment(uid, href, articleID)
+
     # parse_image(page, href, count, pk)
 
 
