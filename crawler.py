@@ -35,6 +35,7 @@ def analyze(url, tree=None):
     for href in all_links:
         if re_tag.search(href):
             t.append(href)
+            print(href, file=sys.stdout)
             continue
         if regex.search(href):
             link, uid = concat(href)
@@ -106,7 +107,8 @@ if __name__ == '__main__':
     q = queue.Queue() #uid queue to analyze
     t = [] #topic list to crawl
 
-    logtime = str(time.time())
+    logtime = datetime.datetime.fromtimestamp(int(time.time())).strftime('%Y-%m-%d-%H:%M:%S')
+    print(logtime)
     os.system('mkdir -p logs/'+logtime+'/')
     sys.stdout = open('logs/'+logtime+'/std.log', 'w')
     sys.stderr = open('logs/'+logtime+'/error.log', 'w')
@@ -117,6 +119,9 @@ if __name__ == '__main__':
         t.append('https://medium.com/topic/editors-picks')
         t.append('https://medium.com/topic/world')
         t.append('https://medium.com/topic/future')
+        t.append('https://medium.com/topic/education')
+        t.append('https://medium.com/topic/family')
+        #https://medium.com/topics
 
         while len(t) > 0:
             analyze(t.pop())
