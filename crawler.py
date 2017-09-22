@@ -107,21 +107,21 @@ if __name__ == '__main__':
     q = queue.Queue() #uid queue to analyze
     t = queue.Queue() #topic list to crawl
 
-    logtime = datetime.datetime.fromtimestamp(int(time.time())).strftime('%Y-%m-%d-%H:%M:%S')
+    logtime = datetime.datetime.fromtimestamp(int(time.time())).strftime('%Y-%m-%d-%H-%M-%S')
     print(logtime)
     os.system('mkdir -p logs/'+logtime+'/')
     sys.stdout = open('logs/'+logtime+'/std.log', 'w')
     sys.stderr = open('logs/'+logtime+'/error.log', 'w')
 
     while True: #sleep for a while and load updates
-        t.append('https://medium.com')
-        t.append('https://medium.com/topics')
-        t.append('https://medium.com/topic/popular')
-        t.append('https://medium.com/topic/editors-picks')
-        t.append('https://medium.com/topic/world')
-        t.append('https://medium.com/topic/future')
-        t.append('https://medium.com/topic/education')
-        t.append('https://medium.com/topic/family')
+        t.put('https://medium.com')
+        t.put('https://medium.com/topics')
+        t.put('https://medium.com/topic/popular')
+        t.put('https://medium.com/topic/editors-picks')
+        t.put('https://medium.com/topic/world')
+        t.put('https://medium.com/topic/future')
+        t.put('https://medium.com/topic/education')
+        t.put('https://medium.com/topic/family')
         #https://medium.com/topics
 
         while len(t) > 0:
