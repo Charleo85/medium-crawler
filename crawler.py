@@ -17,7 +17,7 @@ def concat(href):
     return None, None
 
 regex = re.compile(r'https:\/\/[\s\S]+-[\w]{12}\?source=[\s\S]+')
-re_tag = re.compile(r'https:\/\/[\w|.]+\/[tag|topic|tagged]\/[\s\S]+')
+re_tag = re.compile(r'https:\/\/[\w|.]+\/(tag|topic|tagged)\/[\s\S]+')
 
 def analyze(url, tree=None):
     global q
@@ -34,7 +34,7 @@ def analyze(url, tree=None):
 
     for href in all_links:
         if re_tag.search(href):
-            t.append(href)
+            t.put(href)
             print(href, file=sys.stdout)
             continue
         if regex.search(href):
@@ -105,7 +105,7 @@ if __name__ == '__main__':
     initdb()
 
     q = queue.Queue() #uid queue to analyze
-    t = [] #topic list to crawl
+    t = queue.Queue() #topic list to crawl
 
     logtime = datetime.datetime.fromtimestamp(int(time.time())).strftime('%Y-%m-%d-%H:%M:%S')
     print(logtime)
@@ -115,6 +115,7 @@ if __name__ == '__main__':
 
     while True: #sleep for a while and load updates
         t.append('https://medium.com')
+        t.append('https://medium.com/topics')
         t.append('https://medium.com/topic/popular')
         t.append('https://medium.com/topic/editors-picks')
         t.append('https://medium.com/topic/world')
@@ -124,7 +125,7 @@ if __name__ == '__main__':
         #https://medium.com/topics
 
         while len(t) > 0:
-            analyze(t.pop())
+            analyze(t.get())
 
             while not q.empty():
                 time.sleep(10)
