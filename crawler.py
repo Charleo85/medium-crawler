@@ -124,7 +124,7 @@ if __name__ == '__main__':
         t.put('https://medium.com/topic/family')
         #https://medium.com/topics
 
-        while len(t) > 0:
+        while not t.empty():
             analyze(t.get())
 
             while not q.empty():
