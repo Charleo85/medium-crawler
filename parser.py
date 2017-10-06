@@ -30,6 +30,7 @@ def convert_count(text):
     elif unit == 'B':
         return int(float(text[:-1])*1000000000)
     return int(text)
+
 pattern = re.compile(r'https:\/\/[\s\S]+\/@(.+)\?source=[\s\S]+')
 def matchUsername(url):
     m = re.match(pattern, url)
@@ -187,12 +188,12 @@ def parse_article(tree, url, uid, articleID=None):
                 article_name = ""
 
     try:
-        authorNode = tree.xpath('//*[starts-with(@class,"link link link--darken link--darker")]')[0]
+        authorNode = tree.xpath('//*[contains(@class,"link link--darken link--darker")]')[0]
         authorName = authorNode.xpath('./text()')[0]
         authorMediumID = authorNode.xpath('./@data-user-id')[0]
         username = matchUsername(authorNode.xpath('./@href')[0])
         # print(username)
-        bioNode = tree.xpath('//*[starts-with(@class,"postMetaInline u-noWrapWithEllipsis")]/text()')
+        bioNode = tree.xpath('//*[contains(@class,"postMetaInline u-noWrapWithEllipsis")]/text()')
         if bioNode:
             bio = bioNode[0]
         else:
@@ -211,7 +212,12 @@ def parse_article(tree, url, uid, articleID=None):
     try:
         tags = tree.xpath('//ul[@class="tags tags--postTags tags--borderless"]')[0]
         timestamp = convert_utctime(tree.xpath('//time/@datetime')[0])
-        numberLikes = convert_count(tree.xpath('//button[@data-action="show-recommends"]/text()')[0])
+        likeNode = tree.xpath('//button[@data-action="show-recommends"]/text()')
+        if len(likeNode) == 0 :
+            numberLikes = 0
+        else:
+            numberLikes = convert_count(likeNode[0])
+
     except:
         print("bad format cannot parse the article: "+url, file=sys.stderr)
         return False
@@ -240,7 +246,7 @@ def parse_article(tree, url, uid, articleID=None):
 
     section = tree.xpath('//section/div[@class="section-content"]')
     for sec in section:
-        body = sec.xpath('./div[starts-with(@class,"section-inner")]/*')
+        body = sec.xpath('./div[contains(@class,"section-inner")]/*')
         parse_para(body, uid, articleID)
 
     return True;
@@ -283,7 +289,7 @@ def parse(href, id=None, articleID=None, tree=None):
             tree = html.fromstring(page.content.decode('utf-8'))
         except:
             return None
-    
+
     # if not first:
     #     # try:
     #     os.system('rm data/*/'+str(pk//1000)+'/'+str(pk)+'_*')
@@ -310,4 +316,4 @@ if __name__ == '__main__':
 
         # sys.stderr = open('output.txt', 'w')
         initdb()
-        parse("https://healthcareinamerica.us/storing-medical-records-on-the-ethereum-blockchain-e088f19c9fca")
+        parse("https://medium.com/@OrganicsByLee/sprouted-grains-and-the-harvesting-process-8fa878bea2ee")
