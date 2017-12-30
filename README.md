@@ -32,14 +32,14 @@ Datebase Structure:
 | Field   | Type      |  Info                    |
 | :-------------:|:-------------:| :------------------------|
 | commentID     | SERIAL PRIMARY KEY |                          |
-| commentName   | text               |                          |
+| commentMediumID   | text               |                          |
 | commentContent| text               |                          |
 | commentTime   | timestamp          |                          |
 | authorID      | int                |                          |
 | numberLikes   | int                |                          |
 | articleID     | int                |  link to Article Table   |
 | corrStnID     | varchar(300)       |  Match with SentenceTable|
-***To add corrStnID instead of stnName***
+***To match with stnID instead of stnMediumID***
 
 - AuthorTable
  
@@ -56,11 +56,21 @@ Datebase Structure:
 | Field   | Type      | Info  |
 | :-------------:|:-------------:| :---- |
 | stnID         |SERIAL PRIMARY KEY |  |
-| stnName       |varchar(300)       |    |
+| stnMediumID       |varchar(300)       |    |
 | content       |text               |     |
 | articleID     | int                |   link to Article Table  |
 
 
+- HighlightTable
+
+| Field   | Type      | Info  |
+| :-------------:|:-------------:| :---- |
+| highlightID         |SERIAL PRIMARY KEY |  |
+| content       |text               |     |
+| numberlikes     | int                |   |
+| articleID     | int                |   link to Article Table  |
+| stnMediumID       |varchar(300)       |  Match with SentenceTable  |
+***To match with stnID instead of stnMediumID***
 
 Disclaimer: The development is for academic use only. The developer shall not be responsible for any consequence from the user behavior of this program.
 For the use of dataset, acknowledgement would be appreciated.
