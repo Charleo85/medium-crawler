@@ -69,7 +69,7 @@ Datebase Structure:
 | content       |text               |     |
 | numberlikes     | int                |   |
 | articleID     | int                |   link to Article Table  |
-| stnMediumID       |varchar(300)       |  Match with SentenceTable  |
+| corrStnID       |varchar(300)       |  Match with SentenceTable  |
 ***To match with stnID instead of stnMediumID***
 
 Disclaimer: The development is for academic use only. The developer shall not be responsible for any consequence from the user behavior of this program.
