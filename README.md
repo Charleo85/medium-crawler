@@ -34,8 +34,8 @@ Datebase Table Structure:
 | Field   | Type      |  Info                    |
 | :-------------:|:-------------:| :------------------------|
 | commentID     | SERIAL PRIMARY KEY |                          |
-| MediumID   | varchar(20)    |                          |
-| Content| text               |                          |
+| mediumID   | varchar(20)    |                          |
+| content| text               |                          |
 | commentTime   | timestamp          |                          |
 | numberLikes   | int                |                          |
 | corrAuthorID      | int                |  link to Author  |
@@ -57,7 +57,7 @@ Datebase Table Structure:
 | Field   | Type      | Info  |
 | :-------------:|:-------------:| :---- |
 | stnID         |SERIAL PRIMARY KEY |  |
-| MediumID       |varchar(10)       |    |
+| mediumID       |varchar(10)       |    |
 | content       |text               |     |
 | corrArticleID     | int                |   link to Article  |
 
