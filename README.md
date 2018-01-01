@@ -9,68 +9,57 @@ Crawler environment requirement
 
 To query data:
 ```
-psql
+psql medium
+# \dt
+# select $field from $table;
 ```
 
-Datebase Structure:
+Datebase Table Structure:
 
-- ArticleTable
+- article
  
 | Field   | Type      |    Info                |
 | :-------------:|:-------------:| :----------------------|
 | articleID           | SERIAL PRIMARY KEY |                        |
-| articleMediumID     | text      |                        |
-| articleTitle        | text      |                        |
-| articleContent      | text      |                        |
+| mediumID     | varchar(300)      |                        |
+| title        | text      |                        |
+| highlight      | text      |                        |
 | tag                 | varchar(300)     |                        |
-| articleTime         |  timestamp        |                        |
+| postTime         |  timestamp        |                        |
 | numberLikes         |   int           |                        |
-| authorID            | int      |    link to Author Table|
+| corrAuthorID            | int      |    link to Author |
 
-- CommentTable
- 
+- comment
+
 | Field   | Type      |  Info                    |
 | :-------------:|:-------------:| :------------------------|
 | commentID     | SERIAL PRIMARY KEY |                          |
-| commentMediumID   | text               |                          |
-| commentContent| text               |                          |
+| MediumID   | varchar(20)    |                          |
+| Content| text               |                          |
 | commentTime   | timestamp          |                          |
-| authorID      | int                |                          |
 | numberLikes   | int                |                          |
-| articleID     | int                |  link to Article Table   |
-| corrStnID     | varchar(300)       |  Match with SentenceTable|
-***To match with stnID instead of stnMediumID***
+| corrAuthorID      | int                |  link to Author  |
+| corrArticleID     | int                |  link to Article   |
+| corrStnID     | int       |  link to Sentence|
 
-- AuthorTable
+- author
  
 | Field   | Type      | Info  |
 | :-------------:|:-------------:| :---- |
 | authorID      | SERIAL PRIMARY KEY |  |
-| authorName    | varchar(300)       |    |
-| authorMediumID| varchar(300)       |     |
-| authorUserName| varchar(300)       |     |
+| name    | varchar(50)       |    |
+| mediumID| varchar(20)       |     |
+| userName| varchar(50)       |     |
 | bio           | text               |     |
 
-- SentenceTable
+- sentence
 
 | Field   | Type      | Info  |
 | :-------------:|:-------------:| :---- |
 | stnID         |SERIAL PRIMARY KEY |  |
-| stnMediumID       |varchar(300)       |    |
+| MediumID       |varchar(300)       |    |
 | content       |text               |     |
-| articleID     | int                |   link to Article Table  |
-
-
-- HighlightTable
-
-| Field   | Type      | Info  |
-| :-------------:|:-------------:| :---- |
-| highlightID         |SERIAL PRIMARY KEY |  |
-| content       |text               |     |
-| numberlikes     | int                |   |
-| articleID     | int                |   link to Article Table  |
-| corrStnID       |varchar(300)       |  Match with SentenceTable  |
-***To match with stnID instead of stnMediumID***
+| corrArticleID     | int                |   link to Article  |
 
 Disclaimer: The development is for academic use only. The developer shall not be responsible for any consequence from the user behavior of this program.
 For the use of dataset, acknowledgement would be appreciated.
