@@ -3,7 +3,7 @@ This crawler has built up the following dataset based on Medium.com with ground 
 
 You may contact Charlie Wu at jw7jb@virginia.edu to obtain the dataset
 
-Crawler environment requirement 
+Crawler environment requirement
 - python 3.6
 - postgresql environment on MacOS/Linux
 
@@ -17,7 +17,7 @@ psql medium
 Datebase Table Structure:
 
 - article
- 
+
 | Field   | Type      |    Info                |
 | :-------------:|:-------------:| :----------------------|
 | articleID           | SERIAL PRIMARY KEY |                        |
@@ -27,41 +27,36 @@ Datebase Table Structure:
 | tag                 | varchar(300)     |                        |
 | postTime         |  timestamp        |                        |
 | numberLikes         |   int           |                        |
-| corrAuthorID            | int      |    link to Author |
+| corrAuthorID            | int      |    link to author |
 
 - comment
+The detailed info of a comment is stored inside an article model as field **selfArticleID**
 
 | Field   | Type      |  Info                    |
 | :-------------:|:-------------:| :------------------------|
 | commentID     | SERIAL PRIMARY KEY |                          |
-| mediumID   | varchar(20)    |                          |
-| content| text               |                          |
-| commentTime   | timestamp          |                          |
-| numberLikes   | int                |                          |
-| corrAuthorID      | int                |  link to Author  |
-| corrArticleID     | int                |  link to Article   |
-| corrStnID     | int       |  link to Sentence|
+| selfArticleID     | int      |  link to article   |
+| corrArticleID     | int      |  link to article   |
+| corrStnID     | int       |  link to sentence|
 
 - author
- 
+
 | Field   | Type      | Info  |
 | :-------------:|:-------------:| :---- |
 | authorID      | SERIAL PRIMARY KEY |  |
 | name    | varchar(50)       |    |
 | mediumID| varchar(20)       |     |
 | userName| varchar(50)       |     |
-| bio           | text               |     |
+| bio     | text               |     |
 
 - sentence
 
 | Field   | Type      | Info  |
 | :-------------:|:-------------:| :---- |
 | stnID         |SERIAL PRIMARY KEY |  |
-| mediumID       |varchar(10)       |    |
+| mediumID      |varchar(10)       |    |
 | content       |text               |     |
-| corrArticleID     | int                |   link to Article  |
+| corrArticleID     | int           |   link to article  |
 
 Disclaimer: The development is for academic use only. The developer shall not be responsible for any consequence from the user behavior of this program.
 For the use of dataset, acknowledgement would be appreciated.
-
-
