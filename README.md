@@ -57,7 +57,7 @@ Datebase Table Structure:
 | Field   | Type      | Info  |
 | :-------------:|:-------------:| :---- |
 | stnID         |SERIAL PRIMARY KEY |  |
-| MediumID       |varchar(300)       |    |
+| MediumID       |varchar(10)       |    |
 | content       |text               |     |
 | corrArticleID     | int                |   link to Article  |
 
