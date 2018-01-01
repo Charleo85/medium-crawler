@@ -7,9 +7,9 @@ def createAuthorTable():
 	command = ("""
 		CREATE TABLE author (
 			authorID SERIAL PRIMARY KEY,
-			authorName varchar(300),
-			authorMediumID varchar(300),
-			authorUserName varchar(300),
+			name varchar(50),
+			mediumID varchar(20),
+			username varchar(50),
 			bio text
 		)
 		""")
@@ -37,12 +37,12 @@ def createAuthorTable():
 		if conn is not None:
 			conn.close()
 
-def insertAuthor(authorName, authorMediumID, authorUserName, bio):
+def insertAuthor(name, mediumID, username, bio):
 	command = ("""
 		INSERT INTO author (
-			authorName,
-			authorMediumID,
-			authorUserName,
+			name,
+			mediumID,
+			username,
 			bio
 		)
 		VALUES(
@@ -60,9 +60,9 @@ def insertAuthor(authorName, authorMediumID, authorUserName, bio):
 		cur = conn.cursor()
 		# print("before inserting into author table....")
 		# print("inserting into author:", file=sys.stderr)
-		# print(authorName, authorMediumID, sep=", ", file=sys.stderr)
+		# print(name, mediumID, sep=", ", file=sys.stderr)
 		# for command in commands:
-		cur.execute(command, (authorName, authorMediumID, authorUserName, bio, ))
+		cur.execute(command, (name, mediumID, username, bio, ))
 		# print("after inserting into author table....")
 
 		authorID = cur.fetchone()[0]
@@ -79,9 +79,9 @@ def insertAuthor(authorName, authorMediumID, authorUserName, bio):
 		if conn is not None:
 			conn.close()
 
-def existAuthor(authorMediumID):
+def existAuthor(mediumID):
 	command = ("""
-		select exists(select 1 from author where authorMediumID=%s)""")
+		select exists(select 1 from author where mediumID=%s)""")
 
 	conn = None
 	try:
@@ -93,7 +93,7 @@ def existAuthor(authorMediumID):
 		# print("exist author in the author table....")
 
 		# for command in commands:
-		cur.execute(command, (authorMediumID, ))
+		cur.execute(command, (mediumID, ))
 		# print("after existing author in the table....")
 
 		existFlag = cur.fetchone()[0]
@@ -115,7 +115,7 @@ def queryAuthorIDbyMediumID(MediumID):
 		SELECT
 			authorID
 		FROM author
-		WHERE authorMediumID = %s
+		WHERE mediumID = %s
 		""")
 
 	conn = None

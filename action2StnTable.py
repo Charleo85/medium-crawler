@@ -7,9 +7,9 @@ def createSTNTable():
 	command = ("""
 		CREATE TABLE stn (
 			stnID SERIAL PRIMARY KEY,
-			stnName varchar(300),
-			articleID int,
-			content text
+			mediumID varchar(10),
+			content text,
+			corrArticleID int
 		)
 		""")
 
@@ -36,12 +36,12 @@ def createSTNTable():
 		if conn is not None:
 			conn.close()
 
-def insertSTN(stnName, articleID, stnContent):
+def insertSTN(mediumID, articleID, stnContent):
 	command = ("""
 		INSERT INTO stn (
-			stnName,
-			articleID,
-			content
+			mediumID,
+			content,
+			corrArticleID
 		)
 		VALUES(
 		%s, %s, %s)
@@ -59,7 +59,7 @@ def insertSTN(stnName, articleID, stnContent):
 		# print("before inserting into article table....")
 
 		# for command in commands:
-		cur.execute(command, (stnName, articleID, stnContent, ))
+		cur.execute(command, (mediumID, stnContent, articleID, ))
 		# print("after inserting into article table....")
 
 		stnID = cur.fetchone()[0]
@@ -76,15 +76,15 @@ def insertSTN(stnName, articleID, stnContent):
 		if conn is not None:
 			conn.close()
 
-def queryStnIDbyStnName(stnName):
+def queryStnIDbyMediumID(mediumID, articleID):
 
 	command = ("""
 		SELECT
 			stnID
 		FROM stn
-		WHERE stnName = %s
+		WHERE mediumID = %s
+		AND corrArticleID = %s
 		""")
-
 
 	conn = None
 	try:
@@ -97,13 +97,13 @@ def queryStnIDbyStnName(stnName):
 		# print("inserting into sentence:", file=sys.stderr)
 		# print(commentName, commentContent, authorID, commentTime, numLikes, corrStnID, articleID, sep=", ", file=sys.stderr)
 		# for command in commands:
-		cur.execute(command, (stnName,))
+		cur.execute(command, (mediumID, articleID,))
 		# print("after querying sentence table....")
 
 		stnID = cur.fetchone()
-		if stn is None:
-			print("no stn fetched" % stnName)
-			return
+		if stnID is None:
+			print("no stn fetched: " + mediumID + ' '+ str(articleID) )
+			return -1
 		cur.close()
 
 		conn.commit()

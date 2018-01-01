@@ -8,13 +8,13 @@ def createArticleTable():
 	command = ("""
 		CREATE TABLE article (
 			articleID SERIAL PRIMARY KEY,
-			articleMediumID text,
-			articleTitle text,
-			articleContent text,
-			authorID int,
+			mediumID varchar(20),
+			title text,
+			highlight text,
 			tag varchar(300),
-			articleTime timestamp,
-			numberLikes int
+			postTime timestamp,
+			numberLikes int,
+			corrAuthorID int
 		)
 		""")
 
@@ -41,16 +41,16 @@ def createArticleTable():
 		if conn is not None:
 			conn.close()
 
-def insertArticle(articleMediumID, articleTitle="", articleContent="", authorID=-1, tag="", articleTime=DEFAULT_TIME, numberLikes=-1):
+def insertArticle(articleMediumID, articleTitle="", highlight="", authorID=-1, tag="", articleTime=DEFAULT_TIME, numberLikes=-1):
 	command = ("""
 		INSERT INTO article (
-			articleMediumID,
-			articleTitle,
-			articleContent,
-			authorID,
+			mediumID,
+			title,
+			highlight,
 			tag,
-			articleTime,
-			numberLikes
+			postTime,
+			numberLikes,
+			corrAuthorID
 		)
 		VALUES(
 		%s, %s, %s, %s, %s, %s, %s)
@@ -69,7 +69,7 @@ def insertArticle(articleMediumID, articleTitle="", articleContent="", authorID=
 		# print("inserting into article:", file=sys.stderr)
 		# print(articleMediumID, articleTitle, articleContent, authorID, tag, articleTime, numberLikes, sep=", ", file=sys.stderr)
 		# for command in commands:
-		cur.execute(command, (articleMediumID, articleTitle, articleContent, authorID, tag, articleTime, numberLikes, ))
+		cur.execute(command, (articleMediumID, articleTitle, highlight, tag, articleTime, numberLikes, authorID))
 		# print("after inserting into article table....")
 
 		articleID = cur.fetchone()[0]
@@ -86,17 +86,17 @@ def insertArticle(articleMediumID, articleTitle="", articleContent="", authorID=
 		if conn is not None:
 			conn.close()
 
-def updateArticle(articleMediumID, articleTitle, articleContent, authorID, tag, articleTime, numberLikes, articleID):
+def updateArticle(articleMediumID, articleTitle, highlight, tag, articleTime, numberLikes, articleID, authorID):
 	command = ("""
 		UPDATE article
 		SET
-			articleMediumID = %s,
-			articleTitle = %s,
-			articleContent = %s,
-			authorID = %s,
+			mediumID = %s,
+			title = %s,
+			highlight = %s,
 			tag = %s,
-			articleTime = %s,
-			numberLikes = %s
+			postTime = %s,
+			numberLikes = %s,
+			corrAuthorID = %s
 		WHERE articleID = %s
 		""")
 
@@ -111,7 +111,7 @@ def updateArticle(articleMediumID, articleTitle, articleContent, authorID, tag, 
 		# print("inserting into article:", file=sys.stderr)
 		# print(articleMediumID, articleTitle, articleContent, authorID, tag, articleTime, numberLikes, sep=", ", file=sys.stderr)
 		# for command in commands:
-		cur.execute(command, (articleMediumID, articleTitle, articleContent, authorID, tag, articleTime, numberLikes, articleID, ))
+		cur.execute(command, (articleMediumID, articleTitle, articleContent, tag, articleTime, numberLikes, articleID, authorID,))
 		# print("after inserting into article table....")
 
 		cur.close()
@@ -129,7 +129,7 @@ def queryArticleIDbyMediumID(mediumID):
 		SELECT
 			articleID
 		FROM article
-		WHERE articleMediumID = %s
+		WHERE mediumID = %s
 		""")
 
 	conn = None
@@ -161,7 +161,7 @@ def queryArticleIDbyMediumID(mediumID):
 
 def existArticle(mediumID):
 	command = ("""
-		select exists(select 1 from article where articleMediumID=%s)""")
+		select exists(select 1 from article where mediumID=%s)""")
 
 	conn = None
 	try:

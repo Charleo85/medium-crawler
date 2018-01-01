@@ -1,9 +1,11 @@
-import sys, os, time, requests, queue, re
+# import sys, os, time, requests, queue, re
 import pickle
-from lxml import html
+# from lxml import html
 from parser import parse
 from action2ArticleTable import existArticle
 from insert2DB import *
+from utils import *
+from selenium import webdriver
 
 def concat(href):
     n = len(href)
@@ -103,12 +105,14 @@ def analyze(url, tree=None):
 
 if __name__ == '__main__':
     initdb()
+    driver = webdriver.Chrome('./chromedriver')
+    driver = login(driver)
 
     q = queue.Queue() #uid queue to analyze
     t = queue.Queue() #topic list to crawl
 
     logtime = datetime.datetime.fromtimestamp(int(time.time())).strftime('%Y-%m-%d-%H-%M-%S')
-    print(logtime)
+    print('login and started parser at' + logtime)
     os.system('mkdir -p logs/'+logtime+'/')
     sys.stdout = open('logs/'+logtime+'/std.log', 'w')
     sys.stderr = open('logs/'+logtime+'/error.log', 'w')
@@ -116,12 +120,12 @@ if __name__ == '__main__':
     while True: #sleep for a while and load updates
         t.put('https://medium.com')
         t.put('https://medium.com/topics')
-        t.put('https://medium.com/topic/popular')
-        t.put('https://medium.com/topic/editors-picks')
-        t.put('https://medium.com/topic/world')
-        t.put('https://medium.com/topic/future')
-        t.put('https://medium.com/topic/education')
-        t.put('https://medium.com/topic/family')
+        # t.put('https://medium.com/topic/popular')
+        # t.put('https://medium.com/topic/editors-picks')
+        # t.put('https://medium.com/topic/world')
+        # t.put('https://medium.com/topic/future')
+        # t.put('https://medium.com/topic/education')
+        # t.put('https://medium.com/topic/family')
         #https://medium.com/topics
 
         while not t.empty():
@@ -131,7 +135,7 @@ if __name__ == '__main__':
                 time.sleep(10)
                 uid, url, articleID = q.get()
                 tree = analyze(url)
-                parse(url, uid, articleID, tree)
+                parse(url, driver, uid, articleID, tree)
                 # d[uid]["timestamp"] = time.time() #give a timestamp that crawled
                 # url = d[uid]["url"]
                 # if d[uid]["pk"] == -1:  # first time crawl
@@ -148,3 +152,4 @@ if __name__ == '__main__':
 
         # print("falling sleep...", file=sys.stderr)
         # sleep(60*10) # wait ten minutes to restart
+    driver.close()

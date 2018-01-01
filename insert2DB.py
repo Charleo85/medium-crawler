@@ -1,17 +1,17 @@
 import psycopg2
-import datetime, sys, time
 from config import config
 from action2AuthorTable import *
 from action2ArticleTable import *
 from action2StnTable import *
 from action2CommentTable import *
-
+from action2HighlightTable import *
 
 def initdb():
 	createAuthorTable()
 	createSTNTable()
 	createCommentTable()
 	createArticleTable()
+	# createHighlightTable()
 
 ###insert author if not exist into the author table
 def saveAuthor(author):
@@ -36,7 +36,7 @@ def saveArticle(article, articleID=None, authorID=None):
 
 	articleMediumID = article['mediumID']
 	articleTitle = article['title']
-	articleContent = article['content']
+	highlight = article['highlight']
 	tag = article['tag']
 	numberLikes = article['numberLikes']
 	articleTime = article['time']
@@ -45,9 +45,9 @@ def saveArticle(article, articleID=None, authorID=None):
 		authorID = queryAuthorIDbyMediumID(authorMediumID)
 
 	if articleID:
-		updateArticle(articleMediumID, articleTitle, articleContent, authorID, tag, articleTime, numberLikes, articleID)
+		updateArticle(articleMediumID, articleTitle, highlight, authorID, tag, articleTime, numberLikes, articleID)
 	else:
-		articleID = insertArticle(articleMediumID, articleTitle, articleContent, authorID, tag, articleTime, numberLikes)
+		articleID = insertArticle(articleMediumID, articleTitle, highlight, authorID, tag, articleTime, numberLikes)
 
 
 def saveSratchArticle(articleMediumID):
@@ -56,24 +56,27 @@ def saveSratchArticle(articleMediumID):
 
 ###insert sentence into stn table
 def saveSentence(sentence, articleID=None):
-	stnName = sentence['id']
+	stnMediumID = sentence['id']
 	stnContent = sentence['content']
 	articleMediumID = sentence['articleMediumID']
 	if articleID is None:
 		articleID = queryArticleIDbyMediumID(articleMediumID)
-	stnID = insertSTN(stnName, articleID, stnContent)
+	stnID = insertSTN(stnMediumID, articleID, stnContent)
 
 ###insert comment into comment table
 def saveComment(comment):
-	commentName = ''
+	commentMediumID = comment['mediumID']
 	commentContent = comment['content']
 	authorMediumID = comment['authorMediumID']
 	commentTime = comment['time']
-	numberLikes = -1
-	corrStnID = comment['corrStnID']
+	numberLikes = comment['numberLikes']
+	corrStnMediumID = comment['corrStnID']
 	articleMediumID = comment['articleMediumID']
 
 	authorID = queryAuthorIDbyMediumID(authorMediumID)
 	articleID = queryArticleIDbyMediumID(articleMediumID)
+	corrStnID = -1
+	if corrStnMediumID != '':
+		corrStnID = queryStnIDbyMediumID(corrStnMediumID, articleID)
 
-	insertComment(commentName, commentContent, authorID, commentTime, numberLikes, corrStnID, articleID)
+	insertComment(commentMediumID, commentContent, authorID, commentTime, numberLikes, corrStnID, articleID)
