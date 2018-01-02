@@ -59,8 +59,7 @@ def parse_stream(uid, session, href, references):
                 'username': username,
                 'bio': user_data[creator_id]['bio']
             })
-        except KeyError:
-            print("comment author key error with url: "+href, file=sys.stderr)
+        except KeyError: print("comment author key error with url: "+href, file=sys.stderr)
 
         self_articleID = saveArticle({
             'mediumID': self_article_mediumID,
@@ -91,9 +90,9 @@ def parse_stream(uid, session, href, references):
         if media_id != '': commment_dict[media_id] = self_article_mediumID
 
         comment_map[self_article_mediumID] = {
-                'selfArticleID': self_articleID,
-                'corrArticleMediumID':corr_article_mediumID,
-                'corrHighlightID':-1
+            'selfArticleID': self_articleID,
+            'corrArticleMediumID':corr_article_mediumID,
+            'corrHighlightID':-1
         }
 
     # parse quote
@@ -112,18 +111,18 @@ def parse_stream(uid, session, href, references):
                 try:
                     start = quote['startOffset']
                     end = quote['endOffset']
+                    paras = quote['paragraphs']
+                    corr_article_mediumID = quote['postId']
                 except KeyError:
                     print("quote key error with url: "+href, file=sys.stderr)
-                    contine
+                    continue
 
                 content = ''
                 corrStnMediumIDs = []
-                for para in quote['paragraphs']:
+                for para in paras:
                     content += para['text']
                     corrStnMediumIDs.append(para['name'])
-
                 content = content[start:end]
-                corr_article_mediumID = quote['postId']
 
                 highlightID = exist_highlight(corr_article_mediumID, content)
                 if highlightID == -1:
@@ -147,22 +146,22 @@ def parse_highlight(uid, articleID, session):
         try:
             start = highlight['startOffset']
             end = highlight['endOffset']
-            numLikes = highlight['count']
+            paras = highlight['paragraphs']
         except KeyError:
             print("highlight key error with url: "+href, file=sys.stderr)
-            contine
+            continue
 
         content = ''
         corrStnMediumIDs = []
-        for para in highlight['paragraphs']:
+        for para in paras:
             content += para['text']
             corrStnMediumIDs.append(para['name'])
-
         content = content[start:end]
+
         saveHighlight({
             'content': content,
             'corrStnMediumIDs': corrStnMediumIDs,
-            'numLikes': numLikes,
+            'numLikes': highlight.get('count', -1),
             'articleMediumID': uid
         }, articleID)
 
@@ -193,9 +192,7 @@ def parse_para(body, uid, articleID):
 
 
 def parse(href, session, uid=None, articleID=None, tree=None):
-    if not uid:
-        uid = parse_uid(href)
-
+    if not uid: uid = parse_uid(href)
     parse_comment(uid, session)
 
 
@@ -203,15 +200,11 @@ if __name__ == '__main__':
     if len(sys.argv) == 3:
         parse(sys.argv[1], int(sys.argv[2]))
     else:
-        # parse("https://medium.com/tag/artificial-intelligence", 0)
-        # parse("https://medium.freecodecamp.com/big-picture-machine-learning-classifying-text-with-neural-networks-and-tensorflow-d94036ac2274", 0)
-        # parse("https://backchannel.com/i-work-i-swear-a649e0eb697d", 0) #815
-        # parse("https://medium.com/@OrganicsByLee/sprouted-grains-and-the-harvesting-process-8fa878bea2ee")
-        sys.stdout = open('logs/std.log', 'w')
-        sys.stderr = open('logs/err.log', 'w')
+        # sys.stdout = open('logs/std.log', 'w')
+        # sys.stderr = open('logs/err.log', 'w')
 
         initdb()
-        session = load_obj('login.obj')
+        session = load_obj('./objects/login.obj')
         # session = login()
         # parse('https://timeline.com/it-was-sex-all-the-time-at-this-1800s-commune-with-anyone-you-wanted-and-none-of-the-guilt-c7ea4734e9ca', session)
         parse('https://medium.com/@beyondtherobot/my-real-life-superpower-c2a9b309cf7', session)

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import psycopg2,sys
 
-from config import config
+from db.config import config
 DEFAULT_TIME = "1900-01-01 00:00:00"
 
 def createArticleTable():

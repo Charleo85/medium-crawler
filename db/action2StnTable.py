@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import psycopg2,sys
 
-from config import config
+from db.config import config
 
 def createSTNTable():
 	command = ("""

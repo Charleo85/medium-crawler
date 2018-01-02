@@ -1,10 +1,10 @@
 import psycopg2
-from config import config
-from action2AuthorTable import *
-from action2ArticleTable import *
-from action2StnTable import *
-from action2CommentTable import *
-from action2HighlightTable import *
+from db.config import config
+from db.action2AuthorTable import *
+from db.action2ArticleTable import *
+from db.action2StnTable import *
+from db.action2CommentTable import *
+from db.action2HighlightTable import *
 
 def initdb():
 	createAuthorTable()
