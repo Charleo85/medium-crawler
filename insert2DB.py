@@ -53,7 +53,7 @@ def saveArticle(article, articleID=None, authorID=None):
 
 	return articleID
 
-def savedArticle(articleMediumID):
+def exist_article(articleMediumID):
 	return existArticle(articleMediumID)
 
 def saveSratchArticle(articleMediumID):
@@ -90,5 +90,6 @@ def saveHighlight(highlight, corrArticleID=None):
 	highlightID = insertHighlight(content, numLikes, corrArticleID, corrStnMediumIDs)
 	return highlightID
 
-def existHighlight(articleMediumID):
-	return existHighlight(articleMediumID)
+def exist_highlight(articleMediumID, content):
+	corrArticleID = queryArticleIDbyMediumID(articleMediumID)
+	return existHighlight(corrArticleID, content)

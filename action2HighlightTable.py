@@ -78,9 +78,15 @@ def insertHighlight(content, numlikes, corrArticleID, corrStnMediumIDs):
 		if conn is not None:
 			conn.close()
 
-def existHighlight(mediumID):
+def existHighlight(corrArticleID, content):
+
 	command = ("""
-		select exists(select 1 from author where corrArticleID=%s)""")
+		SELECT
+			highlightID
+		FROM highlight
+		WHERE corrArticleID = %s
+		AND content = %s
+		""")
 
 	conn = None
 	try:
@@ -89,19 +95,22 @@ def existHighlight(mediumID):
 		conn = psycopg2.connect(**params)
 
 		cur = conn.cursor()
-		# print("exist author in the author table....")
-
+		# print("querying sentence table....")
+		# print("inserting into sentence:", file=sys.stderr)
+		# print(commentName, commentContent, authorID, commentTime, numLikes, corrStnID, articleID, sep=", ", file=sys.stderr)
 		# for command in commands:
-		cur.execute(command, (mediumID, ))
-		# print("after existing author in the table....")
+		cur.execute(command, (corrArticleID, content,))
+		# print("after querying sentence table....")
 
-		existFlag = cur.fetchone()[0]
-
+		highlightID = cur.fetchone()
+		if highlightID is None:
+			# print("no stn fetched: " + mediumID + ' '+ str(articleID) )
+			return -1
 		cur.close()
 
 		conn.commit()
 
-		return existFlag
+		return highlightID[0]
 
 	except(Exception, psycopg2.DatabaseError) as error:
 		print(error, file=sys.stderr)

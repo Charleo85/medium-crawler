@@ -1,6 +1,6 @@
 import requests, re, json, random, sys, os
 import datetime, sys, time
-import pickle
+import pickle, queue
 from lxml import html
 from lxml import etree
 from selenium import webdriver
@@ -74,7 +74,7 @@ def load_json(session, href, params=None):
     resp_data = json.loads(resp.content.decode('utf-8')[16:])
     if 'success' in resp_data: return resp_data
 
-    print("json request not successful with url: "+url, file=sys.stderr)
+    print("json request not successful with url: "+href, file=sys.stderr)
     return None
 
 
@@ -103,4 +103,5 @@ def login():
         c = {cookie['name']: cookie['value']}
         s.cookies.update(c)
     driver.close()
+    write_obj(s, 'login.obj')
     return s

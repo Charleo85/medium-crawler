@@ -14,12 +14,17 @@ def parse_comment(uid, session):
     if resp_data is None: return
 
     references = resp_data['payload']['references']
-    # paging = resp_data['payload']['paging']
-    # while 'next' in paging:
-    #     paging_params = href+paging['next']
-    #     resp_paging_data = load_json(session, href, params=paging_params)
-    #     references
-    #     paging = resp_paging_data['payload']['paging']
+    paging = resp_data['payload']['paging']
+    parse_stream(uid, session, href, references)
+
+    while 'next' in paging:
+        resp_data = load_json(session, href, params=paging['next'])
+        if resp_data is None: break
+        references = resp_data['payload']['references']
+        paging = resp_data['payload']['paging']
+        parse_stream(uid, session, href, references)
+
+def parse_stream(uid, session, href, references):
     if 'Post' in references and 'User' in references:
         comm_data = references['Post']
         user_data = references['User']
@@ -28,11 +33,11 @@ def parse_comment(uid, session):
     commment_dict = {}
     comment_map = {}
     # parse all comments
-    for key, value in comm_data.items():
+    for self_article_mediumID, value in comm_data.items():
+        if exist_article(self_article_mediumID): continue
         try:
             comment_full = value['previewContent']['isFullContent']
             comment_paras = value['previewContent']['bodyModel']['paragraphs']
-            self_article_mediumID = value['id']
             creator_id = value['creatorId']
             numLikes = value['virtuals']['totalClapCount']
             num_responses = value['virtuals']['responsesCreatedCount']
@@ -45,8 +50,6 @@ def parse_comment(uid, session):
         except KeyError:
             print("id key error with url: "+href, file=sys.stderr)
             continue
-
-        if savedArticle(self_article_mediumID): continue
 
         try:
             username = user_data[creator_id]['username']
@@ -81,12 +84,11 @@ def parse_comment(uid, session):
             comment_href = 'https://medium.com/@'+username+'/'+unique_slug
             parse_sentence(self_article_mediumID, self_articleID, comment_href, session)
 
-        if num_responses > 0: parse_comment(self_article_mediumID, session)
-
         parse_highlight(self_article_mediumID, self_articleID, session)
 
-        if media_id != '': #assume one media_id only to one sentences
-            commment_dict[media_id] = self_article_mediumID
+        if num_responses > 0: parse_comment(self_article_mediumID, session)
+
+        if media_id != '': commment_dict[media_id] = self_article_mediumID
 
         comment_map[self_article_mediumID] = {
                 'selfArticleID': self_articleID,
@@ -95,18 +97,15 @@ def parse_comment(uid, session):
         }
 
     # parse quote
-    # value['inResponseToMediaResourceId'] matches value['MediaResource'][key]
-    # "mediumQuote" not none
-    quote_count=0
     if 'MediaResource' in references and 'Quote' in references:
         media_data=references['MediaResource']
         quote_data=references['Quote']
         for mediaResourceId, media in media_data.items():
             if 'mediumQuote' in media:
-                quote_count += 1
-                self_article_mediumID = commment_dict.get(str(mediaResourceId))
+                media_id = str(mediaResourceId)
+                self_article_mediumID = commment_dict.get(media_id)
                 if self_article_mediumID is None:
-                    print(self_article_mediumID)
+                    print(mediaResourceId)
                     continue
 
                 quote = quote_data[media['mediumQuote']['quoteId']]
@@ -120,77 +119,18 @@ def parse_comment(uid, session):
                 content = content[quote['startOffset']:quote['endOffset']]
                 corr_article_mediumID = quote['postId']
 
-                highlightID = saveHighlight({
-                    'content': content,
-                    'corrStnMediumIDs': corrStnMediumIDs,
-                    'numLikes': -1,
-                    'articleMediumID': corr_article_mediumID
-                })
+                highlightID = exist_highlight(corr_article_mediumID, content)
+                if highlightID == -1:
+                    highlightID = saveHighlight({
+                        'content': content,
+                        'corrStnMediumIDs': corrStnMediumIDs,
+                        'numLikes': -1,
+                        'articleMediumID': corr_article_mediumID
+                    })
 
-                # comment_map[self_article_mediumID]['corrArticleMediumID'] = corr_article_mediumID
                 comment_map[self_article_mediumID]['corrHighlightID'] = highlightID
 
     for _, commentObj in comment_map.items(): saveComment(commentObj)
-
-
-# def parse_article(tree, url, uid, articleID=None, session=None):
-#
-#     try:
-#         article_name = tree.xpath('//h1/text()')[0]
-#     except Exception as e:
-#         try:
-#             article_name = tree.xpath('//h1/*/text()')[0]
-#         except Exception as e:
-#             try:
-#                 article_name = tree.xpath('//p[@class="graf graf--p graf--leading"]/*/text()')[0]
-#             except Exception as e:
-#                 print("bad format cannot parse the title: "+url, file=sys.stderr)
-#                 article_name = ""
-#
-#     try:
-#         authorNode = tree.xpath('//*[contains(@class,"link link--darken link--darker")]')[0]
-#         authorName = authorNode.xpath('./text()')[0]
-#         authorMediumID = authorNode.xpath('./@data-user-id')[0]
-#         username = match_username(authorNode.xpath('./@href')[0])
-#         bioNode = tree.xpath('//*[contains(@class,"postMetaInline u-noWrapWithEllipsis")]/text()')
-#         if bioNode: bio = bioNode[0]
-#         else: bio = ''
-#         authorID = saveAuthor({
-#             'name': authorName,
-#             'mediumID': authorMediumID,
-#             'username': username,
-#             'bio': bio
-#         })
-#     except Exception as e:
-#         print("bad format in parsing author: "+str(e)+url, file=sys.stderr)
-#         return False
-#
-#     try:
-#         tags = tree.xpath('//ul[@class="tags tags--postTags tags--borderless"]')[0]
-#         timestamp = convert_utctime(tree.xpath('//time/@datetime')[0])
-#         likeNode = tree.xpath('//button[@data-action="show-recommends"]/text()')
-#         if len(likeNode) == 0: numLikes = 0
-#         else: numLikes = convert_count(likeNode[0])
-#     except Exception as e:
-#         print("bad format in parsing timestamp, tag or like: "+str(e)+url, file=sys.stderr)
-#         return False
-#
-#     tags_arr = []
-#     for tag in tags.xpath('./*/a/text()'): tags_arr.append(tag)
-#
-#     articleID = saveArticle({
-#         'mediumID': uid,
-#         'authorMediumID': authorMediumID,
-#         'recommends' : -1,
-#         'title': article_name,
-#         'time': timestamp,
-#         'tags': tags_arr,
-#         'numLikes': numLikes
-#     }, articleID, authorID)
-#
-#     parse_sentence(uid, articleID, url, session, tree=tree)
-#     parse_highlight(uid, articleID, session)
-#     return True;
 
 def parse_highlight(uid, articleID, session):
     href = 'https://medium.com/p/'+uid+'/quotes'
@@ -205,7 +145,6 @@ def parse_highlight(uid, articleID, session):
             corrStnMediumIDs.append(para['name'])
 
         content = content[highlight['startOffset']:highlight['endOffset']]
-        print(corrStnMediumIDs, highlight['count'], uid, articleID)
         saveHighlight({
             'content': content,
             'corrStnMediumIDs': corrStnMediumIDs,
@@ -213,10 +152,9 @@ def parse_highlight(uid, articleID, session):
             'articleMediumID': uid
         }, articleID)
 
-def parse_sentence(uid, articleID, href, session, tree=None):
-    if tree is None:
-        tree = load_html(session, href)
-        if tree is None: return
+def parse_sentence(uid, articleID, href, session):
+    tree = load_html(session, href)
+    if tree is None: return
 
     section = tree.xpath('//section/div[@class="section-content"]')
     for sec in section:
@@ -226,8 +164,7 @@ def parse_sentence(uid, articleID, href, session, tree=None):
 def parse_para(body, uid, articleID):
     for para in body:
         sentence = para.text_content()
-        try:
-            key = para.xpath('@id')[0]
+        try: key = para.xpath('@id')[0]
         except:
             sub_body = para.xpath('./*')
             parse_para(sub_body, uid, articleID)
@@ -245,15 +182,7 @@ def parse(href, session, uid=None, articleID=None, tree=None):
     if not uid:
         uid = parse_uid(href)
 
-    # print(uid)
-    if tree is None:
-        tree = load_html(session, href)
-        if tree is None: return
-
-    # if parse_article(tree, href, uid, articleID=articleID, session=session):
     parse_comment(uid, session)
-
-    # parse_image(page, href, count, pk)
 
 
 if __name__ == '__main__':
