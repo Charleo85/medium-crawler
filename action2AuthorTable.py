@@ -110,7 +110,7 @@ def existAuthor(mediumID):
 		if conn is not None:
 			conn.close()
 
-def queryAuthorIDbyMediumID(MediumID):
+def queryAuthorIDbyMediumID(mediumID):
 	command = ("""
 		SELECT
 			authorID
@@ -128,13 +128,13 @@ def queryAuthorIDbyMediumID(MediumID):
 		# print("queryAuthorIDbyMediumID....")
 
 		# for command in commands:
-		cur.execute(command, (MediumID,))
+		cur.execute(command, (mediumID,))
 		# print("after queryAuthorIDbyMediumID....")
 
 		authorID = cur.fetchone()
 		if authorID is None:
-			print("no author fetched" % MediumID)
-			return
+			# print("no author fetched: " + mediumID)
+			return -1;
 
 		cur.close()
 

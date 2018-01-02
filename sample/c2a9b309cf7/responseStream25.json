@@ -1,0 +1,5251 @@
+{
+  "b": "32111-acac638",
+  "payload": {
+    "paging": {
+      "next": {
+        "limit": 25,
+        "to": "1:56771c9cf8ff"
+      },
+      "path": "/_/api/posts/c2a9b309cf7/responsesStream"
+    },
+    "references": {
+      "MediaResource": {
+        "020f4f4bc0858932dd0799e4b6aff13c": {
+          "authorName": "",
+          "description": "",
+          "display": 1,
+          "domain": "medium.com",
+          "href": "https://medium.com/@andydentperth/habit-reprogramming-may-be-the-answer-and-a-cure-54fc7e30625c",
+          "iframeHeight": 0,
+          "iframeSrc": "",
+          "iframeWidth": 0,
+          "mediaResourceId": "020f4f4bc0858932dd0799e4b6aff13c",
+          "mediaResourceType": "MediaResourceMediumPost",
+          "mediumPost": {
+            "postId": "54fc7e30625c"
+          },
+          "thumbnailHeight": 0,
+          "thumbnailImageId": "",
+          "thumbnailUrl": "",
+          "thumbnailWidth": 0,
+          "title": "Habit reprogramming may be the answer, and a cure.",
+          "type": "MediaResource"
+        },
+        "0d2ceee1a54fffbe38adce78db6944d2": {
+          "authorName": "",
+          "description": "",
+          "display": 1,
+          "domain": "medium.com",
+          "href": "https://medium.com/@LochlanBloom/great-questions-from-the-description-i-dont-think-i-have-experienced-this-to-the-same-extent-53e275283b9",
+          "iframeHeight": 0,
+          "iframeSrc": "",
+          "iframeWidth": 0,
+          "mediaResourceId": "0d2ceee1a54fffbe38adce78db6944d2",
+          "mediaResourceType": "MediaResourceMediumPost",
+          "mediumPost": {
+            "postId": "53e275283b9"
+          },
+          "thumbnailHeight": 0,
+          "thumbnailImageId": "",
+          "thumbnailUrl": "",
+          "thumbnailWidth": 0,
+          "title": "Great questions, from the description I don’t think I have experienced this to the same extent.",
+          "type": "MediaResource"
+        },
+        "1fae5ec522e4a0c518ea7fcffe5590fd": {
+          "authorName": "",
+          "description": "",
+          "display": 1,
+          "domain": "medium.com",
+          "href": "https://medium.com/@skysong/well-ive-always-experienced-reading-in-that-way-and-my-mother-did-too-aaf3372fdca0",
+          "iframeHeight": 0,
+          "iframeSrc": "",
+          "iframeWidth": 0,
+          "mediaResourceId": "1fae5ec522e4a0c518ea7fcffe5590fd",
+          "mediaResourceType": "MediaResourceMediumPost",
+          "mediumPost": {
+            "postId": "aaf3372fdca0"
+          },
+          "thumbnailHeight": 0,
+          "thumbnailImageId": "",
+          "thumbnailUrl": "",
+          "thumbnailWidth": 0,
+          "title": "Well, I’ve always experienced reading in that way — and my mother did too.",
+          "type": "MediaResource"
+        },
+        "30e5b4a6894a4f99038afa4d248e5ae0": {
+          "authorName": "",
+          "description": "",
+          "display": 1,
+          "domain": "medium.com",
+          "href": "https://medium.com/@beyondtherobot/that-is-so-interesting-lochlan-4d8560bebea6#c152--highlight-d4a698739fe7",
+          "iframeHeight": 0,
+          "iframeSrc": "",
+          "iframeWidth": 0,
+          "mediaResourceId": "30e5b4a6894a4f99038afa4d248e5ae0",
+          "mediaResourceType": "MediaResourceMediumQuote",
+          "mediumPost": {
+            "postId": "4d8560bebea6"
+          },
+          "mediumQuote": {
+            "quoteId": "d4a698739fe7"
+          },
+          "thumbnailHeight": 0,
+          "thumbnailImageId": "",
+          "thumbnailUrl": "",
+          "thumbnailWidth": 0,
+          "title": "That is so interesting, Lochlan.",
+          "type": "MediaResource"
+        },
+        "5fbf71e994980741e547d7f723df099a": {
+          "authorName": "",
+          "description": "",
+          "display": 1,
+          "domain": "medium.com",
+          "href": "https://medium.com/@m0sh3g/also-if-you-want-to-learn-more-about-this-power-i-highly-recommend-checking-out-my-big-toe-book-e94d80013c02",
+          "iframeHeight": 0,
+          "iframeSrc": "",
+          "iframeWidth": 0,
+          "mediaResourceId": "5fbf71e994980741e547d7f723df099a",
+          "mediaResourceType": "MediaResourceMediumPost",
+          "mediumPost": {
+            "postId": "e94d80013c02"
+          },
+          "thumbnailHeight": 0,
+          "thumbnailImageId": "",
+          "thumbnailUrl": "",
+          "thumbnailWidth": 0,
+          "title": "Also, if you want to learn more about this power, I highly recommend checking out “My Big ToE\" book…",
+          "type": "MediaResource"
+        },
+        "772c1b4843d9aca39a0a3017c944c8b6": {
+          "authorName": "",
+          "description": "",
+          "display": 1,
+          "domain": "medium.com",
+          "href": "https://medium.com/@paul_markle/as-a-child-i-experienced-this-but-the-pursuit-of-academics-ruined-it-as-an-adult-859f51e8a961",
+          "iframeHeight": 0,
+          "iframeSrc": "",
+          "iframeWidth": 0,
+          "mediaResourceId": "772c1b4843d9aca39a0a3017c944c8b6",
+          "mediaResourceType": "MediaResourceMediumPost",
+          "mediumPost": {
+            "postId": "859f51e8a961"
+          },
+          "thumbnailHeight": 0,
+          "thumbnailImageId": "",
+          "thumbnailUrl": "",
+          "thumbnailWidth": 0,
+          "title": "As a child I experienced this, but the pursuit of academics ruined it as an adult.",
+          "type": "MediaResource"
+        },
+        "810dbd66c18411c121bda33a6cd2bb96": {
+          "authorName": "",
+          "description": "",
+          "display": 1,
+          "domain": "medium.com",
+          "href": "https://medium.com/@greg_31456/i-know-this-feeling-37a6f612aaa2",
+          "iframeHeight": 0,
+          "iframeSrc": "",
+          "iframeWidth": 0,
+          "mediaResourceId": "810dbd66c18411c121bda33a6cd2bb96",
+          "mediaResourceType": "MediaResourceMediumPost",
+          "mediumPost": {
+            "postId": "37a6f612aaa2"
+          },
+          "thumbnailHeight": 0,
+          "thumbnailImageId": "",
+          "thumbnailUrl": "",
+          "thumbnailWidth": 0,
+          "title": "I know this feeling…",
+          "type": "MediaResource"
+        },
+        "a48337f40f49af8f1d3bf154afb138ff": {
+          "authorName": "",
+          "description": "",
+          "display": 1,
+          "domain": "medium.com",
+          "href": "https://medium.com/@beyondtherobot/ok-theres-a-clue-in-that-56f2ac9bc565#bdbe--highlight-bc627093da9f",
+          "iframeHeight": 0,
+          "iframeSrc": "",
+          "iframeWidth": 0,
+          "mediaResourceId": "a48337f40f49af8f1d3bf154afb138ff",
+          "mediaResourceType": "MediaResourceMediumQuote",
+          "mediumPost": {
+            "postId": "56f2ac9bc565"
+          },
+          "mediumQuote": {
+            "quoteId": "bc627093da9f"
+          },
+          "thumbnailHeight": 0,
+          "thumbnailImageId": "",
+          "thumbnailUrl": "",
+          "thumbnailWidth": 0,
+          "title": "OK, there’s a clue in that.",
+          "type": "MediaResource"
+        },
+        "a8a1befb8a9a05375c5478055efef3d7": {
+          "authorName": "",
+          "description": "",
+          "display": 1,
+          "domain": "medium.com",
+          "href": "https://medium.com/@MalamuteMan/well-i-wrote-an-essay-on-my-experience-of-reading-to-which-i-provided-a-link-to-you-in-a-different-36e9d7aa0ea5",
+          "iframeHeight": 0,
+          "iframeSrc": "",
+          "iframeWidth": 0,
+          "mediaResourceId": "a8a1befb8a9a05375c5478055efef3d7",
+          "mediaResourceType": "MediaResourceMediumPost",
+          "mediumPost": {
+            "postId": "36e9d7aa0ea5"
+          },
+          "thumbnailHeight": 0,
+          "thumbnailImageId": "",
+          "thumbnailUrl": "",
+          "thumbnailWidth": 0,
+          "title": "Well… I wrote an essay on my experience of reading to which I provided a link to you in a different…",
+          "type": "MediaResource"
+        },
+        "bde2cc4cb6b3cfe03e93029de6e3d189": {
+          "authorName": "",
+          "description": "",
+          "display": 1,
+          "domain": "medium.com",
+          "href": "https://medium.com/@beyondtherobot/my-real-life-superpower-c2a9b309cf7#9dfd--highlight-37e2f79d228a",
+          "iframeHeight": 0,
+          "iframeSrc": "",
+          "iframeWidth": 0,
+          "mediaResourceId": "bde2cc4cb6b3cfe03e93029de6e3d189",
+          "mediaResourceType": "MediaResourceMediumQuote",
+          "mediumPost": {
+            "postId": "c2a9b309cf7"
+          },
+          "mediumQuote": {
+            "quoteId": "37e2f79d228a"
+          },
+          "thumbnailHeight": 720,
+          "thumbnailImageId": "1*tqi5QzCE3ZaJyxhio3GYaw.jpeg",
+          "thumbnailUrl": "",
+          "thumbnailWidth": 1280,
+          "title": "My Real Life Superpower",
+          "type": "MediaResource"
+        },
+        "cba1a87406e331de2c73163e027e4560": {
+          "authorName": "",
+          "description": "",
+          "display": 1,
+          "domain": "medium.com",
+          "href": "https://medium.com/@beyondtherobot/my-real-life-superpower-c2a9b309cf7",
+          "iframeHeight": 0,
+          "iframeSrc": "",
+          "iframeWidth": 0,
+          "mediaResourceId": "cba1a87406e331de2c73163e027e4560",
+          "mediaResourceType": "MediaResourceMediumPost",
+          "mediumPost": {
+            "postId": "c2a9b309cf7"
+          },
+          "thumbnailHeight": 720,
+          "thumbnailImageId": "1*tqi5QzCE3ZaJyxhio3GYaw.jpeg",
+          "thumbnailUrl": "",
+          "thumbnailWidth": 1280,
+          "title": "My Real Life Superpower",
+          "type": "MediaResource"
+        },
+        "da7cdd9a28dd008ac4f263185774a5fd": {
+          "authorName": "",
+          "description": "",
+          "display": 1,
+          "domain": "medium.com",
+          "href": "https://medium.com/@beyondtherobot/this-seems-to-have-really-jumped-out-as-a-theme-in-the-responses-to-this-essay-and-its-one-i-85f9303e0dd8#6aa1--highlight-f094050fcc45",
+          "iframeHeight": 0,
+          "iframeSrc": "",
+          "iframeWidth": 0,
+          "mediaResourceId": "da7cdd9a28dd008ac4f263185774a5fd",
+          "mediaResourceType": "MediaResourceMediumQuote",
+          "mediumPost": {
+            "postId": "85f9303e0dd8"
+          },
+          "mediumQuote": {
+            "quoteId": "f094050fcc45"
+          },
+          "thumbnailHeight": 0,
+          "thumbnailImageId": "",
+          "thumbnailUrl": "",
+          "thumbnailWidth": 0,
+          "title": "This seems to have really jumped out as a theme in the responses to this essay, and it’s one I…",
+          "type": "MediaResource"
+        },
+        "fac0717cbfa7a6b0a1c042b422a56442": {
+          "authorName": "",
+          "description": "",
+          "display": 1,
+          "domain": "medium.com",
+          "href": "https://medium.com/@beyondtherobot/my-real-life-superpower-c2a9b309cf7#d803--highlight-b2d5f362dc2f",
+          "iframeHeight": 0,
+          "iframeSrc": "",
+          "iframeWidth": 0,
+          "mediaResourceId": "fac0717cbfa7a6b0a1c042b422a56442",
+          "mediaResourceType": "MediaResourceMediumQuote",
+          "mediumPost": {
+            "postId": "c2a9b309cf7"
+          },
+          "mediumQuote": {
+            "quoteId": "b2d5f362dc2f"
+          },
+          "thumbnailHeight": 720,
+          "thumbnailImageId": "1*tqi5QzCE3ZaJyxhio3GYaw.jpeg",
+          "thumbnailUrl": "",
+          "thumbnailWidth": 1280,
+          "title": "My Real Life Superpower",
+          "type": "MediaResource"
+        }
+      },
+      "Post": {
+        "36e9d7aa0ea5": {
+          "acceptedAt": 0,
+          "allowResponses": true,
+          "approvedHomeCollectionId": "",
+          "audioVersionDurationSec": 0,
+          "canonicalUrl": "",
+          "content": {
+            "postDisplay": {
+              "coverless": true
+            },
+            "subtitle": "I have had that immersive experience a few times… The last time I recall having that sort of experience was reading The Lord of the Rings…"
+          },
+          "coverless": true,
+          "createdAt": 1514743533086,
+          "creatorId": "254b89ded3d4",
+          "deletedAt": 0,
+          "detectedLanguage": "en",
+          "displayAuthor": "",
+          "experimentalCss": "",
+          "firstPublishedAt": 1514745823017,
+          "hasUnpublishedEdits": false,
+          "hightowerMinimumGuaranteeEndsAt": 0,
+          "hightowerMinimumGuaranteeStartsAt": 0,
+          "homeCollectionId": "",
+          "id": "36e9d7aa0ea5",
+          "importedPublishedAt": 0,
+          "importedUrl": "",
+          "inResponseToMediaResourceId": "cba1a87406e331de2c73163e027e4560",
+          "inResponseToPostId": "c2a9b309cf7",
+          "inResponseToRemovedAt": 0,
+          "isApprovedTranslation": false,
+          "isBlockedFromHightower": false,
+          "isEligibleForRevenue": false,
+          "isNsfw": false,
+          "isRequestToPubDisabled": false,
+          "isSeries": false,
+          "isSponsored": false,
+          "isSubscriptionLocked": false,
+          "isTitleSynthesized": true,
+          "latestPublishedAt": 1514745823017,
+          "latestPublishedVersion": "55544b5c8869",
+          "latestRev": 208,
+          "latestVersion": "55544b5c8869",
+          "license": 0,
+          "lockedPostSource": 0,
+          "mediumUrl": "",
+          "migrationId": "",
+          "newsletterId": "",
+          "notifyFacebook": false,
+          "notifyFollowers": true,
+          "notifyTwitter": false,
+          "previewContent": {
+            "bodyModel": {
+              "paragraphs": [
+                {
+                  "alignment": 1,
+                  "markups": [
+                  ],
+                  "name": "53d7",
+                  "text": "How do you experience reading?",
+                  "type": 6
+                },
+                {
+                  "alignment": 1,
+                  "markups": [
+                  ],
+                  "name": "aceb",
+                  "text": "Well… I wrote an essay on my experience of reading to which I provided a link to you in a different thread… But this seems a much more appropriate place to post that link… so here is is again…",
+                  "type": 1
+                }
+              ],
+              "sections": [
+                {
+                  "startIndex": 0
+                }
+              ]
+            },
+            "isFullContent": false
+          },
+          "responseHiddenOnParentPostAt": 0,
+          "sequenceId": "",
+          "seriesLastAppendedAt": 0,
+          "slug": "well-i-wrote-an-essay-on-my-experience-of-reading-to-which-i-provided-a-link-to-you-in-a-different",
+          "title": "Well… I wrote an essay on my experience of reading to which I provided a link to you in a different…",
+          "translationSourceCreatorId": "",
+          "translationSourcePostId": "",
+          "type": "Post",
+          "uniqueSlug": "well-i-wrote-an-essay-on-my-experience-of-reading-to-which-i-provided-a-link-to-you-in-a-different-36e9d7aa0ea5",
+          "updatedAt": 1514762102101,
+          "versionId": "55544b5c8869",
+          "virtuals": {
+            "allowNotes": true,
+            "imageCount": 0,
+            "isBookmarked": false,
+            "isLockedPreviewOnly": false,
+            "links": {
+              "entries": [
+                {
+                  "alts": [
+                    {
+                      "type": 2,
+                      "url": "medium://p/2c458e9b99f6"
+                    },
+                    {
+                      "type": 3,
+                      "url": "medium://p/2c458e9b99f6"
+                    }
+                  ],
+                  "httpStatus": 200,
+                  "url": "https://medium.com/mals-world/i-dont-read-2c458e9b99f6"
+                }
+              ],
+              "generatedAt": 1514745823454,
+              "version": "0.3"
+            },
+            "metaDescription": "",
+            "previewImage": {
+              "backgroundSize": "",
+              "filter": "",
+              "height": 0,
+              "imageId": "",
+              "originalHeight": 0,
+              "originalWidth": 0,
+              "strategy": "resample",
+              "width": 0
+            },
+            "readingList": 0,
+            "readingTime": "1.0943396226415094",
+            "recommends": 1,
+            "responsesCreatedCount": 1,
+            "sectionCount": 1,
+            "socialRecommendsCount": 0,
+            "subtitle": "I have had that immersive experience a few times… The last time I recall having that sort of experience was reading The Lord of the Rings…",
+            "tags": [
+            ],
+            "takeoverId": "",
+            "totalClapCount": 5,
+            "usersBySocialRecommends": [
+            ],
+            "wordCount": 290
+          },
+          "visibility": 0,
+          "vote": false,
+          "webCanonicalUrl": ""
+        },
+        "37a6f612aaa2": {
+          "acceptedAt": 0,
+          "allowResponses": true,
+          "approvedHomeCollectionId": "",
+          "audioVersionDurationSec": 0,
+          "canonicalUrl": "",
+          "content": {
+            "postDisplay": {
+              "coverless": true
+            },
+            "subtitle": "I grew up reading a lot. Not a common lot, but a ridiculous amount. Part of the reason I did so is the experience you describe in this…"
+          },
+          "coverless": true,
+          "createdAt": 1514848294376,
+          "creatorId": "6d549f8ccd6a",
+          "deletedAt": 0,
+          "detectedLanguage": "en",
+          "displayAuthor": "",
+          "experimentalCss": "",
+          "firstPublishedAt": 1514848591816,
+          "hasUnpublishedEdits": false,
+          "hightowerMinimumGuaranteeEndsAt": 0,
+          "hightowerMinimumGuaranteeStartsAt": 0,
+          "homeCollectionId": "",
+          "id": "37a6f612aaa2",
+          "importedPublishedAt": 0,
+          "importedUrl": "",
+          "inResponseToMediaResourceId": "cba1a87406e331de2c73163e027e4560",
+          "inResponseToPostId": "c2a9b309cf7",
+          "inResponseToRemovedAt": 0,
+          "isApprovedTranslation": false,
+          "isBlockedFromHightower": false,
+          "isEligibleForRevenue": false,
+          "isNsfw": false,
+          "isRequestToPubDisabled": false,
+          "isSeries": false,
+          "isSponsored": false,
+          "isSubscriptionLocked": false,
+          "isTitleSynthesized": true,
+          "latestPublishedAt": 1514848591816,
+          "latestPublishedVersion": "38f39f2e18eb",
+          "latestRev": 54,
+          "latestVersion": "38f39f2e18eb",
+          "license": 0,
+          "lockedPostSource": 0,
+          "mediumUrl": "",
+          "migrationId": "",
+          "newsletterId": "",
+          "notifyFacebook": false,
+          "notifyFollowers": true,
+          "notifyTwitter": false,
+          "previewContent": {
+            "bodyModel": {
+              "paragraphs": [
+                {
+                  "alignment": 1,
+                  "markups": [
+                  ],
+                  "name": "3076",
+                  "text": "I know this feeling…",
+                  "type": 3
+                },
+                {
+                  "alignment": 1,
+                  "markups": [
+                  ],
+                  "name": "c4a0",
+                  "text": "I grew up reading a lot. Not a common lot, but a ridiculous amount. Part of the reason I did so is the experience you describe in this article. Reading didn’t involve words from about second grade. It was simply a very detailed, very complex movie. I would be lost in the book, simply…",
+                  "type": 1
+                }
+              ],
+              "sections": [
+                {
+                  "startIndex": 0
+                }
+              ]
+            },
+            "isFullContent": false
+          },
+          "responseHiddenOnParentPostAt": 0,
+          "sequenceId": "",
+          "seriesLastAppendedAt": 0,
+          "slug": "i-know-this-feeling",
+          "title": "I know this feeling…",
+          "translationSourceCreatorId": "",
+          "translationSourcePostId": "",
+          "type": "Post",
+          "uniqueSlug": "i-know-this-feeling-37a6f612aaa2",
+          "updatedAt": 1514863150202,
+          "versionId": "38f39f2e18eb",
+          "virtuals": {
+            "allowNotes": true,
+            "imageCount": 0,
+            "isBookmarked": false,
+            "isLockedPreviewOnly": false,
+            "links": {
+              "entries": [
+              ],
+              "generatedAt": 1514848592380,
+              "version": "0.3"
+            },
+            "metaDescription": "",
+            "previewImage": {
+              "backgroundSize": "",
+              "filter": "",
+              "height": 0,
+              "imageId": "",
+              "originalHeight": 0,
+              "originalWidth": 0,
+              "strategy": "resample",
+              "width": 0
+            },
+            "readingList": 0,
+            "readingTime": "0.5207547169811321",
+            "recommends": 2,
+            "responsesCreatedCount": 2,
+            "sectionCount": 1,
+            "socialRecommendsCount": 0,
+            "subtitle": "I grew up reading a lot. Not a common lot, but a ridiculous amount. Part of the reason I did so is the experience you describe in this…",
+            "tags": [
+              {
+                "metadata": {
+                  "coverImage": {
+                    "id": "1*-djakoQnr4pNRTlE6R92_g.jpeg"
+                  },
+                  "followerCount": 873166,
+                  "postCount": 50329
+                },
+                "name": "Books",
+                "postCount": 50329,
+                "slug": "books",
+                "type": "Tag",
+                "virtuals": {
+                  "isFollowing": false
+                }
+              },
+              {
+                "metadata": {
+                  "coverImage": {
+                    "id": "1*LIJ3LJIqAqvME_Jm1Jw-nQ.jpeg"
+                  },
+                  "followerCount": 781826,
+                  "postCount": 15768
+                },
+                "name": "Reading",
+                "postCount": 15768,
+                "slug": "reading",
+                "type": "Tag",
+                "virtuals": {
+                  "isFollowing": false
+                }
+              },
+              {
+                "metadata": {
+                  "coverImage": {
+                    "id": "1*70mWmxgf52m1YqTcCfRkkQ.jpeg"
+                  },
+                  "followerCount": 1301948,
+                  "postCount": 100058
+                },
+                "name": "Self Improvement",
+                "postCount": 100058,
+                "slug": "self-improvement",
+                "type": "Tag",
+                "virtuals": {
+                  "isFollowing": false
+                }
+              },
+              {
+                "metadata": {
+                  "coverImage": {
+                    "id": "1*EoJ4rrgS6ozaU9Kf1Sg_DA.jpeg",
+                    "originalHeight": 941,
+                    "originalWidth": 1674
+                  },
+                  "followerCount": 15448,
+                  "postCount": 38292
+                },
+                "name": "Personal Development",
+                "postCount": 38292,
+                "slug": "personal-development",
+                "type": "Tag",
+                "virtuals": {
+                  "isFollowing": false
+                }
+              },
+              {
+                "metadata": {
+                  "coverImage": {
+                    "id": "1*l_a4u4eO-owLFDUNT6qYFw.jpeg"
+                  },
+                  "followerCount": 1523092,
+                  "postCount": 44679
+                },
+                "name": "Creativity",
+                "postCount": 44679,
+                "slug": "creativity",
+                "type": "Tag",
+                "virtuals": {
+                  "isFollowing": false
+                }
+              }
+            ],
+            "takeoverId": "",
+            "totalClapCount": 6,
+            "userPostRelation": {
+              "audioProgressSec": 0,
+              "clapCount": 0,
+              "collaboratorAddedAt": 0,
+              "lastReadAt": 0,
+              "lastReadParagraphName": "",
+              "lastReadPercentage": 0,
+              "lastReadSectionName": "",
+              "lastReadVersionId": "",
+              "notesAddedAt": 0,
+              "postId": "37a6f612aaa2",
+              "presentedCountInResponseManagement": 0,
+              "presentedCountInStream": 1,
+              "queuedAt": 0,
+              "readAt": 0,
+              "readLaterAddedAt": 0,
+              "seriesFirstViewedAt": 0,
+              "seriesLastViewedAt": 0,
+              "seriesUpdateNotifsOptedInAt": 0,
+              "subscribedAt": 0,
+              "userId": "babae01b1fce",
+              "viewedAt": 0,
+              "votedAt": 0
+            },
+            "usersBySocialRecommends": [
+            ],
+            "wordCount": 138
+          },
+          "visibility": 0,
+          "vote": false,
+          "webCanonicalUrl": ""
+        },
+        "4d8560bebea6": {
+          "acceptedAt": 0,
+          "allowResponses": true,
+          "approvedHomeCollectionId": "",
+          "audioVersionDurationSec": 0,
+          "canonicalUrl": "",
+          "content": {
+            "postDisplay": {
+              "coverless": true
+            }
+          },
+          "coverless": true,
+          "createdAt": 1514664230379,
+          "creatorId": "5373b75f0c97",
+          "deletedAt": 0,
+          "detectedLanguage": "en",
+          "displayAuthor": "",
+          "experimentalCss": "",
+          "firstPublishedAt": 1514664792674,
+          "hasUnpublishedEdits": false,
+          "hightowerMinimumGuaranteeEndsAt": 0,
+          "hightowerMinimumGuaranteeStartsAt": 0,
+          "homeCollectionId": "",
+          "id": "4d8560bebea6",
+          "importedPublishedAt": 0,
+          "importedUrl": "",
+          "inResponseToMediaResourceId": "0d2ceee1a54fffbe38adce78db6944d2",
+          "inResponseToPostId": "53e275283b9",
+          "inResponseToRemovedAt": 0,
+          "isApprovedTranslation": false,
+          "isBlockedFromHightower": false,
+          "isEligibleForRevenue": false,
+          "isNsfw": false,
+          "isRequestToPubDisabled": false,
+          "isSeries": false,
+          "isSponsored": false,
+          "isSubscriptionLocked": false,
+          "isTitleSynthesized": true,
+          "latestPublishedAt": 1514664792674,
+          "latestPublishedVersion": "1a14ca1669d8",
+          "latestRev": 82,
+          "latestVersion": "1a14ca1669d8",
+          "license": 0,
+          "lockedPostSource": 0,
+          "mediumUrl": "",
+          "migrationId": "",
+          "newsletterId": "",
+          "notifyFacebook": false,
+          "notifyFollowers": true,
+          "notifyTwitter": false,
+          "previewContent": {
+            "bodyModel": {
+              "paragraphs": [
+                {
+                  "alignment": 1,
+                  "name": "previewTitle",
+                  "text": "That is so interesting, Lochlan.",
+                  "type": 3
+                },
+                {
+                  "alignment": 1,
+                  "name": "previewSnippet0",
+                  "text": "Similar to waking from a vivid dream there can also be this sense that there is a meaning tantalisingly just beyond reach. With some reading at least, there is this heightened desire to apprehend a hidden meaning. I might remember perceiving images, people etc but also…",
+                  "type": 1
+                }
+              ],
+              "sections": [
+                {
+                  "startIndex": 0
+                }
+              ]
+            },
+            "isFullContent": false
+          },
+          "responseHiddenOnParentPostAt": 0,
+          "sequenceId": "",
+          "seriesLastAppendedAt": 0,
+          "slug": "that-is-so-interesting-lochlan",
+          "title": "That is so interesting, Lochlan.",
+          "translationSourceCreatorId": "",
+          "translationSourcePostId": "",
+          "type": "Post",
+          "uniqueSlug": "that-is-so-interesting-lochlan-4d8560bebea6",
+          "updatedAt": 1514671278853,
+          "versionId": "1a14ca1669d8",
+          "virtuals": {
+            "allowNotes": true,
+            "imageCount": 0,
+            "isBookmarked": false,
+            "isLockedPreviewOnly": false,
+            "links": {
+              "entries": [
+              ],
+              "generatedAt": 1514664792961,
+              "version": "0.3"
+            },
+            "metaDescription": "",
+            "previewImage": {
+              "backgroundSize": "",
+              "filter": "",
+              "height": 0,
+              "imageId": "",
+              "originalHeight": 0,
+              "originalWidth": 0,
+              "strategy": "resample",
+              "width": 0
+            },
+            "readingList": 0,
+            "readingTime": "0.7094339622641509",
+            "recommends": 2,
+            "responsesCreatedCount": 1,
+            "sectionCount": 1,
+            "socialRecommendsCount": 0,
+            "subtitle": "",
+            "tags": [
+            ],
+            "takeoverId": "",
+            "totalClapCount": 40,
+            "usersBySocialRecommends": [
+            ],
+            "wordCount": 188
+          },
+          "visibility": 0,
+          "vote": false,
+          "webCanonicalUrl": ""
+        },
+        "53e275283b9": {
+          "acceptedAt": 0,
+          "allowResponses": true,
+          "approvedHomeCollectionId": "",
+          "audioVersionDurationSec": 0,
+          "canonicalUrl": "",
+          "content": {
+            "postDisplay": {
+              "coverless": true
+            },
+            "subtitle": "For me it varies a lot from book to book how much I lose myself but I would say at best its more akin to remembering a vivid dream after…"
+          },
+          "coverless": true,
+          "createdAt": 1514657014000,
+          "creatorId": "d5e694e73eca",
+          "deletedAt": 0,
+          "detectedLanguage": "en",
+          "displayAuthor": "",
+          "experimentalCss": "",
+          "firstPublishedAt": 1514658927076,
+          "hasUnpublishedEdits": false,
+          "hightowerMinimumGuaranteeEndsAt": 0,
+          "hightowerMinimumGuaranteeStartsAt": 0,
+          "homeCollectionId": "",
+          "id": "53e275283b9",
+          "importedPublishedAt": 0,
+          "importedUrl": "",
+          "inResponseToMediaResourceId": "cba1a87406e331de2c73163e027e4560",
+          "inResponseToPostId": "c2a9b309cf7",
+          "inResponseToRemovedAt": 0,
+          "isApprovedTranslation": false,
+          "isBlockedFromHightower": false,
+          "isEligibleForRevenue": false,
+          "isNsfw": false,
+          "isRequestToPubDisabled": false,
+          "isSeries": false,
+          "isSponsored": false,
+          "isSubscriptionLocked": false,
+          "isTitleSynthesized": true,
+          "latestPublishedAt": 1514658927076,
+          "latestPublishedVersion": "5245768250e2",
+          "latestRev": 257,
+          "latestVersion": "5245768250e2",
+          "license": 0,
+          "lockedPostSource": 0,
+          "mediumUrl": "",
+          "migrationId": "",
+          "newsletterId": "",
+          "notifyFacebook": false,
+          "notifyFollowers": true,
+          "notifyTwitter": false,
+          "previewContent": {
+            "bodyModel": {
+              "paragraphs": [
+                {
+                  "alignment": 1,
+                  "markups": [
+                  ],
+                  "name": "63f4",
+                  "text": "Great questions, from the description I don’t think I have experienced this to the same extent. I have certainly been lost in books and subsumed by the experience but its never quite such an all-encompassing 3-D experience.",
+                  "type": 1
+                },
+                {
+                  "alignment": 1,
+                  "markups": [
+                  ],
+                  "name": "de7e",
+                  "text": "For me it varies a lot from book to book how much I lose myself but I would say at best its more akin…",
+                  "type": 1
+                }
+              ],
+              "sections": [
+                {
+                  "startIndex": 0
+                }
+              ]
+            },
+            "isFullContent": false
+          },
+          "responseHiddenOnParentPostAt": 0,
+          "sequenceId": "",
+          "seriesLastAppendedAt": 0,
+          "slug": "great-questions-from-the-description-i-dont-think-i-have-experienced-this-to-the-same-extent",
+          "title": "Great questions, from the description I don’t think I have experienced this to the same extent.",
+          "translationSourceCreatorId": "",
+          "translationSourcePostId": "",
+          "type": "Post",
+          "uniqueSlug": "great-questions-from-the-description-i-dont-think-i-have-experienced-this-to-the-same-extent-53e275283b9",
+          "updatedAt": 1514664205822,
+          "versionId": "5245768250e2",
+          "virtuals": {
+            "allowNotes": true,
+            "imageCount": 0,
+            "isBookmarked": false,
+            "isLockedPreviewOnly": false,
+            "links": {
+              "entries": [
+              ],
+              "generatedAt": 1514658927490,
+              "version": "0.3"
+            },
+            "metaDescription": "",
+            "previewImage": {
+              "backgroundSize": "",
+              "filter": "",
+              "height": 0,
+              "imageId": "",
+              "originalHeight": 0,
+              "originalWidth": 0,
+              "strategy": "resample",
+              "width": 0
+            },
+            "readingList": 0,
+            "readingTime": "0.8377358490566038",
+            "recommends": 1,
+            "responsesCreatedCount": 1,
+            "sectionCount": 1,
+            "socialRecommendsCount": 0,
+            "subtitle": "For me it varies a lot from book to book how much I lose myself but I would say at best its more akin to remembering a vivid dream after…",
+            "tags": [
+              {
+                "metadata": {
+                  "coverImage": {
+                    "id": "1*7gRSIK1ouGx4BkQtq_GRTA.jpeg",
+                    "isFeatured": true,
+                    "originalHeight": 1779,
+                    "originalWidth": 2738
+                  },
+                  "followerCount": 5956,
+                  "postCount": 25405
+                },
+                "name": "Philosophy",
+                "postCount": 25405,
+                "slug": "philosophy",
+                "type": "Tag",
+                "virtuals": {
+                  "isFollowing": false
+                }
+              },
+              {
+                "metadata": {
+                  "coverImage": {
+                    "id": "1*LIJ3LJIqAqvME_Jm1Jw-nQ.jpeg"
+                  },
+                  "followerCount": 781826,
+                  "postCount": 15768
+                },
+                "name": "Reading",
+                "postCount": 15768,
+                "slug": "reading",
+                "type": "Tag",
+                "virtuals": {
+                  "isFollowing": false
+                }
+              },
+              {
+                "metadata": {
+                  "coverImage": {
+                    "id": "1*AwaoHDZEX9wjHc7o9Ienzg.jpeg"
+                  },
+                  "followerCount": 1058293,
+                  "postCount": 119399
+                },
+                "name": "Writing",
+                "postCount": 119399,
+                "slug": "writing",
+                "type": "Tag",
+                "virtuals": {
+                  "isFollowing": false
+                }
+              },
+              {
+                "metadata": {
+                  "coverImage": {
+                    "id": "1*ulYaN8tsrn55aox8r_dvWA.jpeg",
+                    "originalHeight": 1065,
+                    "originalWidth": 1600
+                  },
+                  "followerCount": 3510,
+                  "postCount": 10780
+                },
+                "name": "Dreams",
+                "postCount": 10780,
+                "slug": "dreams",
+                "type": "Tag",
+                "virtuals": {
+                  "isFollowing": false
+                }
+              }
+            ],
+            "takeoverId": "",
+            "totalClapCount": 5,
+            "usersBySocialRecommends": [
+            ],
+            "wordCount": 222
+          },
+          "visibility": 0,
+          "vote": false,
+          "webCanonicalUrl": ""
+        },
+        "54fc7e30625c": {
+          "acceptedAt": 0,
+          "allowResponses": true,
+          "approvedHomeCollectionId": "",
+          "audioVersionDurationSec": 0,
+          "canonicalUrl": "",
+          "content": {
+            "postDisplay": {
+              "coverless": true
+            },
+            "subtitle": "I’ve been reading Duhigg’s “The Power of Habit” after hearing him on a podcast. One of the fascinating things about habit research is that…"
+          },
+          "coverless": true,
+          "createdAt": 1514684283637,
+          "creatorId": "922d4b8e7d17",
+          "deletedAt": 0,
+          "detectedLanguage": "en",
+          "displayAuthor": "",
+          "experimentalCss": "",
+          "firstPublishedAt": 1514684697345,
+          "hasUnpublishedEdits": false,
+          "hightowerMinimumGuaranteeEndsAt": 0,
+          "hightowerMinimumGuaranteeStartsAt": 0,
+          "homeCollectionId": "",
+          "id": "54fc7e30625c",
+          "importedPublishedAt": 0,
+          "importedUrl": "",
+          "inResponseToMediaResourceId": "cba1a87406e331de2c73163e027e4560",
+          "inResponseToPostId": "c2a9b309cf7",
+          "inResponseToRemovedAt": 0,
+          "isApprovedTranslation": false,
+          "isBlockedFromHightower": false,
+          "isEligibleForRevenue": false,
+          "isNsfw": false,
+          "isRequestToPubDisabled": false,
+          "isSeries": false,
+          "isSponsored": false,
+          "isSubscriptionLocked": false,
+          "isTitleSynthesized": true,
+          "latestPublishedAt": 1514684697345,
+          "latestPublishedVersion": "c0d53ff06d10",
+          "latestRev": 65,
+          "latestVersion": "c0d53ff06d10",
+          "license": 0,
+          "lockedPostSource": 0,
+          "mediumUrl": "",
+          "migrationId": "",
+          "newsletterId": "",
+          "notifyFacebook": false,
+          "notifyFollowers": true,
+          "notifyTwitter": false,
+          "previewContent": {
+            "bodyModel": {
+              "paragraphs": [
+                {
+                  "alignment": 1,
+                  "markups": [
+                  ],
+                  "name": "e9a3",
+                  "text": "Habit reprogramming may be the answer, and a cure.",
+                  "type": 1
+                },
+                {
+                  "alignment": 1,
+                  "markups": [
+                    {
+                      "anchorType": 0,
+                      "end": 256,
+                      "href": "http://charlesduhigg.com/how-habits-work/",
+                      "rel": "nofollow",
+                      "start": 215,
+                      "title": "",
+                      "type": 3
+                    }
+                  ],
+                  "name": "1287",
+                  "text": "I’ve been reading Duhigg’s “The Power of Habit” after hearing him on a podcast. One of the fascinating things about habit research is that we overwrite old habits but they are still there. You can see the basics at http://charlesduhigg.com/how-habits-work/ where he describes…",
+                  "type": 1
+                }
+              ],
+              "sections": [
+                {
+                  "startIndex": 0
+                }
+              ]
+            },
+            "isFullContent": false
+          },
+          "responseHiddenOnParentPostAt": 0,
+          "sequenceId": "",
+          "seriesLastAppendedAt": 0,
+          "slug": "habit-reprogramming-may-be-the-answer-and-a-cure",
+          "title": "Habit reprogramming may be the answer, and a cure.",
+          "translationSourceCreatorId": "",
+          "translationSourcePostId": "",
+          "type": "Post",
+          "uniqueSlug": "habit-reprogramming-may-be-the-answer-and-a-cure-54fc7e30625c",
+          "updatedAt": 1514737555757,
+          "versionId": "c0d53ff06d10",
+          "virtuals": {
+            "allowNotes": true,
+            "imageCount": 0,
+            "isBookmarked": false,
+            "isLockedPreviewOnly": false,
+            "links": {
+              "entries": [
+                {
+                  "alts": [
+                  ],
+                  "httpStatus": 200,
+                  "url": "http://charlesduhigg.com/how-habits-work/"
+                }
+              ],
+              "generatedAt": 1514684697981,
+              "version": "0.3"
+            },
+            "metaDescription": "",
+            "previewImage": {
+              "backgroundSize": "",
+              "filter": "",
+              "height": 0,
+              "imageId": "",
+              "originalHeight": 0,
+              "originalWidth": 0,
+              "strategy": "resample",
+              "width": 0
+            },
+            "readingList": 0,
+            "readingTime": "0.7018867924528301",
+            "recommends": 1,
+            "responsesCreatedCount": 1,
+            "sectionCount": 1,
+            "socialRecommendsCount": 0,
+            "subtitle": "I’ve been reading Duhigg’s “The Power of Habit” after hearing him on a podcast. One of the fascinating things about habit research is that…",
+            "tags": [
+              {
+                "metadata": {
+                  "coverImage": {
+                    "id": "1*_ALr30B4wHSRy0yhseciSw.jpeg",
+                    "isFeatured": true,
+                    "originalHeight": 473,
+                    "originalWidth": 625
+                  },
+                  "followerCount": 1042,
+                  "postCount": 3388
+                },
+                "name": "Habits",
+                "postCount": 3388,
+                "slug": "habits",
+                "type": "Tag",
+                "virtuals": {
+                  "isFollowing": false
+                }
+              }
+            ],
+            "takeoverId": "",
+            "totalClapCount": 5,
+            "usersBySocialRecommends": [
+            ],
+            "wordCount": 186
+          },
+          "visibility": 0,
+          "vote": false,
+          "webCanonicalUrl": ""
+        },
+        "56771c9cf8ff": {
+          "acceptedAt": 0,
+          "allowResponses": true,
+          "approvedHomeCollectionId": "",
+          "audioVersionDurationSec": 0,
+          "canonicalUrl": "",
+          "content": {
+            "postDisplay": {
+              "coverless": true
+            }
+          },
+          "coverless": true,
+          "createdAt": 1514654645652,
+          "creatorId": "4b39545b31b5",
+          "deletedAt": 0,
+          "detectedLanguage": "en",
+          "displayAuthor": "",
+          "experimentalCss": "",
+          "firstPublishedAt": 1514654682320,
+          "hasUnpublishedEdits": false,
+          "hightowerMinimumGuaranteeEndsAt": 0,
+          "hightowerMinimumGuaranteeStartsAt": 0,
+          "homeCollectionId": "",
+          "id": "56771c9cf8ff",
+          "importedPublishedAt": 0,
+          "importedUrl": "",
+          "inResponseToMediaResourceId": "da7cdd9a28dd008ac4f263185774a5fd",
+          "inResponseToPostId": "85f9303e0dd8",
+          "inResponseToRemovedAt": 0,
+          "isApprovedTranslation": false,
+          "isBlockedFromHightower": false,
+          "isEligibleForRevenue": false,
+          "isNsfw": false,
+          "isRequestToPubDisabled": false,
+          "isSeries": false,
+          "isSponsored": false,
+          "isSubscriptionLocked": false,
+          "isTitleSynthesized": true,
+          "latestPublishedAt": 1514654682320,
+          "latestPublishedVersion": "c91a6e74b83f",
+          "latestRev": 7,
+          "latestVersion": "c91a6e74b83f",
+          "license": 0,
+          "lockedPostSource": 0,
+          "mediumUrl": "",
+          "migrationId": "",
+          "newsletterId": "",
+          "notifyFacebook": false,
+          "notifyFollowers": true,
+          "notifyTwitter": false,
+          "previewContent": {
+            "bodyModel": {
+              "paragraphs": [
+                {
+                  "alignment": 1,
+                  "markups": [
+                  ],
+                  "name": "c26c",
+                  "text": "I agree 100%. Well put Jack.",
+                  "type": 1
+                }
+              ],
+              "sections": [
+                {
+                  "startIndex": 0
+                }
+              ]
+            },
+            "isFullContent": true
+          },
+          "responseHiddenOnParentPostAt": 0,
+          "sequenceId": "",
+          "seriesLastAppendedAt": 0,
+          "slug": "i-agree-100-well-put-jack",
+          "title": "I agree 100%. Well put Jack.",
+          "translationSourceCreatorId": "",
+          "translationSourcePostId": "",
+          "type": "Post",
+          "uniqueSlug": "i-agree-100-well-put-jack-56771c9cf8ff",
+          "updatedAt": 1514656707873,
+          "versionId": "c91a6e74b83f",
+          "virtuals": {
+            "allowNotes": true,
+            "imageCount": 0,
+            "isBookmarked": false,
+            "isLockedPreviewOnly": false,
+            "links": {
+              "entries": [
+              ],
+              "generatedAt": 1514654682834,
+              "version": "0.3"
+            },
+            "metaDescription": "",
+            "previewImage": {
+              "backgroundSize": "",
+              "filter": "",
+              "height": 0,
+              "imageId": "",
+              "originalHeight": 0,
+              "originalWidth": 0,
+              "strategy": "resample",
+              "width": 0
+            },
+            "readingList": 0,
+            "readingTime": "0.022641509433962263",
+            "recommends": 1,
+            "responsesCreatedCount": 0,
+            "sectionCount": 1,
+            "socialRecommendsCount": 0,
+            "subtitle": "",
+            "tags": [
+            ],
+            "takeoverId": "",
+            "totalClapCount": 5,
+            "userPostRelation": {
+              "audioProgressSec": 0,
+              "clapCount": 0,
+              "collaboratorAddedAt": 0,
+              "lastReadAt": 0,
+              "lastReadParagraphName": "",
+              "lastReadPercentage": 0,
+              "lastReadSectionName": "",
+              "lastReadVersionId": "",
+              "notesAddedAt": 0,
+              "postId": "56771c9cf8ff",
+              "presentedCountInResponseManagement": 0,
+              "presentedCountInStream": 2,
+              "queuedAt": 0,
+              "readAt": 1514866689179,
+              "readLaterAddedAt": 0,
+              "seriesFirstViewedAt": 0,
+              "seriesLastViewedAt": 0,
+              "seriesUpdateNotifsOptedInAt": 0,
+              "subscribedAt": 0,
+              "userId": "babae01b1fce",
+              "viewedAt": 1514866689178,
+              "votedAt": 0
+            },
+            "usersBySocialRecommends": [
+            ],
+            "wordCount": 6
+          },
+          "visibility": 0,
+          "vote": false,
+          "webCanonicalUrl": ""
+        },
+        "56f2ac9bc565": {
+          "acceptedAt": 0,
+          "allowResponses": true,
+          "approvedHomeCollectionId": "",
+          "audioVersionDurationSec": 0,
+          "canonicalUrl": "",
+          "content": {
+            "postDisplay": {
+              "coverless": true
+            }
+          },
+          "coverless": true,
+          "createdAt": 1514550564731,
+          "creatorId": "5373b75f0c97",
+          "deletedAt": 0,
+          "detectedLanguage": "en",
+          "displayAuthor": "",
+          "experimentalCss": "",
+          "firstPublishedAt": 1514551049342,
+          "hasUnpublishedEdits": false,
+          "hightowerMinimumGuaranteeEndsAt": 0,
+          "hightowerMinimumGuaranteeStartsAt": 0,
+          "homeCollectionId": "",
+          "id": "56f2ac9bc565",
+          "importedPublishedAt": 0,
+          "importedUrl": "",
+          "inResponseToMediaResourceId": "1fae5ec522e4a0c518ea7fcffe5590fd",
+          "inResponseToPostId": "aaf3372fdca0",
+          "inResponseToRemovedAt": 0,
+          "isApprovedTranslation": false,
+          "isBlockedFromHightower": false,
+          "isEligibleForRevenue": false,
+          "isNsfw": false,
+          "isRequestToPubDisabled": false,
+          "isSeries": false,
+          "isSponsored": false,
+          "isSubscriptionLocked": false,
+          "isTitleSynthesized": true,
+          "latestPublishedAt": 1514551049342,
+          "latestPublishedVersion": "be85b524c3a2",
+          "latestRev": 71,
+          "latestVersion": "be85b524c3a2",
+          "license": 0,
+          "lockedPostSource": 0,
+          "mediumUrl": "",
+          "migrationId": "",
+          "newsletterId": "",
+          "notifyFacebook": false,
+          "notifyFollowers": true,
+          "notifyTwitter": false,
+          "previewContent": {
+            "bodyModel": {
+              "paragraphs": [
+                {
+                  "alignment": 1,
+                  "markups": [
+                  ],
+                  "name": "2a55",
+                  "text": "but I can tell you, it takes extremely good writing :)",
+                  "type": 6
+                },
+                {
+                  "alignment": 1,
+                  "markups": [
+                  ],
+                  "name": "bdbe",
+                  "text": "OK, there’s a clue in that. While I haven’t experienced the full self-vanishing described here since my late teens, I do recognize different levels of ordinary immersion when reading, depending on the writer. I have developed a special affection for Alice Hoffman for…",
+                  "type": 1
+                }
+              ],
+              "sections": [
+                {
+                  "startIndex": 0
+                }
+              ]
+            },
+            "isFullContent": false
+          },
+          "responseHiddenOnParentPostAt": 0,
+          "sequenceId": "",
+          "seriesLastAppendedAt": 0,
+          "slug": "ok-theres-a-clue-in-that",
+          "title": "OK, there’s a clue in that.",
+          "translationSourceCreatorId": "",
+          "translationSourcePostId": "",
+          "type": "Post",
+          "uniqueSlug": "ok-theres-a-clue-in-that-56f2ac9bc565",
+          "updatedAt": 1514640702277,
+          "versionId": "be85b524c3a2",
+          "virtuals": {
+            "allowNotes": true,
+            "imageCount": 0,
+            "isBookmarked": false,
+            "isLockedPreviewOnly": false,
+            "links": {
+              "entries": [
+              ],
+              "generatedAt": 1514551049660,
+              "version": "0.3"
+            },
+            "metaDescription": "",
+            "previewImage": {
+              "backgroundSize": "",
+              "filter": "",
+              "height": 0,
+              "imageId": "",
+              "originalHeight": 0,
+              "originalWidth": 0,
+              "strategy": "resample",
+              "width": 0
+            },
+            "readingList": 0,
+            "readingTime": "0.5132075471698113",
+            "recommends": 3,
+            "responsesCreatedCount": 2,
+            "sectionCount": 1,
+            "socialRecommendsCount": 0,
+            "subtitle": "",
+            "tags": [
+            ],
+            "takeoverId": "",
+            "totalClapCount": 19,
+            "userPostRelation": {
+              "audioProgressSec": 0,
+              "clapCount": 0,
+              "collaboratorAddedAt": 0,
+              "lastReadAt": 0,
+              "lastReadParagraphName": "",
+              "lastReadPercentage": 0,
+              "lastReadSectionName": "",
+              "lastReadVersionId": "",
+              "notesAddedAt": 0,
+              "postId": "56f2ac9bc565",
+              "presentedCountInResponseManagement": 0,
+              "presentedCountInStream": 1,
+              "queuedAt": 0,
+              "readAt": 0,
+              "readLaterAddedAt": 0,
+              "seriesFirstViewedAt": 0,
+              "seriesLastViewedAt": 0,
+              "seriesUpdateNotifsOptedInAt": 0,
+              "subscribedAt": 0,
+              "userId": "babae01b1fce",
+              "viewedAt": 0,
+              "votedAt": 0
+            },
+            "usersBySocialRecommends": [
+            ],
+            "wordCount": 136
+          },
+          "visibility": 0,
+          "vote": false,
+          "webCanonicalUrl": ""
+        },
+        "590105a006d8": {
+          "acceptedAt": 0,
+          "allowResponses": true,
+          "approvedHomeCollectionId": "",
+          "audioVersionDurationSec": 0,
+          "canonicalUrl": "",
+          "content": {
+            "postDisplay": {
+              "coverless": true
+            }
+          },
+          "coverless": true,
+          "createdAt": 1514549298054,
+          "creatorId": "4f99c49ff347",
+          "deletedAt": 0,
+          "detectedLanguage": "un",
+          "displayAuthor": "",
+          "experimentalCss": "",
+          "firstPublishedAt": 1514549301437,
+          "hasUnpublishedEdits": false,
+          "hightowerMinimumGuaranteeEndsAt": 0,
+          "hightowerMinimumGuaranteeStartsAt": 0,
+          "homeCollectionId": "",
+          "id": "590105a006d8",
+          "importedPublishedAt": 0,
+          "importedUrl": "",
+          "inResponseToMediaResourceId": "fac0717cbfa7a6b0a1c042b422a56442",
+          "inResponseToPostId": "c2a9b309cf7",
+          "inResponseToRemovedAt": 0,
+          "isApprovedTranslation": false,
+          "isBlockedFromHightower": false,
+          "isEligibleForRevenue": false,
+          "isNsfw": false,
+          "isRequestToPubDisabled": false,
+          "isSeries": false,
+          "isSponsored": false,
+          "isSubscriptionLocked": false,
+          "isTitleSynthesized": true,
+          "latestPublishedAt": 1514549301437,
+          "latestPublishedVersion": "6ba81372be94",
+          "latestRev": 4,
+          "latestVersion": "6ba81372be94",
+          "license": 0,
+          "lockedPostSource": 0,
+          "mediumUrl": "",
+          "migrationId": "",
+          "newsletterId": "",
+          "notifyFacebook": false,
+          "notifyFollowers": true,
+          "notifyTwitter": false,
+          "previewContent": {
+            "bodyModel": {
+              "paragraphs": [
+                {
+                  "alignment": 1,
+                  "markups": [
+                  ],
+                  "name": "4f77",
+                  "text": "Yes!",
+                  "type": 1
+                }
+              ],
+              "sections": [
+                {
+                  "startIndex": 0
+                }
+              ]
+            },
+            "isFullContent": true
+          },
+          "responseHiddenOnParentPostAt": 0,
+          "sequenceId": "",
+          "seriesLastAppendedAt": 0,
+          "slug": "yes",
+          "title": "Yes!",
+          "translationSourceCreatorId": "",
+          "translationSourcePostId": "",
+          "type": "Post",
+          "uniqueSlug": "yes-590105a006d8",
+          "updatedAt": 1514640811676,
+          "versionId": "6ba81372be94",
+          "virtuals": {
+            "allowNotes": true,
+            "imageCount": 0,
+            "isBookmarked": false,
+            "isLockedPreviewOnly": false,
+            "links": {
+              "entries": [
+              ],
+              "generatedAt": 1514549301816,
+              "version": "0.3"
+            },
+            "metaDescription": "",
+            "previewImage": {
+              "backgroundSize": "",
+              "filter": "",
+              "height": 0,
+              "imageId": "",
+              "originalHeight": 0,
+              "originalWidth": 0,
+              "strategy": "resample",
+              "width": 0
+            },
+            "readingList": 0,
+            "readingTime": "0.0037735849056603774",
+            "recommends": 2,
+            "responsesCreatedCount": 0,
+            "sectionCount": 1,
+            "socialRecommendsCount": 0,
+            "subtitle": "",
+            "tags": [
+            ],
+            "takeoverId": "",
+            "totalClapCount": 6,
+            "userPostRelation": {
+              "audioProgressSec": 0,
+              "clapCount": 0,
+              "collaboratorAddedAt": 0,
+              "lastReadAt": 0,
+              "lastReadParagraphName": "",
+              "lastReadPercentage": 0,
+              "lastReadSectionName": "",
+              "lastReadVersionId": "",
+              "notesAddedAt": 0,
+              "postId": "590105a006d8",
+              "presentedCountInResponseManagement": 0,
+              "presentedCountInStream": 2,
+              "queuedAt": 0,
+              "readAt": 0,
+              "readLaterAddedAt": 0,
+              "seriesFirstViewedAt": 0,
+              "seriesLastViewedAt": 0,
+              "seriesUpdateNotifsOptedInAt": 0,
+              "subscribedAt": 0,
+              "userId": "babae01b1fce",
+              "viewedAt": 1514866679319,
+              "votedAt": 0
+            },
+            "usersBySocialRecommends": [
+            ],
+            "wordCount": 1
+          },
+          "visibility": 0,
+          "vote": false,
+          "webCanonicalUrl": ""
+        },
+        "5be3bb4ebd74": {
+          "acceptedAt": 0,
+          "allowResponses": true,
+          "approvedHomeCollectionId": "",
+          "audioVersionDurationSec": 0,
+          "canonicalUrl": "",
+          "content": {
+            "postDisplay": {
+              "coverless": true
+            }
+          },
+          "coverless": true,
+          "createdAt": 1514658180721,
+          "creatorId": "69a135d2dfa8",
+          "deletedAt": 0,
+          "detectedLanguage": "en",
+          "displayAuthor": "",
+          "experimentalCss": "",
+          "firstPublishedAt": 1514658246201,
+          "hasUnpublishedEdits": false,
+          "hightowerMinimumGuaranteeEndsAt": 0,
+          "hightowerMinimumGuaranteeStartsAt": 0,
+          "homeCollectionId": "",
+          "id": "5be3bb4ebd74",
+          "importedPublishedAt": 0,
+          "importedUrl": "",
+          "inResponseToMediaResourceId": "cba1a87406e331de2c73163e027e4560",
+          "inResponseToPostId": "c2a9b309cf7",
+          "inResponseToRemovedAt": 0,
+          "isApprovedTranslation": false,
+          "isBlockedFromHightower": false,
+          "isEligibleForRevenue": false,
+          "isNsfw": false,
+          "isRequestToPubDisabled": false,
+          "isSeries": false,
+          "isSponsored": false,
+          "isSubscriptionLocked": false,
+          "isTitleSynthesized": true,
+          "latestPublishedAt": 1514658246201,
+          "latestPublishedVersion": "1d51cc658986",
+          "latestRev": 17,
+          "latestVersion": "1d51cc658986",
+          "license": 0,
+          "lockedPostSource": 0,
+          "mediumUrl": "",
+          "migrationId": "",
+          "newsletterId": "",
+          "notifyFacebook": false,
+          "notifyFollowers": true,
+          "notifyTwitter": false,
+          "previewContent": {
+            "bodyModel": {
+              "paragraphs": [
+                {
+                  "alignment": 1,
+                  "markups": [
+                  ],
+                  "name": "bae4",
+                  "text": "I still do (I’m 60) get immersed in a good book just as you describe. I can’t tell you how to find your way back to it though. Losing it must be like losing one of your senses.",
+                  "type": 1
+                }
+              ],
+              "sections": [
+                {
+                  "startIndex": 0
+                }
+              ]
+            },
+            "isFullContent": true
+          },
+          "responseHiddenOnParentPostAt": 0,
+          "sequenceId": "",
+          "seriesLastAppendedAt": 0,
+          "slug": "i-still-do-im-60-get-immersed-in-a-good-book-just-as-you-describe",
+          "title": "I still do (I’m 60) get immersed in a good book just as you describe.",
+          "translationSourceCreatorId": "",
+          "translationSourcePostId": "",
+          "type": "Post",
+          "uniqueSlug": "i-still-do-im-60-get-immersed-in-a-good-book-just-as-you-describe-5be3bb4ebd74",
+          "updatedAt": 1514658737254,
+          "versionId": "1d51cc658986",
+          "virtuals": {
+            "allowNotes": true,
+            "imageCount": 0,
+            "isBookmarked": false,
+            "isLockedPreviewOnly": false,
+            "links": {
+              "entries": [
+              ],
+              "generatedAt": 1514658246569,
+              "version": "0.3"
+            },
+            "metaDescription": "",
+            "previewImage": {
+              "backgroundSize": "",
+              "filter": "",
+              "height": 0,
+              "imageId": "",
+              "originalHeight": 0,
+              "originalWidth": 0,
+              "strategy": "resample",
+              "width": 0
+            },
+            "readingList": 0,
+            "readingTime": "0.14339622641509434",
+            "recommends": 1,
+            "responsesCreatedCount": 0,
+            "sectionCount": 1,
+            "socialRecommendsCount": 0,
+            "subtitle": "",
+            "tags": [
+            ],
+            "takeoverId": "",
+            "totalClapCount": 10,
+            "usersBySocialRecommends": [
+            ],
+            "wordCount": 38
+          },
+          "visibility": 0,
+          "vote": false,
+          "webCanonicalUrl": ""
+        },
+        "614cad387b84": {
+          "acceptedAt": 0,
+          "allowResponses": true,
+          "approvedHomeCollectionId": "",
+          "audioVersionDurationSec": 0,
+          "canonicalUrl": "",
+          "content": {
+            "postDisplay": {
+              "coverless": true
+            },
+            "subtitle": "My feeling is that there is definitely some connection/mechanism that links consciousness, meaning and dreams at a basic level."
+          },
+          "coverless": true,
+          "createdAt": 1514670239668,
+          "creatorId": "d5e694e73eca",
+          "deletedAt": 0,
+          "detectedLanguage": "en",
+          "displayAuthor": "",
+          "experimentalCss": "",
+          "firstPublishedAt": 1514671274886,
+          "hasUnpublishedEdits": false,
+          "hightowerMinimumGuaranteeEndsAt": 0,
+          "hightowerMinimumGuaranteeStartsAt": 0,
+          "homeCollectionId": "",
+          "id": "614cad387b84",
+          "importedPublishedAt": 0,
+          "importedUrl": "",
+          "inResponseToMediaResourceId": "30e5b4a6894a4f99038afa4d248e5ae0",
+          "inResponseToPostId": "4d8560bebea6",
+          "inResponseToRemovedAt": 0,
+          "isApprovedTranslation": false,
+          "isBlockedFromHightower": false,
+          "isEligibleForRevenue": false,
+          "isNsfw": false,
+          "isRequestToPubDisabled": false,
+          "isSeries": false,
+          "isSponsored": false,
+          "isSubscriptionLocked": false,
+          "isTitleSynthesized": true,
+          "latestPublishedAt": 1514671274886,
+          "latestPublishedVersion": "a87d7de10379",
+          "latestRev": 91,
+          "latestVersion": "a87d7de10379",
+          "license": 0,
+          "lockedPostSource": 0,
+          "mediumUrl": "",
+          "migrationId": "",
+          "newsletterId": "",
+          "notifyFacebook": false,
+          "notifyFollowers": true,
+          "notifyTwitter": false,
+          "previewContent": {
+            "bodyModel": {
+              "paragraphs": [
+                {
+                  "alignment": 1,
+                  "markups": [
+                  ],
+                  "name": "8ffe",
+                  "text": "This is absolutely right! It seems so often the things that we are most consciously aware of, the objects in front of us and that surround us, we barely register their meaning.",
+                  "type": 1
+                },
+                {
+                  "alignment": 1,
+                  "markups": [
+                  ],
+                  "name": "01fc",
+                  "text": "My feeling is that there is definitely some connection/mechanism that links consciousness, meaning and dreams at a basic level.",
+                  "type": 1
+                }
+              ],
+              "sections": [
+                {
+                  "startIndex": 0
+                }
+              ]
+            },
+            "isFullContent": true
+          },
+          "responseHiddenOnParentPostAt": 0,
+          "sequenceId": "",
+          "seriesLastAppendedAt": 0,
+          "slug": "this-is-absolutely-right",
+          "title": "This is absolutely right!",
+          "translationSourceCreatorId": "",
+          "translationSourcePostId": "",
+          "type": "Post",
+          "uniqueSlug": "this-is-absolutely-right-614cad387b84",
+          "updatedAt": 1514674260001,
+          "versionId": "a87d7de10379",
+          "virtuals": {
+            "allowNotes": true,
+            "imageCount": 0,
+            "isBookmarked": false,
+            "isLockedPreviewOnly": false,
+            "links": {
+              "entries": [
+              ],
+              "generatedAt": 1514671276336,
+              "version": "0.3"
+            },
+            "metaDescription": "",
+            "previewImage": {
+              "backgroundSize": "",
+              "filter": "",
+              "height": 0,
+              "imageId": "",
+              "originalHeight": 0,
+              "originalWidth": 0,
+              "strategy": "resample",
+              "width": 0
+            },
+            "readingList": 0,
+            "readingTime": "0.19245283018867926",
+            "recommends": 1,
+            "responsesCreatedCount": 0,
+            "sectionCount": 1,
+            "socialRecommendsCount": 0,
+            "subtitle": "My feeling is that there is definitely some connection/mechanism that links consciousness, meaning and dreams at a basic level.",
+            "tags": [
+            ],
+            "takeoverId": "",
+            "totalClapCount": 5,
+            "usersBySocialRecommends": [
+            ],
+            "wordCount": 51
+          },
+          "visibility": 0,
+          "vote": false,
+          "webCanonicalUrl": ""
+        },
+        "740e58b47201": {
+          "acceptedAt": 0,
+          "allowResponses": true,
+          "approvedHomeCollectionId": "",
+          "audioVersionDurationSec": 0,
+          "canonicalUrl": "",
+          "content": {
+            "postDisplay": {
+              "coverless": true
+            },
+            "subtitle": "I have not experienced 3D immersion per se, but I have often forgotten where I am and my own position of seating while reading some novels."
+          },
+          "coverless": true,
+          "createdAt": 1514809997197,
+          "creatorId": "c2f5689a2729",
+          "deletedAt": 0,
+          "detectedLanguage": "en",
+          "displayAuthor": "",
+          "experimentalCss": "",
+          "firstPublishedAt": 1514810354491,
+          "hasUnpublishedEdits": false,
+          "hightowerMinimumGuaranteeEndsAt": 0,
+          "hightowerMinimumGuaranteeStartsAt": 0,
+          "homeCollectionId": "",
+          "id": "740e58b47201",
+          "importedPublishedAt": 0,
+          "importedUrl": "",
+          "inResponseToMediaResourceId": "cba1a87406e331de2c73163e027e4560",
+          "inResponseToPostId": "c2a9b309cf7",
+          "inResponseToRemovedAt": 0,
+          "isApprovedTranslation": false,
+          "isBlockedFromHightower": false,
+          "isEligibleForRevenue": false,
+          "isNsfw": false,
+          "isRequestToPubDisabled": false,
+          "isSeries": false,
+          "isSponsored": false,
+          "isSubscriptionLocked": false,
+          "isTitleSynthesized": true,
+          "latestPublishedAt": 1514810384209,
+          "latestPublishedVersion": "dd6533283a58",
+          "latestRev": 62,
+          "latestVersion": "dd6533283a58",
+          "license": 0,
+          "lockedPostSource": 0,
+          "mediumUrl": "",
+          "migrationId": "",
+          "newsletterId": "",
+          "notifyFacebook": false,
+          "notifyFollowers": true,
+          "notifyTwitter": false,
+          "previewContent": {
+            "bodyModel": {
+              "paragraphs": [
+                {
+                  "alignment": 1,
+                  "markups": [
+                  ],
+                  "name": "f8f8",
+                  "text": "This is a great post. Thanks for sharing.",
+                  "type": 1
+                },
+                {
+                  "alignment": 1,
+                  "markups": [
+                    {
+                      "end": 42,
+                      "start": 36,
+                      "type": 2
+                    }
+                  ],
+                  "name": "f268",
+                  "text": "I have not experienced 3D immersion per se, but I have often forgotten where I am and my own position of seating while reading some novels.",
+                  "type": 1
+                },
+                {
+                  "alignment": 1,
+                  "markups": [
+                  ],
+                  "name": "6c6a",
+                  "text": "I remember while reading The Matarese Circle by Robert Ludlum, there is a section that builds up a tense atmosphere…",
+                  "type": 1
+                }
+              ],
+              "sections": [
+                {
+                  "startIndex": 0
+                }
+              ]
+            },
+            "isFullContent": false
+          },
+          "responseHiddenOnParentPostAt": 0,
+          "sequenceId": "",
+          "seriesLastAppendedAt": 0,
+          "slug": "this-is-a-great-post-thanks-for-sharing",
+          "title": "This is a great post. Thanks for sharing.",
+          "translationSourceCreatorId": "",
+          "translationSourcePostId": "",
+          "type": "Post",
+          "uniqueSlug": "this-is-a-great-post-thanks-for-sharing-740e58b47201",
+          "updatedAt": 1514811086626,
+          "versionId": "dd6533283a58",
+          "virtuals": {
+            "allowNotes": true,
+            "imageCount": 0,
+            "isBookmarked": false,
+            "isLockedPreviewOnly": false,
+            "links": {
+              "entries": [
+              ],
+              "generatedAt": 1514810384491,
+              "version": "0.3"
+            },
+            "metaDescription": "",
+            "previewImage": {
+              "backgroundSize": "",
+              "filter": "",
+              "height": 0,
+              "imageId": "",
+              "originalHeight": 0,
+              "originalWidth": 0,
+              "strategy": "resample",
+              "width": 0
+            },
+            "readingList": 0,
+            "readingTime": "0.43018867924528303",
+            "recommends": 1,
+            "responsesCreatedCount": 0,
+            "sectionCount": 1,
+            "socialRecommendsCount": 0,
+            "subtitle": "I have not experienced 3D immersion per se, but I have often forgotten where I am and my own position of seating while reading some novels.",
+            "tags": [
+            ],
+            "takeoverId": "",
+            "totalClapCount": 5,
+            "usersBySocialRecommends": [
+            ],
+            "wordCount": 114
+          },
+          "visibility": 0,
+          "vote": false,
+          "webCanonicalUrl": ""
+        },
+        "740f68a9e7fb": {
+          "acceptedAt": 0,
+          "allowResponses": true,
+          "approvedHomeCollectionId": "",
+          "audioVersionDurationSec": 0,
+          "canonicalUrl": "",
+          "content": {
+            "postDisplay": {
+              "coverless": true
+            },
+            "subtitle": "At the same time, I really resent an author who writes a good story, but who doesn’t understand how the world works in some way that I do…"
+          },
+          "coverless": true,
+          "createdAt": 1514669548330,
+          "creatorId": "66fabfd76504",
+          "deletedAt": 0,
+          "detectedLanguage": "en",
+          "displayAuthor": "",
+          "experimentalCss": "",
+          "firstPublishedAt": 1514670480850,
+          "hasUnpublishedEdits": false,
+          "hightowerMinimumGuaranteeEndsAt": 0,
+          "hightowerMinimumGuaranteeStartsAt": 0,
+          "homeCollectionId": "",
+          "id": "740f68a9e7fb",
+          "importedPublishedAt": 0,
+          "importedUrl": "",
+          "inResponseToMediaResourceId": "cba1a87406e331de2c73163e027e4560",
+          "inResponseToPostId": "c2a9b309cf7",
+          "inResponseToRemovedAt": 0,
+          "isApprovedTranslation": false,
+          "isBlockedFromHightower": false,
+          "isEligibleForRevenue": false,
+          "isNsfw": false,
+          "isRequestToPubDisabled": false,
+          "isSeries": false,
+          "isSponsored": false,
+          "isSubscriptionLocked": false,
+          "isTitleSynthesized": true,
+          "latestPublishedAt": 1514670480850,
+          "latestPublishedVersion": "cbf08ac2e98d",
+          "latestRev": 96,
+          "latestVersion": "cbf08ac2e98d",
+          "license": 0,
+          "lockedPostSource": 0,
+          "mediumUrl": "",
+          "migrationId": "",
+          "newsletterId": "",
+          "notifyFacebook": false,
+          "notifyFollowers": true,
+          "notifyTwitter": false,
+          "previewContent": {
+            "bodyModel": {
+              "paragraphs": [
+                {
+                  "alignment": 1,
+                  "markups": [
+                  ],
+                  "name": "e5bd",
+                  "text": "I too, as a child and adolescent, could lose myself in books, and I still can at times, although it takes a really good author/story. I have found that the stories I really get lost in will also occupy my imagination when I have finished reading them, as I explore their worlds and imagine other or alternate adventures.",
+                  "type": 1
+                }
+              ],
+              "sections": [
+                {
+                  "startIndex": 0
+                }
+              ]
+            },
+            "isFullContent": false
+          },
+          "responseHiddenOnParentPostAt": 0,
+          "sequenceId": "",
+          "seriesLastAppendedAt": 0,
+          "slug": "i-too-as-a-child-and-adolescent-could-lose-myself-in-books-and-i-still-can-at-times-although-it",
+          "title": "I too, as a child and adolescent, could lose myself in books, and I still can at times, although it…",
+          "translationSourceCreatorId": "",
+          "translationSourcePostId": "",
+          "type": "Post",
+          "uniqueSlug": "i-too-as-a-child-and-adolescent-could-lose-myself-in-books-and-i-still-can-at-times-although-it-740f68a9e7fb",
+          "updatedAt": 1514671101311,
+          "versionId": "cbf08ac2e98d",
+          "virtuals": {
+            "allowNotes": true,
+            "imageCount": 0,
+            "isBookmarked": false,
+            "isLockedPreviewOnly": false,
+            "links": {
+              "entries": [
+              ],
+              "generatedAt": 1514670481167,
+              "version": "0.3"
+            },
+            "metaDescription": "",
+            "previewImage": {
+              "backgroundSize": "",
+              "filter": "",
+              "height": 0,
+              "imageId": "",
+              "originalHeight": 0,
+              "originalWidth": 0,
+              "strategy": "resample",
+              "width": 0
+            },
+            "readingList": 0,
+            "readingTime": "0.6830188679245283",
+            "recommends": 1,
+            "responsesCreatedCount": 0,
+            "sectionCount": 1,
+            "socialRecommendsCount": 0,
+            "subtitle": "At the same time, I really resent an author who writes a good story, but who doesn’t understand how the world works in some way that I do…",
+            "tags": [
+            ],
+            "takeoverId": "",
+            "totalClapCount": 5,
+            "usersBySocialRecommends": [
+            ],
+            "wordCount": 181
+          },
+          "visibility": 0,
+          "vote": false,
+          "webCanonicalUrl": ""
+        },
+        "859f51e8a961": {
+          "acceptedAt": 0,
+          "allowResponses": true,
+          "approvedHomeCollectionId": "",
+          "audioVersionDurationSec": 0,
+          "canonicalUrl": "",
+          "content": {
+            "postDisplay": {
+              "coverless": true
+            }
+          },
+          "coverless": true,
+          "createdAt": 1514611442437,
+          "creatorId": "4b39545b31b5",
+          "deletedAt": 0,
+          "detectedLanguage": "en",
+          "displayAuthor": "",
+          "experimentalCss": "",
+          "firstPublishedAt": 1514611516751,
+          "hasUnpublishedEdits": false,
+          "hightowerMinimumGuaranteeEndsAt": 0,
+          "hightowerMinimumGuaranteeStartsAt": 0,
+          "homeCollectionId": "",
+          "id": "859f51e8a961",
+          "importedPublishedAt": 0,
+          "importedUrl": "",
+          "inResponseToMediaResourceId": "bde2cc4cb6b3cfe03e93029de6e3d189",
+          "inResponseToPostId": "c2a9b309cf7",
+          "inResponseToRemovedAt": 0,
+          "isApprovedTranslation": false,
+          "isBlockedFromHightower": false,
+          "isEligibleForRevenue": false,
+          "isNsfw": false,
+          "isRequestToPubDisabled": false,
+          "isSeries": false,
+          "isSponsored": false,
+          "isSubscriptionLocked": false,
+          "isTitleSynthesized": true,
+          "latestPublishedAt": 1514611516751,
+          "latestPublishedVersion": "f5e6a51695ff",
+          "latestRev": 10,
+          "latestVersion": "f5e6a51695ff",
+          "license": 0,
+          "lockedPostSource": 0,
+          "mediumUrl": "",
+          "migrationId": "",
+          "newsletterId": "",
+          "notifyFacebook": false,
+          "notifyFollowers": true,
+          "notifyTwitter": false,
+          "previewContent": {
+            "bodyModel": {
+              "paragraphs": [
+                {
+                  "alignment": 1,
+                  "markups": [
+                  ],
+                  "name": "6f5b",
+                  "text": "As a child I experienced this, but the pursuit of academics ruined it as an adult.",
+                  "type": 1
+                }
+              ],
+              "sections": [
+                {
+                  "startIndex": 0
+                }
+              ]
+            },
+            "isFullContent": true
+          },
+          "responseHiddenOnParentPostAt": 0,
+          "sequenceId": "",
+          "seriesLastAppendedAt": 0,
+          "slug": "as-a-child-i-experienced-this-but-the-pursuit-of-academics-ruined-it-as-an-adult",
+          "title": "As a child I experienced this, but the pursuit of academics ruined it as an adult.",
+          "translationSourceCreatorId": "",
+          "translationSourcePostId": "",
+          "type": "Post",
+          "uniqueSlug": "as-a-child-i-experienced-this-but-the-pursuit-of-academics-ruined-it-as-an-adult-859f51e8a961",
+          "updatedAt": 1514649483113,
+          "versionId": "f5e6a51695ff",
+          "virtuals": {
+            "allowNotes": true,
+            "imageCount": 0,
+            "isBookmarked": false,
+            "isLockedPreviewOnly": false,
+            "links": {
+              "entries": [
+              ],
+              "generatedAt": 1514611517257,
+              "version": "0.3"
+            },
+            "metaDescription": "",
+            "previewImage": {
+              "backgroundSize": "",
+              "filter": "",
+              "height": 0,
+              "imageId": "",
+              "originalHeight": 0,
+              "originalWidth": 0,
+              "strategy": "resample",
+              "width": 0
+            },
+            "readingList": 0,
+            "readingTime": "0.06037735849056604",
+            "recommends": 1,
+            "responsesCreatedCount": 1,
+            "sectionCount": 1,
+            "socialRecommendsCount": 0,
+            "subtitle": "",
+            "tags": [
+            ],
+            "takeoverId": "",
+            "totalClapCount": 5,
+            "userPostRelation": {
+              "audioProgressSec": 0,
+              "clapCount": 0,
+              "collaboratorAddedAt": 0,
+              "lastReadAt": 0,
+              "lastReadParagraphName": "",
+              "lastReadPercentage": 0,
+              "lastReadSectionName": "",
+              "lastReadVersionId": "",
+              "notesAddedAt": 0,
+              "postId": "859f51e8a961",
+              "presentedCountInResponseManagement": 0,
+              "presentedCountInStream": 1,
+              "queuedAt": 0,
+              "readAt": 1514814922136,
+              "readLaterAddedAt": 0,
+              "seriesFirstViewedAt": 0,
+              "seriesLastViewedAt": 0,
+              "seriesUpdateNotifsOptedInAt": 0,
+              "subscribedAt": 0,
+              "userId": "babae01b1fce",
+              "viewedAt": 1514814922135,
+              "votedAt": 0
+            },
+            "usersBySocialRecommends": [
+            ],
+            "wordCount": 16
+          },
+          "visibility": 0,
+          "vote": false,
+          "webCanonicalUrl": ""
+        },
+        "85f9303e0dd8": {
+          "acceptedAt": 0,
+          "allowResponses": true,
+          "approvedHomeCollectionId": "",
+          "audioVersionDurationSec": 0,
+          "canonicalUrl": "",
+          "content": {
+            "postDisplay": {
+              "coverless": true
+            }
+          },
+          "coverless": true,
+          "createdAt": 1514649495283,
+          "creatorId": "5373b75f0c97",
+          "deletedAt": 0,
+          "detectedLanguage": "en",
+          "displayAuthor": "",
+          "experimentalCss": "",
+          "firstPublishedAt": 1514650186827,
+          "hasUnpublishedEdits": false,
+          "hightowerMinimumGuaranteeEndsAt": 0,
+          "hightowerMinimumGuaranteeStartsAt": 0,
+          "homeCollectionId": "",
+          "id": "85f9303e0dd8",
+          "importedPublishedAt": 0,
+          "importedUrl": "",
+          "inResponseToMediaResourceId": "772c1b4843d9aca39a0a3017c944c8b6",
+          "inResponseToPostId": "859f51e8a961",
+          "inResponseToRemovedAt": 0,
+          "isApprovedTranslation": false,
+          "isBlockedFromHightower": false,
+          "isEligibleForRevenue": false,
+          "isNsfw": false,
+          "isRequestToPubDisabled": false,
+          "isSeries": false,
+          "isSponsored": false,
+          "isSubscriptionLocked": false,
+          "isTitleSynthesized": true,
+          "latestPublishedAt": 1514650186827,
+          "latestPublishedVersion": "6718b9ba8850",
+          "latestRev": 97,
+          "latestVersion": "6718b9ba8850",
+          "license": 0,
+          "lockedPostSource": 0,
+          "mediumUrl": "",
+          "migrationId": "",
+          "newsletterId": "",
+          "notifyFacebook": false,
+          "notifyFollowers": true,
+          "notifyTwitter": false,
+          "previewContent": {
+            "bodyModel": {
+              "paragraphs": [
+                {
+                  "alignment": 1,
+                  "markups": [
+                  ],
+                  "name": "3117",
+                  "text": "As a child I experienced this, but the pursuit of academics ruined it as an adult.",
+                  "type": 6
+                },
+                {
+                  "alignment": 1,
+                  "markups": [
+                  ],
+                  "name": "6aa1",
+                  "text": "This seems to have really jumped out as a theme in the responses to this essay, and it’s one I never seriously considered before posting it. I’m learning a lot from everyone sharing their experience. I’m starting to think that when the powers…",
+                  "type": 1
+                }
+              ],
+              "sections": [
+                {
+                  "startIndex": 0
+                }
+              ]
+            },
+            "isFullContent": false
+          },
+          "responseHiddenOnParentPostAt": 0,
+          "sequenceId": "",
+          "seriesLastAppendedAt": 0,
+          "slug": "this-seems-to-have-really-jumped-out-as-a-theme-in-the-responses-to-this-essay-and-its-one-i",
+          "title": "This seems to have really jumped out as a theme in the responses to this essay, and it’s one I…",
+          "translationSourceCreatorId": "",
+          "translationSourcePostId": "",
+          "type": "Post",
+          "uniqueSlug": "this-seems-to-have-really-jumped-out-as-a-theme-in-the-responses-to-this-essay-and-its-one-i-85f9303e0dd8",
+          "updatedAt": 1514721994344,
+          "versionId": "6718b9ba8850",
+          "virtuals": {
+            "allowNotes": true,
+            "imageCount": 0,
+            "isBookmarked": false,
+            "isLockedPreviewOnly": false,
+            "links": {
+              "entries": [
+              ],
+              "generatedAt": 1514650187207,
+              "version": "0.3"
+            },
+            "metaDescription": "",
+            "previewImage": {
+              "backgroundSize": "",
+              "filter": "",
+              "height": 0,
+              "imageId": "",
+              "originalHeight": 0,
+              "originalWidth": 0,
+              "strategy": "resample",
+              "width": 0
+            },
+            "readingList": 0,
+            "readingTime": "0.6452830188679245",
+            "recommends": 1,
+            "responsesCreatedCount": 1,
+            "sectionCount": 1,
+            "socialRecommendsCount": 0,
+            "subtitle": "",
+            "tags": [
+            ],
+            "takeoverId": "",
+            "totalClapCount": 1,
+            "userPostRelation": {
+              "audioProgressSec": 0,
+              "clapCount": 0,
+              "collaboratorAddedAt": 0,
+              "lastReadAt": 0,
+              "lastReadParagraphName": "",
+              "lastReadPercentage": 0,
+              "lastReadSectionName": "",
+              "lastReadVersionId": "",
+              "notesAddedAt": 0,
+              "postId": "85f9303e0dd8",
+              "presentedCountInResponseManagement": 0,
+              "presentedCountInStream": 1,
+              "queuedAt": 0,
+              "readAt": 0,
+              "readLaterAddedAt": 0,
+              "seriesFirstViewedAt": 0,
+              "seriesLastViewedAt": 0,
+              "seriesUpdateNotifsOptedInAt": 0,
+              "subscribedAt": 0,
+              "userId": "babae01b1fce",
+              "viewedAt": 0,
+              "votedAt": 0
+            },
+            "usersBySocialRecommends": [
+            ],
+            "wordCount": 171
+          },
+          "visibility": 0,
+          "vote": false,
+          "webCanonicalUrl": ""
+        },
+        "8ac2f921b3ed": {
+          "acceptedAt": 0,
+          "allowResponses": true,
+          "approvedHomeCollectionId": "",
+          "audioVersionDurationSec": 0,
+          "canonicalUrl": "",
+          "content": {
+            "postDisplay": {
+              "coverless": true
+            }
+          },
+          "coverless": true,
+          "createdAt": 1514647397060,
+          "creatorId": "a9a1133703b9",
+          "deletedAt": 0,
+          "detectedLanguage": "en",
+          "displayAuthor": "",
+          "experimentalCss": "",
+          "firstPublishedAt": 1514647402776,
+          "hasUnpublishedEdits": false,
+          "hightowerMinimumGuaranteeEndsAt": 0,
+          "hightowerMinimumGuaranteeStartsAt": 0,
+          "homeCollectionId": "",
+          "id": "8ac2f921b3ed",
+          "importedPublishedAt": 0,
+          "importedUrl": "",
+          "inResponseToMediaResourceId": "cba1a87406e331de2c73163e027e4560",
+          "inResponseToPostId": "c2a9b309cf7",
+          "inResponseToRemovedAt": 0,
+          "isApprovedTranslation": false,
+          "isBlockedFromHightower": false,
+          "isEligibleForRevenue": false,
+          "isNsfw": false,
+          "isRequestToPubDisabled": false,
+          "isSeries": false,
+          "isSponsored": false,
+          "isSubscriptionLocked": false,
+          "isTitleSynthesized": true,
+          "latestPublishedAt": 1514647402776,
+          "latestPublishedVersion": "979a8686825d",
+          "latestRev": 4,
+          "latestVersion": "979a8686825d",
+          "license": 0,
+          "lockedPostSource": 0,
+          "mediumUrl": "",
+          "migrationId": "",
+          "newsletterId": "",
+          "notifyFacebook": false,
+          "notifyFollowers": true,
+          "notifyTwitter": false,
+          "previewContent": {
+            "bodyModel": {
+              "paragraphs": [
+                {
+                  "alignment": 1,
+                  "markups": [
+                  ],
+                  "name": "59ce",
+                  "text": "I think that this depends on the genre you are reading. It’s clearly that novel and fiction will generate vivid pictures and great details, because writers are meant to make in that way. Instead, This is not valid for non fiction books, because you cannot image a habit or a mindset changing as easily as your novel characters. You could do surely, but would be a bit unnatural and less imaginative.",
+                  "type": 1
+                }
+              ],
+              "sections": [
+                {
+                  "startIndex": 0
+                }
+              ]
+            },
+            "isFullContent": true
+          },
+          "responseHiddenOnParentPostAt": 0,
+          "sequenceId": "",
+          "seriesLastAppendedAt": 0,
+          "slug": "i-think-that-this-depends-on-the-genre-you-are-reading",
+          "title": "I think that this depends on the genre you are reading.",
+          "translationSourceCreatorId": "",
+          "translationSourcePostId": "",
+          "type": "Post",
+          "uniqueSlug": "i-think-that-this-depends-on-the-genre-you-are-reading-8ac2f921b3ed",
+          "updatedAt": 1514652117961,
+          "versionId": "979a8686825d",
+          "virtuals": {
+            "allowNotes": true,
+            "imageCount": 0,
+            "isBookmarked": false,
+            "isLockedPreviewOnly": false,
+            "links": {
+              "entries": [
+              ],
+              "generatedAt": 1514647403206,
+              "version": "0.3"
+            },
+            "metaDescription": "",
+            "previewImage": {
+              "backgroundSize": "",
+              "filter": "",
+              "height": 0,
+              "imageId": "",
+              "originalHeight": 0,
+              "originalWidth": 0,
+              "strategy": "resample",
+              "width": 0
+            },
+            "readingList": 0,
+            "readingTime": "0.2679245283018868",
+            "recommends": 1,
+            "responsesCreatedCount": 0,
+            "sectionCount": 1,
+            "socialRecommendsCount": 0,
+            "subtitle": "",
+            "tags": [
+            ],
+            "takeoverId": "",
+            "totalClapCount": 5,
+            "userPostRelation": {
+              "audioProgressSec": 0,
+              "clapCount": 0,
+              "collaboratorAddedAt": 0,
+              "lastReadAt": 0,
+              "lastReadParagraphName": "",
+              "lastReadPercentage": 0,
+              "lastReadSectionName": "",
+              "lastReadVersionId": "",
+              "notesAddedAt": 0,
+              "postId": "8ac2f921b3ed",
+              "presentedCountInResponseManagement": 0,
+              "presentedCountInStream": 2,
+              "queuedAt": 0,
+              "readAt": 1514813406437,
+              "readLaterAddedAt": 0,
+              "seriesFirstViewedAt": 0,
+              "seriesLastViewedAt": 0,
+              "seriesUpdateNotifsOptedInAt": 0,
+              "subscribedAt": 0,
+              "userId": "babae01b1fce",
+              "viewedAt": 1514814922153,
+              "votedAt": 0
+            },
+            "usersBySocialRecommends": [
+            ],
+            "wordCount": 71
+          },
+          "visibility": 0,
+          "vote": false,
+          "webCanonicalUrl": ""
+        },
+        "9471e627f5a4": {
+          "acceptedAt": 0,
+          "allowResponses": true,
+          "approvedHomeCollectionId": "",
+          "audioVersionDurationSec": 0,
+          "canonicalUrl": "",
+          "content": {
+            "postDisplay": {
+              "coverless": true
+            },
+            "subtitle": "I still read this way, although I’m in my mid forties now and I can’t do it nearly as often."
+          },
+          "coverless": true,
+          "createdAt": 1514849799852,
+          "creatorId": "5373b75f0c97",
+          "deletedAt": 0,
+          "detectedLanguage": "en",
+          "displayAuthor": "",
+          "experimentalCss": "",
+          "firstPublishedAt": 1514850905953,
+          "hasUnpublishedEdits": false,
+          "hightowerMinimumGuaranteeEndsAt": 0,
+          "hightowerMinimumGuaranteeStartsAt": 0,
+          "homeCollectionId": "",
+          "id": "9471e627f5a4",
+          "importedPublishedAt": 0,
+          "importedUrl": "",
+          "inResponseToMediaResourceId": "810dbd66c18411c121bda33a6cd2bb96",
+          "inResponseToPostId": "37a6f612aaa2",
+          "inResponseToRemovedAt": 0,
+          "isApprovedTranslation": false,
+          "isBlockedFromHightower": false,
+          "isEligibleForRevenue": false,
+          "isNsfw": false,
+          "isRequestToPubDisabled": false,
+          "isSeries": false,
+          "isSponsored": false,
+          "isSubscriptionLocked": false,
+          "isTitleSynthesized": true,
+          "latestPublishedAt": 1514850905953,
+          "latestPublishedVersion": "827acf774685",
+          "latestRev": 146,
+          "latestVersion": "827acf774685",
+          "license": 0,
+          "lockedPostSource": 0,
+          "mediumUrl": "",
+          "migrationId": "",
+          "newsletterId": "",
+          "notifyFacebook": false,
+          "notifyFollowers": true,
+          "notifyTwitter": false,
+          "previewContent": {
+            "bodyModel": {
+              "paragraphs": [
+                {
+                  "alignment": 1,
+                  "markups": [
+                  ],
+                  "name": "7adb",
+                  "text": "Reading didn’t involve words from about second grade. It was simply a very detailed, very complex movie.",
+                  "type": 6
+                },
+                {
+                  "alignment": 1,
+                  "markups": [
+                  ],
+                  "name": "0340",
+                  "text": "Before publishing this essay, I really thought I was alone in this. Probably the best thing about posting this on Medium has been finding out there are a bunch of us out there. We’re like the X-Men of reading…",
+                  "type": 1
+                }
+              ],
+              "sections": [
+                {
+                  "startIndex": 0
+                }
+              ]
+            },
+            "isFullContent": false
+          },
+          "responseHiddenOnParentPostAt": 0,
+          "sequenceId": "",
+          "seriesLastAppendedAt": 0,
+          "slug": "before-publishing-this-essay-i-really-thought-i-was-alone-in-this",
+          "title": "Before publishing this essay, I really thought I was alone in this.",
+          "translationSourceCreatorId": "",
+          "translationSourcePostId": "",
+          "type": "Post",
+          "uniqueSlug": "before-publishing-this-essay-i-really-thought-i-was-alone-in-this-9471e627f5a4",
+          "updatedAt": 1514850906741,
+          "versionId": "827acf774685",
+          "virtuals": {
+            "allowNotes": true,
+            "imageCount": 0,
+            "isBookmarked": false,
+            "isLockedPreviewOnly": false,
+            "links": {
+              "entries": [
+              ],
+              "generatedAt": 1514850906417,
+              "version": "0.3"
+            },
+            "metaDescription": "",
+            "previewImage": {
+              "backgroundSize": "",
+              "filter": "",
+              "height": 0,
+              "imageId": "",
+              "originalHeight": 0,
+              "originalWidth": 0,
+              "strategy": "resample",
+              "width": 0
+            },
+            "readingList": 0,
+            "readingTime": "0.9962264150943396",
+            "recommends": 0,
+            "responsesCreatedCount": 0,
+            "sectionCount": 1,
+            "socialRecommendsCount": 0,
+            "subtitle": "I still read this way, although I’m in my mid forties now and I can’t do it nearly as often.",
+            "tags": [
+            ],
+            "takeoverId": "",
+            "totalClapCount": 0,
+            "userPostRelation": {
+              "audioProgressSec": 0,
+              "clapCount": 0,
+              "collaboratorAddedAt": 0,
+              "lastReadAt": 0,
+              "lastReadParagraphName": "",
+              "lastReadPercentage": 0,
+              "lastReadSectionName": "",
+              "lastReadVersionId": "",
+              "notesAddedAt": 0,
+              "postId": "9471e627f5a4",
+              "presentedCountInResponseManagement": 0,
+              "presentedCountInStream": 1,
+              "queuedAt": 0,
+              "readAt": 0,
+              "readLaterAddedAt": 0,
+              "seriesFirstViewedAt": 0,
+              "seriesLastViewedAt": 0,
+              "seriesUpdateNotifsOptedInAt": 0,
+              "subscribedAt": 0,
+              "userId": "babae01b1fce",
+              "viewedAt": 0,
+              "votedAt": 0
+            },
+            "usersBySocialRecommends": [
+            ],
+            "wordCount": 264
+          },
+          "visibility": 0,
+          "vote": false,
+          "webCanonicalUrl": ""
+        },
+        "9e6e1938ea2e": {
+          "acceptedAt": 0,
+          "allowResponses": true,
+          "approvedHomeCollectionId": "",
+          "audioVersionDurationSec": 0,
+          "canonicalUrl": "",
+          "content": {
+            "postDisplay": {
+              "coverless": true
+            }
+          },
+          "coverless": true,
+          "createdAt": 1514726079049,
+          "creatorId": "e4d971c7eba7",
+          "deletedAt": 0,
+          "detectedLanguage": "en",
+          "displayAuthor": "",
+          "experimentalCss": "",
+          "firstPublishedAt": 1514726086378,
+          "hasUnpublishedEdits": false,
+          "hightowerMinimumGuaranteeEndsAt": 0,
+          "hightowerMinimumGuaranteeStartsAt": 0,
+          "homeCollectionId": "",
+          "id": "9e6e1938ea2e",
+          "importedPublishedAt": 0,
+          "importedUrl": "",
+          "inResponseToMediaResourceId": "cba1a87406e331de2c73163e027e4560",
+          "inResponseToPostId": "c2a9b309cf7",
+          "inResponseToRemovedAt": 0,
+          "isApprovedTranslation": false,
+          "isBlockedFromHightower": false,
+          "isEligibleForRevenue": false,
+          "isNsfw": false,
+          "isRequestToPubDisabled": false,
+          "isSeries": false,
+          "isSponsored": false,
+          "isSubscriptionLocked": false,
+          "isTitleSynthesized": true,
+          "latestPublishedAt": 1514726086378,
+          "latestPublishedVersion": "5955ef2a7fe",
+          "latestRev": 8,
+          "latestVersion": "5955ef2a7fe",
+          "license": 0,
+          "lockedPostSource": 0,
+          "mediumUrl": "",
+          "migrationId": "",
+          "newsletterId": "",
+          "notifyFacebook": false,
+          "notifyFollowers": true,
+          "notifyTwitter": false,
+          "previewContent": {
+            "bodyModel": {
+              "paragraphs": [
+                {
+                  "alignment": 1,
+                  "markups": [
+                  ],
+                  "name": "2e9c",
+                  "text": "“All children are born artists, the problem is to remain an artist as we grow up.” — Pablo Picasso.",
+                  "type": 6
+                }
+              ],
+              "sections": [
+                {
+                  "startIndex": 0
+                }
+              ]
+            },
+            "isFullContent": true
+          },
+          "responseHiddenOnParentPostAt": 0,
+          "sequenceId": "",
+          "seriesLastAppendedAt": 0,
+          "slug": "all-children-are-born-artists-the-problem-is-to-remain-an-artist-as-we-grow-up-pablo-picasso",
+          "title": "“All children are born artists, the problem is to remain an artist as we grow up.” — Pablo Picasso.",
+          "translationSourceCreatorId": "",
+          "translationSourcePostId": "",
+          "type": "Post",
+          "uniqueSlug": "all-children-are-born-artists-the-problem-is-to-remain-an-artist-as-we-grow-up-pablo-picasso-9e6e1938ea2e",
+          "updatedAt": 1514726293760,
+          "versionId": "5955ef2a7fe",
+          "virtuals": {
+            "allowNotes": true,
+            "imageCount": 0,
+            "isBookmarked": false,
+            "isLockedPreviewOnly": false,
+            "links": {
+              "entries": [
+              ],
+              "generatedAt": 1514726086958,
+              "version": "0.3"
+            },
+            "metaDescription": "",
+            "previewImage": {
+              "backgroundSize": "",
+              "filter": "",
+              "height": 0,
+              "imageId": "",
+              "originalHeight": 0,
+              "originalWidth": 0,
+              "strategy": "resample",
+              "width": 0
+            },
+            "readingList": 0,
+            "readingTime": "0.07169811320754717",
+            "recommends": 1,
+            "responsesCreatedCount": 0,
+            "sectionCount": 1,
+            "socialRecommendsCount": 0,
+            "subtitle": "",
+            "tags": [
+            ],
+            "takeoverId": "",
+            "totalClapCount": 5,
+            "userPostRelation": {
+              "audioProgressSec": 0,
+              "clapCount": 0,
+              "collaboratorAddedAt": 0,
+              "lastReadAt": 0,
+              "lastReadParagraphName": "",
+              "lastReadPercentage": 0,
+              "lastReadSectionName": "",
+              "lastReadVersionId": "",
+              "notesAddedAt": 0,
+              "postId": "9e6e1938ea2e",
+              "presentedCountInResponseManagement": 0,
+              "presentedCountInStream": 2,
+              "queuedAt": 0,
+              "readAt": 1514814922148,
+              "readLaterAddedAt": 0,
+              "seriesFirstViewedAt": 0,
+              "seriesLastViewedAt": 0,
+              "seriesUpdateNotifsOptedInAt": 0,
+              "subscribedAt": 0,
+              "userId": "babae01b1fce",
+              "viewedAt": 1514814922147,
+              "votedAt": 0
+            },
+            "usersBySocialRecommends": [
+            ],
+            "wordCount": 19
+          },
+          "visibility": 0,
+          "vote": false,
+          "webCanonicalUrl": ""
+        },
+        "aaf3372fdca0": {
+          "acceptedAt": 0,
+          "allowResponses": true,
+          "approvedHomeCollectionId": "",
+          "audioVersionDurationSec": 0,
+          "canonicalUrl": "",
+          "content": {
+            "postDisplay": {
+              "coverless": true
+            }
+          },
+          "coverless": true,
+          "createdAt": 1514549111296,
+          "creatorId": "42b01e7ae497",
+          "deletedAt": 0,
+          "detectedLanguage": "en",
+          "displayAuthor": "",
+          "experimentalCss": "",
+          "firstPublishedAt": 1514549203940,
+          "hasUnpublishedEdits": false,
+          "hightowerMinimumGuaranteeEndsAt": 0,
+          "hightowerMinimumGuaranteeStartsAt": 0,
+          "homeCollectionId": "",
+          "id": "aaf3372fdca0",
+          "importedPublishedAt": 0,
+          "importedUrl": "",
+          "inResponseToMediaResourceId": "cba1a87406e331de2c73163e027e4560",
+          "inResponseToPostId": "c2a9b309cf7",
+          "inResponseToRemovedAt": 0,
+          "isApprovedTranslation": false,
+          "isBlockedFromHightower": false,
+          "isEligibleForRevenue": false,
+          "isNsfw": false,
+          "isRequestToPubDisabled": false,
+          "isSeries": false,
+          "isSponsored": false,
+          "isSubscriptionLocked": false,
+          "isTitleSynthesized": true,
+          "latestPublishedAt": 1514549203940,
+          "latestPublishedVersion": "c39c672920b3",
+          "latestRev": 23,
+          "latestVersion": "c39c672920b3",
+          "license": 0,
+          "lockedPostSource": 0,
+          "mediumUrl": "",
+          "migrationId": "",
+          "newsletterId": "",
+          "notifyFacebook": false,
+          "notifyFollowers": true,
+          "notifyTwitter": false,
+          "previewContent": {
+            "bodyModel": {
+              "paragraphs": [
+                {
+                  "alignment": 1,
+                  "markups": [
+                  ],
+                  "name": "58cb",
+                  "text": "Well, I’ve always experienced reading in that way — and my mother did too. It didn’t disappear, but it now fluctuates, fighting with the critical in-brain editor that nags a lot. I hope you can return to reading with complete immersion, but I can tell you, it takes extremely good writing :)",
+                  "type": 1
+                }
+              ],
+              "sections": [
+                {
+                  "startIndex": 0
+                }
+              ]
+            },
+            "isFullContent": true
+          },
+          "responseHiddenOnParentPostAt": 0,
+          "sequenceId": "",
+          "seriesLastAppendedAt": 0,
+          "slug": "well-ive-always-experienced-reading-in-that-way-and-my-mother-did-too",
+          "title": "Well, I’ve always experienced reading in that way — and my mother did too.",
+          "translationSourceCreatorId": "",
+          "translationSourcePostId": "",
+          "type": "Post",
+          "uniqueSlug": "well-ive-always-experienced-reading-in-that-way-and-my-mother-did-too-aaf3372fdca0",
+          "updatedAt": 1514721473663,
+          "versionId": "c39c672920b3",
+          "virtuals": {
+            "allowNotes": true,
+            "imageCount": 0,
+            "isBookmarked": false,
+            "isLockedPreviewOnly": false,
+            "links": {
+              "entries": [
+              ],
+              "generatedAt": 1514549204292,
+              "version": "0.3"
+            },
+            "metaDescription": "",
+            "previewImage": {
+              "backgroundSize": "",
+              "filter": "",
+              "height": 0,
+              "imageId": "",
+              "originalHeight": 0,
+              "originalWidth": 0,
+              "strategy": "resample",
+              "width": 0
+            },
+            "readingList": 0,
+            "readingTime": 0.2,
+            "recommends": 9,
+            "responsesCreatedCount": 2,
+            "sectionCount": 1,
+            "socialRecommendsCount": 0,
+            "subtitle": "",
+            "tags": [
+            ],
+            "takeoverId": "",
+            "totalClapCount": 27,
+            "userPostRelation": {
+              "audioProgressSec": 0,
+              "clapCount": 0,
+              "collaboratorAddedAt": 0,
+              "lastReadAt": 0,
+              "lastReadParagraphName": "",
+              "lastReadPercentage": 0,
+              "lastReadSectionName": "",
+              "lastReadVersionId": "",
+              "notesAddedAt": 0,
+              "postId": "aaf3372fdca0",
+              "presentedCountInResponseManagement": 0,
+              "presentedCountInStream": 7,
+              "queuedAt": 0,
+              "readAt": 1514866668432,
+              "readLaterAddedAt": 0,
+              "seriesFirstViewedAt": 0,
+              "seriesLastViewedAt": 0,
+              "seriesUpdateNotifsOptedInAt": 0,
+              "subscribedAt": 0,
+              "userId": "babae01b1fce",
+              "viewedAt": 1514866668430,
+              "votedAt": 0
+            },
+            "usersBySocialRecommends": [
+            ],
+            "wordCount": 53
+          },
+          "visibility": 0,
+          "vote": false,
+          "webCanonicalUrl": ""
+        },
+        "ab5b8cc41aef": {
+          "acceptedAt": 0,
+          "allowResponses": true,
+          "approvedHomeCollectionId": "",
+          "audioVersionDurationSec": 0,
+          "canonicalUrl": "",
+          "content": {
+            "postDisplay": {
+              "coverless": true
+            },
+            "subtitle": "Camus, Nietzsche, The Tin Drum (it took about 10 months for me to make it 2/3 of the way through before giving up), mountains of Scientific…"
+          },
+          "coverless": true,
+          "createdAt": 1514760728344,
+          "creatorId": "5373b75f0c97",
+          "deletedAt": 0,
+          "detectedLanguage": "en",
+          "displayAuthor": "",
+          "experimentalCss": "",
+          "firstPublishedAt": 1514762035885,
+          "hasUnpublishedEdits": false,
+          "hightowerMinimumGuaranteeEndsAt": 0,
+          "hightowerMinimumGuaranteeStartsAt": 0,
+          "homeCollectionId": "",
+          "id": "ab5b8cc41aef",
+          "importedPublishedAt": 0,
+          "importedUrl": "",
+          "inResponseToMediaResourceId": "a8a1befb8a9a05375c5478055efef3d7",
+          "inResponseToPostId": "36e9d7aa0ea5",
+          "inResponseToRemovedAt": 0,
+          "isApprovedTranslation": false,
+          "isBlockedFromHightower": false,
+          "isEligibleForRevenue": false,
+          "isNsfw": false,
+          "isRequestToPubDisabled": false,
+          "isSeries": false,
+          "isSponsored": false,
+          "isSubscriptionLocked": false,
+          "isTitleSynthesized": true,
+          "latestPublishedAt": 1514762035885,
+          "latestPublishedVersion": "4b7c7f763bef",
+          "latestRev": 167,
+          "latestVersion": "4b7c7f763bef",
+          "license": 0,
+          "lockedPostSource": 0,
+          "mediumUrl": "",
+          "migrationId": "",
+          "newsletterId": "",
+          "notifyFacebook": false,
+          "notifyFollowers": true,
+          "notifyTwitter": false,
+          "previewContent": {
+            "bodyModel": {
+              "paragraphs": [
+                {
+                  "alignment": 1,
+                  "markups": [
+                    {
+                      "end": 87,
+                      "start": 66,
+                      "type": 2
+                    }
+                  ],
+                  "name": "2c1d",
+                  "text": "The last time I recall having that sort of experience was reading The Lord of the Rings. That would have been somewhere around 1971… I have no idea why I was able to transcend the difficulties I usually have with reading when reading that.",
+                  "type": 6
+                },
+                {
+                  "alignment": 1,
+                  "markups": [
+                  ],
+                  "name": "a3d1",
+                  "text": "I had that experience with Lord of the Rings around 1977, so not long after you did…",
+                  "type": 1
+                }
+              ],
+              "sections": [
+                {
+                  "startIndex": 0
+                }
+              ]
+            },
+            "isFullContent": false
+          },
+          "responseHiddenOnParentPostAt": 0,
+          "sequenceId": "",
+          "seriesLastAppendedAt": 0,
+          "slug": "i-had-that-experience-with-lord-of-the-rings-around-1977-so-not-long-after-you-did",
+          "title": "I had that experience with Lord of the Rings around 1977, so not long after you did.",
+          "translationSourceCreatorId": "",
+          "translationSourcePostId": "",
+          "type": "Post",
+          "uniqueSlug": "i-had-that-experience-with-lord-of-the-rings-around-1977-so-not-long-after-you-did-ab5b8cc41aef",
+          "updatedAt": 1514762036637,
+          "versionId": "4b7c7f763bef",
+          "virtuals": {
+            "allowNotes": true,
+            "imageCount": 0,
+            "isBookmarked": false,
+            "isLockedPreviewOnly": false,
+            "links": {
+              "entries": [
+              ],
+              "generatedAt": 1514762036271,
+              "version": "0.3"
+            },
+            "metaDescription": "",
+            "previewImage": {
+              "backgroundSize": "",
+              "filter": "",
+              "height": 0,
+              "imageId": "",
+              "originalHeight": 0,
+              "originalWidth": 0,
+              "strategy": "resample",
+              "width": 0
+            },
+            "readingList": 0,
+            "readingTime": "1.1924528301886792",
+            "recommends": 0,
+            "responsesCreatedCount": 0,
+            "sectionCount": 1,
+            "socialRecommendsCount": 0,
+            "subtitle": "Camus, Nietzsche, The Tin Drum (it took about 10 months for me to make it 2/3 of the way through before giving up), mountains of Scientific…",
+            "tags": [
+            ],
+            "takeoverId": "",
+            "totalClapCount": 0,
+            "userPostRelation": {
+              "audioProgressSec": 0,
+              "clapCount": 0,
+              "collaboratorAddedAt": 0,
+              "lastReadAt": 0,
+              "lastReadParagraphName": "",
+              "lastReadPercentage": 0,
+              "lastReadSectionName": "",
+              "lastReadVersionId": "",
+              "notesAddedAt": 0,
+              "postId": "ab5b8cc41aef",
+              "presentedCountInResponseManagement": 0,
+              "presentedCountInStream": 2,
+              "queuedAt": 0,
+              "readAt": 0,
+              "readLaterAddedAt": 0,
+              "seriesFirstViewedAt": 0,
+              "seriesLastViewedAt": 0,
+              "seriesUpdateNotifsOptedInAt": 0,
+              "subscribedAt": 0,
+              "userId": "babae01b1fce",
+              "viewedAt": 0,
+              "votedAt": 0
+            },
+            "usersBySocialRecommends": [
+            ],
+            "wordCount": 316
+          },
+          "visibility": 0,
+          "vote": false,
+          "webCanonicalUrl": ""
+        },
+        "aff4ee2a1828": {
+          "acceptedAt": 0,
+          "allowResponses": true,
+          "approvedHomeCollectionId": "",
+          "audioVersionDurationSec": 0,
+          "canonicalUrl": "",
+          "content": {
+            "postDisplay": {
+              "coverless": true
+            }
+          },
+          "coverless": true,
+          "createdAt": 1514596882657,
+          "creatorId": "75790be0be5a",
+          "deletedAt": 0,
+          "detectedLanguage": "en",
+          "displayAuthor": "",
+          "experimentalCss": "",
+          "firstPublishedAt": 1514597448063,
+          "hasUnpublishedEdits": false,
+          "hightowerMinimumGuaranteeEndsAt": 0,
+          "hightowerMinimumGuaranteeStartsAt": 0,
+          "homeCollectionId": "",
+          "id": "aff4ee2a1828",
+          "importedPublishedAt": 0,
+          "importedUrl": "",
+          "inResponseToMediaResourceId": "a48337f40f49af8f1d3bf154afb138ff",
+          "inResponseToPostId": "56f2ac9bc565",
+          "inResponseToRemovedAt": 0,
+          "isApprovedTranslation": false,
+          "isBlockedFromHightower": false,
+          "isEligibleForRevenue": false,
+          "isNsfw": false,
+          "isRequestToPubDisabled": false,
+          "isSeries": false,
+          "isSponsored": false,
+          "isSubscriptionLocked": false,
+          "isTitleSynthesized": true,
+          "latestPublishedAt": 1514597448063,
+          "latestPublishedVersion": "d73d4af8be42",
+          "latestRev": 80,
+          "latestVersion": "d73d4af8be42",
+          "license": 0,
+          "lockedPostSource": 0,
+          "mediumUrl": "",
+          "migrationId": "",
+          "newsletterId": "",
+          "notifyFacebook": false,
+          "notifyFollowers": true,
+          "notifyTwitter": false,
+          "previewContent": {
+            "bodyModel": {
+              "paragraphs": [
+                {
+                  "alignment": 1,
+                  "markups": [
+                  ],
+                  "name": "80b6",
+                  "text": "I too experience that total immersion. As a child it was the norm, but now I get it only with certain writers. Dan Simmons comes to mind, and Margaret Atwood, but even some of their work awakens my inner editor.",
+                  "type": 1
+                }
+              ],
+              "sections": [
+                {
+                  "startIndex": 0
+                }
+              ]
+            },
+            "isFullContent": true
+          },
+          "responseHiddenOnParentPostAt": 0,
+          "sequenceId": "",
+          "seriesLastAppendedAt": 0,
+          "slug": "i-too-experience-that-total-immersion",
+          "title": "I too experience that total immersion.",
+          "translationSourceCreatorId": "",
+          "translationSourcePostId": "",
+          "type": "Post",
+          "uniqueSlug": "i-too-experience-that-total-immersion-aff4ee2a1828",
+          "updatedAt": 1514601144352,
+          "versionId": "d73d4af8be42",
+          "virtuals": {
+            "allowNotes": true,
+            "imageCount": 0,
+            "isBookmarked": false,
+            "isLockedPreviewOnly": false,
+            "links": {
+              "entries": [
+              ],
+              "generatedAt": 1514597448404,
+              "version": "0.3"
+            },
+            "metaDescription": "",
+            "previewImage": {
+              "backgroundSize": "",
+              "filter": "",
+              "height": 0,
+              "imageId": "",
+              "originalHeight": 0,
+              "originalWidth": 0,
+              "strategy": "resample",
+              "width": 0
+            },
+            "readingList": 0,
+            "readingTime": "0.1509433962264151",
+            "recommends": 2,
+            "responsesCreatedCount": 0,
+            "sectionCount": 1,
+            "socialRecommendsCount": 0,
+            "subtitle": "",
+            "tags": [
+            ],
+            "takeoverId": "",
+            "totalClapCount": 8,
+            "usersBySocialRecommends": [
+            ],
+            "wordCount": 40
+          },
+          "visibility": 0,
+          "vote": false,
+          "webCanonicalUrl": ""
+        },
+        "c2a9b309cf7": {
+          "acceptedAt": 0,
+          "allowResponses": true,
+          "approvedHomeCollectionId": "",
+          "audioVersionDurationSec": 0,
+          "canonicalUrl": "",
+          "content": {
+            "postDisplay": {
+              "coverless": true
+            },
+            "subtitle": "This is not a metaphor. Take what follows literally."
+          },
+          "coverless": true,
+          "createdAt": 1514510368858,
+          "creatorId": "5373b75f0c97",
+          "deletedAt": 0,
+          "detectedLanguage": "en",
+          "displayAuthor": "",
+          "experimentalCss": "",
+          "firstPublishedAt": 1514545261933,
+          "hasUnpublishedEdits": false,
+          "hightowerMinimumGuaranteeEndsAt": 0,
+          "hightowerMinimumGuaranteeStartsAt": 0,
+          "homeCollectionId": "",
+          "id": "c2a9b309cf7",
+          "importedPublishedAt": 0,
+          "importedUrl": "",
+          "inResponseToMediaResourceId": "",
+          "inResponseToPostId": "",
+          "inResponseToRemovedAt": 0,
+          "isApprovedTranslation": false,
+          "isBlockedFromHightower": false,
+          "isEligibleForRevenue": true,
+          "isNsfw": false,
+          "isRequestToPubDisabled": false,
+          "isSeries": false,
+          "isSponsored": false,
+          "isSubscriptionLocked": true,
+          "isTitleSynthesized": true,
+          "latestPublishedAt": 1514597092132,
+          "latestPublishedVersion": "34e25dd58dba",
+          "latestRev": 122,
+          "latestVersion": "34e25dd58dba",
+          "license": 0,
+          "lockedPostSource": 1,
+          "mediumUrl": "",
+          "migrationId": "",
+          "newsletterId": "",
+          "notifyFacebook": false,
+          "notifyFollowers": true,
+          "notifyTwitter": false,
+          "previewContent": {
+            "bodyModel": {
+              "paragraphs": [
+                {
+                  "alignment": 1,
+                  "markups": [
+                  ],
+                  "name": "f991",
+                  "text": "My Real Life Superpower",
+                  "type": 3
+                },
+                {
+                  "alignment": 1,
+                  "markups": [
+                  ],
+                  "name": "b333",
+                  "text": "This is not a metaphor. Take what follows literally.",
+                  "type": 13
+                },
+                {
+                  "layout": 10,
+                  "markups": [
+                  ],
+                  "metadata": {
+                    "id": "1*tqi5QzCE3ZaJyxhio3GYaw.jpeg",
+                    "originalHeight": 720,
+                    "originalWidth": 1280
+                  },
+                  "name": "18d7",
+                  "text": "",
+                  "type": 4
+                }
+              ],
+              "sections": [
+                {
+                  "startIndex": 0
+                }
+              ]
+            },
+            "isFullContent": false
+          },
+          "responseHiddenOnParentPostAt": 0,
+          "sequenceId": "",
+          "seriesLastAppendedAt": 0,
+          "slug": "my-real-life-superpower",
+          "title": "My Real Life Superpower",
+          "translationSourceCreatorId": "",
+          "translationSourcePostId": "",
+          "type": "Post",
+          "uniqueSlug": "my-real-life-superpower-c2a9b309cf7",
+          "updatedAt": 1514879463826,
+          "versionId": "34e25dd58dba",
+          "virtuals": {
+            "allowNotes": true,
+            "imageCount": 3,
+            "isBookmarked": false,
+            "isLockedPreviewOnly": false,
+            "links": {
+              "entries": [
+                {
+                  "alts": [
+                  ],
+                  "httpStatus": 200,
+                  "url": "https://en.wikipedia.org/wiki/Carlos_Castaneda"
+                },
+                {
+                  "alts": [
+                  ],
+                  "httpStatus": 200,
+                  "url": "http://www.dictionary.com/browse/immersive"
+                },
+                {
+                  "alts": [
+                  ],
+                  "httpStatus": 200,
+                  "url": "https://study.com/academy/lesson/what-is-reading-definition-process.html"
+                },
+                {
+                  "alts": [
+                    {
+                      "type": 2,
+                      "url": "medium://p/55a895fcbdbb"
+                    },
+                    {
+                      "type": 3,
+                      "url": "medium://p/55a895fcbdbb"
+                    }
+                  ],
+                  "httpStatus": 200,
+                  "url": "https://beyondtherobot.com/the-good-stuff-55a895fcbdbb"
+                }
+              ],
+              "generatedAt": 1514597093113,
+              "version": "0.3"
+            },
+            "metaDescription": "",
+            "previewImage": {
+              "backgroundSize": "",
+              "filter": "",
+              "height": 0,
+              "imageId": "1*tqi5QzCE3ZaJyxhio3GYaw.jpeg",
+              "originalHeight": 720,
+              "originalWidth": 1280,
+              "strategy": "resample",
+              "width": 0
+            },
+            "readingList": 0,
+            "readingTime": "4.546226415094339",
+            "recommends": 142,
+            "responsesCreatedCount": 29,
+            "sectionCount": 6,
+            "socialRecommendsCount": 0,
+            "subtitle": "This is not a metaphor. Take what follows literally.",
+            "tags": [
+              {
+                "metadata": {
+                  "coverImage": {
+                    "id": "1*-djakoQnr4pNRTlE6R92_g.jpeg"
+                  },
+                  "followerCount": 873166,
+                  "postCount": 50329
+                },
+                "name": "Books",
+                "postCount": 50329,
+                "slug": "books",
+                "type": "Tag",
+                "virtuals": {
+                  "isFollowing": false
+                }
+              },
+              {
+                "metadata": {
+                  "coverImage": {
+                    "id": "1*LIJ3LJIqAqvME_Jm1Jw-nQ.jpeg"
+                  },
+                  "followerCount": 781826,
+                  "postCount": 15768
+                },
+                "name": "Reading",
+                "postCount": 15768,
+                "slug": "reading",
+                "type": "Tag",
+                "virtuals": {
+                  "isFollowing": false
+                }
+              },
+              {
+                "metadata": {
+                  "coverImage": {
+                    "id": "1*70mWmxgf52m1YqTcCfRkkQ.jpeg"
+                  },
+                  "followerCount": 1301948,
+                  "postCount": 100058
+                },
+                "name": "Self Improvement",
+                "postCount": 100058,
+                "slug": "self-improvement",
+                "type": "Tag",
+                "virtuals": {
+                  "isFollowing": false
+                }
+              },
+              {
+                "metadata": {
+                  "coverImage": {
+                    "id": "1*EoJ4rrgS6ozaU9Kf1Sg_DA.jpeg",
+                    "originalHeight": 941,
+                    "originalWidth": 1674
+                  },
+                  "followerCount": 15448,
+                  "postCount": 38292
+                },
+                "name": "Personal Development",
+                "postCount": 38292,
+                "slug": "personal-development",
+                "type": "Tag",
+                "virtuals": {
+                  "isFollowing": false
+                }
+              },
+              {
+                "metadata": {
+                  "coverImage": {
+                    "id": "1*l_a4u4eO-owLFDUNT6qYFw.jpeg"
+                  },
+                  "followerCount": 1523092,
+                  "postCount": 44679
+                },
+                "name": "Creativity",
+                "postCount": 44679,
+                "slug": "creativity",
+                "type": "Tag",
+                "virtuals": {
+                  "isFollowing": false
+                }
+              }
+            ],
+            "takeoverId": "",
+            "totalClapCount": 1258,
+            "userPostRelation": {
+              "audioProgressSec": 0,
+              "clapCount": 0,
+              "collaboratorAddedAt": 0,
+              "lastReadAt": 1514882617058,
+              "lastReadParagraphName": "9dfd",
+              "lastReadPercentage": 0.23,
+              "lastReadSectionName": "cbff",
+              "lastReadVersionId": "34e25dd58dba",
+              "notesAddedAt": 0,
+              "postId": "c2a9b309cf7",
+              "presentedCountInResponseManagement": 0,
+              "presentedCountInStream": 16,
+              "queuedAt": 0,
+              "readAt": 1514880221179,
+              "readLaterAddedAt": 0,
+              "seriesFirstViewedAt": 0,
+              "seriesLastViewedAt": 0,
+              "seriesUpdateNotifsOptedInAt": 0,
+              "subscribedAt": 0,
+              "userId": "babae01b1fce",
+              "viewedAt": 1514879629213,
+              "votedAt": 0
+            },
+            "usersBySocialRecommends": [
+            ],
+            "wordCount": 1059
+          },
+          "visibility": 2,
+          "vote": false,
+          "webCanonicalUrl": ""
+        },
+        "c58e97a2197e": {
+          "acceptedAt": 0,
+          "allowResponses": true,
+          "approvedHomeCollectionId": "",
+          "audioVersionDurationSec": 0,
+          "canonicalUrl": "",
+          "content": {
+            "postDisplay": {
+              "coverless": true
+            }
+          },
+          "coverless": true,
+          "createdAt": 1514644763538,
+          "creatorId": "4aae9d0b37b2",
+          "deletedAt": 0,
+          "detectedLanguage": "en",
+          "displayAuthor": "",
+          "experimentalCss": "",
+          "firstPublishedAt": 1514644905660,
+          "hasUnpublishedEdits": false,
+          "hightowerMinimumGuaranteeEndsAt": 0,
+          "hightowerMinimumGuaranteeStartsAt": 0,
+          "homeCollectionId": "",
+          "id": "c58e97a2197e",
+          "importedPublishedAt": 0,
+          "importedUrl": "",
+          "inResponseToMediaResourceId": "cba1a87406e331de2c73163e027e4560",
+          "inResponseToPostId": "c2a9b309cf7",
+          "inResponseToRemovedAt": 0,
+          "isApprovedTranslation": false,
+          "isBlockedFromHightower": false,
+          "isEligibleForRevenue": false,
+          "isNsfw": false,
+          "isRequestToPubDisabled": false,
+          "isSeries": false,
+          "isSponsored": false,
+          "isSubscriptionLocked": false,
+          "isTitleSynthesized": true,
+          "latestPublishedAt": 1514644905660,
+          "latestPublishedVersion": "4feb12477629",
+          "latestRev": 34,
+          "latestVersion": "4feb12477629",
+          "license": 0,
+          "lockedPostSource": 0,
+          "mediumUrl": "",
+          "migrationId": "",
+          "newsletterId": "",
+          "notifyFacebook": false,
+          "notifyFollowers": true,
+          "notifyTwitter": false,
+          "previewContent": {
+            "bodyModel": {
+              "paragraphs": [
+                {
+                  "alignment": 1,
+                  "markups": [
+                  ],
+                  "name": "4eb7",
+                  "text": "Thanks for this article! You describe exactly what it was like for me to read fantasy and sci-fi when I was younger. My most vivid memories of books I’ve read are not words or sentences, they are scenes in 3D that move and have as much life as any 3D video-game.",
+                  "type": 1
+                }
+              ],
+              "sections": [
+                {
+                  "startIndex": 0
+                }
+              ]
+            },
+            "isFullContent": true
+          },
+          "responseHiddenOnParentPostAt": 0,
+          "sequenceId": "",
+          "seriesLastAppendedAt": 0,
+          "slug": "thanks-for-this-article",
+          "title": "Thanks for this article!",
+          "translationSourceCreatorId": "",
+          "translationSourcePostId": "",
+          "type": "Post",
+          "uniqueSlug": "thanks-for-this-article-c58e97a2197e",
+          "updatedAt": 1514652071884,
+          "versionId": "4feb12477629",
+          "virtuals": {
+            "allowNotes": true,
+            "imageCount": 0,
+            "isBookmarked": false,
+            "isLockedPreviewOnly": false,
+            "links": {
+              "entries": [
+              ],
+              "generatedAt": 1514644906074,
+              "version": "0.3"
+            },
+            "metaDescription": "",
+            "previewImage": {
+              "backgroundSize": "",
+              "filter": "",
+              "height": 0,
+              "imageId": "",
+              "originalHeight": 0,
+              "originalWidth": 0,
+              "strategy": "resample",
+              "width": 0
+            },
+            "readingList": 0,
+            "readingTime": 0.2,
+            "recommends": 1,
+            "responsesCreatedCount": 0,
+            "sectionCount": 1,
+            "socialRecommendsCount": 0,
+            "subtitle": "",
+            "tags": [
+            ],
+            "takeoverId": "",
+            "totalClapCount": 5,
+            "userPostRelation": {
+              "audioProgressSec": 0,
+              "clapCount": 0,
+              "collaboratorAddedAt": 0,
+              "lastReadAt": 0,
+              "lastReadParagraphName": "",
+              "lastReadPercentage": 0,
+              "lastReadSectionName": "",
+              "lastReadVersionId": "",
+              "notesAddedAt": 0,
+              "postId": "c58e97a2197e",
+              "presentedCountInResponseManagement": 0,
+              "presentedCountInStream": 1,
+              "queuedAt": 0,
+              "readAt": 0,
+              "readLaterAddedAt": 0,
+              "seriesFirstViewedAt": 0,
+              "seriesLastViewedAt": 0,
+              "seriesUpdateNotifsOptedInAt": 0,
+              "subscribedAt": 0,
+              "userId": "babae01b1fce",
+              "viewedAt": 1514814888922,
+              "votedAt": 0
+            },
+            "usersBySocialRecommends": [
+            ],
+            "wordCount": 53
+          },
+          "visibility": 0,
+          "vote": false,
+          "webCanonicalUrl": ""
+        },
+        "ca686d5d9b": {
+          "acceptedAt": 0,
+          "allowResponses": true,
+          "approvedHomeCollectionId": "",
+          "audioVersionDurationSec": 0,
+          "canonicalUrl": "",
+          "content": {
+            "postDisplay": {
+              "coverless": true
+            }
+          },
+          "coverless": true,
+          "createdAt": 1514670899885,
+          "creatorId": "5373b75f0c97",
+          "deletedAt": 0,
+          "detectedLanguage": "en",
+          "displayAuthor": "",
+          "experimentalCss": "",
+          "firstPublishedAt": 1514670931370,
+          "hasUnpublishedEdits": false,
+          "hightowerMinimumGuaranteeEndsAt": 0,
+          "hightowerMinimumGuaranteeStartsAt": 0,
+          "homeCollectionId": "",
+          "id": "ca686d5d9b",
+          "importedPublishedAt": 0,
+          "importedUrl": "",
+          "inResponseToMediaResourceId": "5fbf71e994980741e547d7f723df099a",
+          "inResponseToPostId": "e94d80013c02",
+          "inResponseToRemovedAt": 0,
+          "isApprovedTranslation": false,
+          "isBlockedFromHightower": false,
+          "isEligibleForRevenue": false,
+          "isNsfw": false,
+          "isRequestToPubDisabled": false,
+          "isSeries": false,
+          "isSponsored": false,
+          "isSubscriptionLocked": false,
+          "isTitleSynthesized": true,
+          "latestPublishedAt": 1514670931370,
+          "latestPublishedVersion": "4347ff5332e2",
+          "latestRev": 14,
+          "latestVersion": "4347ff5332e2",
+          "license": 0,
+          "lockedPostSource": 0,
+          "mediumUrl": "",
+          "migrationId": "",
+          "newsletterId": "",
+          "notifyFacebook": false,
+          "notifyFollowers": true,
+          "notifyTwitter": false,
+          "previewContent": {
+            "bodyModel": {
+              "paragraphs": [
+                {
+                  "alignment": 1,
+                  "markups": [
+                  ],
+                  "name": "6490",
+                  "text": "“My Big ToE” book from Thomas Campbell.",
+                  "type": 6
+                },
+                {
+                  "alignment": 1,
+                  "markups": [
+                  ],
+                  "name": "3cfd",
+                  "text": "I am downloading it as we speak. Looks interesting. Thanks!",
+                  "type": 1
+                }
+              ],
+              "sections": [
+                {
+                  "startIndex": 0
+                }
+              ]
+            },
+            "isFullContent": true
+          },
+          "responseHiddenOnParentPostAt": 0,
+          "sequenceId": "",
+          "seriesLastAppendedAt": 0,
+          "slug": "i-am-downloading-it-as-we-speak-looks-interesting-thanks",
+          "title": "I am downloading it as we speak. Looks interesting. Thanks!",
+          "translationSourceCreatorId": "",
+          "translationSourcePostId": "",
+          "type": "Post",
+          "uniqueSlug": "i-am-downloading-it-as-we-speak-looks-interesting-thanks-ca686d5d9b",
+          "updatedAt": 1514670932430,
+          "versionId": "4347ff5332e2",
+          "virtuals": {
+            "allowNotes": true,
+            "imageCount": 0,
+            "isBookmarked": false,
+            "isLockedPreviewOnly": false,
+            "links": {
+              "entries": [
+              ],
+              "generatedAt": 1514670931913,
+              "version": "0.3"
+            },
+            "metaDescription": "",
+            "previewImage": {
+              "backgroundSize": "",
+              "filter": "",
+              "height": 0,
+              "imageId": "",
+              "originalHeight": 0,
+              "originalWidth": 0,
+              "strategy": "resample",
+              "width": 0
+            },
+            "readingList": 0,
+            "readingTime": "0.06415094339622641",
+            "recommends": 0,
+            "responsesCreatedCount": 0,
+            "sectionCount": 1,
+            "socialRecommendsCount": 0,
+            "subtitle": "",
+            "tags": [
+            ],
+            "takeoverId": "",
+            "totalClapCount": 0,
+            "userPostRelation": {
+              "audioProgressSec": 0,
+              "clapCount": 0,
+              "collaboratorAddedAt": 0,
+              "lastReadAt": 0,
+              "lastReadParagraphName": "",
+              "lastReadPercentage": 0,
+              "lastReadSectionName": "",
+              "lastReadVersionId": "",
+              "notesAddedAt": 0,
+              "postId": "ca686d5d9b",
+              "presentedCountInResponseManagement": 0,
+              "presentedCountInStream": 1,
+              "queuedAt": 0,
+              "readAt": 1514814888919,
+              "readLaterAddedAt": 0,
+              "seriesFirstViewedAt": 0,
+              "seriesLastViewedAt": 0,
+              "seriesUpdateNotifsOptedInAt": 0,
+              "subscribedAt": 0,
+              "userId": "babae01b1fce",
+              "viewedAt": 1514814888918,
+              "votedAt": 0
+            },
+            "usersBySocialRecommends": [
+            ],
+            "wordCount": 17
+          },
+          "visibility": 0,
+          "vote": false,
+          "webCanonicalUrl": ""
+        },
+        "e94d80013c02": {
+          "acceptedAt": 0,
+          "allowResponses": true,
+          "approvedHomeCollectionId": "",
+          "audioVersionDurationSec": 0,
+          "canonicalUrl": "",
+          "content": {
+            "postDisplay": {
+              "coverless": true
+            }
+          },
+          "coverless": true,
+          "createdAt": 1514670130499,
+          "creatorId": "73f2901d9ac7",
+          "deletedAt": 0,
+          "detectedLanguage": "en",
+          "displayAuthor": "",
+          "experimentalCss": "",
+          "firstPublishedAt": 1514670163438,
+          "hasUnpublishedEdits": false,
+          "hightowerMinimumGuaranteeEndsAt": 0,
+          "hightowerMinimumGuaranteeStartsAt": 0,
+          "homeCollectionId": "",
+          "id": "e94d80013c02",
+          "importedPublishedAt": 0,
+          "importedUrl": "",
+          "inResponseToMediaResourceId": "cba1a87406e331de2c73163e027e4560",
+          "inResponseToPostId": "c2a9b309cf7",
+          "inResponseToRemovedAt": 0,
+          "isApprovedTranslation": false,
+          "isBlockedFromHightower": false,
+          "isEligibleForRevenue": false,
+          "isNsfw": false,
+          "isRequestToPubDisabled": false,
+          "isSeries": false,
+          "isSponsored": false,
+          "isSubscriptionLocked": false,
+          "isTitleSynthesized": true,
+          "latestPublishedAt": 1514670163438,
+          "latestPublishedVersion": "881a702f6cb9",
+          "latestRev": 7,
+          "latestVersion": "881a702f6cb9",
+          "license": 0,
+          "lockedPostSource": 0,
+          "mediumUrl": "",
+          "migrationId": "",
+          "newsletterId": "",
+          "notifyFacebook": false,
+          "notifyFollowers": true,
+          "notifyTwitter": false,
+          "previewContent": {
+            "bodyModel": {
+              "paragraphs": [
+                {
+                  "alignment": 1,
+                  "markups": [
+                  ],
+                  "name": "9c91",
+                  "text": "Also, if you want to learn more about this power, I highly recommend checking out “My Big ToE\" book from Thomas Campbell.",
+                  "type": 1
+                }
+              ],
+              "sections": [
+                {
+                  "startIndex": 0
+                }
+              ]
+            },
+            "isFullContent": true
+          },
+          "responseHiddenOnParentPostAt": 0,
+          "sequenceId": "",
+          "seriesLastAppendedAt": 0,
+          "slug": "also-if-you-want-to-learn-more-about-this-power-i-highly-recommend-checking-out-my-big-toe-book",
+          "title": "Also, if you want to learn more about this power, I highly recommend checking out “My Big ToE\" book…",
+          "translationSourceCreatorId": "",
+          "translationSourcePostId": "",
+          "type": "Post",
+          "uniqueSlug": "also-if-you-want-to-learn-more-about-this-power-i-highly-recommend-checking-out-my-big-toe-book-e94d80013c02",
+          "updatedAt": 1514670883803,
+          "versionId": "881a702f6cb9",
+          "virtuals": {
+            "allowNotes": true,
+            "imageCount": 0,
+            "isBookmarked": false,
+            "isLockedPreviewOnly": false,
+            "links": {
+              "entries": [
+              ],
+              "generatedAt": 1514670163770,
+              "version": "0.3"
+            },
+            "metaDescription": "",
+            "previewImage": {
+              "backgroundSize": "",
+              "filter": "",
+              "height": 0,
+              "imageId": "",
+              "originalHeight": 0,
+              "originalWidth": 0,
+              "strategy": "resample",
+              "width": 0
+            },
+            "readingList": 0,
+            "readingTime": "0.0830188679245283",
+            "recommends": 1,
+            "responsesCreatedCount": 1,
+            "sectionCount": 1,
+            "socialRecommendsCount": 0,
+            "subtitle": "",
+            "tags": [
+            ],
+            "takeoverId": "",
+            "totalClapCount": 5,
+            "userPostRelation": {
+              "audioProgressSec": 0,
+              "clapCount": 0,
+              "collaboratorAddedAt": 0,
+              "lastReadAt": 0,
+              "lastReadParagraphName": "",
+              "lastReadPercentage": 0,
+              "lastReadSectionName": "",
+              "lastReadVersionId": "",
+              "notesAddedAt": 0,
+              "postId": "e94d80013c02",
+              "presentedCountInResponseManagement": 0,
+              "presentedCountInStream": 1,
+              "queuedAt": 0,
+              "readAt": 1514814888915,
+              "readLaterAddedAt": 0,
+              "seriesFirstViewedAt": 0,
+              "seriesLastViewedAt": 0,
+              "seriesUpdateNotifsOptedInAt": 0,
+              "subscribedAt": 0,
+              "userId": "babae01b1fce",
+              "viewedAt": 1514814888914,
+              "votedAt": 0
+            },
+            "usersBySocialRecommends": [
+            ],
+            "wordCount": 22
+          },
+          "visibility": 0,
+          "vote": false,
+          "webCanonicalUrl": ""
+        },
+        "eabef6f8facd": {
+          "acceptedAt": 0,
+          "allowResponses": true,
+          "approvedHomeCollectionId": "",
+          "audioVersionDurationSec": 0,
+          "canonicalUrl": "",
+          "content": {
+            "postDisplay": {
+              "coverless": true
+            }
+          },
+          "coverless": true,
+          "createdAt": 1514737580630,
+          "creatorId": "5373b75f0c97",
+          "deletedAt": 0,
+          "detectedLanguage": "en",
+          "displayAuthor": "",
+          "experimentalCss": "",
+          "firstPublishedAt": 1514737692681,
+          "hasUnpublishedEdits": false,
+          "hightowerMinimumGuaranteeEndsAt": 0,
+          "hightowerMinimumGuaranteeStartsAt": 0,
+          "homeCollectionId": "",
+          "id": "eabef6f8facd",
+          "importedPublishedAt": 0,
+          "importedUrl": "",
+          "inResponseToMediaResourceId": "020f4f4bc0858932dd0799e4b6aff13c",
+          "inResponseToPostId": "54fc7e30625c",
+          "inResponseToRemovedAt": 0,
+          "isApprovedTranslation": false,
+          "isBlockedFromHightower": false,
+          "isEligibleForRevenue": false,
+          "isNsfw": false,
+          "isRequestToPubDisabled": false,
+          "isSeries": false,
+          "isSponsored": false,
+          "isSubscriptionLocked": false,
+          "isTitleSynthesized": true,
+          "latestPublishedAt": 1514737692681,
+          "latestPublishedVersion": "2238763b84ef",
+          "latestRev": 23,
+          "latestVersion": "2238763b84ef",
+          "license": 0,
+          "lockedPostSource": 0,
+          "mediumUrl": "",
+          "migrationId": "",
+          "newsletterId": "",
+          "notifyFacebook": false,
+          "notifyFollowers": true,
+          "notifyTwitter": false,
+          "previewContent": {
+            "bodyModel": {
+              "paragraphs": [
+                {
+                  "alignment": 1,
+                  "markups": [
+                  ],
+                  "name": "22c1",
+                  "text": "SUPER. USEFUL. INFORMATION. Thank you, Andy! I have been on the wait list for months to check out “The Power of Habit” from my local library, but now I’m just going to go to Amazon and buy it. Thank you for this!",
+                  "type": 1
+                }
+              ],
+              "sections": [
+                {
+                  "startIndex": 0
+                }
+              ]
+            },
+            "isFullContent": true
+          },
+          "responseHiddenOnParentPostAt": 0,
+          "sequenceId": "",
+          "seriesLastAppendedAt": 0,
+          "slug": "super-useful",
+          "title": "SUPER. USEFUL.",
+          "translationSourceCreatorId": "",
+          "translationSourcePostId": "",
+          "type": "Post",
+          "uniqueSlug": "super-useful-eabef6f8facd",
+          "updatedAt": 1514768927248,
+          "versionId": "2238763b84ef",
+          "virtuals": {
+            "allowNotes": true,
+            "imageCount": 0,
+            "isBookmarked": false,
+            "isLockedPreviewOnly": false,
+            "links": {
+              "entries": [
+              ],
+              "generatedAt": 1514737693692,
+              "version": "0.3"
+            },
+            "metaDescription": "",
+            "previewImage": {
+              "backgroundSize": "",
+              "filter": "",
+              "height": 0,
+              "imageId": "",
+              "originalHeight": 0,
+              "originalWidth": 0,
+              "strategy": "resample",
+              "width": 0
+            },
+            "readingList": 0,
+            "readingTime": "0.15849056603773584",
+            "recommends": 1,
+            "responsesCreatedCount": 0,
+            "sectionCount": 1,
+            "socialRecommendsCount": 0,
+            "subtitle": "",
+            "tags": [
+            ],
+            "takeoverId": "",
+            "totalClapCount": 1,
+            "userPostRelation": {
+              "audioProgressSec": 0,
+              "clapCount": 0,
+              "collaboratorAddedAt": 0,
+              "lastReadAt": 0,
+              "lastReadParagraphName": "",
+              "lastReadPercentage": 0,
+              "lastReadSectionName": "",
+              "lastReadVersionId": "",
+              "notesAddedAt": 0,
+              "postId": "eabef6f8facd",
+              "presentedCountInResponseManagement": 0,
+              "presentedCountInStream": 1,
+              "queuedAt": 0,
+              "readAt": 1514814888910,
+              "readLaterAddedAt": 0,
+              "seriesFirstViewedAt": 0,
+              "seriesLastViewedAt": 0,
+              "seriesUpdateNotifsOptedInAt": 0,
+              "subscribedAt": 0,
+              "userId": "babae01b1fce",
+              "viewedAt": 1514814888909,
+              "votedAt": 0
+            },
+            "usersBySocialRecommends": [
+            ],
+            "wordCount": 42
+          },
+          "visibility": 0,
+          "vote": false,
+          "webCanonicalUrl": ""
+        },
+        "f65aae88988f": {
+          "acceptedAt": 0,
+          "allowResponses": true,
+          "approvedHomeCollectionId": "",
+          "audioVersionDurationSec": 0,
+          "canonicalUrl": "",
+          "content": {
+            "postDisplay": {
+              "coverless": true
+            },
+            "subtitle": "Every time you ‘render’ a new piece of information,you contribute to your edification, like minuscule Legos creating a robust stronghold."
+          },
+          "coverless": true,
+          "createdAt": 1514836998111,
+          "creatorId": "f5fbbe24fe8b",
+          "deletedAt": 0,
+          "detectedLanguage": "en",
+          "displayAuthor": "",
+          "experimentalCss": "",
+          "firstPublishedAt": 1514837471264,
+          "hasUnpublishedEdits": false,
+          "hightowerMinimumGuaranteeEndsAt": 0,
+          "hightowerMinimumGuaranteeStartsAt": 0,
+          "homeCollectionId": "",
+          "id": "f65aae88988f",
+          "importedPublishedAt": 0,
+          "importedUrl": "",
+          "inResponseToMediaResourceId": "cba1a87406e331de2c73163e027e4560",
+          "inResponseToPostId": "c2a9b309cf7",
+          "inResponseToRemovedAt": 0,
+          "isApprovedTranslation": false,
+          "isBlockedFromHightower": false,
+          "isEligibleForRevenue": false,
+          "isNsfw": false,
+          "isRequestToPubDisabled": false,
+          "isSeries": false,
+          "isSponsored": false,
+          "isSubscriptionLocked": false,
+          "isTitleSynthesized": true,
+          "latestPublishedAt": 1514837471264,
+          "latestPublishedVersion": "f9c67df3dfc5",
+          "latestRev": 47,
+          "latestVersion": "f9c67df3dfc5",
+          "license": 0,
+          "lockedPostSource": 0,
+          "mediumUrl": "",
+          "migrationId": "",
+          "newsletterId": "",
+          "notifyFacebook": false,
+          "notifyFollowers": true,
+          "notifyTwitter": false,
+          "previewContent": {
+            "bodyModel": {
+              "paragraphs": [
+                {
+                  "alignment": 1,
+                  "markups": [
+                  ],
+                  "name": "5ef5",
+                  "text": "Working on 3-d visualization is like a muscle. You start small, colors, sound, humanoid shapes, emotions. Then you work your way up, textures, shade(in books you usually have omnipresent vision it is difficult to forget about the elephant in the scene after you read about it), heat, pain.",
+                  "type": 1
+                }
+              ],
+              "sections": [
+                {
+                  "startIndex": 0
+                }
+              ]
+            },
+            "isFullContent": false
+          },
+          "responseHiddenOnParentPostAt": 0,
+          "sequenceId": "",
+          "seriesLastAppendedAt": 0,
+          "slug": "working-on-3-d-visualization-is-like-a-muscle",
+          "title": "Working on 3-d visualization is like a muscle.",
+          "translationSourceCreatorId": "",
+          "translationSourcePostId": "",
+          "type": "Post",
+          "uniqueSlug": "working-on-3-d-visualization-is-like-a-muscle-f65aae88988f",
+          "updatedAt": 1514851147348,
+          "versionId": "f9c67df3dfc5",
+          "virtuals": {
+            "allowNotes": true,
+            "imageCount": 0,
+            "isBookmarked": false,
+            "isLockedPreviewOnly": false,
+            "links": {
+              "entries": [
+              ],
+              "generatedAt": 1514837471877,
+              "version": "0.3"
+            },
+            "metaDescription": "",
+            "previewImage": {
+              "backgroundSize": "",
+              "filter": "",
+              "height": 0,
+              "imageId": "",
+              "originalHeight": 0,
+              "originalWidth": 0,
+              "strategy": "resample",
+              "width": 0
+            },
+            "readingList": 0,
+            "readingTime": "0.4075471698113208",
+            "recommends": 1,
+            "responsesCreatedCount": 0,
+            "sectionCount": 1,
+            "socialRecommendsCount": 0,
+            "subtitle": "Every time you ‘render’ a new piece of information,you contribute to your edification, like minuscule Legos creating a robust stronghold.",
+            "tags": [
+              {
+                "metadata": {
+                  "coverImage": {
+                    "id": "1*0sJtn9WT-yfCMX8S8LyYVg.jpeg"
+                  },
+                  "followerCount": 1063856,
+                  "postCount": 204895
+                },
+                "name": "Life",
+                "postCount": 204895,
+                "slug": "life",
+                "type": "Tag",
+                "virtuals": {
+                  "isFollowing": false
+                }
+              },
+              {
+                "metadata": {
+                  "coverImage": {
+                    "id": "1*LIJ3LJIqAqvME_Jm1Jw-nQ.jpeg"
+                  },
+                  "followerCount": 781826,
+                  "postCount": 15768
+                },
+                "name": "Reading",
+                "postCount": 15768,
+                "slug": "reading",
+                "type": "Tag",
+                "virtuals": {
+                  "isFollowing": false
+                }
+              },
+              {
+                "metadata": {
+                  "coverImage": {
+                    "id": "1*-djakoQnr4pNRTlE6R92_g.jpeg"
+                  },
+                  "followerCount": 873166,
+                  "postCount": 50329
+                },
+                "name": "Books",
+                "postCount": 50329,
+                "slug": "books",
+                "type": "Tag",
+                "virtuals": {
+                  "isFollowing": false
+                }
+              }
+            ],
+            "takeoverId": "",
+            "totalClapCount": 5,
+            "usersBySocialRecommends": [
+            ],
+            "wordCount": 108
+          },
+          "visibility": 0,
+          "vote": false,
+          "webCanonicalUrl": ""
+        }
+      },
+      "Quote": {
+        "37e2f79d228a": {
+          "createdAt": 1514611441243,
+          "endOffset": 472,
+          "paragraphs": [
+            {
+              "alignment": 1,
+              "dataId": "",
+              "hasDropCap": false,
+              "href": "",
+              "layout": 1,
+              "markups": [
+              ],
+              "name": "9dfd",
+              "purpose": 1,
+              "text": "Should someone call my name or tap me on the shoulder, I would immediately snap back to normal awareness and respond appropriately. So, if I was reading in the throes of some kind of kid self-hypnosis, it was a light trance that was easily broken — but it was also one that was easily reestablished. Once the distraction was dealt with, I could reliably, every time, return to my book and within a paragraph or two be right back in that state of total cinematic immersion.",
+              "translationStatus": 1,
+              "type": 1
+            }
+          ],
+          "postId": "c2a9b309cf7",
+          "quoteId": "37e2f79d228a",
+          "quoteType": 1,
+          "removedAt": 0,
+          "startOffset": 300,
+          "type": "Quote",
+          "userId": "4b39545b31b5"
+        },
+        "b2d5f362dc2f": {
+          "createdAt": 1514549291565,
+          "endOffset": 315,
+          "paragraphs": [
+            {
+              "markups": [
+              ],
+              "name": "d803",
+              "text": "I want my superpower back! I’m setting a goal this year to research “reading and the brain,” and if possible, to regain the ability to experience fiction with full 3-D cinematic immersion. If I figure it out, I promise I’ll share the secret here on Medium. We can all be superheroes and traverse the stars together.",
+              "type": 1
+            }
+          ],
+          "postId": "c2a9b309cf7",
+          "quoteId": "b2d5f362dc2f",
+          "quoteType": 1,
+          "removedAt": 0,
+          "startOffset": 0,
+          "type": "Quote",
+          "userId": "4f99c49ff347"
+        },
+        "bc627093da9f": {
+          "createdAt": 1514596881563,
+          "endOffset": 701,
+          "paragraphs": [
+            {
+              "dataId": "",
+              "hasDropCap": false,
+              "href": "",
+              "markups": [
+              ],
+              "name": "bdbe",
+              "text": "OK, there’s a clue in that. While I haven’t experienced the full self-vanishing described here since my late teens, I do recognize different levels of ordinary immersion when reading, depending on the writer. I have developed a special affection for Alice Hoffman for exactly this reason. There is something about the way she writes that practically animates the reader’s brain for them. Her prose is written like poetry, and maybe that is a key. My favorite writer since I discovered him in the 5th grade is Ray Bradbury, I think for this very same reason. There’s more than just a good story being told. The language itself is like an incantation. If you know of more writers like that, let me know! Thanks A!",
+              "type": 1
+            }
+          ],
+          "postId": "56f2ac9bc565",
+          "quoteId": "bc627093da9f",
+          "quoteType": 1,
+          "removedAt": 0,
+          "startOffset": 650,
+          "type": "Quote",
+          "userId": "75790be0be5a"
+        },
+        "d4a698739fe7": {
+          "createdAt": 1514670213231,
+          "endOffset": 381,
+          "paragraphs": [
+            {
+              "markups": [
+              ],
+              "name": "c152",
+              "text": "That is so interesting, Lochlan. Maybe there is some real connection between the meanings we try to communicate to one another through fiction, and the meaning whispered to us by the unconscious mind in sleeping dreams. Connection as in via the same mechanism in consciousness. How much meaning, on how many levels, do our brains perceive all the time? And us mostly unaware of it? My sense from studying dreams/dream interpretation is that the “tantalising just beyond reach” feeling on waking means we really have perceived an important meaning, we just can’t quite remember it. Which means its in there, in our minds, effecting us even if we never grasp it consciously. What power gripping fiction can/must have on us, too. Deep stuff. I have to give this some real thought! Thanks, Lochlan!",
+              "type": 1
+            }
+          ],
+          "postId": "4d8560bebea6",
+          "quoteId": "d4a698739fe7",
+          "quoteType": 1,
+          "removedAt": 0,
+          "startOffset": 278,
+          "type": "Quote",
+          "userId": "d5e694e73eca"
+        },
+        "f094050fcc45": {
+          "createdAt": 1514654644693,
+          "endOffset": 844,
+          "paragraphs": [
+            {
+              "alignment": 1,
+              "dataId": "",
+              "hasDropCap": false,
+              "href": "",
+              "layout": 1,
+              "markups": [
+                {
+                  "anchorType": 2,
+                  "creatorIds": [
+                  ],
+                  "end": 844,
+                  "href": "",
+                  "name": "",
+                  "rel": "",
+                  "start": 838,
+                  "title": "",
+                  "type": 3,
+                  "userId": "4b39545b31b5"
+                },
+                {
+                  "anchorType": 0,
+                  "creatorIds": [
+                  ],
+                  "end": 283,
+                  "href": "",
+                  "name": "",
+                  "rel": "",
+                  "start": 274,
+                  "title": "",
+                  "type": 2,
+                  "userId": ""
+                },
+                {
+                  "anchorType": 0,
+                  "creatorIds": [
+                  ],
+                  "end": 336,
+                  "href": "",
+                  "name": "",
+                  "rel": "",
+                  "start": 329,
+                  "title": "",
+                  "type": 2,
+                  "userId": ""
+                },
+                {
+                  "anchorType": 0,
+                  "creatorIds": [
+                  ],
+                  "end": 455,
+                  "href": "",
+                  "name": "",
+                  "rel": "",
+                  "start": 444,
+                  "title": "",
+                  "type": 2,
+                  "userId": ""
+                },
+                {
+                  "anchorType": 0,
+                  "creatorIds": [
+                  ],
+                  "end": 503,
+                  "href": "",
+                  "name": "",
+                  "rel": "",
+                  "start": 498,
+                  "title": "",
+                  "type": 2,
+                  "userId": ""
+                }
+              ],
+              "name": "6aa1",
+              "purpose": 1,
+              "text": "This seems to have really jumped out as a theme in the responses to this essay, and it’s one I never seriously considered before posting it. I’m learning a lot from everyone sharing their experience. I’m starting to think that when the powers that be go on and on about the benefits of a college education, they need to list the hazards, too. This is a big one. “Learning how to learn” from written texts, and even learning how to academically appreciate literary writing, can steal our ability to enjoy reading, to read from a non-academic POV. That’s a mighty theft, there. My thought is that there has to be a way to do both. Academia presents it as an either/or, a trade one has to make in order to succeed in adult fields. I’m hoping that’s BS, an artifact of the way college is taught, not something inherent in our brains. Thanks, Pauls!",
+              "translationStatus": 1,
+              "type": 1
+            }
+          ],
+          "postId": "85f9303e0dd8",
+          "quoteId": "f094050fcc45",
+          "quoteType": 1,
+          "removedAt": 0,
+          "startOffset": 200,
+          "type": "Quote",
+          "userId": "4b39545b31b5"
+        }
+      },
+      "User": {
+        "254b89ded3d4": {
+          "allowNotes": 1,
+          "backgroundImageId": "",
+          "bio": "On the internet they can’t tell that you’re actually a dog…",
+          "createdAt": 1479257408101,
+          "facebookAccountId": "",
+          "imageId": "1*Hd80TfYofKFXrp0yxIH_fQ.jpeg",
+          "isNsfw": false,
+          "lastPostCreatedAt": 1514754389604,
+          "mediumMemberAt": 1490759225000,
+          "name": "Mal",
+          "twitterScreenName": "",
+          "type": "User",
+          "userId": "254b89ded3d4",
+          "username": "MalamuteMan"
+        },
+        "42b01e7ae497": {
+          "allowNotes": 1,
+          "backgroundImageId": "",
+          "bio": "Writers can only write their hearts and no two hearts are the same.",
+          "createdAt": 1507078250457,
+          "facebookAccountId": "",
+          "imageId": "1*36dhyUdUv1zKt5nWOogThg.jpeg",
+          "isNsfw": false,
+          "lastPostCreatedAt": 1514833383872,
+          "mediumMemberAt": 1510162901000,
+          "name": "A Maguire",
+          "twitterScreenName": "",
+          "type": "User",
+          "userId": "42b01e7ae497",
+          "username": "skysong"
+        },
+        "4aae9d0b37b2": {
+          "allowNotes": 1,
+          "backgroundImageId": "",
+          "bio": "",
+          "createdAt": 1509564575828,
+          "facebookAccountId": "",
+          "imageId": "0*vmNimxechZwLgrWd.",
+          "isNsfw": false,
+          "lastPostCreatedAt": 1514644763538,
+          "mediumMemberAt": 1509565375000,
+          "name": "Dean McGrath",
+          "twitterScreenName": "",
+          "type": "User",
+          "userId": "4aae9d0b37b2",
+          "username": "dean.mcgrath"
+        },
+        "4b39545b31b5": {
+          "allowNotes": 1,
+          "backgroundImageId": "",
+          "bio": "Lover of family, words, humor & authentic living Experiential Therapist & Equine Assisted Coach…",
+          "createdAt": 1454076081303,
+          "facebookAccountId": "",
+          "imageId": "1*6Ph8sXSjJqwkK12AbfAoXw.jpeg",
+          "isNsfw": false,
+          "lastPostCreatedAt": 1514677369921,
+          "mediumMemberAt": 1490279524000,
+          "name": "Pauls Markle",
+          "twitterScreenName": "_paulsmarkle",
+          "type": "User",
+          "userId": "4b39545b31b5",
+          "username": "paul_markle"
+        },
+        "4f99c49ff347": {
+          "allowNotes": 1,
+          "backgroundImageId": "",
+          "bio": "It ain't what you think. Former newsman, car salesman, teacher. Everything is Thou, if you so allow it. You can find some of it at https://youtu.be/5iWo8nEvkpo",
+          "createdAt": 1448794329017,
+          "facebookAccountId": "389904658105264",
+          "imageId": "0*YDn6BwUC9l6q1zwZ.jpeg",
+          "isNsfw": false,
+          "lastPostCreatedAt": 1514844622426,
+          "mediumMemberAt": 1490223500000,
+          "name": "Jeffrey Field",
+          "twitterScreenName": "FarkleUp",
+          "type": "User",
+          "userId": "4f99c49ff347",
+          "username": "FarkleUp"
+        },
+        "5373b75f0c97": {
+          "allowNotes": 1,
+          "backgroundImageId": "",
+          "bio": "SciFi scribbler. Poet philosopher. Slouching towards humanity @ http://beyondtherobot.com",
+          "createdAt": 1470699036232,
+          "facebookAccountId": "110045089786322",
+          "imageId": "1*_EZH0BA1IH_ajjhciQuONg.jpeg",
+          "isNsfw": false,
+          "lastPostCreatedAt": 1514853193777,
+          "mediumMemberAt": 1490227446000,
+          "name": "Jack Preston King",
+          "twitterScreenName": "BeyondtheRobot",
+          "type": "User",
+          "userId": "5373b75f0c97",
+          "username": "beyondtherobot"
+        },
+        "66fabfd76504": {
+          "allowNotes": 1,
+          "backgroundImageId": "",
+          "bio": "",
+          "createdAt": 1445357238167,
+          "facebookAccountId": "",
+          "imageId": "0*XIQFA0co1QAzDhuG.jpg",
+          "isNsfw": false,
+          "lastPostCreatedAt": 1514669548330,
+          "mediumMemberAt": 1509982719000,
+          "name": "Gordon Foreman",
+          "twitterScreenName": "",
+          "type": "User",
+          "userId": "66fabfd76504",
+          "username": "gpforeman"
+        },
+        "69a135d2dfa8": {
+          "allowNotes": 1,
+          "backgroundImageId": "",
+          "bio": "",
+          "createdAt": 1469536873165,
+          "facebookAccountId": "10154327224259378",
+          "imageId": "0*B226MK7xJcb6JRha.",
+          "isNsfw": false,
+          "lastPostCreatedAt": 1514829780906,
+          "mediumMemberAt": 1509036698000,
+          "name": "Gregg Bender",
+          "twitterScreenName": "",
+          "type": "User",
+          "userId": "69a135d2dfa8",
+          "username": "greggbender"
+        },
+        "6d549f8ccd6a": {
+          "allowNotes": 1,
+          "backgroundImageId": "",
+          "bio": "",
+          "createdAt": 1514848196328,
+          "facebookAccountId": "",
+          "imageId": "0*qPt4fRnV4Xh_ftvy.",
+          "isNsfw": false,
+          "lastPostCreatedAt": 1514862939287,
+          "mediumMemberAt": 0,
+          "name": "Greg Coleman",
+          "twitterScreenName": "",
+          "type": "User",
+          "userId": "6d549f8ccd6a",
+          "username": "greg_31456"
+        },
+        "73f2901d9ac7": {
+          "allowNotes": 1,
+          "backgroundImageId": "",
+          "bio": "",
+          "createdAt": 1504402352538,
+          "facebookAccountId": "2003112686567779",
+          "imageId": "0*aK_Ev5WIv-KfVffH.",
+          "isNsfw": false,
+          "lastPostCreatedAt": 1514670130499,
+          "mediumMemberAt": 1514669824547,
+          "name": "Moshe G",
+          "twitterScreenName": "",
+          "type": "User",
+          "userId": "73f2901d9ac7",
+          "username": "m0sh3g"
+        },
+        "75790be0be5a": {
+          "allowNotes": 1,
+          "backgroundImageId": "",
+          "bio": "Culture jammer, cancer survivor, sober agnostic, activist, tree hugger, dog owner, business analyst, and more.",
+          "createdAt": 1490734700024,
+          "facebookAccountId": "",
+          "imageId": "1*dmbNkD5D-u45r44go_cf0g.png",
+          "isNsfw": false,
+          "lastPostCreatedAt": 1514596882657,
+          "mediumMemberAt": 1506368753000,
+          "name": "Hilary Jones",
+          "twitterScreenName": "",
+          "type": "User",
+          "userId": "75790be0be5a",
+          "username": "hilarysarahjones"
+        },
+        "922d4b8e7d17": {
+          "allowNotes": 1,
+          "backgroundImageId": "",
+          "bio": "CEO & Founder of Touchgram. Investor and advisor to WorkLifeCalendar. Aspiring SF & tech author. Multiplatform developer. Martial artist. Parent of adults.",
+          "createdAt": 1389594363497,
+          "facebookAccountId": "",
+          "imageId": "1*UjCI8UTPpifQfUkn4zWCHw.jpeg",
+          "isNsfw": false,
+          "lastPostCreatedAt": 1514684283637,
+          "mediumMemberAt": 1490880202000,
+          "name": "Andy Dent",
+          "twitterScreenName": "AndyDentPerth",
+          "type": "User",
+          "userId": "922d4b8e7d17",
+          "username": "andydentperth"
+        },
+        "a9a1133703b9": {
+          "allowNotes": 1,
+          "backgroundImageId": "",
+          "bio": "",
+          "createdAt": 1506716257724,
+          "facebookAccountId": "1131565670311228",
+          "imageId": "1*BDwQQ5Z-CEIRMuIO9dFtcw.jpeg",
+          "isNsfw": false,
+          "lastPostCreatedAt": 1514647397060,
+          "mediumMemberAt": 1511649350000,
+          "name": "Marco Basile",
+          "twitterScreenName": "basile9797",
+          "type": "User",
+          "userId": "a9a1133703b9",
+          "username": "basile9797"
+        },
+        "c2f5689a2729": {
+          "allowNotes": 1,
+          "backgroundImageId": "",
+          "bio": "Cyclist, Guitarist, Writer, Editor, Tech and Heavy Metal enthusiast — Jack of many trades, pro in two.",
+          "createdAt": 1476769123532,
+          "facebookAccountId": "",
+          "imageId": "1*NqTe2FMc6XAs2NpE8vgoaQ.jpeg",
+          "isNsfw": false,
+          "lastPostCreatedAt": 1514809997197,
+          "mediumMemberAt": 1513916503000,
+          "name": "Ganesh Chakravarthi",
+          "twitterScreenName": "",
+          "type": "User",
+          "userId": "c2f5689a2729",
+          "username": "ganeshcr"
+        },
+        "d5e694e73eca": {
+          "allowNotes": 1,
+          "backgroundImageId": "",
+          "bio": "Lochlan Bloom is a British novelist, screenwriter and short story writer | For more: www.lochlanbloom.com",
+          "createdAt": 1478860780239,
+          "facebookAccountId": "",
+          "imageId": "1*NrxPMDOrBqLMHmSdVo4OYw.jpeg",
+          "isNsfw": false,
+          "lastPostCreatedAt": 1514813976874,
+          "mediumMemberAt": 1509367378000,
+          "name": "Lochlan Bloom",
+          "twitterScreenName": "LochlanBloom",
+          "type": "User",
+          "userId": "d5e694e73eca",
+          "username": "LochlanBloom"
+        },
+        "e4d971c7eba7": {
+          "allowNotes": 1,
+          "backgroundImageId": "1*zwHmAm9Ogg4400zTW-sxuQ.jpeg",
+          "bio": "Writer, book summarizer & habit coach on coach.me. | Made http://time2read.co | Blog: http://niklasgoeke.com | 400+ book summaries on http://fourminutebooks.com",
+          "createdAt": 1410597587433,
+          "facebookAccountId": "649204131853335",
+          "imageId": "1*aKh64LbNfvGRslHuh-rmTg.png",
+          "isNsfw": false,
+          "lastPostCreatedAt": 1514814740151,
+          "mediumMemberAt": 1490903827000,
+          "name": "Niklas Goeke",
+          "twitterScreenName": "NiklasGoeke",
+          "type": "User",
+          "userId": "e4d971c7eba7",
+          "username": "ngoeke"
+        },
+        "f5fbbe24fe8b": {
+          "allowNotes": 1,
+          "backgroundImageId": "",
+          "bio": "",
+          "createdAt": 1486422297731,
+          "facebookAccountId": "10154226789697097",
+          "imageId": "0*Wgk23AGn-bbIE4Aq.",
+          "isNsfw": false,
+          "lastPostCreatedAt": 1514836998111,
+          "mediumMemberAt": 1512990918787,
+          "name": "Valeriu Potra",
+          "twitterScreenName": "qVintage",
+          "type": "User",
+          "userId": "f5fbbe24fe8b",
+          "username": "balherian"
+        }
+      }
+    },
+    "streamItems": [
+      {
+        "conversation": {
+          "conversationItems": [
+            {
+              "displayMode": 1,
+              "postId": "37a6f612aaa2",
+              "postSuggestionReasons": [
+                {
+                  "reason": 31,
+                  "users": [
+                    {
+                      "image": {
+                        "imageId": "1*_EZH0BA1IH_ajjhciQuONg.jpeg"
+                      },
+                      "name": "Jack Preston King",
+                      "userId": "5373b75f0c97",
+                      "username": "beyondtherobot"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "displayMode": 1,
+              "postId": "9471e627f5a4",
+              "postSuggestionReasons": [
+                {
+                  "reason": 29
+                }
+              ]
+            }
+          ],
+          "userIds": [
+            "6d549f8ccd6a",
+            "5373b75f0c97"
+          ]
+        },
+        "createdAt": 1514883158192,
+        "itemType": "conversation",
+        "randomId": "9f9cc00ec505",
+        "type": "StreamItem"
+      },
+      {
+        "createdAt": 1514883158193,
+        "itemType": "postPreview",
+        "postPreview": {
+          "postId": "590105a006d8"
+        },
+        "randomId": "5a8e72bbf969",
+        "type": "StreamItem"
+      },
+      {
+        "createdAt": 1514883158193,
+        "itemType": "postPreview",
+        "postPreview": {
+          "postId": "f65aae88988f"
+        },
+        "randomId": "36c8ec99a56d",
+        "type": "StreamItem"
+      },
+      {
+        "conversation": {
+          "conversationItems": [
+            {
+              "displayMode": 1,
+              "postId": "54fc7e30625c",
+              "postSuggestionReasons": [
+                {
+                  "reason": 31,
+                  "users": [
+                    {
+                      "image": {
+                        "imageId": "1*_EZH0BA1IH_ajjhciQuONg.jpeg"
+                      },
+                      "name": "Jack Preston King",
+                      "userId": "5373b75f0c97",
+                      "username": "beyondtherobot"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "displayMode": 1,
+              "postId": "eabef6f8facd",
+              "postSuggestionReasons": [
+                {
+                  "reason": 29
+                }
+              ]
+            }
+          ],
+          "userIds": [
+            "922d4b8e7d17",
+            "5373b75f0c97"
+          ]
+        },
+        "createdAt": 1514883158193,
+        "itemType": "conversation",
+        "randomId": "35eefb1318ee",
+        "type": "StreamItem"
+      },
+      {
+        "conversation": {
+          "conversationItems": [
+            {
+              "displayMode": 1,
+              "postId": "e94d80013c02",
+              "postSuggestionReasons": [
+                {
+                  "reason": 31,
+                  "users": [
+                    {
+                      "image": {
+                        "imageId": "1*_EZH0BA1IH_ajjhciQuONg.jpeg"
+                      },
+                      "name": "Jack Preston King",
+                      "userId": "5373b75f0c97",
+                      "username": "beyondtherobot"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "displayMode": 1,
+              "postId": "ca686d5d9b",
+              "postSuggestionReasons": [
+                {
+                  "reason": 29
+                }
+              ]
+            }
+          ],
+          "userIds": [
+            "73f2901d9ac7",
+            "5373b75f0c97"
+          ]
+        },
+        "createdAt": 1514883158193,
+        "itemType": "conversation",
+        "randomId": "571e8d6843f0",
+        "type": "StreamItem"
+      },
+      {
+        "createdAt": 1514883158193,
+        "itemType": "postPreview",
+        "postPreview": {
+          "postId": "c58e97a2197e"
+        },
+        "randomId": "be16243119bb",
+        "type": "StreamItem"
+      },
+      {
+        "conversation": {
+          "conversationItems": [
+            {
+              "displayMode": 2,
+              "postId": "aaf3372fdca0",
+              "postSuggestionReasons": [
+                {
+                  "reason": 31,
+                  "users": [
+                    {
+                      "image": {
+                        "imageId": "1*_EZH0BA1IH_ajjhciQuONg.jpeg"
+                      },
+                      "name": "Jack Preston King",
+                      "userId": "5373b75f0c97",
+                      "username": "beyondtherobot"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "displayMode": 1,
+              "postId": "56f2ac9bc565",
+              "postSuggestionReasons": [
+                {
+                  "reason": 29
+                }
+              ]
+            },
+            {
+              "displayMode": 1,
+              "postId": "aff4ee2a1828",
+              "postSuggestionReasons": [
+                {
+                  "reason": 31,
+                  "users": [
+                    {
+                      "image": {
+                        "imageId": "1*_EZH0BA1IH_ajjhciQuONg.jpeg"
+                      },
+                      "name": "Jack Preston King",
+                      "userId": "5373b75f0c97",
+                      "username": "beyondtherobot"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "userIds": [
+            "42b01e7ae497",
+            "5373b75f0c97",
+            "75790be0be5a"
+          ]
+        },
+        "createdAt": 1514883158193,
+        "itemType": "conversation",
+        "randomId": "de7d1bd2b532",
+        "type": "StreamItem"
+      },
+      {
+        "conversation": {
+          "conversationItems": [
+            {
+              "displayMode": 1,
+              "postId": "36e9d7aa0ea5",
+              "postSuggestionReasons": [
+                {
+                  "reason": 31,
+                  "users": [
+                    {
+                      "image": {
+                        "imageId": "1*_EZH0BA1IH_ajjhciQuONg.jpeg"
+                      },
+                      "name": "Jack Preston King",
+                      "userId": "5373b75f0c97",
+                      "username": "beyondtherobot"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "displayMode": 1,
+              "postId": "ab5b8cc41aef",
+              "postSuggestionReasons": [
+                {
+                  "reason": 29
+                }
+              ]
+            }
+          ],
+          "userIds": [
+            "254b89ded3d4",
+            "5373b75f0c97"
+          ]
+        },
+        "createdAt": 1514883158194,
+        "itemType": "conversation",
+        "randomId": "cc4bf8702764",
+        "type": "StreamItem"
+      },
+      {
+        "createdAt": 1514883158194,
+        "itemType": "postPreview",
+        "postPreview": {
+          "postId": "9e6e1938ea2e"
+        },
+        "randomId": "3d7a257dce90",
+        "type": "StreamItem"
+      },
+      {
+        "createdAt": 1514883158194,
+        "itemType": "postPreview",
+        "postPreview": {
+          "postId": "8ac2f921b3ed"
+        },
+        "randomId": "c1962d0adbad",
+        "type": "StreamItem"
+      },
+      {
+        "createdAt": 1514883158194,
+        "itemType": "postPreview",
+        "postPreview": {
+          "postId": "740f68a9e7fb"
+        },
+        "randomId": "eeef230dc7c0",
+        "type": "StreamItem"
+      },
+      {
+        "createdAt": 1514883158194,
+        "itemType": "postPreview",
+        "postPreview": {
+          "postId": "740e58b47201"
+        },
+        "randomId": "268ccb91cb8c",
+        "type": "StreamItem"
+      },
+      {
+        "conversation": {
+          "conversationItems": [
+            {
+              "displayMode": 1,
+              "postId": "53e275283b9",
+              "postSuggestionReasons": [
+                {
+                  "reason": 31,
+                  "users": [
+                    {
+                      "image": {
+                        "imageId": "1*_EZH0BA1IH_ajjhciQuONg.jpeg"
+                      },
+                      "name": "Jack Preston King",
+                      "userId": "5373b75f0c97",
+                      "username": "beyondtherobot"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "displayMode": 1,
+              "postId": "4d8560bebea6",
+              "postSuggestionReasons": [
+                {
+                  "reason": 29
+                }
+              ]
+            },
+            {
+              "displayMode": 1,
+              "postId": "614cad387b84",
+              "postSuggestionReasons": [
+                {
+                  "reason": 31,
+                  "users": [
+                    {
+                      "image": {
+                        "imageId": "1*_EZH0BA1IH_ajjhciQuONg.jpeg"
+                      },
+                      "name": "Jack Preston King",
+                      "userId": "5373b75f0c97",
+                      "username": "beyondtherobot"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "userIds": [
+            "d5e694e73eca",
+            "5373b75f0c97"
+          ]
+        },
+        "createdAt": 1514883158194,
+        "itemType": "conversation",
+        "randomId": "918cc7b13fa3",
+        "type": "StreamItem"
+      },
+      {
+        "createdAt": 1514883158194,
+        "itemType": "postPreview",
+        "postPreview": {
+          "postId": "5be3bb4ebd74"
+        },
+        "randomId": "98c168c36ff6",
+        "type": "StreamItem"
+      },
+      {
+        "conversation": {
+          "conversationItems": [
+            {
+              "displayMode": 1,
+              "postId": "859f51e8a961",
+              "postSuggestionReasons": [
+                {
+                  "reason": 31,
+                  "users": [
+                    {
+                      "image": {
+                        "imageId": "1*_EZH0BA1IH_ajjhciQuONg.jpeg"
+                      },
+                      "name": "Jack Preston King",
+                      "userId": "5373b75f0c97",
+                      "username": "beyondtherobot"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "displayMode": 1,
+              "postId": "85f9303e0dd8",
+              "postSuggestionReasons": [
+                {
+                  "reason": 29
+                }
+              ]
+            },
+            {
+              "displayMode": 1,
+              "postId": "56771c9cf8ff",
+              "postSuggestionReasons": [
+                {
+                  "reason": 31,
+                  "users": [
+                    {
+                      "image": {
+                        "imageId": "1*_EZH0BA1IH_ajjhciQuONg.jpeg"
+                      },
+                      "name": "Jack Preston King",
+                      "userId": "5373b75f0c97",
+                      "username": "beyondtherobot"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "userIds": [
+            "4b39545b31b5",
+            "5373b75f0c97"
+          ]
+        },
+        "createdAt": 1514883158195,
+        "itemType": "conversation",
+        "randomId": "45c45385b46f",
+        "type": "StreamItem"
+      }
+    ]
+  },
+  "success": true,
+  "v": 3
+}

@@ -1,230 +1,227 @@
-from lxml import html
-from lxml import etree
 from insert2DB import *
 from utils import *
-from selenium import webdriver
 
-def parse_fullcomment(href):
-    try:
-        page = requests.get(href, allow_redirects=True, timeout=1)
-        tree = html.fromstring(page.content.decode('utf-8'))
-    except Exception as e:
-        print("error in loading comment page: "+str(e)+href, file=sys.stderr)
-        return
-
-    content = ''
-
-    section = tree.xpath('//section/div[@class="section-content"]')
-    for sec in section:
-        body = sec.xpath('./div[contains(@class,"section-inner")]/*')
-        # parse_para(body, uid, articleID)
-
-    return content
-
-def parse_comment(uid, url, articleID=None):
-    try:
-        resp = requests.get(
-            url="https://medium.com/_/api/posts/"+uid+"/responsesStream",
-            allow_redirects=True, timeout=10
-        )
-    except Exception as e:
-        print("error in making comment requests: "+str(e) + uid, file=sys.stderr)
-        return
-    # print(uid)
-    resp_data = json.loads(resp.content.decode('utf-8')[16:])
-
-    if (resp_data['success']):
-        try:
-            comm_data=resp_data['payload']['references']['Post']
-            user_data=resp_data['payload']['references']['User']
-        except KeyError:
-            print("comment key error with url: "+url, file=sys.stderr)
-            return None
-
-        count = 0
-        commment_dict = {}
-        comment_map = {}
-        # parse all comments
-        for key, value in comm_data.items():
-            count += 1
-
-            comment_id = ''
-            creator_id = ''
-            content = ''
-            media_id = ''
-            try:
-                comment_full = value['previewContent']['isFullContent']
-                comment_paras = value['previewContent']['bodyModel']['paragraphs']
-                comment_id = value['id']
-                creator_id = value['creatorId']
-                numberLikes = value['virtuals']['totalClapCount']
-                media_id = value['inResponseToMediaResourceId']
-                timestamp = convert_unixtime(value['latestPublishedAt'])
-            except KeyError:
-                print("id key error with url: "+url, file=sys.stderr)
-                count-=1
-                continue
-
-            if comment_id == uid:
-                count-=1
-                continue
-
-            try:
-                username = user_data[creator_id]['username']
-                saveAuthor({
-                    'name': user_data[creator_id]['name'],
-                    'mediumID': creator_id,
-                    'username': username,
-                    'bio': user_data[creator_id]['bio']
-                })
-            except KeyError:
-                print("comment user key error with url: "+url, file=sys.stderr)
-
-
-            if comment_full:
-                for comm_para in comment_paras:
-                    content+=comm_para['text']
-            else:
-                unique_slug = value['uniqueSlug']
-                content = parse_fullcomment('https://medium.com/@'+username+'/'+unique_slug)
-
-            if media_id != '': #assume one media_id only to one sentences
-                commment_dict[media_id] = comment_id
-
-            comment_map[comment_id] = {
-                    'mediumID': comment_id,
-                    'content': content,
-                    'authorMediumID': creator_id,
-                    'time': timestamp,
-                    'corrStnID': '',
-                    'numberLikes':numberLikes,
-                    'articleMediumID':uid
-            }
-
-        # parse quote
-        # value['inResponseToMediaResourceId'] matches value['MediaResource'][key]
-        # "mediumQuote" not none
-        quote_count=0
-        quote_data=None
-        media_data=None
-        try:
-            media_data=resp_data['payload']['references']['MediaResource']
-            quote_data=resp_data['payload']['references']['Quote']
-        except KeyError:
-            # print("no quote: "+url, file=sys.stderr)
-            pass
-
-        if media_data and quote_data:
-            for mediaResourceId, media in media_data.items():
-                if 'mediumQuote' in media:
-                    quote_count += 1
-                    media_id = str(mediaResourceId)
-                    comment_id = commment_dict.get(media_id)
-
-                    quote_id = media['mediumQuote']['quoteId']
-                    quote = quote_data[quote_id]
-                    creator_id = ''
-                    comment = ''
-                    sentence_id = ''
-                    try:
-                        comment_paras = quote['paragraphs']
-                        sentence_id = quote['paragraphs'][0]['name']
-                        creator_id = quote['userId']
-                    except Exception as e:
-                        print("id key error with url: "+url, file=sys.stderr)
-
-                    for comm_para in comment_paras:
-                        comment+=comm_para['text']
-
-                    comment_map[comment_id]['corrStnID'] = sentence_id
-
-        for _, commentObj in comment_map.items():
-            saveComment(commentObj)
-        return count
-    else:
-        print("bad request with url: "+url, file=sys.stderr)
-
-
-def parse_article(tree, url, uid, articleID=None):
-
-    try:
-        article_name = tree.xpath('//h1/text()')[0]
-    except Exception as e:
-        try:
-            article_name = tree.xpath('//h1/*/text()')[0]
-        except Exception as e:
-            try:
-                article_name = tree.xpath('//p[@class="graf graf--p graf--leading"]/*/text()')[0]
-                # print(article_name)
-            except Exception as e:
-                print("bad format cannot parse the title: "+url, file=sys.stderr)
-                article_name = ""
-
-    try:
-        authorNode = tree.xpath('//*[contains(@class,"link link--darken link--darker")]')[0]
-        authorName = authorNode.xpath('./text()')[0]
-        authorMediumID = authorNode.xpath('./@data-user-id')[0]
-        username = matchUsername(authorNode.xpath('./@href')[0])
-        # print(username)
-        bioNode = tree.xpath('//*[contains(@class,"postMetaInline u-noWrapWithEllipsis")]/text()')
-        if bioNode:
-            bio = bioNode[0]
-        else:
-            bio = ''
-        authorID = saveAuthor({
-            'name': authorName,
-            'mediumID': authorMediumID,
-            'username': username,
-            'bio': bio
-        })
-    except Exception as e:
-        print("bad format in parsing author: "+str(e)+url, file=sys.stderr)
-        return False
-
-
-    try:
-        tags = tree.xpath('//ul[@class="tags tags--postTags tags--borderless"]')[0]
-        timestamp = convert_utctime(tree.xpath('//time/@datetime')[0])
-        likeNode = tree.xpath('//button[@data-action="show-recommends"]/text()')
-        if len(likeNode) == 0 :
-            numberLikes = 0
-        else:
-            numberLikes = convert_count(likeNode[0])
-    except Exception as e:
-        print("bad format in parsing timestamp, tag or like: "+str(e)+url, file=sys.stderr)
-        return False
-
+def parse_comment_tags(tag_dict_arr):
     tags_arr = []
-    for tag in tags.xpath('./*/a/text()'):
-        tags_arr.append(tag)
+    if tag_dict_arr:
+        for tag_dict in tag_dict_arr:
+            tags_arr.append(tag_dict['name'])
+    return tags_arr
 
-    highlight = ''
-    try:
-        highlights = tree.xpath('//span[starts-with(@class,"markup--quote")]/text()')
-        if len(highlights) > 0:
-            highlight = highlights[0]
-            if len(highlights) > 1:
-                print("multiple hightlights exists"+url, file=sys.stderr)
-    except Exception as e:
-        print("bad format in parsing hightlight: "+str(e)+url, file=sys.stderr)
+def parse_comment(uid, session):
+    href = "https://medium.com/_/api/posts/"+uid+"/responsesStream"
+    resp_data = load_json(session, href)
+    if resp_data is None: return
 
-    saveArticle({
-        'mediumID': uid,
-        'authorMediumID': authorMediumID,
-        'highlight' : '',
-        'title': article_name,
-        'time': timestamp,
-        'tag': tags_arr,
-        'numberLikes': numberLikes
-    }, articleID, authorID)
+    references = resp_data['payload']['references']
+    # paging = resp_data['payload']['paging']
+    # while 'next' in paging:
+    #     paging_params = href+paging['next']
+    #     resp_paging_data = load_json(session, href, params=paging_params)
+    #     references
+    #     paging = resp_paging_data['payload']['paging']
+    if 'Post' in references and 'User' in references:
+        comm_data = references['Post']
+        user_data = references['User']
+    else: return
+
+    commment_dict = {}
+    comment_map = {}
+    # parse all comments
+    for key, value in comm_data.items():
+        try:
+            comment_full = value['previewContent']['isFullContent']
+            comment_paras = value['previewContent']['bodyModel']['paragraphs']
+            self_article_mediumID = value['id']
+            creator_id = value['creatorId']
+            numLikes = value['virtuals']['totalClapCount']
+            num_responses = value['virtuals']['responsesCreatedCount']
+            recommends = value['virtuals']['recommends']
+            tag_arr = parse_comment_tags(value['virtuals']['tags'])
+            comment_title = value['title']
+            media_id = value['inResponseToMediaResourceId']
+            corr_article_mediumID = value['inResponseToPostId']
+            timestamp = convert_unixtime(value['latestPublishedAt'])
+        except KeyError:
+            print("id key error with url: "+href, file=sys.stderr)
+            continue
+
+        if savedArticle(self_article_mediumID): continue
+
+        try:
+            username = user_data[creator_id]['username']
+            authorID = saveAuthor({
+                'name': user_data[creator_id]['name'],
+                'mediumID': creator_id,
+                'username': username,
+                'bio': user_data[creator_id]['bio']
+            })
+        except KeyError:
+            print("comment author key error with url: "+href, file=sys.stderr)
+
+        self_articleID = saveArticle({
+            'mediumID': self_article_mediumID,
+            'authorMediumID': creator_id,
+            'recommends' : recommends,
+            'title': comment_title,
+            'time': timestamp,
+            'tags': tag_arr,
+            'numLikes': numLikes
+        }, authorID=authorID)
+
+        if comment_full:
+            for comm_para in comment_paras:
+                saveSentence({
+                    'content': comm_para['text'],
+                    'id': comm_para['name'],
+                    'articleID': self_articleID
+                })
+        else:
+            unique_slug = value['uniqueSlug']
+            comment_href = 'https://medium.com/@'+username+'/'+unique_slug
+            parse_sentence(self_article_mediumID, self_articleID, comment_href, session)
+
+        if num_responses > 0: parse_comment(self_article_mediumID, session)
+
+        parse_highlight(self_article_mediumID, self_articleID, session)
+
+        if media_id != '': #assume one media_id only to one sentences
+            commment_dict[media_id] = self_article_mediumID
+
+        comment_map[self_article_mediumID] = {
+                'selfArticleID': self_articleID,
+                'corrArticleMediumID':corr_article_mediumID,
+                'corrHighlightID':-1
+        }
+
+    # parse quote
+    # value['inResponseToMediaResourceId'] matches value['MediaResource'][key]
+    # "mediumQuote" not none
+    quote_count=0
+    if 'MediaResource' in references and 'Quote' in references:
+        media_data=references['MediaResource']
+        quote_data=references['Quote']
+        for mediaResourceId, media in media_data.items():
+            if 'mediumQuote' in media:
+                quote_count += 1
+                self_article_mediumID = commment_dict.get(str(mediaResourceId))
+                if self_article_mediumID is None:
+                    print(self_article_mediumID)
+                    continue
+
+                quote = quote_data[media['mediumQuote']['quoteId']]
+
+                content = ''
+                corrStnMediumIDs = []
+                for para in quote['paragraphs']:
+                    content += para['text']
+                    corrStnMediumIDs.append(para['name'])
+
+                content = content[quote['startOffset']:quote['endOffset']]
+                corr_article_mediumID = quote['postId']
+
+                highlightID = saveHighlight({
+                    'content': content,
+                    'corrStnMediumIDs': corrStnMediumIDs,
+                    'numLikes': -1,
+                    'articleMediumID': corr_article_mediumID
+                })
+
+                # comment_map[self_article_mediumID]['corrArticleMediumID'] = corr_article_mediumID
+                comment_map[self_article_mediumID]['corrHighlightID'] = highlightID
+
+    for _, commentObj in comment_map.items(): saveComment(commentObj)
+
+
+# def parse_article(tree, url, uid, articleID=None, session=None):
+#
+#     try:
+#         article_name = tree.xpath('//h1/text()')[0]
+#     except Exception as e:
+#         try:
+#             article_name = tree.xpath('//h1/*/text()')[0]
+#         except Exception as e:
+#             try:
+#                 article_name = tree.xpath('//p[@class="graf graf--p graf--leading"]/*/text()')[0]
+#             except Exception as e:
+#                 print("bad format cannot parse the title: "+url, file=sys.stderr)
+#                 article_name = ""
+#
+#     try:
+#         authorNode = tree.xpath('//*[contains(@class,"link link--darken link--darker")]')[0]
+#         authorName = authorNode.xpath('./text()')[0]
+#         authorMediumID = authorNode.xpath('./@data-user-id')[0]
+#         username = match_username(authorNode.xpath('./@href')[0])
+#         bioNode = tree.xpath('//*[contains(@class,"postMetaInline u-noWrapWithEllipsis")]/text()')
+#         if bioNode: bio = bioNode[0]
+#         else: bio = ''
+#         authorID = saveAuthor({
+#             'name': authorName,
+#             'mediumID': authorMediumID,
+#             'username': username,
+#             'bio': bio
+#         })
+#     except Exception as e:
+#         print("bad format in parsing author: "+str(e)+url, file=sys.stderr)
+#         return False
+#
+#     try:
+#         tags = tree.xpath('//ul[@class="tags tags--postTags tags--borderless"]')[0]
+#         timestamp = convert_utctime(tree.xpath('//time/@datetime')[0])
+#         likeNode = tree.xpath('//button[@data-action="show-recommends"]/text()')
+#         if len(likeNode) == 0: numLikes = 0
+#         else: numLikes = convert_count(likeNode[0])
+#     except Exception as e:
+#         print("bad format in parsing timestamp, tag or like: "+str(e)+url, file=sys.stderr)
+#         return False
+#
+#     tags_arr = []
+#     for tag in tags.xpath('./*/a/text()'): tags_arr.append(tag)
+#
+#     articleID = saveArticle({
+#         'mediumID': uid,
+#         'authorMediumID': authorMediumID,
+#         'recommends' : -1,
+#         'title': article_name,
+#         'time': timestamp,
+#         'tags': tags_arr,
+#         'numLikes': numLikes
+#     }, articleID, authorID)
+#
+#     parse_sentence(uid, articleID, url, session, tree=tree)
+#     parse_highlight(uid, articleID, session)
+#     return True;
+
+def parse_highlight(uid, articleID, session):
+    href = 'https://medium.com/p/'+uid+'/quotes'
+    resp_data = load_json(session, href)
+    if resp_data is None: return
+
+    for highlight in resp_data['payload']['value']:
+        content = ''
+        corrStnMediumIDs = []
+        for para in highlight['paragraphs']:
+            content += para['text']
+            corrStnMediumIDs.append(para['name'])
+
+        content = content[highlight['startOffset']:highlight['endOffset']]
+        print(corrStnMediumIDs, highlight['count'], uid, articleID)
+        saveHighlight({
+            'content': content,
+            'corrStnMediumIDs': corrStnMediumIDs,
+            'numLikes': highlight['count'],
+            'articleMediumID': uid
+        }, articleID)
+
+def parse_sentence(uid, articleID, href, session, tree=None):
+    if tree is None:
+        tree = load_html(session, href)
+        if tree is None: return
 
     section = tree.xpath('//section/div[@class="section-content"]')
     for sec in section:
         body = sec.xpath('./div[contains(@class,"section-inner")]/*')
         parse_para(body, uid, articleID)
-
-    return True;
-
 
 def parse_para(body, uid, articleID):
     for para in body:
@@ -240,27 +237,21 @@ def parse_para(body, uid, articleID):
         saveSentence({
             'content': sentence,
             'id': key,
-            'articleMediumID': uid
-        }, articleID)
+            'articleID': articleID
+        })
 
 
-def parse(href, driver, id=None, articleID=None, tree=None):
-    if not id:
+def parse(href, session, uid=None, articleID=None, tree=None):
+    if not uid:
         uid = parse_uid(href)
-    else:
-        uid = id
+
     # print(uid)
     if tree is None:
-        try:
-            driver.get(href)
-            page = driver.page_source
-            tree = html.fromstring(page)
-        except Exception as e:
-            print("error in loading article page: "+str(e)+href, file=sys.stderr)
-            return
+        tree = load_html(session, href)
+        if tree is None: return
 
-    if parse_article(tree, href, uid, articleID):
-        parse_comment(uid, href, articleID)
+    # if parse_article(tree, href, uid, articleID=articleID, session=session):
+    parse_comment(uid, session)
 
     # parse_image(page, href, count, pk)
 
@@ -272,11 +263,12 @@ if __name__ == '__main__':
         # parse("https://medium.com/tag/artificial-intelligence", 0)
         # parse("https://medium.freecodecamp.com/big-picture-machine-learning-classifying-text-with-neural-networks-and-tensorflow-d94036ac2274", 0)
         # parse("https://backchannel.com/i-work-i-swear-a649e0eb697d", 0) #815
-        # sys.stdout = open('cache/logs/'+logtime+'/std.log', 'w')
-        #
-        # sys.stderr = open('output.txt', 'w')
-        initdb()
         # parse("https://medium.com/@OrganicsByLee/sprouted-grains-and-the-harvesting-process-8fa878bea2ee")
-        driver = webdriver.Chrome('./chromedriver')
-        driver = login(driver)
-        parse('https://medium.com/@beyondtherobot/my-real-life-superpower-c2a9b309cf7', driver)
+        # sys.stdout = open('logs/std.log', 'w')
+        # sys.stderr = open('logs/err.log', 'w')
+
+        initdb()
+        session = load_obj('login.obj')
+        # session = login()
+        # parse('https://timeline.com/it-was-sex-all-the-time-at-this-1800s-commune-with-anyone-you-wanted-and-none-of-the-guilt-c7ea4734e9ca', session)
+        parse('https://medium.com/@beyondtherobot/my-real-life-superpower-c2a9b309cf7', session)
