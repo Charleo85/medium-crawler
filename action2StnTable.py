@@ -56,13 +56,13 @@ def insertSTN(mediumID, articleID, stnContent):
 		conn = psycopg2.connect(**params)
 
 		cur = conn.cursor()
-		# print("before inserting into article table....")
+		# print("before inserting into stn table....")
 
 		# for command in commands:
 		cur.execute(command, (mediumID, stnContent, articleID, ))
-		# print("after inserting into article table....")
 
 		stnID = cur.fetchone()[0]
+		# print("after inserting into stn table....")
 
 		cur.close()
 

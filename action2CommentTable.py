@@ -7,13 +7,9 @@ def createCommentTable():
 	command = ("""
 		CREATE TABLE comment (
 			commentID SERIAL PRIMARY KEY,
-			mediumID varchar(20),
-			content text,
-			commentTime timestamp,
-			numberLikes int,
-			corrAuthorID int,
+			selfArticleID int,
 			corrArticleID int,
-			corrStnID int
+			corrHighlightID int
 		)
 		""")
 
@@ -40,19 +36,15 @@ def createCommentTable():
 		if conn is not None:
 			conn.close()
 
-def insertComment(mediumID, content, corrAuthorID, commentTime, numberLikes, corrStnID, corrArticleID):
+def insertComment(selfArticleID, corrHighlightID, corrArticleID):
 	command = ("""
 		INSERT INTO comment (
-			mediumID,
-			content,
-			commentTime,
-			numberLikes,
-			corrAuthorID,
+			selfArticleID,
 			corrArticleID,
-			corrStnID
+			corrHighlightID
 		)
 		VALUES(
-		%s, %s, %s, %s, %s, %s, %s)
+		%s, %s, %s)
 
 		RETURNING commentID;
 		""")
@@ -68,10 +60,10 @@ def insertComment(mediumID, content, corrAuthorID, commentTime, numberLikes, cor
 		# print("inserting into comment:", file=sys.stderr)
 		# print(mediumID, content, corrAuthorID, commentTime, numLikes, corrStnID, corrArticleID, sep=", ", file=sys.stderr)
 		# for command in commands:
-		cur.execute(command, (mediumID, content, commentTime, numberLikes, corrAuthorID, corrArticleID, corrStnID, ))
-		# print("after inserting into comment table....")
+		cur.execute(command, (selfArticleID, corrArticleID, corrHighlightID, ))
 
 		commentID = cur.fetchone()[0]
+		# print("after inserting into comment table....")
 
 		cur.close()
 

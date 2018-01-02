@@ -1,8 +1,4 @@
-# import sys, os, time, requests, queue, re
-import pickle
-# from lxml import html
 from parser import parse
-from action2ArticleTable import existArticle
 from insert2DB import *
 from utils import *
 from selenium import webdriver
@@ -18,138 +14,65 @@ def concat(href):
                     return href, href[m-j: m]
     return None, None
 
-regex = re.compile(r'https:\/\/[\s\S]+-[\w]{12}\?source=[\s\S]+')
+re_article = re.compile(r'https:\/\/[\s\S]+-[\w]{12}\?source=[\s\S]+')
 re_tag = re.compile(r'https:\/\/[\w|.]+\/(tag|topic|tagged)\/[\s\S]+')
 
-def analyze(url, tree=None):
+def analyze(url, session):
     global q
     global t
 
-    if tree is None:
-        try:
-            page = requests.get(url, allow_redirects=True, timeout=1)
-        except:
-            return
-        tree = html.fromstring(page.content.decode('utf-8'))
+    s = set()
+    tree = load_html(session, url)
+    if tree is None: return
 
     all_links = tree.xpath('//a/@href')
 
     for href in all_links:
-        if re_tag.search(href):
-            t.put(href)
-            print(href, file=sys.stdout)
+        if re_tag.search(href): #find topic links
+            t.add(href)
             continue
-        if regex.search(href):
+        elif re_article.search(href): #find article links
             link, uid = concat(href)
-            if not link or not uid: continue
-            if existArticle(uid):
-                continue
-            else:
-                articleID = saveSratchArticle(uid);
-                q.put((uid, link, articleID))
-            # if uid in d:
-            #     pack = d[uid]
-            #     if pack["timestamp"] == 0: continue #must be on queue still
-            #     elif (time.time()-d[uid]["timestamp"])>172800: # if crawled more than two day ago we can crawl again
-            #         pack["timestamp"] = 0 #put on queue
-            #         d[uid] = pack
-            #         q.put(uid)
-            #     continue
-            # else:
-            #     pack = {}
-            #     pack["url"] = link
-            #     pack["timestamp"] = 0 #must be on queue still
-            #     pack["pk"] = -1 #pk not assigned yet
-            #     d[uid] = pack
-            #     q.put(uid)
-        else:
-            continue
+            if not link or not uid or uid in s: continue
+            s.add(uid)
+            if exist_article(uid): continue #already crawled article
+            else: q.put((uid, link))
 
     return tree
 
-# def getArticles():
-#     global q
-#     global s
-#     global t
-#     try:
-#         resp = requests.get(
-#             url="https://medium.com/_/api/topics/9d34e48ecf94/stream",
-#             params={
-#                 "limit": "1000",
-#             },timeout=60
-#         )
-#     except requests.exceptions.RequestException:
-#         print('topic stream Request failed')
-#
-#     resp_data = json.loads(resp.content.decode('utf-8')[16:])
-#
-#     if (resp_data['success']):
-#         try:
-#             article_data=resp_data['payload']['references']['Post']
-#         except:
-#             print("comment key error with url: "+url, file=sys.stderr)
-#             return None
-#
-#         for key, value in article_data.items():
-#             if key in d:
-#                 continue
-#             try:
-#                 url = value['uniqueSlug']
-#             except:
-#                 print("id key error with url: "+url, file=sys.stderr)
-#                 continue
-#             try:
-#                 domain = value['domain']
-#             except:
-#                 domain = "medium.com"
-
 if __name__ == '__main__':
+    login_filepath = './objects/login.obj'
+    topic_filepath = './objects/topic.obj'
     initdb()
-    driver = webdriver.Chrome('./chromedriver')
-    driver = login(driver)
+    if os.path.exists(login_filepath): session = load_obj(login_filepath)
+    else: session = login()
 
     q = queue.Queue() #uid queue to analyze
-    t = queue.Queue() #topic list to crawl
+    t = set() #topic list to crawl
 
     logtime = datetime.datetime.fromtimestamp(int(time.time())).strftime('%Y-%m-%d-%H-%M-%S')
-    print('login and started parser at' + logtime)
+    print('login and started parser at ' + logtime)
     os.system('mkdir -p logs/'+logtime+'/')
     sys.stdout = open('logs/'+logtime+'/std.log', 'w')
     sys.stderr = open('logs/'+logtime+'/error.log', 'w')
 
+    if os.path.exists(topic_filepath):
+        t = load_obj(topic_filepath)
+    else:
+        t.add('https://medium.com')
+        t.add('https://medium.com/topics')
     while True: #sleep for a while and load updates
-        t.put('https://medium.com')
-        t.put('https://medium.com/topics')
-        # t.put('https://medium.com/topic/popular')
-        # t.put('https://medium.com/topic/editors-picks')
-        # t.put('https://medium.com/topic/world')
-        # t.put('https://medium.com/topic/future')
-        # t.put('https://medium.com/topic/education')
-        # t.put('https://medium.com/topic/family')
-        #https://medium.com/topics
-
-        while not t.empty():
-            analyze(t.get())
-
+        for topic in list(t):
+            analyze(topic, session)
             while not q.empty():
                 time.sleep(10)
-                uid, url, articleID = q.get()
-                tree = analyze(url)
-                parse(url, driver, uid, articleID, tree)
-                # d[uid]["timestamp"] = time.time() #give a timestamp that crawled
-                # url = d[uid]["url"]
-                # if d[uid]["pk"] == -1:  # first time crawl
-                #     d[uid]["pk"] = pk
-                #     analyze(url)
-                #     parse(url,pk,uid)
-                # else: # crawl again
-                #     analyze(url)
-                #     stored_pk = d[uid]["pk"]
-                #     parse(url,stored_pk,uid, False)
+                uid, url = q.get()
+                # print(url, uid)
+                parse(url, session, uid)
 
                 sys.stdout.flush()
                 sys.stderr.flush()
 
-        # print("falling sleep...", file=sys.stderr)
-        # sleep(60*10) # wait ten minutes to restart
-    driver.close()
+        write_obj(t, topic_filepath)
+        print("taking a rest...", file=sys.stderr)
+        time.sleep(60*3) # wait ten minutes to restart

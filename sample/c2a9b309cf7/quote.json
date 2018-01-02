@@ -1,0 +1,29 @@
+{
+  "b": "32111-acac638",
+  "payload": {
+    "references": {
+    },
+    "value": [
+      {
+        "count": 3,
+        "endOffset": 315,
+        "paragraphs": [
+          {
+            "markups": [
+            ],
+            "name": "d803",
+            "text": "I want my superpower back! I’m setting a goal this year to research “reading and the brain,” and if possible, to regain the ability to experience fiction with full 3-D cinematic immersion. If I figure it out, I promise I’ll share the secret here on Medium. We can all be superheroes and traverse the stars together.",
+            "type": 1
+          }
+        ],
+        "postId": "c2a9b309cf7",
+        "quoteId": "anon_1002d3892e41",
+        "startOffset": 0,
+        "type": "Quote",
+        "userId": "anon"
+      }
+    ]
+  },
+  "success": true,
+  "v": 3
+}

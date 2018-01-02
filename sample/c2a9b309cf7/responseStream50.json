@@ -1,0 +1,2981 @@
+{
+  "b": "32111-acac638",
+  "payload": {
+    "paging": {
+    },
+    "references": {
+      "MediaResource": {
+        "1fae5ec522e4a0c518ea7fcffe5590fd": {
+          "authorName": "",
+          "description": "",
+          "display": 1,
+          "domain": "medium.com",
+          "href": "https://medium.com/@skysong/well-ive-always-experienced-reading-in-that-way-and-my-mother-did-too-aaf3372fdca0",
+          "iframeHeight": 0,
+          "iframeSrc": "",
+          "iframeWidth": 0,
+          "mediaResourceId": "1fae5ec522e4a0c518ea7fcffe5590fd",
+          "mediaResourceType": "MediaResourceMediumPost",
+          "mediumPost": {
+            "postId": "aaf3372fdca0"
+          },
+          "thumbnailHeight": 0,
+          "thumbnailImageId": "",
+          "thumbnailUrl": "",
+          "thumbnailWidth": 0,
+          "title": "Well, I’ve always experienced reading in that way — and my mother did too.",
+          "type": "MediaResource"
+        },
+        "397c885a5b24b12993c57eb1af368b04": {
+          "authorName": "",
+          "description": "",
+          "display": 1,
+          "domain": "medium.com",
+          "href": "https://medium.com/@beyondtherobot/ok-theres-a-clue-in-that-56f2ac9bc565",
+          "iframeHeight": 0,
+          "iframeSrc": "",
+          "iframeWidth": 0,
+          "mediaResourceId": "397c885a5b24b12993c57eb1af368b04",
+          "mediaResourceType": "MediaResourceMediumPost",
+          "mediumPost": {
+            "postId": "56f2ac9bc565"
+          },
+          "thumbnailHeight": 0,
+          "thumbnailImageId": "",
+          "thumbnailUrl": "",
+          "thumbnailWidth": 0,
+          "title": "OK, there’s a clue in that.",
+          "type": "MediaResource"
+        },
+        "54156eae84389c3e5dc67de76c9cbc8c": {
+          "authorName": "",
+          "description": "",
+          "display": 1,
+          "domain": "medium.com",
+          "href": "https://medium.com/@beyondtherobot/theres-a-clue-here-jeffrey-one-that-i-almost-don-t-want-to-look-at-though-i-will-ac48caffc1b4#2a24--highlight-d0e50fe7fed",
+          "iframeHeight": 0,
+          "iframeSrc": "",
+          "iframeWidth": 0,
+          "mediaResourceId": "54156eae84389c3e5dc67de76c9cbc8c",
+          "mediaResourceType": "MediaResourceMediumQuote",
+          "mediumPost": {
+            "postId": "ac48caffc1b4"
+          },
+          "mediumQuote": {
+            "quoteId": "d0e50fe7fed"
+          },
+          "thumbnailHeight": 0,
+          "thumbnailImageId": "",
+          "thumbnailUrl": "",
+          "thumbnailWidth": 0,
+          "title": "There’s a clue here, Jeffrey, one that I almost don’t want to look at (though I will).",
+          "type": "MediaResource"
+        },
+        "675d6003d2e5e310a333d0ef2e0d2a21": {
+          "authorName": "",
+          "description": "",
+          "display": 1,
+          "domain": "medium.com",
+          "href": "https://medium.com/@FarkleUp/never-experienced-3-d-immersive-reading-but-i-have-experienced-3-d-immersive-writing-d814f23352c6",
+          "iframeHeight": 0,
+          "iframeSrc": "",
+          "iframeWidth": 0,
+          "mediaResourceId": "675d6003d2e5e310a333d0ef2e0d2a21",
+          "mediaResourceType": "MediaResourceMediumPost",
+          "mediumPost": {
+            "postId": "d814f23352c6"
+          },
+          "thumbnailHeight": 0,
+          "thumbnailImageId": "",
+          "thumbnailUrl": "",
+          "thumbnailWidth": 0,
+          "title": "Never experienced 3-D immersive reading, but… I have experienced 3-D immersive writing!",
+          "type": "MediaResource"
+        },
+        "c81dac68ffd24ccea23ecbd9b3580b6a": {
+          "authorName": "",
+          "description": "",
+          "display": 1,
+          "domain": "medium.com",
+          "href": "https://medium.com/@beyondtherobot/theres-a-clue-here-jeffrey-one-that-i-almost-don-t-want-to-look-at-though-i-will-ac48caffc1b4#2a24--highlight-b36b5d24f482",
+          "iframeHeight": 0,
+          "iframeSrc": "",
+          "iframeWidth": 0,
+          "mediaResourceId": "c81dac68ffd24ccea23ecbd9b3580b6a",
+          "mediaResourceType": "MediaResourceMediumQuote",
+          "mediumPost": {
+            "postId": "ac48caffc1b4"
+          },
+          "mediumQuote": {
+            "quoteId": "b36b5d24f482"
+          },
+          "thumbnailHeight": 0,
+          "thumbnailImageId": "",
+          "thumbnailUrl": "",
+          "thumbnailWidth": 0,
+          "title": "There’s a clue here, Jeffrey, one that I almost don’t want to look at (though I will).",
+          "type": "MediaResource"
+        },
+        "cba1a87406e331de2c73163e027e4560": {
+          "authorName": "",
+          "description": "",
+          "display": 1,
+          "domain": "medium.com",
+          "href": "https://medium.com/@beyondtherobot/my-real-life-superpower-c2a9b309cf7",
+          "iframeHeight": 0,
+          "iframeSrc": "",
+          "iframeWidth": 0,
+          "mediaResourceId": "cba1a87406e331de2c73163e027e4560",
+          "mediaResourceType": "MediaResourceMediumPost",
+          "mediumPost": {
+            "postId": "c2a9b309cf7"
+          },
+          "thumbnailHeight": 720,
+          "thumbnailImageId": "1*tqi5QzCE3ZaJyxhio3GYaw.jpeg",
+          "thumbnailUrl": "",
+          "thumbnailWidth": 1280,
+          "title": "My Real Life Superpower",
+          "type": "MediaResource"
+        },
+        "cd8d28f9cce5b53295ae4178fc48b27a": {
+          "authorName": "",
+          "description": "",
+          "display": 1,
+          "domain": "medium.com",
+          "href": "https://medium.com/@justindpickering/sometimes-when-i-read-the-characters-appear-in-real-life-and-start-calling-me-names-5e1bb5f57316",
+          "iframeHeight": 0,
+          "iframeSrc": "",
+          "iframeWidth": 0,
+          "mediaResourceId": "cd8d28f9cce5b53295ae4178fc48b27a",
+          "mediaResourceType": "MediaResourceMediumPost",
+          "mediumPost": {
+            "postId": "5e1bb5f57316"
+          },
+          "thumbnailHeight": 0,
+          "thumbnailImageId": "",
+          "thumbnailUrl": "",
+          "thumbnailWidth": 0,
+          "title": "Sometimes when I read, the characters appear in real life and start calling me names.",
+          "type": "MediaResource"
+        },
+        "ecab1feb72d512a7e3ed1ae260fc7947": {
+          "authorName": "",
+          "description": "",
+          "display": 1,
+          "domain": "medium.com",
+          "href": "https://medium.com/@karigallomumford/thank-you-for-writing-this-article-bfdd72949b0b",
+          "iframeHeight": 0,
+          "iframeSrc": "",
+          "iframeWidth": 0,
+          "mediaResourceId": "ecab1feb72d512a7e3ed1ae260fc7947",
+          "mediaResourceType": "MediaResourceMediumPost",
+          "mediumPost": {
+            "postId": "bfdd72949b0b"
+          },
+          "thumbnailHeight": 0,
+          "thumbnailImageId": "",
+          "thumbnailUrl": "",
+          "thumbnailWidth": 0,
+          "title": "Thank you for writing this article.",
+          "type": "MediaResource"
+        },
+        "f7330ff19706f3aa356c5f33079aa4f8": {
+          "authorName": "",
+          "description": "",
+          "display": 1,
+          "domain": "medium.com",
+          "href": "https://medium.com/@skysong/yeah-i-think-it-has-to-do-with-love-of-language-both-writer-and-reader-as-well-97e2886da3fb#3e0d--highlight-32835b3b5479",
+          "iframeHeight": 0,
+          "iframeSrc": "",
+          "iframeWidth": 0,
+          "mediaResourceId": "f7330ff19706f3aa356c5f33079aa4f8",
+          "mediaResourceType": "MediaResourceMediumQuote",
+          "mediumPost": {
+            "postId": "97e2886da3fb"
+          },
+          "mediumQuote": {
+            "quoteId": "32835b3b5479"
+          },
+          "thumbnailHeight": 0,
+          "thumbnailImageId": "",
+          "thumbnailUrl": "",
+          "thumbnailWidth": 0,
+          "title": "Yeah, I think it has to do with love of language — both writer and reader — as well.",
+          "type": "MediaResource"
+        }
+      },
+      "Post": {
+        "1e00788dd831": {
+          "acceptedAt": 0,
+          "allowResponses": true,
+          "approvedHomeCollectionId": "",
+          "audioVersionDurationSec": 0,
+          "canonicalUrl": "",
+          "content": {
+            "postDisplay": {
+              "coverless": true
+            },
+            "subtitle": "as for the reading-writing dichotomy, I’m sure many of us go through that inversion from reading more to writing more, I certainly did. But…"
+          },
+          "coverless": true,
+          "createdAt": 1514556517994,
+          "creatorId": "5b1a95ddb0d0",
+          "deletedAt": 0,
+          "detectedLanguage": "en",
+          "displayAuthor": "",
+          "experimentalCss": "",
+          "firstPublishedAt": 1514556793292,
+          "hasUnpublishedEdits": false,
+          "hightowerMinimumGuaranteeEndsAt": 0,
+          "hightowerMinimumGuaranteeStartsAt": 0,
+          "homeCollectionId": "",
+          "id": "1e00788dd831",
+          "importedPublishedAt": 0,
+          "importedUrl": "",
+          "inResponseToMediaResourceId": "c81dac68ffd24ccea23ecbd9b3580b6a",
+          "inResponseToPostId": "ac48caffc1b4",
+          "inResponseToRemovedAt": 0,
+          "isApprovedTranslation": false,
+          "isBlockedFromHightower": false,
+          "isEligibleForRevenue": false,
+          "isNsfw": false,
+          "isRequestToPubDisabled": false,
+          "isSeries": false,
+          "isSponsored": false,
+          "isSubscriptionLocked": false,
+          "isTitleSynthesized": true,
+          "latestPublishedAt": 1514594339445,
+          "latestPublishedVersion": "4600b6f44ab",
+          "latestRev": 32,
+          "latestVersion": "4600b6f44ab",
+          "license": 0,
+          "lockedPostSource": 0,
+          "mediumUrl": "",
+          "migrationId": "",
+          "newsletterId": "",
+          "notifyFacebook": false,
+          "notifyFollowers": true,
+          "notifyTwitter": false,
+          "previewContent": {
+            "bodyModel": {
+              "paragraphs": [
+                {
+                  "alignment": 1,
+                  "markups": [
+                  ],
+                  "name": "3f8d",
+                  "text": "me too — but I love the process, writing is my guilty pleasure. what you describe is my 80%, the rest of the time it pours out of me stream-of-consciousness-and-all.",
+                  "type": 1
+                },
+                {
+                  "alignment": 1,
+                  "markups": [
+                  ],
+                  "name": "9153",
+                  "text": "as for the reading-writing dichotomy, I’m sure many of us go through that inversion from reading more to writing more, I certainly did. But maybe it’s more like a double-helix tangle that undulates between two poles.",
+                  "type": 1
+                }
+              ],
+              "sections": [
+                {
+                  "startIndex": 0
+                }
+              ]
+            },
+            "isFullContent": true
+          },
+          "responseHiddenOnParentPostAt": 0,
+          "sequenceId": "",
+          "seriesLastAppendedAt": 0,
+          "slug": "me-too-but-i-love-the-process-writing-is-my-naughty-pleasure",
+          "title": "me too — but I love the process, writing is my guilty pleasure.",
+          "translationSourceCreatorId": "",
+          "translationSourcePostId": "",
+          "type": "Post",
+          "uniqueSlug": "me-too-but-i-love-the-process-writing-is-my-naughty-pleasure-1e00788dd831",
+          "updatedAt": 1514594340189,
+          "versionId": "4600b6f44ab",
+          "virtuals": {
+            "allowNotes": true,
+            "imageCount": 0,
+            "isBookmarked": false,
+            "isLockedPreviewOnly": false,
+            "links": {
+              "entries": [
+              ],
+              "generatedAt": 1514594339788,
+              "version": "0.3"
+            },
+            "metaDescription": "",
+            "previewImage": {
+              "backgroundSize": "",
+              "filter": "",
+              "height": 0,
+              "imageId": "",
+              "originalHeight": 0,
+              "originalWidth": 0,
+              "strategy": "resample",
+              "width": 0
+            },
+            "readingList": 0,
+            "readingTime": "0.27169811320754716",
+            "recommends": 3,
+            "responsesCreatedCount": 0,
+            "sectionCount": 1,
+            "socialRecommendsCount": 0,
+            "subtitle": "as for the reading-writing dichotomy, I’m sure many of us go through that inversion from reading more to writing more, I certainly did. But…",
+            "tags": [
+              {
+                "metadata": {
+                  "coverImage": {
+                    "id": "1*AwaoHDZEX9wjHc7o9Ienzg.jpeg"
+                  },
+                  "followerCount": 1058293,
+                  "postCount": 119399
+                },
+                "name": "Writing",
+                "postCount": 119399,
+                "slug": "writing",
+                "type": "Tag",
+                "virtuals": {
+                  "isFollowing": false
+                }
+              },
+              {
+                "metadata": {
+                  "coverImage": {
+                    "id": "1*xJV8uYsDYrnDwulfbMByRQ.jpeg"
+                  },
+                  "followerCount": 1079358,
+                  "postCount": 179453
+                },
+                "name": "Life Lessons",
+                "postCount": 179453,
+                "slug": "life-lessons",
+                "type": "Tag",
+                "virtuals": {
+                  "isFollowing": false
+                }
+              }
+            ],
+            "takeoverId": "",
+            "totalClapCount": 7,
+            "userPostRelation": {
+              "audioProgressSec": 0,
+              "clapCount": 0,
+              "collaboratorAddedAt": 0,
+              "lastReadAt": 0,
+              "lastReadParagraphName": "",
+              "lastReadPercentage": 0,
+              "lastReadSectionName": "",
+              "lastReadVersionId": "",
+              "notesAddedAt": 0,
+              "postId": "1e00788dd831",
+              "presentedCountInResponseManagement": 0,
+              "presentedCountInStream": 3,
+              "queuedAt": 0,
+              "readAt": 1514814922128,
+              "readLaterAddedAt": 0,
+              "seriesFirstViewedAt": 0,
+              "seriesLastViewedAt": 0,
+              "seriesUpdateNotifsOptedInAt": 0,
+              "subscribedAt": 0,
+              "userId": "babae01b1fce",
+              "viewedAt": 1514814922126,
+              "votedAt": 0
+            },
+            "usersBySocialRecommends": [
+            ],
+            "wordCount": 72
+          },
+          "visibility": 0,
+          "vote": false,
+          "webCanonicalUrl": ""
+        },
+        "22b0f5e55f32": {
+          "acceptedAt": 0,
+          "allowResponses": true,
+          "approvedHomeCollectionId": "",
+          "audioVersionDurationSec": 0,
+          "canonicalUrl": "",
+          "content": {
+            "postDisplay": {
+              "coverless": true
+            }
+          },
+          "coverless": true,
+          "createdAt": 1514650354072,
+          "creatorId": "5373b75f0c97",
+          "deletedAt": 0,
+          "detectedLanguage": "en",
+          "displayAuthor": "",
+          "experimentalCss": "",
+          "firstPublishedAt": 1514650436621,
+          "hasUnpublishedEdits": false,
+          "hightowerMinimumGuaranteeEndsAt": 0,
+          "hightowerMinimumGuaranteeStartsAt": 0,
+          "homeCollectionId": "",
+          "id": "22b0f5e55f32",
+          "importedPublishedAt": 0,
+          "importedUrl": "",
+          "inResponseToMediaResourceId": "cd8d28f9cce5b53295ae4178fc48b27a",
+          "inResponseToPostId": "5e1bb5f57316",
+          "inResponseToRemovedAt": 0,
+          "isApprovedTranslation": false,
+          "isBlockedFromHightower": false,
+          "isEligibleForRevenue": false,
+          "isNsfw": false,
+          "isRequestToPubDisabled": false,
+          "isSeries": false,
+          "isSponsored": false,
+          "isSubscriptionLocked": false,
+          "isTitleSynthesized": true,
+          "latestPublishedAt": 1514650436621,
+          "latestPublishedVersion": "88f31a6e8b3",
+          "latestRev": 20,
+          "latestVersion": "88f31a6e8b3",
+          "license": 0,
+          "lockedPostSource": 0,
+          "mediumUrl": "",
+          "migrationId": "",
+          "newsletterId": "",
+          "notifyFacebook": false,
+          "notifyFollowers": true,
+          "notifyTwitter": false,
+          "previewContent": {
+            "bodyModel": {
+              "paragraphs": [
+                {
+                  "alignment": 1,
+                  "markups": [
+                  ],
+                  "name": "96a1",
+                  "text": "Plus, you have to do A LOT of acid to get him to jump out of the book.",
+                  "type": 6
+                },
+                {
+                  "alignment": 1,
+                  "markups": [
+                  ],
+                  "name": "33f9",
+                  "text": "Hey, I’m open to any good idea. I’ve dropped acid for less constructive reasons… So why not? Thanks!",
+                  "type": 1
+                }
+              ],
+              "sections": [
+                {
+                  "startIndex": 0
+                }
+              ]
+            },
+            "isFullContent": true
+          },
+          "responseHiddenOnParentPostAt": 0,
+          "sequenceId": "",
+          "seriesLastAppendedAt": 0,
+          "slug": "hey-im-open-to-any-good-idea",
+          "title": "Hey, I’m open to any good idea.",
+          "translationSourceCreatorId": "",
+          "translationSourcePostId": "",
+          "type": "Post",
+          "uniqueSlug": "hey-im-open-to-any-good-idea-22b0f5e55f32",
+          "updatedAt": 1514650437452,
+          "versionId": "88f31a6e8b3",
+          "virtuals": {
+            "allowNotes": true,
+            "imageCount": 0,
+            "isBookmarked": false,
+            "isLockedPreviewOnly": false,
+            "links": {
+              "entries": [
+              ],
+              "generatedAt": 1514650436986,
+              "version": "0.3"
+            },
+            "metaDescription": "",
+            "previewImage": {
+              "backgroundSize": "",
+              "filter": "",
+              "height": 0,
+              "imageId": "",
+              "originalHeight": 0,
+              "originalWidth": 0,
+              "strategy": "resample",
+              "width": 0
+            },
+            "readingList": 0,
+            "readingTime": "0.13584905660377358",
+            "recommends": 0,
+            "responsesCreatedCount": 0,
+            "sectionCount": 1,
+            "socialRecommendsCount": 0,
+            "subtitle": "",
+            "tags": [
+            ],
+            "takeoverId": "",
+            "totalClapCount": 0,
+            "userPostRelation": {
+              "audioProgressSec": 0,
+              "clapCount": 0,
+              "collaboratorAddedAt": 0,
+              "lastReadAt": 0,
+              "lastReadParagraphName": "",
+              "lastReadPercentage": 0,
+              "lastReadSectionName": "",
+              "lastReadVersionId": "",
+              "notesAddedAt": 0,
+              "postId": "22b0f5e55f32",
+              "presentedCountInResponseManagement": 0,
+              "presentedCountInStream": 1,
+              "queuedAt": 0,
+              "readAt": 1514813456450,
+              "readLaterAddedAt": 0,
+              "seriesFirstViewedAt": 0,
+              "seriesLastViewedAt": 0,
+              "seriesUpdateNotifsOptedInAt": 0,
+              "subscribedAt": 0,
+              "userId": "babae01b1fce",
+              "viewedAt": 1514813456448,
+              "votedAt": 0
+            },
+            "usersBySocialRecommends": [
+            ],
+            "wordCount": 36
+          },
+          "visibility": 0,
+          "vote": false,
+          "webCanonicalUrl": ""
+        },
+        "369ba16a5ca3": {
+          "acceptedAt": 0,
+          "allowResponses": true,
+          "approvedHomeCollectionId": "",
+          "audioVersionDurationSec": 0,
+          "canonicalUrl": "",
+          "content": {
+            "postDisplay": {
+              "coverless": true
+            }
+          },
+          "coverless": true,
+          "createdAt": 1514670003565,
+          "creatorId": "73f2901d9ac7",
+          "deletedAt": 0,
+          "detectedLanguage": "en",
+          "displayAuthor": "",
+          "experimentalCss": "",
+          "firstPublishedAt": 1514670060026,
+          "hasUnpublishedEdits": false,
+          "hightowerMinimumGuaranteeEndsAt": 0,
+          "hightowerMinimumGuaranteeStartsAt": 0,
+          "homeCollectionId": "",
+          "id": "369ba16a5ca3",
+          "importedPublishedAt": 0,
+          "importedUrl": "",
+          "inResponseToMediaResourceId": "cba1a87406e331de2c73163e027e4560",
+          "inResponseToPostId": "c2a9b309cf7",
+          "inResponseToRemovedAt": 0,
+          "isApprovedTranslation": false,
+          "isBlockedFromHightower": false,
+          "isEligibleForRevenue": false,
+          "isNsfw": false,
+          "isRequestToPubDisabled": false,
+          "isSeries": false,
+          "isSponsored": false,
+          "isSubscriptionLocked": false,
+          "isTitleSynthesized": true,
+          "latestPublishedAt": 1514670080013,
+          "latestPublishedVersion": "39033fa92324",
+          "latestRev": 12,
+          "latestVersion": "39033fa92324",
+          "license": 0,
+          "lockedPostSource": 0,
+          "mediumUrl": "",
+          "migrationId": "",
+          "newsletterId": "",
+          "notifyFacebook": false,
+          "notifyFollowers": true,
+          "notifyTwitter": false,
+          "previewContent": {
+            "bodyModel": {
+              "paragraphs": [
+                {
+                  "alignment": 1,
+                  "markups": [
+                  ],
+                  "name": "ee7b",
+                  "text": "I know exactly what you’re talking about. Recently I’ve learned how to control this power. This is a very personal experience, PM me if interested to explore more!",
+                  "type": 1
+                }
+              ],
+              "sections": [
+                {
+                  "startIndex": 0
+                }
+              ]
+            },
+            "isFullContent": true
+          },
+          "responseHiddenOnParentPostAt": 0,
+          "sequenceId": "",
+          "seriesLastAppendedAt": 0,
+          "slug": "i-know-exactly-what-youre-talking-about",
+          "title": "I know exactly what you’re talking about.",
+          "translationSourceCreatorId": "",
+          "translationSourcePostId": "",
+          "type": "Post",
+          "uniqueSlug": "i-know-exactly-what-youre-talking-about-369ba16a5ca3",
+          "updatedAt": 1514670456924,
+          "versionId": "39033fa92324",
+          "virtuals": {
+            "allowNotes": true,
+            "imageCount": 0,
+            "isBookmarked": false,
+            "isLockedPreviewOnly": false,
+            "links": {
+              "entries": [
+              ],
+              "generatedAt": 1514670080328,
+              "version": "0.3"
+            },
+            "metaDescription": "",
+            "previewImage": {
+              "backgroundSize": "",
+              "filter": "",
+              "height": 0,
+              "imageId": "",
+              "originalHeight": 0,
+              "originalWidth": 0,
+              "strategy": "resample",
+              "width": 0
+            },
+            "readingList": 0,
+            "readingTime": "0.10566037735849057",
+            "recommends": 1,
+            "responsesCreatedCount": 0,
+            "sectionCount": 1,
+            "socialRecommendsCount": 0,
+            "subtitle": "",
+            "tags": [
+            ],
+            "takeoverId": "",
+            "totalClapCount": 5,
+            "userPostRelation": {
+              "audioProgressSec": 0,
+              "clapCount": 0,
+              "collaboratorAddedAt": 0,
+              "lastReadAt": 0,
+              "lastReadParagraphName": "",
+              "lastReadPercentage": 0,
+              "lastReadSectionName": "",
+              "lastReadVersionId": "",
+              "notesAddedAt": 0,
+              "postId": "369ba16a5ca3",
+              "presentedCountInResponseManagement": 0,
+              "presentedCountInStream": 1,
+              "queuedAt": 0,
+              "readAt": 1514866689183,
+              "readLaterAddedAt": 0,
+              "seriesFirstViewedAt": 0,
+              "seriesLastViewedAt": 0,
+              "seriesUpdateNotifsOptedInAt": 0,
+              "subscribedAt": 0,
+              "userId": "babae01b1fce",
+              "viewedAt": 1514866689182,
+              "votedAt": 0
+            },
+            "usersBySocialRecommends": [
+            ],
+            "wordCount": 28
+          },
+          "visibility": 0,
+          "vote": false,
+          "webCanonicalUrl": ""
+        },
+        "56f2ac9bc565": {
+          "acceptedAt": 0,
+          "allowResponses": true,
+          "approvedHomeCollectionId": "",
+          "audioVersionDurationSec": 0,
+          "canonicalUrl": "",
+          "content": {
+            "postDisplay": {
+              "coverless": true
+            }
+          },
+          "coverless": true,
+          "createdAt": 1514550564731,
+          "creatorId": "5373b75f0c97",
+          "deletedAt": 0,
+          "detectedLanguage": "en",
+          "displayAuthor": "",
+          "experimentalCss": "",
+          "firstPublishedAt": 1514551049342,
+          "hasUnpublishedEdits": false,
+          "hightowerMinimumGuaranteeEndsAt": 0,
+          "hightowerMinimumGuaranteeStartsAt": 0,
+          "homeCollectionId": "",
+          "id": "56f2ac9bc565",
+          "importedPublishedAt": 0,
+          "importedUrl": "",
+          "inResponseToMediaResourceId": "1fae5ec522e4a0c518ea7fcffe5590fd",
+          "inResponseToPostId": "aaf3372fdca0",
+          "inResponseToRemovedAt": 0,
+          "isApprovedTranslation": false,
+          "isBlockedFromHightower": false,
+          "isEligibleForRevenue": false,
+          "isNsfw": false,
+          "isRequestToPubDisabled": false,
+          "isSeries": false,
+          "isSponsored": false,
+          "isSubscriptionLocked": false,
+          "isTitleSynthesized": true,
+          "latestPublishedAt": 1514551049342,
+          "latestPublishedVersion": "be85b524c3a2",
+          "latestRev": 71,
+          "latestVersion": "be85b524c3a2",
+          "license": 0,
+          "lockedPostSource": 0,
+          "mediumUrl": "",
+          "migrationId": "",
+          "newsletterId": "",
+          "notifyFacebook": false,
+          "notifyFollowers": true,
+          "notifyTwitter": false,
+          "previewContent": {
+            "bodyModel": {
+              "paragraphs": [
+                {
+                  "alignment": 1,
+                  "markups": [
+                  ],
+                  "name": "2a55",
+                  "text": "but I can tell you, it takes extremely good writing :)",
+                  "type": 6
+                },
+                {
+                  "alignment": 1,
+                  "markups": [
+                  ],
+                  "name": "bdbe",
+                  "text": "OK, there’s a clue in that. While I haven’t experienced the full self-vanishing described here since my late teens, I do recognize different levels of ordinary immersion when reading, depending on the writer. I have developed a special affection for Alice Hoffman for…",
+                  "type": 1
+                }
+              ],
+              "sections": [
+                {
+                  "startIndex": 0
+                }
+              ]
+            },
+            "isFullContent": false
+          },
+          "responseHiddenOnParentPostAt": 0,
+          "sequenceId": "",
+          "seriesLastAppendedAt": 0,
+          "slug": "ok-theres-a-clue-in-that",
+          "title": "OK, there’s a clue in that.",
+          "translationSourceCreatorId": "",
+          "translationSourcePostId": "",
+          "type": "Post",
+          "uniqueSlug": "ok-theres-a-clue-in-that-56f2ac9bc565",
+          "updatedAt": 1514640702277,
+          "versionId": "be85b524c3a2",
+          "virtuals": {
+            "allowNotes": true,
+            "imageCount": 0,
+            "isBookmarked": false,
+            "isLockedPreviewOnly": false,
+            "links": {
+              "entries": [
+              ],
+              "generatedAt": 1514551049660,
+              "version": "0.3"
+            },
+            "metaDescription": "",
+            "previewImage": {
+              "backgroundSize": "",
+              "filter": "",
+              "height": 0,
+              "imageId": "",
+              "originalHeight": 0,
+              "originalWidth": 0,
+              "strategy": "resample",
+              "width": 0
+            },
+            "readingList": 0,
+            "readingTime": "0.5132075471698113",
+            "recommends": 3,
+            "responsesCreatedCount": 2,
+            "sectionCount": 1,
+            "socialRecommendsCount": 0,
+            "subtitle": "",
+            "tags": [
+            ],
+            "takeoverId": "",
+            "totalClapCount": 19,
+            "userPostRelation": {
+              "audioProgressSec": 0,
+              "clapCount": 0,
+              "collaboratorAddedAt": 0,
+              "lastReadAt": 0,
+              "lastReadParagraphName": "",
+              "lastReadPercentage": 0,
+              "lastReadSectionName": "",
+              "lastReadVersionId": "",
+              "notesAddedAt": 0,
+              "postId": "56f2ac9bc565",
+              "presentedCountInResponseManagement": 0,
+              "presentedCountInStream": 1,
+              "queuedAt": 0,
+              "readAt": 0,
+              "readLaterAddedAt": 0,
+              "seriesFirstViewedAt": 0,
+              "seriesLastViewedAt": 0,
+              "seriesUpdateNotifsOptedInAt": 0,
+              "subscribedAt": 0,
+              "userId": "babae01b1fce",
+              "viewedAt": 0,
+              "votedAt": 0
+            },
+            "usersBySocialRecommends": [
+            ],
+            "wordCount": 136
+          },
+          "visibility": 0,
+          "vote": false,
+          "webCanonicalUrl": ""
+        },
+        "5e1bb5f57316": {
+          "acceptedAt": 0,
+          "allowResponses": true,
+          "approvedHomeCollectionId": "",
+          "audioVersionDurationSec": 0,
+          "canonicalUrl": "",
+          "content": {
+            "postDisplay": {
+              "coverless": true
+            }
+          },
+          "coverless": true,
+          "createdAt": 1514636139089,
+          "creatorId": "bdf369107123",
+          "deletedAt": 0,
+          "detectedLanguage": "en",
+          "displayAuthor": "",
+          "experimentalCss": "",
+          "firstPublishedAt": 1514636408685,
+          "hasUnpublishedEdits": false,
+          "hightowerMinimumGuaranteeEndsAt": 0,
+          "hightowerMinimumGuaranteeStartsAt": 0,
+          "homeCollectionId": "",
+          "id": "5e1bb5f57316",
+          "importedPublishedAt": 0,
+          "importedUrl": "",
+          "inResponseToMediaResourceId": "cba1a87406e331de2c73163e027e4560",
+          "inResponseToPostId": "c2a9b309cf7",
+          "inResponseToRemovedAt": 0,
+          "isApprovedTranslation": false,
+          "isBlockedFromHightower": false,
+          "isEligibleForRevenue": false,
+          "isNsfw": false,
+          "isRequestToPubDisabled": false,
+          "isSeries": false,
+          "isSponsored": false,
+          "isSubscriptionLocked": false,
+          "isTitleSynthesized": true,
+          "latestPublishedAt": 1514636408685,
+          "latestPublishedVersion": "7e522747218b",
+          "latestRev": 50,
+          "latestVersion": "7e522747218b",
+          "license": 0,
+          "lockedPostSource": 0,
+          "mediumUrl": "",
+          "migrationId": "",
+          "newsletterId": "",
+          "notifyFacebook": false,
+          "notifyFollowers": true,
+          "notifyTwitter": false,
+          "previewContent": {
+            "bodyModel": {
+              "paragraphs": [
+                {
+                  "alignment": 1,
+                  "markups": [
+                  ],
+                  "name": "0b0f",
+                  "text": "Sometimes when I read, the characters appear in real life and start calling me names. Have you ever been called a pussy to your face by Robinson Crusoe? It’s not as exhilarating as it sounds. Plus, you have to do A LOT of acid to get him to jump out of the book.",
+                  "type": 1
+                }
+              ],
+              "sections": [
+                {
+                  "startIndex": 0
+                }
+              ]
+            },
+            "isFullContent": true
+          },
+          "responseHiddenOnParentPostAt": 0,
+          "sequenceId": "",
+          "seriesLastAppendedAt": 0,
+          "slug": "sometimes-when-i-read-the-characters-appear-in-real-life-and-start-calling-me-names",
+          "title": "Sometimes when I read, the characters appear in real life and start calling me names.",
+          "translationSourceCreatorId": "",
+          "translationSourcePostId": "",
+          "type": "Post",
+          "uniqueSlug": "sometimes-when-i-read-the-characters-appear-in-real-life-and-start-calling-me-names-5e1bb5f57316",
+          "updatedAt": 1514650328733,
+          "versionId": "7e522747218b",
+          "virtuals": {
+            "allowNotes": true,
+            "imageCount": 0,
+            "isBookmarked": false,
+            "isLockedPreviewOnly": false,
+            "links": {
+              "entries": [
+              ],
+              "generatedAt": 1514636409389,
+              "version": "0.3"
+            },
+            "metaDescription": "",
+            "previewImage": {
+              "backgroundSize": "",
+              "filter": "",
+              "height": 0,
+              "imageId": "",
+              "originalHeight": 0,
+              "originalWidth": 0,
+              "strategy": "resample",
+              "width": 0
+            },
+            "readingList": 0,
+            "readingTime": 0.2,
+            "recommends": 1,
+            "responsesCreatedCount": 1,
+            "sectionCount": 1,
+            "socialRecommendsCount": 0,
+            "subtitle": "",
+            "tags": [
+            ],
+            "takeoverId": "",
+            "totalClapCount": 5,
+            "userPostRelation": {
+              "audioProgressSec": 0,
+              "clapCount": 0,
+              "collaboratorAddedAt": 0,
+              "lastReadAt": 0,
+              "lastReadParagraphName": "",
+              "lastReadPercentage": 0,
+              "lastReadSectionName": "",
+              "lastReadVersionId": "",
+              "notesAddedAt": 0,
+              "postId": "5e1bb5f57316",
+              "presentedCountInResponseManagement": 0,
+              "presentedCountInStream": 1,
+              "queuedAt": 0,
+              "readAt": 0,
+              "readLaterAddedAt": 0,
+              "seriesFirstViewedAt": 0,
+              "seriesLastViewedAt": 0,
+              "seriesUpdateNotifsOptedInAt": 0,
+              "subscribedAt": 0,
+              "userId": "babae01b1fce",
+              "viewedAt": 1514866689185,
+              "votedAt": 0
+            },
+            "usersBySocialRecommends": [
+            ],
+            "wordCount": 53
+          },
+          "visibility": 0,
+          "vote": false,
+          "webCanonicalUrl": ""
+        },
+        "6f6055b2b148": {
+          "acceptedAt": 0,
+          "allowResponses": true,
+          "approvedHomeCollectionId": "",
+          "audioVersionDurationSec": 0,
+          "canonicalUrl": "",
+          "content": {
+            "postDisplay": {
+              "coverless": true
+            }
+          },
+          "coverless": true,
+          "createdAt": 1514687831404,
+          "creatorId": "e46dcc0fcb91",
+          "deletedAt": 0,
+          "detectedLanguage": "en",
+          "displayAuthor": "",
+          "experimentalCss": "",
+          "firstPublishedAt": 1514687847626,
+          "hasUnpublishedEdits": false,
+          "hightowerMinimumGuaranteeEndsAt": 0,
+          "hightowerMinimumGuaranteeStartsAt": 0,
+          "homeCollectionId": "",
+          "id": "6f6055b2b148",
+          "importedPublishedAt": 0,
+          "importedUrl": "",
+          "inResponseToMediaResourceId": "54156eae84389c3e5dc67de76c9cbc8c",
+          "inResponseToPostId": "ac48caffc1b4",
+          "inResponseToRemovedAt": 0,
+          "isApprovedTranslation": false,
+          "isBlockedFromHightower": false,
+          "isEligibleForRevenue": false,
+          "isNsfw": false,
+          "isRequestToPubDisabled": false,
+          "isSeries": false,
+          "isSponsored": false,
+          "isSubscriptionLocked": false,
+          "isTitleSynthesized": true,
+          "latestPublishedAt": 1514693635325,
+          "latestPublishedVersion": "ef96fed63226",
+          "latestRev": 8,
+          "latestVersion": "ef96fed63226",
+          "license": 0,
+          "lockedPostSource": 0,
+          "mediumUrl": "",
+          "migrationId": "",
+          "newsletterId": "",
+          "notifyFacebook": false,
+          "notifyFollowers": true,
+          "notifyTwitter": false,
+          "previewContent": {
+            "bodyModel": {
+              "paragraphs": [
+                {
+                  "alignment": 1,
+                  "markups": [
+                  ],
+                  "name": "0da3",
+                  "text": "I feel so encouraged by these words. You just don’t know. They really sum up my experience. I got a good visual/flashback with your line about Lego’s too.",
+                  "type": 1
+                }
+              ],
+              "sections": [
+                {
+                  "startIndex": 0
+                }
+              ]
+            },
+            "isFullContent": true
+          },
+          "responseHiddenOnParentPostAt": 0,
+          "sequenceId": "",
+          "seriesLastAppendedAt": 0,
+          "slug": "i-feel-so-encouraged-by-these-words",
+          "title": "I feel so encouraged by these words.",
+          "translationSourceCreatorId": "",
+          "translationSourcePostId": "",
+          "type": "Post",
+          "uniqueSlug": "i-feel-so-encouraged-by-these-words-6f6055b2b148",
+          "updatedAt": 1514693636003,
+          "versionId": "ef96fed63226",
+          "virtuals": {
+            "allowNotes": true,
+            "imageCount": 0,
+            "isBookmarked": false,
+            "isLockedPreviewOnly": false,
+            "links": {
+              "entries": [
+              ],
+              "generatedAt": 1514693635646,
+              "version": "0.3"
+            },
+            "metaDescription": "",
+            "previewImage": {
+              "backgroundSize": "",
+              "filter": "",
+              "height": 0,
+              "imageId": "",
+              "originalHeight": 0,
+              "originalWidth": 0,
+              "strategy": "resample",
+              "width": 0
+            },
+            "readingList": 0,
+            "readingTime": "0.10566037735849057",
+            "recommends": 1,
+            "responsesCreatedCount": 0,
+            "sectionCount": 1,
+            "socialRecommendsCount": 0,
+            "subtitle": "",
+            "tags": [
+            ],
+            "takeoverId": "",
+            "totalClapCount": 5,
+            "userPostRelation": {
+              "audioProgressSec": 0,
+              "clapCount": 0,
+              "collaboratorAddedAt": 0,
+              "lastReadAt": 0,
+              "lastReadParagraphName": "",
+              "lastReadPercentage": 0,
+              "lastReadSectionName": "",
+              "lastReadVersionId": "",
+              "notesAddedAt": 0,
+              "postId": "6f6055b2b148",
+              "presentedCountInResponseManagement": 0,
+              "presentedCountInStream": 3,
+              "queuedAt": 0,
+              "readAt": 1514866704955,
+              "readLaterAddedAt": 0,
+              "seriesFirstViewedAt": 0,
+              "seriesLastViewedAt": 0,
+              "seriesUpdateNotifsOptedInAt": 0,
+              "subscribedAt": 0,
+              "userId": "babae01b1fce",
+              "viewedAt": 1514866704953,
+              "votedAt": 0
+            },
+            "usersBySocialRecommends": [
+            ],
+            "wordCount": 28
+          },
+          "visibility": 0,
+          "vote": false,
+          "webCanonicalUrl": ""
+        },
+        "7eb071d92f56": {
+          "acceptedAt": 0,
+          "allowResponses": true,
+          "approvedHomeCollectionId": "",
+          "audioVersionDurationSec": 0,
+          "canonicalUrl": "",
+          "content": {
+            "postDisplay": {
+              "coverless": true
+            }
+          },
+          "coverless": true,
+          "createdAt": 1514561153641,
+          "creatorId": "5373b75f0c97",
+          "deletedAt": 0,
+          "detectedLanguage": "en",
+          "displayAuthor": "",
+          "experimentalCss": "",
+          "firstPublishedAt": 1514567185371,
+          "hasUnpublishedEdits": false,
+          "hightowerMinimumGuaranteeEndsAt": 0,
+          "hightowerMinimumGuaranteeStartsAt": 0,
+          "homeCollectionId": "",
+          "id": "7eb071d92f56",
+          "importedPublishedAt": 0,
+          "importedUrl": "",
+          "inResponseToMediaResourceId": "f7330ff19706f3aa356c5f33079aa4f8",
+          "inResponseToPostId": "97e2886da3fb",
+          "inResponseToRemovedAt": 0,
+          "isApprovedTranslation": false,
+          "isBlockedFromHightower": false,
+          "isEligibleForRevenue": false,
+          "isNsfw": false,
+          "isRequestToPubDisabled": false,
+          "isSeries": false,
+          "isSponsored": false,
+          "isSubscriptionLocked": false,
+          "isTitleSynthesized": true,
+          "latestPublishedAt": 1514567185371,
+          "latestPublishedVersion": "e7b39078bad3",
+          "latestRev": 119,
+          "latestVersion": "e7b39078bad3",
+          "license": 0,
+          "lockedPostSource": 0,
+          "mediumUrl": "",
+          "migrationId": "",
+          "newsletterId": "",
+          "notifyFacebook": false,
+          "notifyFollowers": true,
+          "notifyTwitter": false,
+          "previewContent": {
+            "bodyModel": {
+              "paragraphs": [
+                {
+                  "alignment": 1,
+                  "markups": [
+                  ],
+                  "name": "94f9",
+                  "text": "That’s another important insight, I think. In another part of this response thread, it’s come up that the age at which I became aware that my ability to read immersively (on a superpower level) was gone, 25, was the same age I enrolled in a college writing program. One huge thing that changed then was that, prior to college, my “mood” was pretty…",
+                  "type": 1
+                }
+              ],
+              "sections": [
+                {
+                  "startIndex": 0
+                }
+              ]
+            },
+            "isFullContent": false
+          },
+          "responseHiddenOnParentPostAt": 0,
+          "sequenceId": "",
+          "seriesLastAppendedAt": 0,
+          "slug": "thats-another-important-insight-i-think",
+          "title": "That’s another important insight, I think.",
+          "translationSourceCreatorId": "",
+          "translationSourcePostId": "",
+          "type": "Post",
+          "uniqueSlug": "thats-another-important-insight-i-think-7eb071d92f56",
+          "updatedAt": 1514640793387,
+          "versionId": "e7b39078bad3",
+          "virtuals": {
+            "allowNotes": true,
+            "imageCount": 0,
+            "isBookmarked": false,
+            "isLockedPreviewOnly": false,
+            "links": {
+              "entries": [
+              ],
+              "generatedAt": 1514567185878,
+              "version": "0.3"
+            },
+            "metaDescription": "",
+            "previewImage": {
+              "backgroundSize": "",
+              "filter": "",
+              "height": 0,
+              "imageId": "",
+              "originalHeight": 0,
+              "originalWidth": 0,
+              "strategy": "resample",
+              "width": 0
+            },
+            "readingList": 0,
+            "readingTime": "0.9433962264150944",
+            "recommends": 2,
+            "responsesCreatedCount": 0,
+            "sectionCount": 1,
+            "socialRecommendsCount": 0,
+            "subtitle": "",
+            "tags": [
+              {
+                "metadata": {
+                  "coverImage": {
+                    "id": "1*AwaoHDZEX9wjHc7o9Ienzg.jpeg"
+                  },
+                  "followerCount": 1058293,
+                  "postCount": 119399
+                },
+                "name": "Writing",
+                "postCount": 119399,
+                "slug": "writing",
+                "type": "Tag",
+                "virtuals": {
+                  "isFollowing": false
+                }
+              },
+              {
+                "metadata": {
+                  "coverImage": {
+                    "id": "1*LIJ3LJIqAqvME_Jm1Jw-nQ.jpeg"
+                  },
+                  "followerCount": 781826,
+                  "postCount": 15768
+                },
+                "name": "Reading",
+                "postCount": 15768,
+                "slug": "reading",
+                "type": "Tag",
+                "virtuals": {
+                  "isFollowing": false
+                }
+              }
+            ],
+            "takeoverId": "",
+            "totalClapCount": 18,
+            "userPostRelation": {
+              "audioProgressSec": 0,
+              "clapCount": 0,
+              "collaboratorAddedAt": 0,
+              "lastReadAt": 0,
+              "lastReadParagraphName": "",
+              "lastReadPercentage": 0,
+              "lastReadSectionName": "",
+              "lastReadVersionId": "",
+              "notesAddedAt": 0,
+              "postId": "7eb071d92f56",
+              "presentedCountInResponseManagement": 0,
+              "presentedCountInStream": 3,
+              "queuedAt": 0,
+              "readAt": 0,
+              "readLaterAddedAt": 0,
+              "seriesFirstViewedAt": 0,
+              "seriesLastViewedAt": 0,
+              "seriesUpdateNotifsOptedInAt": 0,
+              "subscribedAt": 0,
+              "userId": "babae01b1fce",
+              "viewedAt": 0,
+              "votedAt": 0
+            },
+            "usersBySocialRecommends": [
+            ],
+            "wordCount": 250
+          },
+          "visibility": 0,
+          "vote": false,
+          "webCanonicalUrl": ""
+        },
+        "891d0ec861e9": {
+          "acceptedAt": 0,
+          "allowResponses": true,
+          "approvedHomeCollectionId": "",
+          "audioVersionDurationSec": 0,
+          "canonicalUrl": "",
+          "content": {
+            "postDisplay": {
+              "coverless": true
+            }
+          },
+          "coverless": true,
+          "createdAt": 1514590031646,
+          "creatorId": "be6b9878f533",
+          "deletedAt": 0,
+          "detectedLanguage": "en",
+          "displayAuthor": "",
+          "experimentalCss": "",
+          "firstPublishedAt": 1514590085189,
+          "hasUnpublishedEdits": false,
+          "hightowerMinimumGuaranteeEndsAt": 0,
+          "hightowerMinimumGuaranteeStartsAt": 0,
+          "homeCollectionId": "",
+          "id": "891d0ec861e9",
+          "importedPublishedAt": 0,
+          "importedUrl": "",
+          "inResponseToMediaResourceId": "ecab1feb72d512a7e3ed1ae260fc7947",
+          "inResponseToPostId": "bfdd72949b0b",
+          "inResponseToRemovedAt": 0,
+          "isApprovedTranslation": false,
+          "isBlockedFromHightower": false,
+          "isEligibleForRevenue": false,
+          "isNsfw": false,
+          "isRequestToPubDisabled": false,
+          "isSeries": false,
+          "isSponsored": false,
+          "isSubscriptionLocked": false,
+          "isTitleSynthesized": true,
+          "latestPublishedAt": 1514590085189,
+          "latestPublishedVersion": "2221cbebdbf4",
+          "latestRev": 10,
+          "latestVersion": "2221cbebdbf4",
+          "license": 0,
+          "lockedPostSource": 0,
+          "mediumUrl": "",
+          "migrationId": "",
+          "newsletterId": "",
+          "notifyFacebook": false,
+          "notifyFollowers": true,
+          "notifyTwitter": false,
+          "previewContent": {
+            "bodyModel": {
+              "paragraphs": [
+                {
+                  "alignment": 1,
+                  "markups": [
+                  ],
+                  "name": "73b4",
+                  "text": "Thank you, Jack. I feel honored and inspired.",
+                  "type": 1
+                }
+              ],
+              "sections": [
+                {
+                  "startIndex": 0
+                }
+              ]
+            },
+            "isFullContent": true
+          },
+          "responseHiddenOnParentPostAt": 0,
+          "sequenceId": "",
+          "seriesLastAppendedAt": 0,
+          "slug": "thank-you-jack-i-feel-honored-and-inspired",
+          "title": "Thank you, Jack. I feel honored and inspired.",
+          "translationSourceCreatorId": "",
+          "translationSourcePostId": "",
+          "type": "Post",
+          "uniqueSlug": "thank-you-jack-i-feel-honored-and-inspired-891d0ec861e9",
+          "updatedAt": 1514597235914,
+          "versionId": "2221cbebdbf4",
+          "virtuals": {
+            "allowNotes": true,
+            "imageCount": 0,
+            "isBookmarked": false,
+            "isLockedPreviewOnly": false,
+            "links": {
+              "entries": [
+              ],
+              "generatedAt": 1514590085532,
+              "version": "0.3"
+            },
+            "metaDescription": "",
+            "previewImage": {
+              "backgroundSize": "",
+              "filter": "",
+              "height": 0,
+              "imageId": "",
+              "originalHeight": 0,
+              "originalWidth": 0,
+              "strategy": "resample",
+              "width": 0
+            },
+            "readingList": 0,
+            "readingTime": "0.03018867924528302",
+            "recommends": 1,
+            "responsesCreatedCount": 0,
+            "sectionCount": 1,
+            "socialRecommendsCount": 0,
+            "subtitle": "",
+            "tags": [
+            ],
+            "takeoverId": "",
+            "totalClapCount": 5,
+            "userPostRelation": {
+              "audioProgressSec": 0,
+              "clapCount": 0,
+              "collaboratorAddedAt": 0,
+              "lastReadAt": 0,
+              "lastReadParagraphName": "",
+              "lastReadPercentage": 0,
+              "lastReadSectionName": "",
+              "lastReadVersionId": "",
+              "notesAddedAt": 0,
+              "postId": "891d0ec861e9",
+              "presentedCountInResponseManagement": 0,
+              "presentedCountInStream": 1,
+              "queuedAt": 0,
+              "readAt": 0,
+              "readLaterAddedAt": 0,
+              "seriesFirstViewedAt": 0,
+              "seriesLastViewedAt": 0,
+              "seriesUpdateNotifsOptedInAt": 0,
+              "subscribedAt": 0,
+              "userId": "babae01b1fce",
+              "viewedAt": 1514814922131,
+              "votedAt": 0
+            },
+            "usersBySocialRecommends": [
+            ],
+            "wordCount": 8
+          },
+          "visibility": 0,
+          "vote": false,
+          "webCanonicalUrl": ""
+        },
+        "97e2886da3fb": {
+          "acceptedAt": 0,
+          "allowResponses": true,
+          "approvedHomeCollectionId": "",
+          "audioVersionDurationSec": 0,
+          "canonicalUrl": "",
+          "content": {
+            "postDisplay": {
+              "coverless": true
+            },
+            "subtitle": "I love Bradbury’s stories but the exact nature of the spell — ha, like so much of true magic — depends on the nature of the recipient…"
+          },
+          "coverless": true,
+          "createdAt": 1514552321277,
+          "creatorId": "42b01e7ae497",
+          "deletedAt": 0,
+          "detectedLanguage": "en",
+          "displayAuthor": "",
+          "experimentalCss": "",
+          "firstPublishedAt": 1514552817401,
+          "hasUnpublishedEdits": false,
+          "hightowerMinimumGuaranteeEndsAt": 0,
+          "hightowerMinimumGuaranteeStartsAt": 0,
+          "homeCollectionId": "",
+          "id": "97e2886da3fb",
+          "importedPublishedAt": 0,
+          "importedUrl": "",
+          "inResponseToMediaResourceId": "397c885a5b24b12993c57eb1af368b04",
+          "inResponseToPostId": "56f2ac9bc565",
+          "inResponseToRemovedAt": 0,
+          "isApprovedTranslation": false,
+          "isBlockedFromHightower": false,
+          "isEligibleForRevenue": false,
+          "isNsfw": false,
+          "isRequestToPubDisabled": false,
+          "isSeries": false,
+          "isSponsored": false,
+          "isSubscriptionLocked": false,
+          "isTitleSynthesized": true,
+          "latestPublishedAt": 1514552817401,
+          "latestPublishedVersion": "4a86fda5b332",
+          "latestRev": 77,
+          "latestVersion": "4a86fda5b332",
+          "license": 0,
+          "lockedPostSource": 0,
+          "mediumUrl": "",
+          "migrationId": "",
+          "newsletterId": "",
+          "notifyFacebook": false,
+          "notifyFollowers": true,
+          "notifyTwitter": false,
+          "previewContent": {
+            "bodyModel": {
+              "paragraphs": [
+                {
+                  "alignment": 1,
+                  "markups": [
+                  ],
+                  "name": "7176",
+                  "text": "Yeah, I think it has to do with love of language — both writer and reader — as well. Not necessary lyrical but powerful, conjuring image and sound, touch and taste and smell so effortlessly the reader isn’t aware of the words at all, but only the senses.",
+                  "type": 1
+                }
+              ],
+              "sections": [
+                {
+                  "startIndex": 0
+                }
+              ]
+            },
+            "isFullContent": false
+          },
+          "responseHiddenOnParentPostAt": 0,
+          "sequenceId": "",
+          "seriesLastAppendedAt": 0,
+          "slug": "yeah-i-think-it-has-to-do-with-love-of-language-both-writer-and-reader-as-well",
+          "title": "Yeah, I think it has to do with love of language — both writer and reader — as well.",
+          "translationSourceCreatorId": "",
+          "translationSourcePostId": "",
+          "type": "Post",
+          "uniqueSlug": "yeah-i-think-it-has-to-do-with-love-of-language-both-writer-and-reader-as-well-97e2886da3fb",
+          "updatedAt": 1514864481282,
+          "versionId": "4a86fda5b332",
+          "virtuals": {
+            "allowNotes": true,
+            "imageCount": 0,
+            "isBookmarked": false,
+            "isLockedPreviewOnly": false,
+            "links": {
+              "entries": [
+              ],
+              "generatedAt": 1514552817751,
+              "version": "0.3"
+            },
+            "metaDescription": "",
+            "previewImage": {
+              "backgroundSize": "",
+              "filter": "",
+              "height": 0,
+              "imageId": "",
+              "originalHeight": 0,
+              "originalWidth": 0,
+              "strategy": "resample",
+              "width": 0
+            },
+            "readingList": 0,
+            "readingTime": "0.7132075471698113",
+            "recommends": 6,
+            "responsesCreatedCount": 1,
+            "sectionCount": 1,
+            "socialRecommendsCount": 0,
+            "subtitle": "I love Bradbury’s stories but the exact nature of the spell — ha, like so much of true magic — depends on the nature of the recipient…",
+            "tags": [
+            ],
+            "takeoverId": "",
+            "totalClapCount": 23,
+            "userPostRelation": {
+              "audioProgressSec": 0,
+              "clapCount": 0,
+              "collaboratorAddedAt": 0,
+              "lastReadAt": 0,
+              "lastReadParagraphName": "",
+              "lastReadPercentage": 0,
+              "lastReadSectionName": "",
+              "lastReadVersionId": "",
+              "notesAddedAt": 0,
+              "postId": "97e2886da3fb",
+              "presentedCountInResponseManagement": 0,
+              "presentedCountInStream": 1,
+              "queuedAt": 0,
+              "readAt": 0,
+              "readLaterAddedAt": 0,
+              "seriesFirstViewedAt": 0,
+              "seriesLastViewedAt": 0,
+              "seriesUpdateNotifsOptedInAt": 0,
+              "subscribedAt": 0,
+              "userId": "babae01b1fce",
+              "viewedAt": 0,
+              "votedAt": 0
+            },
+            "usersBySocialRecommends": [
+            ],
+            "wordCount": 189
+          },
+          "visibility": 0,
+          "vote": false,
+          "webCanonicalUrl": ""
+        },
+        "aaf3372fdca0": {
+          "acceptedAt": 0,
+          "allowResponses": true,
+          "approvedHomeCollectionId": "",
+          "audioVersionDurationSec": 0,
+          "canonicalUrl": "",
+          "content": {
+            "postDisplay": {
+              "coverless": true
+            }
+          },
+          "coverless": true,
+          "createdAt": 1514549111296,
+          "creatorId": "42b01e7ae497",
+          "deletedAt": 0,
+          "detectedLanguage": "en",
+          "displayAuthor": "",
+          "experimentalCss": "",
+          "firstPublishedAt": 1514549203940,
+          "hasUnpublishedEdits": false,
+          "hightowerMinimumGuaranteeEndsAt": 0,
+          "hightowerMinimumGuaranteeStartsAt": 0,
+          "homeCollectionId": "",
+          "id": "aaf3372fdca0",
+          "importedPublishedAt": 0,
+          "importedUrl": "",
+          "inResponseToMediaResourceId": "cba1a87406e331de2c73163e027e4560",
+          "inResponseToPostId": "c2a9b309cf7",
+          "inResponseToRemovedAt": 0,
+          "isApprovedTranslation": false,
+          "isBlockedFromHightower": false,
+          "isEligibleForRevenue": false,
+          "isNsfw": false,
+          "isRequestToPubDisabled": false,
+          "isSeries": false,
+          "isSponsored": false,
+          "isSubscriptionLocked": false,
+          "isTitleSynthesized": true,
+          "latestPublishedAt": 1514549203940,
+          "latestPublishedVersion": "c39c672920b3",
+          "latestRev": 23,
+          "latestVersion": "c39c672920b3",
+          "license": 0,
+          "lockedPostSource": 0,
+          "mediumUrl": "",
+          "migrationId": "",
+          "newsletterId": "",
+          "notifyFacebook": false,
+          "notifyFollowers": true,
+          "notifyTwitter": false,
+          "previewContent": {
+            "bodyModel": {
+              "paragraphs": [
+                {
+                  "alignment": 1,
+                  "markups": [
+                  ],
+                  "name": "58cb",
+                  "text": "Well, I’ve always experienced reading in that way — and my mother did too. It didn’t disappear, but it now fluctuates, fighting with the critical in-brain editor that nags a lot. I hope you can return to reading with complete immersion, but I can tell you, it takes extremely good writing :)",
+                  "type": 1
+                }
+              ],
+              "sections": [
+                {
+                  "startIndex": 0
+                }
+              ]
+            },
+            "isFullContent": true
+          },
+          "responseHiddenOnParentPostAt": 0,
+          "sequenceId": "",
+          "seriesLastAppendedAt": 0,
+          "slug": "well-ive-always-experienced-reading-in-that-way-and-my-mother-did-too",
+          "title": "Well, I’ve always experienced reading in that way — and my mother did too.",
+          "translationSourceCreatorId": "",
+          "translationSourcePostId": "",
+          "type": "Post",
+          "uniqueSlug": "well-ive-always-experienced-reading-in-that-way-and-my-mother-did-too-aaf3372fdca0",
+          "updatedAt": 1514721473663,
+          "versionId": "c39c672920b3",
+          "virtuals": {
+            "allowNotes": true,
+            "imageCount": 0,
+            "isBookmarked": false,
+            "isLockedPreviewOnly": false,
+            "links": {
+              "entries": [
+              ],
+              "generatedAt": 1514549204292,
+              "version": "0.3"
+            },
+            "metaDescription": "",
+            "previewImage": {
+              "backgroundSize": "",
+              "filter": "",
+              "height": 0,
+              "imageId": "",
+              "originalHeight": 0,
+              "originalWidth": 0,
+              "strategy": "resample",
+              "width": 0
+            },
+            "readingList": 0,
+            "readingTime": 0.2,
+            "recommends": 9,
+            "responsesCreatedCount": 2,
+            "sectionCount": 1,
+            "socialRecommendsCount": 0,
+            "subtitle": "",
+            "tags": [
+            ],
+            "takeoverId": "",
+            "totalClapCount": 27,
+            "userPostRelation": {
+              "audioProgressSec": 0,
+              "clapCount": 0,
+              "collaboratorAddedAt": 0,
+              "lastReadAt": 0,
+              "lastReadParagraphName": "",
+              "lastReadPercentage": 0,
+              "lastReadSectionName": "",
+              "lastReadVersionId": "",
+              "notesAddedAt": 0,
+              "postId": "aaf3372fdca0",
+              "presentedCountInResponseManagement": 0,
+              "presentedCountInStream": 7,
+              "queuedAt": 0,
+              "readAt": 1514866668432,
+              "readLaterAddedAt": 0,
+              "seriesFirstViewedAt": 0,
+              "seriesLastViewedAt": 0,
+              "seriesUpdateNotifsOptedInAt": 0,
+              "subscribedAt": 0,
+              "userId": "babae01b1fce",
+              "viewedAt": 1514866668430,
+              "votedAt": 0
+            },
+            "usersBySocialRecommends": [
+            ],
+            "wordCount": 53
+          },
+          "visibility": 0,
+          "vote": false,
+          "webCanonicalUrl": ""
+        },
+        "ac48caffc1b4": {
+          "acceptedAt": 0,
+          "allowResponses": true,
+          "approvedHomeCollectionId": "",
+          "audioVersionDurationSec": 0,
+          "canonicalUrl": "",
+          "content": {
+            "postDisplay": {
+              "coverless": true
+            }
+          },
+          "coverless": true,
+          "createdAt": 1514551147572,
+          "creatorId": "5373b75f0c97",
+          "deletedAt": 0,
+          "detectedLanguage": "en",
+          "displayAuthor": "",
+          "experimentalCss": "",
+          "firstPublishedAt": 1514551795029,
+          "hasUnpublishedEdits": false,
+          "hightowerMinimumGuaranteeEndsAt": 0,
+          "hightowerMinimumGuaranteeStartsAt": 0,
+          "homeCollectionId": "",
+          "id": "ac48caffc1b4",
+          "importedPublishedAt": 0,
+          "importedUrl": "",
+          "inResponseToMediaResourceId": "675d6003d2e5e310a333d0ef2e0d2a21",
+          "inResponseToPostId": "d814f23352c6",
+          "inResponseToRemovedAt": 0,
+          "isApprovedTranslation": false,
+          "isBlockedFromHightower": false,
+          "isEligibleForRevenue": false,
+          "isNsfw": false,
+          "isRequestToPubDisabled": false,
+          "isSeries": false,
+          "isSponsored": false,
+          "isSubscriptionLocked": false,
+          "isTitleSynthesized": true,
+          "latestPublishedAt": 1514551809941,
+          "latestPublishedVersion": "4e45095043c4",
+          "latestRev": 103,
+          "latestVersion": "4e45095043c4",
+          "license": 0,
+          "lockedPostSource": 0,
+          "mediumUrl": "",
+          "migrationId": "",
+          "newsletterId": "",
+          "notifyFacebook": false,
+          "notifyFollowers": true,
+          "notifyTwitter": false,
+          "previewContent": {
+            "bodyModel": {
+              "paragraphs": [
+                {
+                  "alignment": 1,
+                  "markups": [
+                  ],
+                  "name": "ca86",
+                  "text": "Never experienced 3-D immersive reading, but… I have experienced 3-D immersive writing!",
+                  "type": 6
+                },
+                {
+                  "alignment": 1,
+                  "markups": [
+                  ],
+                  "name": "2a24",
+                  "text": "There’s a clue here, Jeffrey, one that I almost don’t want to look at (though I will). Having written this piece, it occurred to me for the first time that when I first became aware that my ability to disappear into reading had changed…",
+                  "type": 1
+                }
+              ],
+              "sections": [
+                {
+                  "startIndex": 0
+                }
+              ]
+            },
+            "isFullContent": false
+          },
+          "responseHiddenOnParentPostAt": 0,
+          "sequenceId": "",
+          "seriesLastAppendedAt": 0,
+          "slug": "theres-a-clue-here-jeffrey-one-that-i-almost-don-t-want-to-look-at-though-i-will",
+          "title": "There’s a clue here, Jeffrey, one that I almost don’t want to look at (though I will).",
+          "translationSourceCreatorId": "",
+          "translationSourcePostId": "",
+          "type": "Post",
+          "uniqueSlug": "theres-a-clue-here-jeffrey-one-that-i-almost-don-t-want-to-look-at-though-i-will-ac48caffc1b4",
+          "updatedAt": 1514828864971,
+          "versionId": "4e45095043c4",
+          "virtuals": {
+            "allowNotes": true,
+            "imageCount": 0,
+            "isBookmarked": false,
+            "isLockedPreviewOnly": false,
+            "links": {
+              "entries": [
+              ],
+              "generatedAt": 1514551810249,
+              "version": "0.3"
+            },
+            "metaDescription": "",
+            "previewImage": {
+              "backgroundSize": "",
+              "filter": "",
+              "height": 0,
+              "imageId": "",
+              "originalHeight": 0,
+              "originalWidth": 0,
+              "strategy": "resample",
+              "width": 0
+            },
+            "readingList": 0,
+            "readingTime": "0.7584905660377359",
+            "recommends": 14,
+            "responsesCreatedCount": 3,
+            "sectionCount": 1,
+            "socialRecommendsCount": 0,
+            "subtitle": "",
+            "tags": [
+            ],
+            "takeoverId": "",
+            "totalClapCount": 58,
+            "userPostRelation": {
+              "audioProgressSec": 0,
+              "clapCount": 0,
+              "collaboratorAddedAt": 0,
+              "lastReadAt": 1514815547387,
+              "lastReadParagraphName": "2a24",
+              "lastReadPercentage": 0.07,
+              "lastReadSectionName": "617f",
+              "lastReadVersionId": "4e45095043c4",
+              "notesAddedAt": 0,
+              "postId": "ac48caffc1b4",
+              "presentedCountInResponseManagement": 0,
+              "presentedCountInStream": 7,
+              "queuedAt": 0,
+              "readAt": 1514815568988,
+              "readLaterAddedAt": 0,
+              "seriesFirstViewedAt": 0,
+              "seriesLastViewedAt": 0,
+              "seriesUpdateNotifsOptedInAt": 0,
+              "subscribedAt": 0,
+              "userId": "babae01b1fce",
+              "viewedAt": 1514815568997,
+              "votedAt": 0
+            },
+            "usersBySocialRecommends": [
+            ],
+            "wordCount": 201
+          },
+          "visibility": 0,
+          "vote": false,
+          "webCanonicalUrl": ""
+        },
+        "bfdd72949b0b": {
+          "acceptedAt": 0,
+          "allowResponses": true,
+          "approvedHomeCollectionId": "",
+          "audioVersionDurationSec": 0,
+          "canonicalUrl": "",
+          "content": {
+            "postDisplay": {
+              "coverless": true
+            }
+          },
+          "coverless": true,
+          "createdAt": 1514570750434,
+          "creatorId": "be6b9878f533",
+          "deletedAt": 0,
+          "detectedLanguage": "en",
+          "displayAuthor": "",
+          "experimentalCss": "",
+          "firstPublishedAt": 1514571347268,
+          "hasUnpublishedEdits": false,
+          "hightowerMinimumGuaranteeEndsAt": 0,
+          "hightowerMinimumGuaranteeStartsAt": 0,
+          "homeCollectionId": "",
+          "id": "bfdd72949b0b",
+          "importedPublishedAt": 0,
+          "importedUrl": "",
+          "inResponseToMediaResourceId": "cba1a87406e331de2c73163e027e4560",
+          "inResponseToPostId": "c2a9b309cf7",
+          "inResponseToRemovedAt": 0,
+          "isApprovedTranslation": false,
+          "isBlockedFromHightower": false,
+          "isEligibleForRevenue": false,
+          "isNsfw": false,
+          "isRequestToPubDisabled": false,
+          "isSeries": false,
+          "isSponsored": false,
+          "isSubscriptionLocked": false,
+          "isTitleSynthesized": true,
+          "latestPublishedAt": 1514571347268,
+          "latestPublishedVersion": "97983f6846ba",
+          "latestRev": 107,
+          "latestVersion": "97983f6846ba",
+          "license": 0,
+          "lockedPostSource": 0,
+          "mediumUrl": "",
+          "migrationId": "",
+          "newsletterId": "",
+          "notifyFacebook": false,
+          "notifyFollowers": true,
+          "notifyTwitter": false,
+          "previewContent": {
+            "bodyModel": {
+              "paragraphs": [
+                {
+                  "alignment": 1,
+                  "markups": [
+                  ],
+                  "name": "4173",
+                  "text": "Thank you for writing this article. I enjoyed it immensely, and I also experience 3D immersive reading, and always have. Like you, I assumed everybody read that way. Now that I’m an adult, it doesn’t happen every time I read, but as some of the others here have suggested, it happens when certain factors are present in the writing. I would love to…",
+                  "type": 1
+                }
+              ],
+              "sections": [
+                {
+                  "startIndex": 0
+                }
+              ]
+            },
+            "isFullContent": false
+          },
+          "responseHiddenOnParentPostAt": 0,
+          "sequenceId": "",
+          "seriesLastAppendedAt": 0,
+          "slug": "thank-you-for-writing-this-article",
+          "title": "Thank you for writing this article.",
+          "translationSourceCreatorId": "",
+          "translationSourcePostId": "",
+          "type": "Post",
+          "uniqueSlug": "thank-you-for-writing-this-article-bfdd72949b0b",
+          "updatedAt": 1514692315726,
+          "versionId": "97983f6846ba",
+          "virtuals": {
+            "allowNotes": true,
+            "imageCount": 0,
+            "isBookmarked": false,
+            "isLockedPreviewOnly": false,
+            "links": {
+              "entries": [
+              ],
+              "generatedAt": 1514571347973,
+              "version": "0.3"
+            },
+            "metaDescription": "",
+            "previewImage": {
+              "backgroundSize": "",
+              "filter": "",
+              "height": 0,
+              "imageId": "",
+              "originalHeight": 0,
+              "originalWidth": 0,
+              "strategy": "resample",
+              "width": 0
+            },
+            "readingList": 0,
+            "readingTime": "0.4188679245283019",
+            "recommends": 4,
+            "responsesCreatedCount": 2,
+            "sectionCount": 1,
+            "socialRecommendsCount": 0,
+            "subtitle": "",
+            "tags": [
+            ],
+            "takeoverId": "",
+            "totalClapCount": 15,
+            "userPostRelation": {
+              "audioProgressSec": 0,
+              "clapCount": 0,
+              "collaboratorAddedAt": 0,
+              "lastReadAt": 0,
+              "lastReadParagraphName": "",
+              "lastReadPercentage": 0,
+              "lastReadSectionName": "",
+              "lastReadVersionId": "",
+              "notesAddedAt": 0,
+              "postId": "bfdd72949b0b",
+              "presentedCountInResponseManagement": 0,
+              "presentedCountInStream": 3,
+              "queuedAt": 0,
+              "readAt": 1514810437287,
+              "readLaterAddedAt": 0,
+              "seriesFirstViewedAt": 0,
+              "seriesLastViewedAt": 0,
+              "seriesUpdateNotifsOptedInAt": 0,
+              "subscribedAt": 0,
+              "userId": "babae01b1fce",
+              "viewedAt": 1514810437294,
+              "votedAt": 0
+            },
+            "usersBySocialRecommends": [
+            ],
+            "wordCount": 111
+          },
+          "visibility": 0,
+          "vote": false,
+          "webCanonicalUrl": ""
+        },
+        "c2a9b309cf7": {
+          "acceptedAt": 0,
+          "allowResponses": true,
+          "approvedHomeCollectionId": "",
+          "audioVersionDurationSec": 0,
+          "canonicalUrl": "",
+          "content": {
+            "postDisplay": {
+              "coverless": true
+            },
+            "subtitle": "This is not a metaphor. Take what follows literally."
+          },
+          "coverless": true,
+          "createdAt": 1514510368858,
+          "creatorId": "5373b75f0c97",
+          "deletedAt": 0,
+          "detectedLanguage": "en",
+          "displayAuthor": "",
+          "experimentalCss": "",
+          "firstPublishedAt": 1514545261933,
+          "hasUnpublishedEdits": false,
+          "hightowerMinimumGuaranteeEndsAt": 0,
+          "hightowerMinimumGuaranteeStartsAt": 0,
+          "homeCollectionId": "",
+          "id": "c2a9b309cf7",
+          "importedPublishedAt": 0,
+          "importedUrl": "",
+          "inResponseToMediaResourceId": "",
+          "inResponseToPostId": "",
+          "inResponseToRemovedAt": 0,
+          "isApprovedTranslation": false,
+          "isBlockedFromHightower": false,
+          "isEligibleForRevenue": true,
+          "isNsfw": false,
+          "isRequestToPubDisabled": false,
+          "isSeries": false,
+          "isSponsored": false,
+          "isSubscriptionLocked": true,
+          "isTitleSynthesized": true,
+          "latestPublishedAt": 1514597092132,
+          "latestPublishedVersion": "34e25dd58dba",
+          "latestRev": 122,
+          "latestVersion": "34e25dd58dba",
+          "license": 0,
+          "lockedPostSource": 1,
+          "mediumUrl": "",
+          "migrationId": "",
+          "newsletterId": "",
+          "notifyFacebook": false,
+          "notifyFollowers": true,
+          "notifyTwitter": false,
+          "previewContent": {
+            "bodyModel": {
+              "paragraphs": [
+                {
+                  "alignment": 1,
+                  "markups": [
+                  ],
+                  "name": "f991",
+                  "text": "My Real Life Superpower",
+                  "type": 3
+                },
+                {
+                  "alignment": 1,
+                  "markups": [
+                  ],
+                  "name": "b333",
+                  "text": "This is not a metaphor. Take what follows literally.",
+                  "type": 13
+                },
+                {
+                  "layout": 10,
+                  "markups": [
+                  ],
+                  "metadata": {
+                    "id": "1*tqi5QzCE3ZaJyxhio3GYaw.jpeg",
+                    "originalHeight": 720,
+                    "originalWidth": 1280
+                  },
+                  "name": "18d7",
+                  "text": "",
+                  "type": 4
+                }
+              ],
+              "sections": [
+                {
+                  "startIndex": 0
+                }
+              ]
+            },
+            "isFullContent": false
+          },
+          "responseHiddenOnParentPostAt": 0,
+          "sequenceId": "",
+          "seriesLastAppendedAt": 0,
+          "slug": "my-real-life-superpower",
+          "title": "My Real Life Superpower",
+          "translationSourceCreatorId": "",
+          "translationSourcePostId": "",
+          "type": "Post",
+          "uniqueSlug": "my-real-life-superpower-c2a9b309cf7",
+          "updatedAt": 1514879463826,
+          "versionId": "34e25dd58dba",
+          "virtuals": {
+            "allowNotes": true,
+            "imageCount": 3,
+            "isBookmarked": false,
+            "isLockedPreviewOnly": false,
+            "links": {
+              "entries": [
+                {
+                  "alts": [
+                  ],
+                  "httpStatus": 200,
+                  "url": "https://en.wikipedia.org/wiki/Carlos_Castaneda"
+                },
+                {
+                  "alts": [
+                  ],
+                  "httpStatus": 200,
+                  "url": "http://www.dictionary.com/browse/immersive"
+                },
+                {
+                  "alts": [
+                  ],
+                  "httpStatus": 200,
+                  "url": "https://study.com/academy/lesson/what-is-reading-definition-process.html"
+                },
+                {
+                  "alts": [
+                    {
+                      "type": 2,
+                      "url": "medium://p/55a895fcbdbb"
+                    },
+                    {
+                      "type": 3,
+                      "url": "medium://p/55a895fcbdbb"
+                    }
+                  ],
+                  "httpStatus": 200,
+                  "url": "https://beyondtherobot.com/the-good-stuff-55a895fcbdbb"
+                }
+              ],
+              "generatedAt": 1514597093113,
+              "version": "0.3"
+            },
+            "metaDescription": "",
+            "previewImage": {
+              "backgroundSize": "",
+              "filter": "",
+              "height": 0,
+              "imageId": "1*tqi5QzCE3ZaJyxhio3GYaw.jpeg",
+              "originalHeight": 720,
+              "originalWidth": 1280,
+              "strategy": "resample",
+              "width": 0
+            },
+            "readingList": 0,
+            "readingTime": "4.546226415094339",
+            "recommends": 142,
+            "responsesCreatedCount": 29,
+            "sectionCount": 6,
+            "socialRecommendsCount": 0,
+            "subtitle": "This is not a metaphor. Take what follows literally.",
+            "tags": [
+              {
+                "metadata": {
+                  "coverImage": {
+                    "id": "1*-djakoQnr4pNRTlE6R92_g.jpeg"
+                  },
+                  "followerCount": 873166,
+                  "postCount": 50329
+                },
+                "name": "Books",
+                "postCount": 50329,
+                "slug": "books",
+                "type": "Tag",
+                "virtuals": {
+                  "isFollowing": false
+                }
+              },
+              {
+                "metadata": {
+                  "coverImage": {
+                    "id": "1*LIJ3LJIqAqvME_Jm1Jw-nQ.jpeg"
+                  },
+                  "followerCount": 781826,
+                  "postCount": 15768
+                },
+                "name": "Reading",
+                "postCount": 15768,
+                "slug": "reading",
+                "type": "Tag",
+                "virtuals": {
+                  "isFollowing": false
+                }
+              },
+              {
+                "metadata": {
+                  "coverImage": {
+                    "id": "1*70mWmxgf52m1YqTcCfRkkQ.jpeg"
+                  },
+                  "followerCount": 1301948,
+                  "postCount": 100058
+                },
+                "name": "Self Improvement",
+                "postCount": 100058,
+                "slug": "self-improvement",
+                "type": "Tag",
+                "virtuals": {
+                  "isFollowing": false
+                }
+              },
+              {
+                "metadata": {
+                  "coverImage": {
+                    "id": "1*EoJ4rrgS6ozaU9Kf1Sg_DA.jpeg",
+                    "originalHeight": 941,
+                    "originalWidth": 1674
+                  },
+                  "followerCount": 15448,
+                  "postCount": 38292
+                },
+                "name": "Personal Development",
+                "postCount": 38292,
+                "slug": "personal-development",
+                "type": "Tag",
+                "virtuals": {
+                  "isFollowing": false
+                }
+              },
+              {
+                "metadata": {
+                  "coverImage": {
+                    "id": "1*l_a4u4eO-owLFDUNT6qYFw.jpeg"
+                  },
+                  "followerCount": 1523092,
+                  "postCount": 44679
+                },
+                "name": "Creativity",
+                "postCount": 44679,
+                "slug": "creativity",
+                "type": "Tag",
+                "virtuals": {
+                  "isFollowing": false
+                }
+              }
+            ],
+            "takeoverId": "",
+            "totalClapCount": 1258,
+            "userPostRelation": {
+              "audioProgressSec": 0,
+              "clapCount": 0,
+              "collaboratorAddedAt": 0,
+              "lastReadAt": 1514883280385,
+              "lastReadParagraphName": "9356",
+              "lastReadPercentage": 0.99,
+              "lastReadSectionName": "cbd8",
+              "lastReadVersionId": "34e25dd58dba",
+              "notesAddedAt": 0,
+              "postId": "c2a9b309cf7",
+              "presentedCountInResponseManagement": 0,
+              "presentedCountInStream": 16,
+              "queuedAt": 0,
+              "readAt": 1514880221179,
+              "readLaterAddedAt": 0,
+              "seriesFirstViewedAt": 0,
+              "seriesLastViewedAt": 0,
+              "seriesUpdateNotifsOptedInAt": 0,
+              "subscribedAt": 0,
+              "userId": "babae01b1fce",
+              "viewedAt": 1514879629213,
+              "votedAt": 0
+            },
+            "usersBySocialRecommends": [
+            ],
+            "wordCount": 1059
+          },
+          "visibility": 2,
+          "vote": false,
+          "webCanonicalUrl": ""
+        },
+        "d814f23352c6": {
+          "acceptedAt": 0,
+          "allowResponses": true,
+          "approvedHomeCollectionId": "",
+          "audioVersionDurationSec": 0,
+          "canonicalUrl": "",
+          "content": {
+            "postDisplay": {
+              "coverless": true
+            },
+            "subtitle": "The second was about about a death ray that boiled the humans’ blood. I felt it in my own body."
+          },
+          "coverless": true,
+          "createdAt": 1514549346084,
+          "creatorId": "4f99c49ff347",
+          "deletedAt": 0,
+          "detectedLanguage": "en",
+          "displayAuthor": "",
+          "experimentalCss": "",
+          "firstPublishedAt": 1514549685807,
+          "hasUnpublishedEdits": false,
+          "hightowerMinimumGuaranteeEndsAt": 0,
+          "hightowerMinimumGuaranteeStartsAt": 0,
+          "homeCollectionId": "",
+          "id": "d814f23352c6",
+          "importedPublishedAt": 0,
+          "importedUrl": "",
+          "inResponseToMediaResourceId": "cba1a87406e331de2c73163e027e4560",
+          "inResponseToPostId": "c2a9b309cf7",
+          "inResponseToRemovedAt": 0,
+          "isApprovedTranslation": false,
+          "isBlockedFromHightower": false,
+          "isEligibleForRevenue": false,
+          "isNsfw": false,
+          "isRequestToPubDisabled": false,
+          "isSeries": false,
+          "isSponsored": false,
+          "isSubscriptionLocked": false,
+          "isTitleSynthesized": true,
+          "latestPublishedAt": 1514549685807,
+          "latestPublishedVersion": "25fcbc263f5d",
+          "latestRev": 62,
+          "latestVersion": "25fcbc263f5d",
+          "license": 0,
+          "lockedPostSource": 0,
+          "mediumUrl": "",
+          "migrationId": "",
+          "newsletterId": "",
+          "notifyFacebook": false,
+          "notifyFollowers": true,
+          "notifyTwitter": false,
+          "previewContent": {
+            "bodyModel": {
+              "paragraphs": [
+                {
+                  "alignment": 1,
+                  "markups": [
+                  ],
+                  "name": "49f0",
+                  "text": "Never experienced 3-D immersive reading, but… I have experienced 3-D immersive writing! I wrote my first two stories when I was maybe 10 or 12 or 11. The first was about how you would get in your car, choose a destination on the screen, any destination at all, push the button and the car would take you there. I was in that car!",
+                  "type": 1
+                }
+              ],
+              "sections": [
+                {
+                  "startIndex": 0
+                }
+              ]
+            },
+            "isFullContent": false
+          },
+          "responseHiddenOnParentPostAt": 0,
+          "sequenceId": "",
+          "seriesLastAppendedAt": 0,
+          "slug": "never-experienced-3-d-immersive-reading-but-i-have-experienced-3-d-immersive-writing",
+          "title": "Never experienced 3-D immersive reading, but… I have experienced 3-D immersive writing!",
+          "translationSourceCreatorId": "",
+          "translationSourcePostId": "",
+          "type": "Post",
+          "uniqueSlug": "never-experienced-3-d-immersive-reading-but-i-have-experienced-3-d-immersive-writing-d814f23352c6",
+          "updatedAt": 1514741914494,
+          "versionId": "25fcbc263f5d",
+          "virtuals": {
+            "allowNotes": true,
+            "imageCount": 0,
+            "isBookmarked": false,
+            "isLockedPreviewOnly": false,
+            "links": {
+              "entries": [
+              ],
+              "generatedAt": 1514549686217,
+              "version": "0.3"
+            },
+            "metaDescription": "",
+            "previewImage": {
+              "backgroundSize": "",
+              "filter": "",
+              "height": 0,
+              "imageId": "",
+              "originalHeight": 0,
+              "originalWidth": 0,
+              "strategy": "resample",
+              "width": 0
+            },
+            "readingList": 0,
+            "readingTime": "0.35471698113207545",
+            "recommends": 10,
+            "responsesCreatedCount": 1,
+            "sectionCount": 1,
+            "socialRecommendsCount": 0,
+            "subtitle": "The second was about about a death ray that boiled the humans’ blood. I felt it in my own body.",
+            "tags": [
+            ],
+            "takeoverId": "",
+            "totalClapCount": 33,
+            "userPostRelation": {
+              "audioProgressSec": 0,
+              "clapCount": 0,
+              "collaboratorAddedAt": 0,
+              "lastReadAt": 1514814842635,
+              "lastReadParagraphName": "1434",
+              "lastReadPercentage": 0.9,
+              "lastReadSectionName": "64f9",
+              "lastReadVersionId": "25fcbc263f5d",
+              "notesAddedAt": 0,
+              "postId": "d814f23352c6",
+              "presentedCountInResponseManagement": 0,
+              "presentedCountInStream": 5,
+              "queuedAt": 0,
+              "readAt": 1514815568966,
+              "readLaterAddedAt": 0,
+              "seriesFirstViewedAt": 0,
+              "seriesLastViewedAt": 0,
+              "seriesUpdateNotifsOptedInAt": 0,
+              "subscribedAt": 0,
+              "userId": "babae01b1fce",
+              "viewedAt": 1514815568978,
+              "votedAt": 0
+            },
+            "usersBySocialRecommends": [
+            ],
+            "wordCount": 94
+          },
+          "visibility": 0,
+          "vote": false,
+          "webCanonicalUrl": ""
+        }
+      },
+      "Quote": {
+        "32835b3b5479": {
+          "createdAt": 1514561152699,
+          "endOffset": 140,
+          "paragraphs": [
+            {
+              "alignment": 1,
+              "dataId": "",
+              "hasDropCap": false,
+              "href": "",
+              "layout": 1,
+              "markups": [
+              ],
+              "name": "3e0d",
+              "purpose": 1,
+              "text": "Did you find that mood affects the degree? I can put down a lot of books searching for the one that matches a kind of restless quest passion. When I find it, bingo, it’s there and I’m gone.",
+              "translationStatus": 1,
+              "type": 1
+            }
+          ],
+          "postId": "97e2886da3fb",
+          "quoteId": "32835b3b5479",
+          "quoteType": 1,
+          "removedAt": 0,
+          "startOffset": 0,
+          "type": "Quote",
+          "userId": "5373b75f0c97"
+        },
+        "b36b5d24f482": {
+          "createdAt": 1514556491766,
+          "endOffset": 873,
+          "paragraphs": [
+            {
+              "markups": [
+              ],
+              "name": "2a24",
+              "text": "There’s a clue here, Jeffrey, one that I almost don’t want to look at (though I will). Having written this piece, it occurred to me for the first time that when I first became aware that my ability to disappear into reading had changed coincided with entering a university writing program. Could it be that learning how to write somehow dulled my ability to read? That’s a weird thought, but it’s one I need to consider. My great weakness as a writer (to balance bragging about my superpower — haha) is that, when writing, I am about as far from “3-D immersive writing” as it is possible to get. I write slowly, ploddingly, building essays and stories and poems one word or sentence at a time, like a kid stacking Legos. The end product is usually pretty OK. But it takes forever. This little 1,000 word essay, for example, took about 8 hours to compose to my satisfaction. I’ll bet there is some weird connection between how I learned to write and the change in how I read. Interesting… Thanks for the food for thought, Jeffrey!",
+              "type": 1
+            }
+          ],
+          "postId": "ac48caffc1b4",
+          "quoteId": "b36b5d24f482",
+          "quoteType": 1,
+          "removedAt": 0,
+          "startOffset": 596,
+          "type": "Quote",
+          "userId": "5b1a95ddb0d0"
+        },
+        "d0e50fe7fed": {
+          "createdAt": 1514687684985,
+          "endOffset": 873,
+          "paragraphs": [
+            {
+              "alignment": 1,
+              "dataId": "",
+              "hasDropCap": false,
+              "href": "",
+              "layout": 1,
+              "markups": [
+              ],
+              "name": "2a24",
+              "purpose": 1,
+              "text": "There’s a clue here, Jeffrey, one that I almost don’t want to look at (though I will). Having written this piece, it occurred to me for the first time that when I first became aware that my ability to disappear into reading had changed coincided with entering a university writing program. Could it be that learning how to write somehow dulled my ability to read? That’s a weird thought, but it’s one I need to consider. My great weakness as a writer (to balance bragging about my superpower — haha) is that, when writing, I am about as far from “3-D immersive writing” as it is possible to get. I write slowly, ploddingly, building essays and stories and poems one word or sentence at a time, like a kid stacking Legos. The end product is usually pretty OK. But it takes forever. This little 1,000 word essay, for example, took about 8 hours to compose to my satisfaction. I’ll bet there is some weird connection between how I learned to write and the change in how I read. Interesting… Thanks for the food for thought, Jeffrey!",
+              "translationStatus": 1,
+              "type": 1
+            }
+          ],
+          "postId": "ac48caffc1b4",
+          "quoteId": "d0e50fe7fed",
+          "quoteType": 1,
+          "removedAt": 0,
+          "startOffset": 596,
+          "type": "Quote",
+          "userId": "e46dcc0fcb91"
+        }
+      },
+      "User": {
+        "42b01e7ae497": {
+          "allowNotes": 1,
+          "backgroundImageId": "",
+          "bio": "Writers can only write their hearts and no two hearts are the same.",
+          "createdAt": 1507078250457,
+          "facebookAccountId": "",
+          "imageId": "1*36dhyUdUv1zKt5nWOogThg.jpeg",
+          "isNsfw": false,
+          "lastPostCreatedAt": 1514833383872,
+          "mediumMemberAt": 1510162901000,
+          "name": "A Maguire",
+          "twitterScreenName": "",
+          "type": "User",
+          "userId": "42b01e7ae497",
+          "username": "skysong"
+        },
+        "4f99c49ff347": {
+          "allowNotes": 1,
+          "backgroundImageId": "",
+          "bio": "It ain't what you think. Former newsman, car salesman, teacher. Everything is Thou, if you so allow it. You can find some of it at https://youtu.be/5iWo8nEvkpo",
+          "createdAt": 1448794329017,
+          "facebookAccountId": "389904658105264",
+          "imageId": "0*YDn6BwUC9l6q1zwZ.jpeg",
+          "isNsfw": false,
+          "lastPostCreatedAt": 1514844622426,
+          "mediumMemberAt": 1490223500000,
+          "name": "Jeffrey Field",
+          "twitterScreenName": "FarkleUp",
+          "type": "User",
+          "userId": "4f99c49ff347",
+          "username": "FarkleUp"
+        },
+        "5373b75f0c97": {
+          "allowNotes": 1,
+          "backgroundImageId": "",
+          "bio": "SciFi scribbler. Poet philosopher. Slouching towards humanity @ http://beyondtherobot.com",
+          "createdAt": 1470699036232,
+          "facebookAccountId": "110045089786322",
+          "imageId": "1*_EZH0BA1IH_ajjhciQuONg.jpeg",
+          "isNsfw": false,
+          "lastPostCreatedAt": 1514853193777,
+          "mediumMemberAt": 1490227446000,
+          "name": "Jack Preston King",
+          "twitterScreenName": "BeyondtheRobot",
+          "type": "User",
+          "userId": "5373b75f0c97",
+          "username": "beyondtherobot"
+        },
+        "5b1a95ddb0d0": {
+          "allowNotes": 1,
+          "backgroundImageId": "",
+          "bio": "armchair linguist / observational essayist / fair weather poet / come for the sarcasm, stay for my soft side",
+          "createdAt": 1499306384563,
+          "facebookAccountId": "10156270982907977",
+          "imageId": "1*gQbI3LYZNXh94YQnuO5Mag.png",
+          "isNsfw": false,
+          "lastPostCreatedAt": 1514842153249,
+          "mediumMemberAt": 1507401130000,
+          "name": "Joe Varadi",
+          "twitterScreenName": "",
+          "type": "User",
+          "userId": "5b1a95ddb0d0",
+          "username": "joevaradi"
+        },
+        "73f2901d9ac7": {
+          "allowNotes": 1,
+          "backgroundImageId": "",
+          "bio": "",
+          "createdAt": 1504402352538,
+          "facebookAccountId": "2003112686567779",
+          "imageId": "0*aK_Ev5WIv-KfVffH.",
+          "isNsfw": false,
+          "lastPostCreatedAt": 1514670130499,
+          "mediumMemberAt": 1514669824547,
+          "name": "Moshe G",
+          "twitterScreenName": "",
+          "type": "User",
+          "userId": "73f2901d9ac7",
+          "username": "m0sh3g"
+        },
+        "bdf369107123": {
+          "allowNotes": 1,
+          "backgroundImageId": "",
+          "bio": "",
+          "createdAt": 1500721288081,
+          "facebookAccountId": "",
+          "imageId": "0*grtRQztnj1-sTnV9.",
+          "isNsfw": false,
+          "lastPostCreatedAt": 1514839316761,
+          "mediumMemberAt": 1504961433000,
+          "name": "Justin Pickering",
+          "twitterScreenName": "",
+          "type": "User",
+          "userId": "bdf369107123",
+          "username": "justindpickering"
+        },
+        "be6b9878f533": {
+          "allowNotes": 1,
+          "backgroundImageId": "",
+          "bio": "",
+          "createdAt": 1509904523533,
+          "facebookAccountId": "10214800063054471",
+          "imageId": "0*_vfCX53_KtNCeuaI.",
+          "isNsfw": false,
+          "lastPostCreatedAt": 1514590031646,
+          "mediumMemberAt": 1514569618000,
+          "name": "Kari Gallo Mumford",
+          "twitterScreenName": "",
+          "type": "User",
+          "userId": "be6b9878f533",
+          "username": "karigallomumford"
+        },
+        "e46dcc0fcb91": {
+          "allowNotes": 1,
+          "backgroundImageId": "",
+          "bio": "Things like: race, religion, travel, grief, nonfiction, veganism, Spanish, LGBTQ and politics",
+          "createdAt": 1476410217984,
+          "facebookAccountId": "",
+          "imageId": "0*Xfu8ZTevnJ9F_mGg.jpg",
+          "isNsfw": false,
+          "lastPostCreatedAt": 1514820062244,
+          "mediumMemberAt": 1509896882000,
+          "name": "Sam, nice to meet you",
+          "twitterScreenName": "SamMcKenzieJr",
+          "type": "User",
+          "userId": "e46dcc0fcb91",
+          "username": "SamMcKenzieJr"
+        }
+      }
+    },
+    "streamItems": [
+      {
+        "createdAt": 1514883323496,
+        "itemType": "postPreview",
+        "postPreview": {
+          "postId": "369ba16a5ca3"
+        },
+        "randomId": "18e3e4d3ef18",
+        "type": "StreamItem"
+      },
+      {
+        "conversation": {
+          "conversationItems": [
+            {
+              "displayMode": 1,
+              "postId": "5e1bb5f57316",
+              "postSuggestionReasons": [
+                {
+                  "reason": 31,
+                  "users": [
+                    {
+                      "image": {
+                        "imageId": "1*_EZH0BA1IH_ajjhciQuONg.jpeg"
+                      },
+                      "name": "Jack Preston King",
+                      "userId": "5373b75f0c97",
+                      "username": "beyondtherobot"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "displayMode": 1,
+              "postId": "22b0f5e55f32",
+              "postSuggestionReasons": [
+                {
+                  "reason": 29
+                }
+              ]
+            }
+          ],
+          "userIds": [
+            "bdf369107123",
+            "5373b75f0c97"
+          ]
+        },
+        "createdAt": 1514883323497,
+        "itemType": "conversation",
+        "randomId": "67fb168e903f",
+        "type": "StreamItem"
+      },
+      {
+        "conversation": {
+          "conversationItems": [
+            {
+              "displayMode": 2,
+              "postId": "d814f23352c6",
+              "postSuggestionReasons": [
+                {
+                  "reason": 31,
+                  "users": [
+                    {
+                      "image": {
+                        "imageId": "1*_EZH0BA1IH_ajjhciQuONg.jpeg"
+                      },
+                      "name": "Jack Preston King",
+                      "userId": "5373b75f0c97",
+                      "username": "beyondtherobot"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "displayMode": 2,
+              "postId": "ac48caffc1b4",
+              "postSuggestionReasons": [
+                {
+                  "reason": 29
+                }
+              ]
+            },
+            {
+              "displayMode": 1,
+              "postId": "1e00788dd831",
+              "postSuggestionReasons": [
+                {
+                  "reason": 31,
+                  "users": [
+                    {
+                      "image": {
+                        "imageId": "1*_EZH0BA1IH_ajjhciQuONg.jpeg"
+                      },
+                      "name": "Jack Preston King",
+                      "userId": "5373b75f0c97",
+                      "username": "beyondtherobot"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "userIds": [
+            "4f99c49ff347",
+            "5373b75f0c97",
+            "5b1a95ddb0d0"
+          ]
+        },
+        "createdAt": 1514883323497,
+        "itemType": "conversation",
+        "randomId": "889a09cf0b72",
+        "type": "StreamItem"
+      },
+      {
+        "conversation": {
+          "conversationItems": [
+            {
+              "displayMode": 2,
+              "postId": "bfdd72949b0b",
+              "postSuggestionReasons": [
+                {
+                  "reason": 31,
+                  "users": [
+                    {
+                      "image": {
+                        "imageId": "1*_EZH0BA1IH_ajjhciQuONg.jpeg"
+                      },
+                      "name": "Jack Preston King",
+                      "userId": "5373b75f0c97",
+                      "username": "beyondtherobot"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "displayMode": 1,
+              "postId": "891d0ec861e9",
+              "postSuggestionReasons": [
+                {
+                  "reason": 31,
+                  "users": [
+                    {
+                      "image": {
+                        "imageId": "1*_EZH0BA1IH_ajjhciQuONg.jpeg"
+                      },
+                      "name": "Jack Preston King",
+                      "userId": "5373b75f0c97",
+                      "username": "beyondtherobot"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "userIds": [
+            "be6b9878f533"
+          ]
+        },
+        "createdAt": 1514883323498,
+        "itemType": "conversation",
+        "randomId": "f21143f49696",
+        "type": "StreamItem"
+      },
+      {
+        "conversation": {
+          "conversationItems": [
+            {
+              "displayMode": 2,
+              "postId": "aaf3372fdca0",
+              "postSuggestionReasons": [
+                {
+                  "reason": 31,
+                  "users": [
+                    {
+                      "image": {
+                        "imageId": "1*_EZH0BA1IH_ajjhciQuONg.jpeg"
+                      },
+                      "name": "Jack Preston King",
+                      "userId": "5373b75f0c97",
+                      "username": "beyondtherobot"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "displayMode": 2,
+              "postId": "56f2ac9bc565",
+              "postSuggestionReasons": [
+                {
+                  "reason": 29
+                }
+              ]
+            },
+            {
+              "displayMode": 1,
+              "postId": "97e2886da3fb"
+            },
+            {
+              "displayMode": 1,
+              "postId": "7eb071d92f56",
+              "postSuggestionReasons": [
+                {
+                  "reason": 29
+                }
+              ]
+            }
+          ],
+          "userIds": [
+            "42b01e7ae497",
+            "5373b75f0c97"
+          ]
+        },
+        "createdAt": 1514883323498,
+        "itemType": "conversation",
+        "randomId": "b9bd07557ebd",
+        "type": "StreamItem"
+      },
+      {
+        "conversation": {
+          "conversationItems": [
+            {
+              "displayMode": 2,
+              "postId": "d814f23352c6",
+              "postSuggestionReasons": [
+                {
+                  "reason": 31,
+                  "users": [
+                    {
+                      "image": {
+                        "imageId": "1*_EZH0BA1IH_ajjhciQuONg.jpeg"
+                      },
+                      "name": "Jack Preston King",
+                      "userId": "5373b75f0c97",
+                      "username": "beyondtherobot"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "displayMode": 2,
+              "postId": "ac48caffc1b4",
+              "postSuggestionReasons": [
+                {
+                  "reason": 29
+                }
+              ]
+            },
+            {
+              "displayMode": 1,
+              "postId": "6f6055b2b148",
+              "postSuggestionReasons": [
+                {
+                  "reason": 31,
+                  "users": [
+                    {
+                      "image": {
+                        "imageId": "1*_EZH0BA1IH_ajjhciQuONg.jpeg"
+                      },
+                      "name": "Jack Preston King",
+                      "userId": "5373b75f0c97",
+                      "username": "beyondtherobot"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "userIds": [
+            "4f99c49ff347",
+            "5373b75f0c97",
+            "e46dcc0fcb91"
+          ]
+        },
+        "createdAt": 1514883323498,
+        "itemType": "conversation",
+        "randomId": "7f9f6a0364af",
+        "type": "StreamItem"
+      }
+    ]
+  },
+  "success": true,
+  "v": 3
+}
