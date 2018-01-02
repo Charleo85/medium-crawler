@@ -264,8 +264,8 @@ if __name__ == '__main__':
         # parse("https://medium.freecodecamp.com/big-picture-machine-learning-classifying-text-with-neural-networks-and-tensorflow-d94036ac2274", 0)
         # parse("https://backchannel.com/i-work-i-swear-a649e0eb697d", 0) #815
         # parse("https://medium.com/@OrganicsByLee/sprouted-grains-and-the-harvesting-process-8fa878bea2ee")
-        # sys.stdout = open('logs/std.log', 'w')
-        # sys.stderr = open('logs/err.log', 'w')
+        sys.stdout = open('logs/std.log', 'w')
+        sys.stderr = open('logs/err.log', 'w')
 
         initdb()
         session = load_obj('login.obj')
