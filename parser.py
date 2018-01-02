@@ -104,11 +104,17 @@ def parse_stream(uid, session, href, references):
             if 'mediumQuote' in media:
                 media_id = str(mediaResourceId)
                 self_article_mediumID = commment_dict.get(media_id)
-                if self_article_mediumID is None:
-                    print(mediaResourceId)
-                    continue
+                if self_article_mediumID is None: continue
+                    # print(mediaResourceId)
 
                 quote = quote_data[media['mediumQuote']['quoteId']]
+
+                try:
+                    start = quote['startOffset']
+                    end = quote['endOffset']
+                except KeyError:
+                    print("quote key error with url: "+href, file=sys.stderr)
+                    contine
 
                 content = ''
                 corrStnMediumIDs = []
@@ -116,7 +122,7 @@ def parse_stream(uid, session, href, references):
                     content += para['text']
                     corrStnMediumIDs.append(para['name'])
 
-                content = content[quote['startOffset']:quote['endOffset']]
+                content = content[start:end]
                 corr_article_mediumID = quote['postId']
 
                 highlightID = exist_highlight(corr_article_mediumID, content)
@@ -138,17 +144,25 @@ def parse_highlight(uid, articleID, session):
     if resp_data is None: return
 
     for highlight in resp_data['payload']['value']:
+        try:
+            start = highlight['startOffset']
+            end = highlight['endOffset']
+            numLikes = highlight['count']
+        except KeyError:
+            print("highlight key error with url: "+href, file=sys.stderr)
+            contine
+
         content = ''
         corrStnMediumIDs = []
         for para in highlight['paragraphs']:
             content += para['text']
             corrStnMediumIDs.append(para['name'])
 
-        content = content[highlight['startOffset']:highlight['endOffset']]
+        content = content[start:end]
         saveHighlight({
             'content': content,
             'corrStnMediumIDs': corrStnMediumIDs,
-            'numLikes': highlight['count'],
+            'numLikes': numLikes,
             'articleMediumID': uid
         }, articleID)
 
