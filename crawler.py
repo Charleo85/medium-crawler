@@ -67,8 +67,8 @@ if __name__ == '__main__':
             while not q.empty():
                 time.sleep(10)
                 uid, url = q.get()
-                print(url, uid)
-                # parse(url, session, uid)
+                # print(url, uid)
+                parse(url, session, uid)
 
                 sys.stdout.flush()
                 sys.stderr.flush()
