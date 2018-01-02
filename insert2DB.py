@@ -11,7 +11,7 @@ def initdb():
 	createSTNTable()
 	createCommentTable()
 	createArticleTable()
-	# createHighlightTable()
+	createHighlightTable()
 
 ###insert author if not exist into the author table
 def saveAuthor(author):
@@ -20,63 +20,75 @@ def saveAuthor(author):
 	username = author['username']
 	bio = author['bio']
 
-	authorExistFlag = existAuthor(authorMediumID)
+	# authorExistFlag = existAuthor(authorMediumID)
+	authorID = queryAuthorIDbyMediumID(authorMediumID)
+	# print("exist author\t", authorName)
 
-	if not authorExistFlag:
-		authorID = insertAuthor(authorName, authorMediumID, username, bio)
+	if authorID == -1: authorID = insertAuthor(authorName, authorMediumID, username, bio)
 
+	return authorID
 
-	# # print("exist author\t", authorName)
-	# authorID = queryAuthorIDbyMediumID(authorMediumID)
 
 ####insert article into article table
 def saveArticle(article, articleID=None, authorID=None):
 	authorMediumID = article['authorMediumID']
-	# authorName = article['author']
-
 	articleMediumID = article['mediumID']
 	articleTitle = article['title']
-	highlight = article['highlight']
-	tag = article['tag']
-	numberLikes = article['numberLikes']
+	recommends = article['recommends']
+	tags = article['tags']
+	numLikes = article['numLikes']
 	articleTime = article['time']
 
-	if authorID is None:
-		authorID = queryAuthorIDbyMediumID(authorMediumID)
+	if authorID is None: authorID = queryAuthorIDbyMediumID(authorMediumID)
 
-	if articleID:
-		updateArticle(articleMediumID, articleTitle, highlight, authorID, tag, articleTime, numberLikes, articleID)
-	else:
-		articleID = insertArticle(articleMediumID, articleTitle, highlight, authorID, tag, articleTime, numberLikes)
+	# if articleID:
+	# 	updateArticle(articleMediumID, articleTitle, recommends, tags, articleTime, numLikes, articleID, authorID)
+	# else:
+	# 	articleID = queryArticleIDbyMediumID(articleMediumID)
+	# 	if articleID != -1:
+	# 		updateArticle(articleMediumID, articleTitle, recommends, tags, articleTime, numLikes, articleID, authorID)
+	# 	else:
+	# 		articleID = insertArticle(articleMediumID, articleTitle, recommends, authorID, tags, articleTime, numLikes)
+	articleID = insertArticle(articleMediumID, articleTitle, recommends, authorID, tags, articleTime, numLikes)
 
+	return articleID
+
+def savedArticle(articleMediumID):
+	return existArticle(articleMediumID)
 
 def saveSratchArticle(articleMediumID):
+	if existArticle(articleMediumID): return -1
 	articleID = insertArticle(articleMediumID)
 	return articleID
 
 ###insert sentence into stn table
-def saveSentence(sentence, articleID=None):
+def saveSentence(sentence):
 	stnMediumID = sentence['id']
 	stnContent = sentence['content']
-	articleMediumID = sentence['articleMediumID']
-	if articleID is None:
-		articleID = queryArticleIDbyMediumID(articleMediumID)
+	articleID = sentence['articleID']
 	stnID = insertSTN(stnMediumID, articleID, stnContent)
 
 ###insert comment into comment table
 def saveComment(comment):
-	commentMediumID = comment['mediumID']
-	commentContent = comment['content']
-	authorMediumID = comment['authorMediumID']
-	commentTime = comment['time']
-	numberLikes = comment['numberLikes']
-	corrStnMediumID = comment['corrStnID']
-	articleMediumID = comment['articleMediumID']
+	selfArticleID = comment['selfArticleID']
+	corrHighlightID = comment['corrHighlightID']
+	corrArticleMediumID = comment['corrArticleMediumID']
+	corrArticleID = queryArticleIDbyMediumID(corrArticleMediumID)
 
-	authorID = queryAuthorIDbyMediumID(authorMediumID)
-	articleID = queryArticleIDbyMediumID(articleMediumID)
-	corrStnID = -1
-	if corrStnMediumID != '':
-		corrStnID = queryStnIDbyMediumID(corrStnMediumID, articleID)
+	insertComment(selfArticleID, corrHighlightID, corrArticleID)
 
-	insertComment(commentMediumID, commentContent, authorID, commentTime, numberLikes, corrStnID, articleID)
+###insert highlight into highlight table
+def saveHighlight(highlight, corrArticleID=None):
+	content = highlight['content']
+	numLikes = highlight['numLikes']
+	corrStnMediumIDs = highlight['corrStnMediumIDs']
+
+	if corrArticleID is None:
+		articleMediumID = highlight['articleMediumID']
+		corrArticleID = queryArticleIDbyMediumID(articleMediumID)
+
+	highlightID = insertHighlight(content, numLikes, corrArticleID, corrStnMediumIDs)
+	return highlightID
+
+def existHighlight(articleMediumID):
+	return existHighlight(articleMediumID)

@@ -8,9 +8,9 @@ def createHighlightTable():
 		CREATE TABLE highlight (
 			highlightID SERIAL PRIMARY KEY,
 			content text,
-			numberlikes int,
-			corrStnID varchar(300),
-			articleID int
+			numLikes int,
+			corrArticleID int,
+			corrStnMediumIDs varchar(300)
 		)
 		""")
 
@@ -37,13 +37,13 @@ def createHighlightTable():
 		if conn is not None:
 			conn.close()
 
-def insertHighlight(stnName, articleID, stnContent):
+def insertHighlight(content, numlikes, corrArticleID, corrStnMediumIDs):
 	command = ("""
-		INSERT INTO stn (
-			content text,
-			numberlikes,int,
-			corrStnID varchar(300),
-			articleID int,
+		INSERT INTO highlight (
+			content,
+			numLikes,
+			corrArticleID,
+			corrStnMediumIDs
 		)
 		VALUES(
 		%s, %s, %s, %s)
@@ -61,7 +61,7 @@ def insertHighlight(stnName, articleID, stnContent):
 		# print("before inserting into article table....")
 
 		# for command in commands:
-		cur.execute(command, (content, numberlikes, corrStnID, articleID, ))
+		cur.execute(command, (content, numlikes, corrArticleID, corrStnMediumIDs,  ))
 		# print("after inserting into article table....")
 
 		highlightID = cur.fetchone()[0]
@@ -78,42 +78,33 @@ def insertHighlight(stnName, articleID, stnContent):
 		if conn is not None:
 			conn.close()
 
-# def queryHighlightIDbyStnName(stnName):
-#
-# 	command = ("""
-# 		SELECT
-# 			stnID
-# 		FROM highlight
-# 		WHERE stnName = %s
-# 		""")
-#
-#
-# 	conn = None
-# 	try:
-# 		params = config()
-#
-# 		conn = psycopg2.connect(**params)
-#
-# 		cur = conn.cursor()
-# 		# print("querying sentence table....")
-# 		# print("inserting into sentence:", file=sys.stderr)
-# 		# print(commentName, commentContent, authorID, commentTime, numLikes, corrStnID, articleID, sep=", ", file=sys.stderr)
-# 		# for command in commands:
-# 		cur.execute(command, (stnName,))
-# 		# print("after querying sentence table....")
-#
-# 		stnID = cur.fetchone()
-# 		if stn is None:
-# 			print("no stn fetched" % stnName)
-# 			return
-# 		cur.close()
-#
-# 		conn.commit()
-#
-# 		return stnID[0]
-#
-# 	except(Exception, psycopg2.DatabaseError) as error:
-# 		print(error, file=sys.stderr)
-# 	finally:
-# 		if conn is not None:
-# 			conn.close()
+def existHighlight(mediumID):
+	command = ("""
+		select exists(select 1 from author where corrArticleID=%s)""")
+
+	conn = None
+	try:
+		params = config()
+
+		conn = psycopg2.connect(**params)
+
+		cur = conn.cursor()
+		# print("exist author in the author table....")
+
+		# for command in commands:
+		cur.execute(command, (mediumID, ))
+		# print("after existing author in the table....")
+
+		existFlag = cur.fetchone()[0]
+
+		cur.close()
+
+		conn.commit()
+
+		return existFlag
+
+	except(Exception, psycopg2.DatabaseError) as error:
+		print(error, file=sys.stderr)
+	finally:
+		if conn is not None:
+			conn.close()

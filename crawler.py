@@ -1,8 +1,6 @@
 # import sys, os, time, requests, queue, re
-import pickle
 # from lxml import html
 from parser import parse
-from action2ArticleTable import existArticle
 from insert2DB import *
 from utils import *
 from selenium import webdriver
@@ -21,16 +19,13 @@ def concat(href):
 regex = re.compile(r'https:\/\/[\s\S]+-[\w]{12}\?source=[\s\S]+')
 re_tag = re.compile(r'https:\/\/[\w|.]+\/(tag|topic|tagged)\/[\s\S]+')
 
-def analyze(url, tree=None):
+def analyze(url, session, tree=None):
     global q
     global t
 
     if tree is None:
-        try:
-            page = requests.get(url, allow_redirects=True, timeout=1)
-        except:
-            return
-        tree = html.fromstring(page.content.decode('utf-8'))
+        tree = load_html(session, href)
+        if tree is None: return
 
     all_links = tree.xpath('//a/@href')
 
@@ -42,11 +37,10 @@ def analyze(url, tree=None):
         if regex.search(href):
             link, uid = concat(href)
             if not link or not uid: continue
-            if existArticle(uid):
-                continue
-            else:
-                articleID = saveSratchArticle(uid);
-                q.put((uid, link, articleID))
+
+            articleID = saveSratchArticle(uid)
+            if articleID == -1: continue #already crawled article
+            else: q.put((uid, link, articleID))
             # if uid in d:
             #     pack = d[uid]
             #     if pack["timestamp"] == 0: continue #must be on queue still
@@ -105,8 +99,7 @@ def analyze(url, tree=None):
 
 if __name__ == '__main__':
     initdb()
-    driver = webdriver.Chrome('./chromedriver')
-    driver = login(driver)
+    session = login()
 
     q = queue.Queue() #uid queue to analyze
     t = queue.Queue() #topic list to crawl
@@ -129,13 +122,12 @@ if __name__ == '__main__':
         #https://medium.com/topics
 
         while not t.empty():
-            analyze(t.get())
+            analyze(t.get(), session)
 
             while not q.empty():
                 time.sleep(10)
                 uid, url, articleID = q.get()
-                tree = analyze(url)
-                parse(url, driver, uid, articleID, tree)
+                driver = parse(url, driver, uid, articleID)
                 # d[uid]["timestamp"] = time.time() #give a timestamp that crawled
                 # url = d[uid]["url"]
                 # if d[uid]["pk"] == -1:  # first time crawl

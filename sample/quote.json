@@ -1,0 +1,29 @@
+{
+  "b": "32111-acac638",
+  "payload": {
+    "references": {
+    },
+    "value": [
+      {
+        "count": 6,
+        "endOffset": 360,
+        "paragraphs": [
+          {
+            "markups": [
+            ],
+            "name": "1ffa",
+            "text": "There were pros and cons to this fluid and publicly mediated sexual compact. On the plus side, women were more liberated at Oneida than almost anywhere in America. They were partners in community decision-making, and the community childrearing arrangement relieved them of their nonstop domestic burdens, so many had time to pursue personal creative endeavors. Community men were encouraged to practice “sexual continence” so that both partners could pursue their passions without consequences. In the area of sex for pleasure — known as “amative” sex, the individual’s desire reigned supreme.",
+            "type": 1
+          }
+        ],
+        "postId": "c7ea4734e9ca",
+        "quoteId": "anon_27a1bc5865ed",
+        "startOffset": 77,
+        "type": "Quote",
+        "userId": "anon"
+      }
+    ]
+  },
+  "success": true,
+  "v": 3
+}

@@ -10,10 +10,10 @@ def createArticleTable():
 			articleID SERIAL PRIMARY KEY,
 			mediumID varchar(20),
 			title text,
-			highlight text,
-			tag varchar(300),
+			recommends int,
+			tags varchar(300),
 			postTime timestamp,
-			numberLikes int,
+			numLikes int,
 			corrAuthorID int
 		)
 		""")
@@ -41,15 +41,15 @@ def createArticleTable():
 		if conn is not None:
 			conn.close()
 
-def insertArticle(articleMediumID, articleTitle="", highlight="", authorID=-1, tag="", articleTime=DEFAULT_TIME, numberLikes=-1):
+def insertArticle(articleMediumID, articleTitle="", recommends=-1, authorID=-1, tags=[], articleTime=DEFAULT_TIME, numLikes=-1):
 	command = ("""
 		INSERT INTO article (
 			mediumID,
 			title,
-			highlight,
-			tag,
+			recommends,
+			tags,
 			postTime,
-			numberLikes,
+			numLikes,
 			corrAuthorID
 		)
 		VALUES(
@@ -67,9 +67,9 @@ def insertArticle(articleMediumID, articleTitle="", highlight="", authorID=-1, t
 		cur = conn.cursor()
 		# print("before inserting into article table....")
 		# print("inserting into article:", file=sys.stderr)
-		# print(articleMediumID, articleTitle, articleContent, authorID, tag, articleTime, numberLikes, sep=", ", file=sys.stderr)
+		# print(articleMediumID, articleTitle, articleContent, authorID, tags, articleTime, numLikes, sep=", ", file=sys.stderr)
 		# for command in commands:
-		cur.execute(command, (articleMediumID, articleTitle, highlight, tag, articleTime, numberLikes, authorID))
+		cur.execute(command, (articleMediumID, articleTitle, recommends, tags, articleTime, numLikes, authorID, ))
 		# print("after inserting into article table....")
 
 		articleID = cur.fetchone()[0]
@@ -86,16 +86,16 @@ def insertArticle(articleMediumID, articleTitle="", highlight="", authorID=-1, t
 		if conn is not None:
 			conn.close()
 
-def updateArticle(articleMediumID, articleTitle, highlight, tag, articleTime, numberLikes, articleID, authorID):
+def updateArticle(articleMediumID, articleTitle, recommends, tags, articleTime, numLikes, articleID, authorID):
 	command = ("""
 		UPDATE article
 		SET
 			mediumID = %s,
 			title = %s,
-			highlight = %s,
-			tag = %s,
+			recommends = %s,
+			tags = %s,
 			postTime = %s,
-			numberLikes = %s,
+			numLikes = %s,
 			corrAuthorID = %s
 		WHERE articleID = %s
 		""")
@@ -109,9 +109,9 @@ def updateArticle(articleMediumID, articleTitle, highlight, tag, articleTime, nu
 		cur = conn.cursor()
 		# print("before inserting into article table....")
 		# print("inserting into article:", file=sys.stderr)
-		# print(articleMediumID, articleTitle, articleContent, authorID, tag, articleTime, numberLikes, sep=", ", file=sys.stderr)
+		# print(articleMediumID, articleTitle, articleContent, authorID, tags, articleTime, numLikes, sep=", ", file=sys.stderr)
 		# for command in commands:
-		cur.execute(command, (articleMediumID, articleTitle, articleContent, tag, articleTime, numberLikes, articleID, authorID,))
+		cur.execute(command, (articleMediumID, articleTitle, recommends, tags, articleTime, numLikes, authorID, articleID, ))
 		# print("after inserting into article table....")
 
 		cur.close()
@@ -145,13 +145,17 @@ def queryArticleIDbyMediumID(mediumID):
 		cur.execute(command, (mediumID,))
 		# print("after querying article table....")
 
-		articleID = cur.fetchone()[0]
+		articleID = cur.fetchone()
+
+		if articleID is None:
+			# print("no article fetched: " + mediumID)
+			return -1;
 
 		cur.close()
 
 		conn.commit()
 
-		return articleID
+		return articleID[0]
 
 	except(Exception, psycopg2.DatabaseError) as error:
 		print(error, file=sys.stderr)
