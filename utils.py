@@ -59,11 +59,12 @@ def load_page(session, href, timeout=15, allow_redirects=True, params=None, head
     except Exception as e:
         logger("error in loading page: "+str(e)+href, file=sys.stderr)
         return None
-    if page.status_code != 200:
+    if page.status_code == 200:
         return page
     else:
-        logger("getting status code: " + page.status_code+ "with url: "+href, file=sys.stderr)
-        time.sleep(30)
+        logger("getting status code: " + str(page.status_code) + " with url: "+href, file=sys.stderr)
+        time.sleep(3)
+        if max_retry < 1: return None
         return load_page(session, href, timeout=timeout, allow_redirects=allow_redirects, params=params, headers=headers,
                         max_retry=max_retry-1)
 
