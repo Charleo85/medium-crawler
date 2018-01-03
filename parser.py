@@ -8,23 +8,65 @@ def parse_comment_tags(tag_dict_arr):
             tags_arr.append(tag_dict['name'])
     return tags_arr
 
-def parse_comment(uid, session):
-    href = "https://medium.com/_/api/posts/"+uid+"/responsesStream"
+def parse_quotes(quote, href):
+    try:
+        start = quote['startOffset']
+        end = quote['endOffset']
+        paras = quote['paragraphs']
+    except KeyError:
+        print("quote key error with url: "+href, file=sys.stderr)
+        return None, None
+
+    content = ''
+    corrStnMediumIDs = []
+    for para in paras:
+        content += para['text']
+        corrStnMediumIDs.append(para['name'])
+    content = content[start:end]
+    return content, corrStnMediumIDs
+
+def parse_sentence(uid, articleID, href, session):
+    tree = load_html(session, href)
+    if tree is None: return
+
+    section = tree.xpath('//section/div[@class="section-content"]')
+    for sec in section:
+        body = sec.xpath('./div[contains(@class,"section-inner")]/*')
+        parse_para(body, uid, articleID)
+
+def parse_para(body, uid, articleID):
+    for para in body:
+        sentence = para.text_content()
+        try: key = para.xpath('@id')[0]
+        except:
+            sub_body = para.xpath('./*')
+            parse_para(sub_body, uid, articleID)
+            continue
+        if sentence == "" or not key: continue
+
+        save_sentence({
+            'content': sentence,
+            'id': key,
+            'articleID': articleID
+        })
+
+def parse_highlight(uid, articleID, session):
+    href = 'https://medium.com/p/'+uid+'/quotes'
     resp_data = load_json(session, href)
     if resp_data is None: return
 
-    references = resp_data['payload']['references']
-    paging = resp_data['payload']['paging']
-    parse_stream(uid, session, href, references)
+    for highlight in resp_data['payload']['value']:
+        content, corrStnMediumIDs = parse_quotes(highlight, href)
+        if content is None: continue
 
-    while 'next' in paging:
-        resp_data = load_json(session, href, params=paging['next'])
-        if resp_data is None: break
-        references = resp_data['payload']['references']
-        paging = resp_data['payload']['paging']
-        parse_stream(uid, session, href, references)
+        save_highlight({
+            'content': content,
+            'corrStnMediumIDs': corrStnMediumIDs,
+            'numLikes': highlight.get('count', -1),
+            'articleMediumID': uid
+        }, articleID)
 
-def parse_stream(uid, session, href, references):
+def parse_responseStream(uid, session, href, references):
     if 'Post' in references and 'User' in references:
         comm_data = references['Post']
         user_data = references['User']
@@ -53,7 +95,7 @@ def parse_stream(uid, session, href, references):
 
         try:
             username = user_data[creator_id]['username']
-            authorID = saveAuthor({
+            authorID = save_author({
                 'name': user_data[creator_id]['name'],
                 'mediumID': creator_id,
                 'username': username,
@@ -61,7 +103,7 @@ def parse_stream(uid, session, href, references):
             })
         except KeyError: print("comment author key error with url: "+href, file=sys.stderr)
 
-        self_articleID = saveArticle({
+        self_articleID = save_article({
             'mediumID': self_article_mediumID,
             'authorMediumID': creator_id,
             'recommends' : recommends,
@@ -73,7 +115,7 @@ def parse_stream(uid, session, href, references):
 
         if comment_full:
             for comm_para in comment_paras:
-                saveSentence({
+                save_sentence({
                     'content': comm_para['text'],
                     'id': comm_para['name'],
                     'articleID': self_articleID
@@ -107,26 +149,13 @@ def parse_stream(uid, session, href, references):
                     # print(mediaResourceId)
 
                 quote = quote_data[media['mediumQuote']['quoteId']]
-
-                try:
-                    start = quote['startOffset']
-                    end = quote['endOffset']
-                    paras = quote['paragraphs']
-                    corr_article_mediumID = quote['postId']
-                except KeyError:
-                    print("quote key error with url: "+href, file=sys.stderr)
-                    continue
-
-                content = ''
-                corrStnMediumIDs = []
-                for para in paras:
-                    content += para['text']
-                    corrStnMediumIDs.append(para['name'])
-                content = content[start:end]
+                corr_article_mediumID = quote['postId']
+                content, corrStnMediumIDs = parse_quotes(quote, href)
+                if content is None: continue
 
                 highlightID = exist_highlight(corr_article_mediumID, content)
                 if highlightID == -1:
-                    highlightID = saveHighlight({
+                    highlightID = save_highlight({
                         'content': content,
                         'corrStnMediumIDs': corrStnMediumIDs,
                         'numLikes': -1,
@@ -135,61 +164,28 @@ def parse_stream(uid, session, href, references):
 
                 comment_map[self_article_mediumID]['corrHighlightID'] = highlightID
 
-    for _, commentObj in comment_map.items(): saveComment(commentObj)
+    for _, comment_obj in comment_map.items(): save_comment(comment_obj)
 
-def parse_highlight(uid, articleID, session):
-    href = 'https://medium.com/p/'+uid+'/quotes'
+def parse_comment(uid, session):
+    href = "https://medium.com/_/api/posts/"+uid+"/responsesStream"
     resp_data = load_json(session, href)
     if resp_data is None: return
 
-    for highlight in resp_data['payload']['value']:
-        try:
-            start = highlight['startOffset']
-            end = highlight['endOffset']
-            paras = highlight['paragraphs']
-        except KeyError:
-            print("highlight key error with url: "+href, file=sys.stderr)
-            continue
+    references = resp_data['payload']['references']
+    paging = resp_data['payload']['paging']
+    parse_responseStream(uid, session, href, references)
 
-        content = ''
-        corrStnMediumIDs = []
-        for para in paras:
-            content += para['text']
-            corrStnMediumIDs.append(para['name'])
-        content = content[start:end]
+    while 'next' in paging:
+        resp_data = load_json(session, href, params=paging['next'])
+        if resp_data is None: break
+        references = resp_data['payload']['references']
+        paging = resp_data['payload']['paging']
+        parse_stream(uid, session, href, references)
 
-        saveHighlight({
-            'content': content,
-            'corrStnMediumIDs': corrStnMediumIDs,
-            'numLikes': highlight.get('count', -1),
-            'articleMediumID': uid
-        }, articleID)
-
-def parse_sentence(uid, articleID, href, session):
-    tree = load_html(session, href)
-    if tree is None: return
-
-    section = tree.xpath('//section/div[@class="section-content"]')
-    for sec in section:
-        body = sec.xpath('./div[contains(@class,"section-inner")]/*')
-        parse_para(body, uid, articleID)
-
-def parse_para(body, uid, articleID):
-    for para in body:
-        sentence = para.text_content()
-        try: key = para.xpath('@id')[0]
-        except:
-            sub_body = para.xpath('./*')
-            parse_para(sub_body, uid, articleID)
-            continue
-        if sentence == "" or not key: continue
-
-        saveSentence({
-            'content': sentence,
-            'id': key,
-            'articleID': articleID
-        })
-
+def parse_topicStream(references):
+    for mediumID, value in references.get('Post', {}).items():
+        if not exist_article(self_article_mediumID):
+            parse_comment(mediumID, session)
 
 def parse(href, session, uid=None, articleID=None, tree=None):
     if not uid: uid = parse_uid(href)
