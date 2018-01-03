@@ -54,7 +54,7 @@ def parse_uid(href):
         if (href[n-1-i] == '-'):
             return href[n-i:n]
 
-def load_page(session, href, timeout=10, allow_redirects=True, params=None, headers=None):
+def load_page(session, href, timeout=15, allow_redirects=True, params=None, headers=None):
     try: page = session.get(href, allow_redirects=allow_redirects, timeout=timeout, params=params, headers=headers)
     except Exception as e:
         print("error in loading page: "+str(e)+href, file=sys.stderr)
@@ -71,7 +71,7 @@ def load_json(session, href, params=None, headers=None):
     resp = load_page(session, href, params=params, headers=headers)
     if resp is None: return None
     resp_data = json.loads(resp.content.decode('utf-8')[16:])
-    if 'success' in resp_data: return resp_data
+    if 'success' in resp_data: return resp_data.get('payload', None)
 
     print("json request not successful with url: "+href, file=sys.stderr)
     return None

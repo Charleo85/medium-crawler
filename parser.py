@@ -55,7 +55,7 @@ def parse_highlight(uid, articleID, session):
     resp_data = load_json(session, href)
     if resp_data is None: return
 
-    for highlight in resp_data['payload']['value']:
+    for highlight in resp_data['value']:
         content, corrStnMediumIDs = parse_quotes(highlight, href)
         if content is None: continue
 
@@ -171,15 +171,15 @@ def parse_comment(uid, session):
     resp_data = load_json(session, href)
     if resp_data is None: return
 
-    references = resp_data['payload']['references']
-    paging = resp_data['payload']['paging']
+    references = resp_data['references']
+    paging = resp_data['paging']
     parse_responseStream(uid, session, href, references)
 
     while 'next' in paging:
         resp_data = load_json(session, href, params=paging['next'])
         if resp_data is None: break
-        references = resp_data['payload']['references']
-        paging = resp_data['payload']['paging']
+        references = resp_data['references']
+        paging = resp_data['paging']
         parse_stream(uid, session, href, references)
 
 def parse_topicStream(references):

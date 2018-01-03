@@ -24,21 +24,21 @@ def parse_topic(href, session):
     resp_data = load_json(session, href, headers={"accept": "application/json"})
     if resp_data is None: return
 
-    references = resp_data['payload']['references']
+    references = resp_data['references']
     parse_topicStream(references)
 
     topics = references.get('Topic', None)
-    if topics is None: topics = resp_data['payload'].get('topic', {})
+    if topics is None: topics = resp_data.get('topic', {})
     for topic_mediumID, value in topics.items():
         parse_topic_dict(value, topic_mediumID)
 
-    paging = resp_data['payload'].get('paging', {})
+    paging = resp_data.get('paging', {})
     while 'next' in paging and 'path' in paging:
         href='https://medium.com'+paging['path']
         resp_data = load_json(session, href, params=paging['next'])
         if resp_data is None: break
-        references = resp_data['payload']['references']
-        paging = resp_data['payload']['paging']
+        references = resp_data['references']
+        paging = resp_data['paging']
         parse_topicStream(references)
 
 if __name__ == '__main__':
