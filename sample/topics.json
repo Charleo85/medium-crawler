@@ -1,0 +1,1616 @@
+{
+  "b": "32123-d347dcc",
+  "payload": {
+    "heroPromos": [
+    ],
+    "navBar": {
+      "index": 11,
+      "navItems": [
+        {
+          "personalizedStream": {
+          },
+          "streamType": "personalizedStream",
+          "title": "Home"
+        },
+        {
+          "layout": "1",
+          "sectionLength": "5",
+          "streamType": "topicStream",
+          "title": "Technology",
+          "topicStream": {
+            "topicId": "f862bfc84e38",
+            "topicSlug": "technology"
+          }
+        },
+        {
+          "layout": "1",
+          "sectionLength": "5",
+          "streamType": "topicStream",
+          "title": "Culture",
+          "topicStream": {
+            "topicId": "1f79d9387f85",
+            "topicSlug": "culture"
+          }
+        },
+        {
+          "layout": "1",
+          "sectionLength": "5",
+          "streamType": "topicStream",
+          "title": "Entrepreneurship",
+          "topicStream": {
+            "topicId": "ba2d3ab15ed6",
+            "topicSlug": "entrepreneurship"
+          }
+        },
+        {
+          "layout": "1",
+          "sectionLength": "5",
+          "streamType": "topicStream",
+          "title": "Creativity",
+          "topicStream": {
+            "topicId": "24853457a119",
+            "topicSlug": "creativity"
+          }
+        },
+        {
+          "layout": "1",
+          "sectionLength": "5",
+          "streamType": "topicStream",
+          "title": "Self",
+          "topicStream": {
+            "topicId": "aef1078a3ef5",
+            "topicSlug": "self"
+          }
+        },
+        {
+          "layout": "1",
+          "sectionLength": "5",
+          "streamType": "topicStream",
+          "title": "Politics",
+          "topicStream": {
+            "topicId": "4d562ee63426",
+            "topicSlug": "politics"
+          }
+        },
+        {
+          "layout": "1",
+          "sectionLength": "5",
+          "streamType": "topicStream",
+          "title": "Media",
+          "topicStream": {
+            "topicId": "403f77178792",
+            "topicSlug": "media"
+          }
+        },
+        {
+          "layout": "1",
+          "sectionLength": "5",
+          "streamType": "topicStream",
+          "title": "Productivity",
+          "topicStream": {
+            "topicId": "8a146bc21b28",
+            "topicSlug": "productivity"
+          }
+        },
+        {
+          "layout": "1",
+          "sectionLength": "5",
+          "streamType": "topicStream",
+          "title": "Design",
+          "topicStream": {
+            "topicId": "22d054b693da",
+            "topicSlug": "digital-design"
+          }
+        },
+        {
+          "layout": "1",
+          "sectionLength": "5",
+          "streamType": "topicStream",
+          "title": "Popular",
+          "topicStream": {
+            "topicId": "9d34e48ecf94",
+            "topicSlug": "popular"
+          }
+        },
+        {
+          "streamType": "topicExploreStream",
+          "title": "More",
+          "topicExploreStream": {
+          }
+        }
+      ]
+    },
+    "references": {
+      "Topic": {
+        "1af65db9c2f8": {
+          "briefCatalogId": "e811a1868896",
+          "createdAt": 1487916832419,
+          "deletedAt": 0,
+          "description": "Born to be bot.",
+          "image": {
+            "id": "1*A28aHchbaA8zNVXraBq0Ug@2x.jpeg",
+            "originalHeight": 3244,
+            "originalWidth": 4866
+          },
+          "isFollowing": false,
+          "name": "Artificial intelligence",
+          "relatedTags": [
+          ],
+          "relatedTopics": [
+          ],
+          "slug": "artificial-intelligence",
+          "topicId": "1af65db9c2f8",
+          "type": "Topic",
+          "visibility": 1
+        },
+        "1f79d9387f85": {
+          "briefCatalogId": "60a151500639",
+          "createdAt": 1489425100775,
+          "deletedAt": 0,
+          "description": "High, low, and sideways.",
+          "image": {
+            "id": "1*TK5lkfLNtUgyo1_QM_orCw@2x.jpeg",
+            "originalHeight": 2731,
+            "originalWidth": 4096
+          },
+          "isFollowing": false,
+          "name": "Culture",
+          "relatedTags": [
+          ],
+          "relatedTopics": [
+          ],
+          "slug": "culture",
+          "topicId": "1f79d9387f85",
+          "type": "Topic",
+          "visibility": 1
+        },
+        "205a8f70c356": {
+          "briefCatalogId": "eba5fe263ee2",
+          "createdAt": 1494092907829,
+          "deletedAt": 0,
+          "description": "The beautiful game.",
+          "image": {
+            "id": "1*doXZ7sCt9PW3-TvbgDtBPA@2x.jpeg",
+            "originalHeight": 2000,
+            "originalWidth": 2992
+          },
+          "isFollowing": false,
+          "name": "Sports",
+          "relatedTags": [
+          ],
+          "relatedTopics": [
+          ],
+          "slug": "sports",
+          "topicId": "205a8f70c356",
+          "type": "Topic",
+          "visibility": 1
+        },
+        "22d054b693da": {
+          "briefCatalogId": "51020d7ae800",
+          "createdAt": 1490119315338,
+          "deletedAt": 0,
+          "description": "More than just a pretty typeface.",
+          "image": {
+            "id": "1*Su6vAh8QOnSkcOrlJAyLmw@2x.jpeg",
+            "originalHeight": 3456,
+            "originalWidth": 5184
+          },
+          "isFollowing": false,
+          "name": "Digital design",
+          "relatedTags": [
+          ],
+          "relatedTopics": [
+          ],
+          "slug": "digital-design",
+          "topicId": "22d054b693da",
+          "type": "Topic",
+          "visibility": 1
+        },
+        "230848015f8c": {
+          "briefCatalogId": "a0ccf7a4f05f",
+          "createdAt": 1493933362318,
+          "deletedAt": 0,
+          "description": "One big question, countless answers.",
+          "image": {
+            "id": "1*_j2rk02Wb72EncmOimPdBQ@2x.jpeg",
+            "originalHeight": 3442,
+            "originalWidth": 5707
+          },
+          "isFollowing": false,
+          "name": "Spirituality",
+          "relatedTags": [
+          ],
+          "relatedTopics": [
+          ],
+          "slug": "spirituality",
+          "topicId": "230848015f8c",
+          "type": "Topic",
+          "visibility": 1
+        },
+        "24853457a119": {
+          "briefCatalogId": "ae44bcb04e03",
+          "createdAt": 1493829403847,
+          "deletedAt": 0,
+          "description": "Of muses and mistakes.",
+          "image": {
+            "id": "1*aeHIv3uvtaMMqQe2ZfzMSg@2x.jpeg",
+            "originalHeight": 2908,
+            "originalWidth": 4362
+          },
+          "isFollowing": false,
+          "name": "Creativity",
+          "relatedTags": [
+          ],
+          "relatedTopics": [
+          ],
+          "slug": "creativity",
+          "topicId": "24853457a119",
+          "type": "Topic",
+          "visibility": 1
+        },
+        "29bb77781daf": {
+          "briefCatalogId": "65160fe6c644",
+          "createdAt": 1493928514716,
+          "deletedAt": 0,
+          "description": "Of invoicing and independence.",
+          "image": {
+            "id": "1*uID8tVL-mgxQ0HgKvZRj6w@2x.jpeg",
+            "originalHeight": 2994,
+            "originalWidth": 4491
+          },
+          "isFollowing": false,
+          "name": "Freelancing",
+          "relatedTags": [
+          ],
+          "relatedTopics": [
+          ],
+          "slug": "freelancing",
+          "topicId": "29bb77781daf",
+          "type": "Topic",
+          "visibility": 1
+        },
+        "2cdb28854f0c": {
+          "briefCatalogId": "54e031cd5118",
+          "createdAt": 1493946907492,
+          "deletedAt": 0,
+          "description": "Feast your retinas.",
+          "image": {
+            "id": "1*H2blBoEmzkSusI_a4Bk0dg@2x.jpeg",
+            "originalHeight": 2592,
+            "originalWidth": 3888
+          },
+          "isFollowing": false,
+          "name": "Art",
+          "relatedTags": [
+          ],
+          "relatedTopics": [
+          ],
+          "slug": "art",
+          "topicId": "2cdb28854f0c",
+          "type": "Topic",
+          "visibility": 1
+        },
+        "308a25bedcb5": {
+          "briefCatalogId": "df3811de96ac",
+          "createdAt": 1493946945588,
+          "deletedAt": 0,
+          "description": "Liner notes.",
+          "image": {
+            "id": "1*kA7YuTntJ95Nr4pBagdIzA@2x.jpeg",
+            "originalHeight": 2991,
+            "originalWidth": 4486
+          },
+          "isFollowing": false,
+          "name": "Music",
+          "relatedTags": [
+          ],
+          "relatedTopics": [
+          ],
+          "slug": "music",
+          "topicId": "308a25bedcb5",
+          "type": "Topic",
+          "visibility": 1
+        },
+        "3d18b94f6858": {
+          "briefCatalogId": "9f9dd4b39b01",
+          "createdAt": 1487705873685,
+          "deletedAt": 0,
+          "description": "Where soul meets body.",
+          "image": {
+            "id": "1*5rk23ZWPz3FljbWuSQD80g@2x.jpeg",
+            "originalHeight": 1280,
+            "originalWidth": 1920
+          },
+          "isFollowing": false,
+          "name": "Wellness",
+          "relatedTags": [
+          ],
+          "relatedTopics": [
+          ],
+          "slug": "wellness",
+          "topicId": "3d18b94f6858",
+          "type": "Topic",
+          "visibility": 1
+        },
+        "403f77178792": {
+          "briefCatalogId": "b6e0be187295",
+          "createdAt": 1490118474751,
+          "deletedAt": 0,
+          "description": "Where the newsroom is the news.",
+          "image": {
+            "id": "1*wLhNmBWoSMvG0kyRGjDIqw@2x.jpeg",
+            "originalHeight": 2448,
+            "originalWidth": 3264
+          },
+          "isFollowing": false,
+          "name": "Media",
+          "relatedTags": [
+          ],
+          "relatedTopics": [
+          ],
+          "slug": "media",
+          "topicId": "403f77178792",
+          "type": "Topic",
+          "visibility": 1
+        },
+        "40997f26fa15": {
+          "briefCatalogId": "cf3743efc0d6",
+          "createdAt": 1493946874688,
+          "deletedAt": 0,
+          "description": "Think about it.",
+          "image": {
+            "id": "1*BqzwKc5qYL5PrzCfpcCU2Q@2x.jpeg",
+            "originalHeight": 2592,
+            "originalWidth": 3888
+          },
+          "isFollowing": false,
+          "name": "Philosophy",
+          "relatedTags": [
+          ],
+          "relatedTopics": [
+          ],
+          "slug": "philosophy",
+          "topicId": "40997f26fa15",
+          "type": "Topic",
+          "visibility": 1
+        },
+        "40c8e34e04ce": {
+          "briefCatalogId": "503ccc4ce806",
+          "createdAt": 1493947210893,
+          "deletedAt": 0,
+          "description": "Follow the money.",
+          "image": {
+            "id": "1*X8Q-l-JZddGhTLoucGJVyw@2x.jpeg",
+            "originalHeight": 3264,
+            "originalWidth": 4928
+          },
+          "isFollowing": false,
+          "name": "Economy",
+          "relatedTags": [
+          ],
+          "relatedTopics": [
+          ],
+          "slug": "economy",
+          "topicId": "40c8e34e04ce",
+          "type": "Topic",
+          "visibility": 1
+        },
+        "4861fee224fd": {
+          "briefCatalogId": "6b59aa3c523c",
+          "createdAt": 1493928453626,
+          "deletedAt": 0,
+          "description": "Always be branding.",
+          "image": {
+            "id": "1*3blpwADxHq_9ksV-SXek-g@2x.jpeg",
+            "originalHeight": 2250,
+            "originalWidth": 4000
+          },
+          "isFollowing": false,
+          "name": "Marketing",
+          "relatedTags": [
+          ],
+          "relatedTopics": [
+          ],
+          "slug": "marketing",
+          "topicId": "4861fee224fd",
+          "type": "Topic",
+          "visibility": 1
+        },
+        "4ae32b074351": {
+          "briefCatalogId": "82b59ff9115a",
+          "createdAt": 1493946926689,
+          "deletedAt": 0,
+          "description": "Get lost.",
+          "image": {
+            "id": "1*IlQq_h9XGzf9GEI24MfJag@2x.jpeg",
+            "originalHeight": 2101,
+            "originalWidth": 3152
+          },
+          "isFollowing": false,
+          "name": "Travel",
+          "relatedTags": [
+          ],
+          "relatedTopics": [
+          ],
+          "slug": "travel",
+          "topicId": "4ae32b074351",
+          "type": "Topic",
+          "visibility": 1
+        },
+        "4d562ee63426": {
+          "briefCatalogId": "cd12048b7f1d",
+          "createdAt": 1489424768549,
+          "deletedAt": 0,
+          "description": "The national 411.",
+          "image": {
+            "id": "1*dYxAZd6BdDmmzFQDUrjAiA@2x.jpeg",
+            "originalHeight": 2463,
+            "originalWidth": 5778
+          },
+          "isFollowing": false,
+          "name": "Politics",
+          "relatedTags": [
+          ],
+          "relatedTopics": [
+          ],
+          "slug": "politics",
+          "topicId": "4d562ee63426",
+          "type": "Topic",
+          "visibility": 1
+        },
+        "55f1c20aba7a": {
+          "briefCatalogId": "baec7bf32d9b",
+          "createdAt": 1491949272237,
+          "deletedAt": 0,
+          "description": "Back-end to front-end.",
+          "image": {
+            "id": "1*U8FboK4lz1wqwQC6IcqxKw@2x.jpeg",
+            "originalHeight": 3098,
+            "originalWidth": 5507
+          },
+          "isFollowing": false,
+          "name": "Software engineering",
+          "relatedTags": [
+          ],
+          "relatedTopics": [
+          ],
+          "slug": "software-engineering",
+          "topicId": "55f1c20aba7a",
+          "type": "Topic",
+          "visibility": 1
+        },
+        "62b70885ee2b": {
+          "briefCatalogId": "b1e2f1eae39c",
+          "createdAt": 1493921757280,
+          "deletedAt": 0,
+          "description": "Turn on, tune in, lol out.",
+          "image": {
+            "id": "1*MLdJ0edjRNMGCXU2c8ssFg@2x.jpeg",
+            "originalHeight": 4912,
+            "originalWidth": 2760
+          },
+          "isFollowing": false,
+          "name": "Humor",
+          "relatedTags": [
+          ],
+          "relatedTopics": [
+          ],
+          "slug": "humor",
+          "topicId": "62b70885ee2b",
+          "type": "Topic",
+          "visibility": 1
+        },
+        "63c6f1f93ee": {
+          "briefCatalogId": "e6f279670b2b",
+          "createdAt": 1493945704961,
+          "deletedAt": 0,
+          "description": "An ode to code.",
+          "image": {
+            "id": "1*5UyyDJ1ESD11yQNd1UVAaQ@2x.jpeg",
+            "originalHeight": 3648,
+            "originalWidth": 5472
+          },
+          "isFollowing": false,
+          "name": "Javascript",
+          "relatedTags": [
+          ],
+          "relatedTopics": [
+          ],
+          "slug": "javascript",
+          "topicId": "63c6f1f93ee",
+          "type": "Topic",
+          "visibility": 1
+        },
+        "76d56a8194b9": {
+          "briefCatalogId": "e2a405b58703",
+          "createdAt": 1490119237251,
+          "deletedAt": 0,
+          "description": "Picture this.",
+          "image": {
+            "id": "1*7M77328YUU-_nDacEgPP_A@2x.jpeg",
+            "originalHeight": 399,
+            "originalWidth": 600
+          },
+          "isFollowing": false,
+          "name": "Photography",
+          "relatedTags": [
+          ],
+          "relatedTopics": [
+          ],
+          "slug": "photography",
+          "topicId": "76d56a8194b9",
+          "type": "Topic",
+          "visibility": 1
+        },
+        "76d64bb2132c": {
+          "briefCatalogId": "e6c539ef5a68",
+          "createdAt": 1491495941661,
+          "deletedAt": 0,
+          "description": "Fiction and wordplay with depth.",
+          "image": {
+            "id": "1*s8IiITC03I9AcUb8aJQG_w@2x.jpeg",
+            "originalHeight": 4000,
+            "originalWidth": 6016
+          },
+          "isFollowing": false,
+          "name": "Lit",
+          "relatedTags": [
+          ],
+          "relatedTopics": [
+          ],
+          "slug": "lit",
+          "topicId": "76d64bb2132c",
+          "type": "Topic",
+          "visibility": 1
+        },
+        "7808efc0cf94": {
+          "briefCatalogId": "9a98a5fd2882",
+          "createdAt": 1494090780021,
+          "deletedAt": 0,
+          "description": "Add it up.",
+          "image": {
+            "id": "1*S4y5QE8kNj1Im9dAcGQtOA@2x.jpeg",
+            "originalHeight": 1200,
+            "originalWidth": 1800
+          },
+          "isFollowing": false,
+          "name": "Math",
+          "relatedTags": [
+          ],
+          "relatedTopics": [
+          ],
+          "slug": "math",
+          "topicId": "7808efc0cf94",
+          "type": "Topic",
+          "visibility": 1
+        },
+        "7b2438b07d33": {
+          "briefCatalogId": "70380bfc1c0a",
+          "createdAt": 1493947240506,
+          "deletedAt": 0,
+          "description": "From Airbnb to Zappos.",
+          "image": {
+            "id": "1*K-IspU8zRzU2GEh1dmJ4VQ@2x.jpeg",
+            "originalHeight": 3029,
+            "originalWidth": 4745
+          },
+          "isFollowing": false,
+          "name": "Business",
+          "relatedTags": [
+          ],
+          "relatedTopics": [
+          ],
+          "slug": "business",
+          "topicId": "7b2438b07d33",
+          "type": "Topic",
+          "visibility": 1
+        },
+        "80e54e691fc9": {
+          "briefCatalogId": "e103ebe0f13e",
+          "createdAt": 1493932391083,
+          "deletedAt": 0,
+          "description": "A little more conversation, a little less stigma.",
+          "image": {
+            "id": "1*-5taj6lnLnCjq6bGuIV0MA@2x.jpeg",
+            "originalHeight": 3936,
+            "originalWidth": 2624
+          },
+          "isFollowing": false,
+          "name": "Mental health",
+          "relatedTags": [
+          ],
+          "relatedTopics": [
+          ],
+          "slug": "mental-health",
+          "topicId": "80e54e691fc9",
+          "type": "Topic",
+          "visibility": 1
+        },
+        "830cded25262": {
+          "briefCatalogId": "2139350937c",
+          "createdAt": 1493930382734,
+          "deletedAt": 0,
+          "description": "Love and other drugs.",
+          "image": {
+            "id": "1*0eAtVrEhCCpk5ToQcftnHA@2x.jpeg",
+            "originalHeight": 3168,
+            "originalWidth": 4752
+          },
+          "isFollowing": false,
+          "name": "Relationships",
+          "relatedTags": [
+          ],
+          "relatedTopics": [
+          ],
+          "slug": "relationships",
+          "topicId": "830cded25262",
+          "type": "Topic",
+          "visibility": 1
+        },
+        "8a146bc21b28": {
+          "briefCatalogId": "ac7e9eeb36e6",
+          "createdAt": 1493922639062,
+          "deletedAt": 0,
+          "description": "Working with purpose.",
+          "image": {
+            "id": "1*Kl2y0nUvCgWSE8Qv0Et84Q@2x.jpeg",
+            "originalHeight": 2731,
+            "originalWidth": 4096
+          },
+          "isFollowing": false,
+          "name": "Productivity",
+          "relatedTags": [
+          ],
+          "relatedTopics": [
+          ],
+          "slug": "productivity",
+          "topicId": "8a146bc21b28",
+          "type": "Topic",
+          "visibility": 1
+        },
+        "8c44fd843e59": {
+          "briefCatalogId": "574340446dea",
+          "createdAt": 1493920504592,
+          "deletedAt": 0,
+          "description": "It's all in your head.",
+          "image": {
+            "id": "1*kVQYE7sPER-G8v3jgLJrpg@2x.jpeg",
+            "originalHeight": 3012,
+            "originalWidth": 4518
+          },
+          "isFollowing": false,
+          "name": "Psychology",
+          "relatedTags": [
+          ],
+          "relatedTopics": [
+          ],
+          "slug": "psychology",
+          "topicId": "8c44fd843e59",
+          "type": "Topic",
+          "visibility": 1
+        },
+        "9213b0063bcc": {
+          "briefCatalogId": "6b64aa10f50a",
+          "createdAt": 1487665088618,
+          "deletedAt": 0,
+          "description": "An ode to the anti-banks.",
+          "image": {
+            "id": "1*iOXaisZyDdgXEPpwHaFrRQ@2x.jpeg",
+            "originalHeight": 3159,
+            "originalWidth": 4739
+          },
+          "isFollowing": false,
+          "name": "Cryptocurrency",
+          "relatedTags": [
+          ],
+          "relatedTopics": [
+          ],
+          "slug": "cryptocurrency",
+          "topicId": "9213b0063bcc",
+          "type": "Topic",
+          "visibility": 1
+        },
+        "935e48590732": {
+          "briefCatalogId": "ec35b12121f8",
+          "createdAt": 1494094085940,
+          "deletedAt": 0,
+          "description": "Farm to fridge.",
+          "image": {
+            "id": "1*3665UWKNuOxnHwpbs_HrCg@2x.jpeg",
+            "originalHeight": 3648,
+            "originalWidth": 5472
+          },
+          "isFollowing": false,
+          "name": "Food",
+          "relatedTags": [
+          ],
+          "relatedTopics": [
+          ],
+          "slug": "food",
+          "topicId": "935e48590732",
+          "type": "Topic",
+          "visibility": 1
+        },
+        "95e38a3034fb": {
+          "briefCatalogId": "a5339724d87f",
+          "createdAt": 1494004852564,
+          "deletedAt": 0,
+          "description": "Headlines that transcend borders.",
+          "image": {
+            "id": "1*HbONgiijEJMH13KwUcrltA@2x.jpeg",
+            "originalHeight": 2832,
+            "originalWidth": 4256
+          },
+          "isFollowing": false,
+          "name": "World",
+          "relatedTags": [
+          ],
+          "relatedTopics": [
+          ],
+          "slug": "world",
+          "topicId": "95e38a3034fb",
+          "type": "Topic",
+          "visibility": 1
+        },
+        "9f59f758e8e0": {
+          "briefCatalogId": "35a81d5d3dfb",
+          "createdAt": 1494092573751,
+          "deletedAt": 0,
+          "description": "Boldly going.",
+          "image": {
+            "id": "1*k7XUjw1QGICVVwioeoMimg@2x.jpeg",
+            "originalHeight": 3280,
+            "originalWidth": 4928
+          },
+          "isFollowing": false,
+          "name": "Space",
+          "relatedTags": [
+          ],
+          "relatedTopics": [
+          ],
+          "slug": "space",
+          "topicId": "9f59f758e8e0",
+          "type": "Topic",
+          "visibility": 1
+        },
+        "9ff4c9770e22": {
+          "briefCatalogId": "12a93bc6dc3e",
+          "createdAt": 1490119357713,
+          "deletedAt": 0,
+          "description": "Of rocks and rockets.",
+          "image": {
+            "id": "1*A6TotBcTdB2v0-WzLx6nOQ@2x.jpeg",
+            "originalHeight": 3456,
+            "originalWidth": 5184
+          },
+          "isFollowing": false,
+          "name": "Science",
+          "relatedTags": [
+          ],
+          "relatedTopics": [
+          ],
+          "slug": "science",
+          "topicId": "9ff4c9770e22",
+          "type": "Topic",
+          "visibility": 1
+        },
+        "a205669c739e": {
+          "briefCatalogId": "fa37e886c6ae",
+          "createdAt": 1493934008418,
+          "deletedAt": 0,
+          "description": "Live it, learn it.",
+          "image": {
+            "id": "1*T4rtHBuFYlSoP4OuU9W0yQ@2x.jpeg",
+            "originalHeight": 3691,
+            "originalWidth": 5536
+          },
+          "isFollowing": false,
+          "name": "Education",
+          "relatedTags": [
+          ],
+          "relatedTopics": [
+          ],
+          "slug": "education",
+          "topicId": "a205669c739e",
+          "type": "Topic",
+          "visibility": 1
+        },
+        "a284e5a75d28": {
+          "briefCatalogId": "52e722b178d",
+          "createdAt": 1494004919938,
+          "deletedAt": 0,
+          "description": "Behind the silver screen.",
+          "image": {
+            "id": "1*59Gem_tSmoY9-MNXDx1V8A@2x.jpeg",
+            "originalHeight": 1760,
+            "originalWidth": 2569
+          },
+          "isFollowing": false,
+          "name": "Film",
+          "relatedTags": [
+          ],
+          "relatedTopics": [
+          ],
+          "slug": "film",
+          "topicId": "a284e5a75d28",
+          "type": "Topic",
+          "visibility": 1
+        },
+        "aa97b7f5ff87": {
+          "briefCatalogId": "9edf367af93c",
+          "createdAt": 1490119192344,
+          "deletedAt": 0,
+          "description": "The past is prologue.",
+          "image": {
+            "id": "1*S9T-8nvdl7zGno2oHKdK0w@2x.jpeg",
+            "originalHeight": 3168,
+            "originalWidth": 4752
+          },
+          "isFollowing": false,
+          "name": "History",
+          "relatedTags": [
+          ],
+          "relatedTopics": [
+          ],
+          "slug": "history",
+          "topicId": "aa97b7f5ff87",
+          "type": "Topic",
+          "visibility": 1
+        },
+        "ae5d4995e225": {
+          "briefCatalogId": "63c534ad8b15",
+          "createdAt": 1493923906289,
+          "deletedAt": 0,
+          "description": "Query this.",
+          "image": {
+            "id": "1*NHWOEki_ncCX-xzbKtkEWw@2x.jpeg",
+            "originalHeight": 3840,
+            "originalWidth": 5760
+          },
+          "isFollowing": false,
+          "name": "Data science",
+          "relatedTags": [
+          ],
+          "relatedTopics": [
+          ],
+          "slug": "data-science",
+          "topicId": "ae5d4995e225",
+          "type": "Topic",
+          "visibility": 1
+        },
+        "aef1078a3ef5": {
+          "briefCatalogId": "8c925d424f80",
+          "createdAt": 1490119409800,
+          "deletedAt": 0,
+          "description": "Live better.",
+          "image": {
+            "id": "1*zk42YBzvJ_du3aTeJrAeEQ@2x.jpeg",
+            "originalHeight": 1984,
+            "originalWidth": 2976
+          },
+          "isFollowing": false,
+          "name": "Self",
+          "relatedTags": [
+          ],
+          "relatedTopics": [
+          ],
+          "slug": "self",
+          "topicId": "aef1078a3ef5",
+          "type": "Topic",
+          "visibility": 1
+        },
+        "af49579e220a": {
+          "briefCatalogId": "6e88d6a4629d",
+          "createdAt": 1487918186996,
+          "deletedAt": 0,
+          "description": "The meaning behind the meetings.",
+          "image": {
+            "id": "1*knbAt5qCQCelKx0BDkzZpQ@2x.jpeg",
+            "originalHeight": 3049,
+            "originalWidth": 5018
+          },
+          "isFollowing": false,
+          "name": "Work",
+          "relatedTags": [
+          ],
+          "relatedTopics": [
+          ],
+          "slug": "work",
+          "topicId": "af49579e220a",
+          "type": "Topic",
+          "visibility": 1
+        },
+        "b315287d189e": {
+          "briefCatalogId": "c3f781ef3ace",
+          "createdAt": 1493945636124,
+          "deletedAt": 0,
+          "description": "Playing the brain game.",
+          "image": {
+            "id": "1*VsiK86O64lHDJvZeHFGFPg@2x.jpeg",
+            "originalHeight": 2000,
+            "originalWidth": 3008
+          },
+          "isFollowing": false,
+          "name": "Neuroscience",
+          "relatedTags": [
+          ],
+          "relatedTopics": [
+          ],
+          "slug": "neuroscience",
+          "topicId": "b315287d189e",
+          "type": "Topic",
+          "visibility": 1
+        },
+        "b559a1d858b1": {
+          "briefCatalogId": "253e0ef7dd71",
+          "createdAt": 1510689032259,
+          "deletedAt": 0,
+          "description": "All the panels and frames fit to print.",
+          "image": {
+            "id": "1*e_8cn8PDZrZrKzUQZSyuXA@2x.jpeg",
+            "originalHeight": 3456,
+            "originalWidth": 5184
+          },
+          "isFollowing": false,
+          "name": "Comics",
+          "relatedTags": [
+          ],
+          "relatedTopics": [
+          ],
+          "slug": "comics",
+          "topicId": "b559a1d858b1",
+          "type": "Topic",
+          "visibility": 1
+        },
+        "ba2d3ab15ed6": {
+          "briefCatalogId": "9e185ab7177b",
+          "createdAt": 1493829293973,
+          "deletedAt": 0,
+          "description": "You're the boss.",
+          "image": {
+            "id": "1*unFN2bn-rJB7tM_HJ4m_Rg@2x.jpeg",
+            "originalHeight": 3648,
+            "originalWidth": 5472
+          },
+          "isFollowing": false,
+          "name": "Entrepreneurship",
+          "relatedTags": [
+          ],
+          "relatedTopics": [
+          ],
+          "slug": "entrepreneurship",
+          "topicId": "ba2d3ab15ed6",
+          "type": "Topic",
+          "visibility": 1
+        },
+        "bceaf21c0fb7": {
+          "briefCatalogId": "18c0311ae645",
+          "createdAt": 1493933890122,
+          "deletedAt": 0,
+          "description": "Like it (or not).",
+          "image": {
+            "id": "1*aQ-8OqnznIs0whPkPcWNqQ@2x.jpeg",
+            "originalHeight": 3456,
+            "originalWidth": 5184
+          },
+          "isFollowing": false,
+          "name": "Social media",
+          "relatedTags": [
+          ],
+          "relatedTopics": [
+          ],
+          "slug": "social-media",
+          "topicId": "bceaf21c0fb7",
+          "type": "Topic",
+          "visibility": 1
+        },
+        "bd856b86de98": {
+          "briefCatalogId": "94d9ae22e9d0",
+          "createdAt": 1494005624802,
+          "deletedAt": 0,
+          "description": "Dispatches from tomorrow.",
+          "image": {
+            "id": "1*pB9OAch9qHzZ_L1da6X8aA@2x.jpeg",
+            "originalHeight": 3744,
+            "originalWidth": 5616
+          },
+          "isFollowing": false,
+          "name": "Future",
+          "relatedTags": [
+          ],
+          "relatedTopics": [
+          ],
+          "slug": "future",
+          "topicId": "bd856b86de98",
+          "type": "Topic",
+          "visibility": 1
+        },
+        "d4e7f4144ac5": {
+          "briefCatalogId": "140d1a582b27",
+          "createdAt": 1493946839810,
+          "deletedAt": 0,
+          "description": "Towards a more perfect password.",
+          "image": {
+            "id": "1*JpJUz3WBPiQG5vkJ9WY8rw@2x.jpeg",
+            "originalHeight": 4000,
+            "originalWidth": 6000
+          },
+          "isFollowing": false,
+          "name": "Cybersecurity",
+          "relatedTags": [
+          ],
+          "relatedTopics": [
+          ],
+          "slug": "cybersecurity",
+          "topicId": "d4e7f4144ac5",
+          "type": "Topic",
+          "visibility": 1
+        },
+        "d61cf867d93f": {
+          "briefCatalogId": "cf31c54ea494",
+          "createdAt": 1493930296516,
+          "deletedAt": 0,
+          "description": "Body talk.",
+          "image": {
+            "id": "1*sDLqtash5p_3dq8wlztLaQ@2x.jpeg",
+            "originalHeight": 3000,
+            "originalWidth": 1997
+          },
+          "isFollowing": false,
+          "name": "Health",
+          "relatedTags": [
+          ],
+          "relatedTopics": [
+          ],
+          "slug": "health",
+          "topicId": "d61cf867d93f",
+          "type": "Topic",
+          "visibility": 1
+        },
+        "decb52b64abf": {
+          "briefCatalogId": "86b45843fb3e",
+          "createdAt": 1493934116328,
+          "deletedAt": 0,
+          "description": "The good, the bad, the buggy.",
+          "image": {
+            "id": "1*iPa136b1cGEO7lvoXg6uHQ@2x.jpeg",
+            "originalHeight": 4016,
+            "originalWidth": 6016
+          },
+          "isFollowing": false,
+          "name": "Programming",
+          "relatedTags": [
+          ],
+          "relatedTopics": [
+          ],
+          "slug": "programming",
+          "topicId": "decb52b64abf",
+          "type": "Topic",
+          "visibility": 1
+        },
+        "dfcc5a84e698": {
+          "briefCatalogId": "91d0ef52fb56",
+          "createdAt": 1494093832800,
+          "deletedAt": 0,
+          "description": "More than free money.",
+          "image": {
+            "id": "1*TwBqR_WrdrEkJHd5UebXzQ@2x.jpeg",
+            "originalHeight": 1508,
+            "originalWidth": 1800
+          },
+          "isFollowing": false,
+          "name": "Basic income",
+          "relatedTags": [
+          ],
+          "relatedTopics": [
+          ],
+          "slug": "basic-income",
+          "topicId": "dfcc5a84e698",
+          "type": "Topic",
+          "visibility": 1
+        },
+        "e15e46793f8d": {
+          "briefCatalogId": "7d1b1f63f7a4",
+          "createdAt": 1493933941642,
+          "deletedAt": 0,
+          "description": "Explore, embrace, repeat.",
+          "image": {
+            "id": "1*mt0tkzrt4ZoX5vuSbenZQw@2x.jpeg",
+            "originalHeight": 2848,
+            "originalWidth": 4202
+          },
+          "isFollowing": false,
+          "name": "Sexuality",
+          "relatedTags": [
+          ],
+          "relatedTopics": [
+          ],
+          "slug": "sexuality",
+          "topicId": "e15e46793f8d",
+          "type": "Topic",
+          "visibility": 1
+        },
+        "e9a66523a5d6": {
+          "briefCatalogId": "b26d0f129fcb",
+          "createdAt": 1494092158268,
+          "deletedAt": 0,
+          "description": "Next gen.",
+          "image": {
+            "id": "1*JVo-9_0i95QSsvsIjA_Azw@2x.jpeg",
+            "originalHeight": 2400,
+            "originalWidth": 3600
+          },
+          "isFollowing": false,
+          "name": "Family",
+          "relatedTags": [
+          ],
+          "relatedTopics": [
+          ],
+          "slug": "family",
+          "topicId": "e9a66523a5d6",
+          "type": "Topic",
+          "visibility": 1
+        },
+        "f721a1120833": {
+          "briefCatalogId": "60115717d13a",
+          "createdAt": 1493934062946,
+          "deletedAt": 0,
+          "description": "Blue and green and tread all over.",
+          "image": {
+            "id": "1*NXQuM8FRrmvc9K-nyM-bmA@2x.jpeg",
+            "originalHeight": 2848,
+            "originalWidth": 4288
+          },
+          "isFollowing": false,
+          "name": "Environment",
+          "relatedTags": [
+          ],
+          "relatedTopics": [
+          ],
+          "slug": "environment",
+          "topicId": "f721a1120833",
+          "type": "Topic",
+          "visibility": 1
+        },
+        "f862bfc84e38": {
+          "briefCatalogId": "d3c0aa0e43c6",
+          "createdAt": 1487918016768,
+          "deletedAt": 0,
+          "description": "The download.",
+          "image": {
+            "id": "1*XxQLrxqHUlIHg5j-eIQrPQ@2x.png",
+            "originalHeight": 384,
+            "originalWidth": 640
+          },
+          "isFollowing": false,
+          "name": "Technology",
+          "relatedTags": [
+          ],
+          "relatedTopics": [
+          ],
+          "slug": "technology",
+          "topicId": "f862bfc84e38",
+          "type": "Topic",
+          "visibility": 1
+        },
+        "ff18cfb862d2": {
+          "briefCatalogId": "75bbdf73cc5a",
+          "createdAt": 1493933978585,
+          "deletedAt": 0,
+          "description": "Typing truth to power.",
+          "image": {
+            "id": "1*cgtXwRk3ZoNGcQdc7hwF6g@2x.jpeg",
+            "originalHeight": 3285,
+            "originalWidth": 5000
+          },
+          "isFollowing": false,
+          "name": "Equality",
+          "relatedTags": [
+          ],
+          "relatedTopics": [
+          ],
+          "slug": "equality",
+          "topicId": "ff18cfb862d2",
+          "type": "Topic",
+          "visibility": 1
+        }
+      }
+    },
+    "streamItems": [
+      {
+        "itemType": "section",
+        "section": {
+          "heading": {
+            "fallbackTitle": "Arts & Entertainment",
+            "headingBasic": {
+              "title": "Arts & Entertainment"
+            },
+            "headingType": "headingBasic"
+          },
+          "items": [
+            {
+              "itemType": "topic",
+              "topic": {
+                "topicId": "2cdb28854f0c"
+              }
+            },
+            {
+              "itemType": "topic",
+              "topic": {
+                "topicId": "b559a1d858b1"
+              }
+            },
+            {
+              "itemType": "topic",
+              "topic": {
+                "topicId": "1f79d9387f85"
+              }
+            },
+            {
+              "itemType": "topic",
+              "topic": {
+                "topicId": "a284e5a75d28"
+              }
+            },
+            {
+              "itemType": "topic",
+              "topic": {
+                "topicId": "935e48590732"
+              }
+            },
+            {
+              "itemType": "topic",
+              "topic": {
+                "topicId": "62b70885ee2b"
+              }
+            },
+            {
+              "itemType": "topic",
+              "topic": {
+                "topicId": "76d64bb2132c"
+              }
+            },
+            {
+              "itemType": "topic",
+              "topic": {
+                "topicId": "308a25bedcb5"
+              }
+            },
+            {
+              "itemType": "topic",
+              "topic": {
+                "topicId": "76d56a8194b9"
+              }
+            },
+            {
+              "itemType": "topic",
+              "topic": {
+                "topicId": "bceaf21c0fb7"
+              }
+            },
+            {
+              "itemType": "topic",
+              "topic": {
+                "topicId": "205a8f70c356"
+              }
+            }
+          ],
+          "layout": 11
+        },
+        "type": "StreamItem"
+      },
+      {
+        "itemType": "section",
+        "section": {
+          "heading": {
+            "fallbackTitle": "Industry",
+            "headingBasic": {
+              "title": "Industry"
+            },
+            "headingType": "headingBasic"
+          },
+          "items": [
+            {
+              "itemType": "topic",
+              "topic": {
+                "topicId": "7b2438b07d33"
+              }
+            },
+            {
+              "itemType": "topic",
+              "topic": {
+                "topicId": "40c8e34e04ce"
+              }
+            },
+            {
+              "itemType": "topic",
+              "topic": {
+                "topicId": "ba2d3ab15ed6"
+              }
+            },
+            {
+              "itemType": "topic",
+              "topic": {
+                "topicId": "29bb77781daf"
+              }
+            },
+            {
+              "itemType": "topic",
+              "topic": {
+                "topicId": "4861fee224fd"
+              }
+            },
+            {
+              "itemType": "topic",
+              "topic": {
+                "topicId": "8a146bc21b28"
+              }
+            },
+            {
+              "itemType": "topic",
+              "topic": {
+                "topicId": "af49579e220a"
+              }
+            }
+          ],
+          "layout": 11
+        },
+        "type": "StreamItem"
+      },
+      {
+        "itemType": "section",
+        "section": {
+          "heading": {
+            "fallbackTitle": "Innovation & Tech",
+            "headingBasic": {
+              "title": "Innovation & Tech"
+            },
+            "headingType": "headingBasic"
+          },
+          "items": [
+            {
+              "itemType": "topic",
+              "topic": {
+                "topicId": "1af65db9c2f8"
+              }
+            },
+            {
+              "itemType": "topic",
+              "topic": {
+                "topicId": "9213b0063bcc"
+              }
+            },
+            {
+              "itemType": "topic",
+              "topic": {
+                "topicId": "d4e7f4144ac5"
+              }
+            },
+            {
+              "itemType": "topic",
+              "topic": {
+                "topicId": "ae5d4995e225"
+              }
+            },
+            {
+              "itemType": "topic",
+              "topic": {
+                "topicId": "22d054b693da"
+              }
+            },
+            {
+              "itemType": "topic",
+              "topic": {
+                "topicId": "63c6f1f93ee"
+              }
+            },
+            {
+              "itemType": "topic",
+              "topic": {
+                "topicId": "7808efc0cf94"
+              }
+            },
+            {
+              "itemType": "topic",
+              "topic": {
+                "topicId": "b315287d189e"
+              }
+            },
+            {
+              "itemType": "topic",
+              "topic": {
+                "topicId": "decb52b64abf"
+              }
+            },
+            {
+              "itemType": "topic",
+              "topic": {
+                "topicId": "9ff4c9770e22"
+              }
+            },
+            {
+              "itemType": "topic",
+              "topic": {
+                "topicId": "55f1c20aba7a"
+              }
+            },
+            {
+              "itemType": "topic",
+              "topic": {
+                "topicId": "9f59f758e8e0"
+              }
+            },
+            {
+              "itemType": "topic",
+              "topic": {
+                "topicId": "f862bfc84e38"
+              }
+            }
+          ],
+          "layout": 11
+        },
+        "type": "StreamItem"
+      },
+      {
+        "itemType": "section",
+        "section": {
+          "heading": {
+            "fallbackTitle": "Life",
+            "headingBasic": {
+              "title": "Life"
+            },
+            "headingType": "headingBasic"
+          },
+          "items": [
+            {
+              "itemType": "topic",
+              "topic": {
+                "topicId": "24853457a119"
+              }
+            },
+            {
+              "itemType": "topic",
+              "topic": {
+                "topicId": "e9a66523a5d6"
+              }
+            },
+            {
+              "itemType": "topic",
+              "topic": {
+                "topicId": "d61cf867d93f"
+              }
+            },
+            {
+              "itemType": "topic",
+              "topic": {
+                "topicId": "80e54e691fc9"
+              }
+            },
+            {
+              "itemType": "topic",
+              "topic": {
+                "topicId": "8c44fd843e59"
+              }
+            },
+            {
+              "itemType": "topic",
+              "topic": {
+                "topicId": "830cded25262"
+              }
+            },
+            {
+              "itemType": "topic",
+              "topic": {
+                "topicId": "aef1078a3ef5"
+              }
+            },
+            {
+              "itemType": "topic",
+              "topic": {
+                "topicId": "e15e46793f8d"
+              }
+            },
+            {
+              "itemType": "topic",
+              "topic": {
+                "topicId": "230848015f8c"
+              }
+            },
+            {
+              "itemType": "topic",
+              "topic": {
+                "topicId": "4ae32b074351"
+              }
+            },
+            {
+              "itemType": "topic",
+              "topic": {
+                "topicId": "3d18b94f6858"
+              }
+            }
+          ],
+          "layout": 11
+        },
+        "type": "StreamItem"
+      },
+      {
+        "itemType": "section",
+        "section": {
+          "heading": {
+            "fallbackTitle": "Society",
+            "headingBasic": {
+              "title": "Society"
+            },
+            "headingType": "headingBasic"
+          },
+          "items": [
+            {
+              "itemType": "topic",
+              "topic": {
+                "topicId": "dfcc5a84e698"
+              }
+            },
+            {
+              "itemType": "topic",
+              "topic": {
+                "topicId": "a205669c739e"
+              }
+            },
+            {
+              "itemType": "topic",
+              "topic": {
+                "topicId": "f721a1120833"
+              }
+            },
+            {
+              "itemType": "topic",
+              "topic": {
+                "topicId": "ff18cfb862d2"
+              }
+            },
+            {
+              "itemType": "topic",
+              "topic": {
+                "topicId": "bd856b86de98"
+              }
+            },
+            {
+              "itemType": "topic",
+              "topic": {
+                "topicId": "aa97b7f5ff87"
+              }
+            },
+            {
+              "itemType": "topic",
+              "topic": {
+                "topicId": "403f77178792"
+              }
+            },
+            {
+              "itemType": "topic",
+              "topic": {
+                "topicId": "40997f26fa15"
+              }
+            },
+            {
+              "itemType": "topic",
+              "topic": {
+                "topicId": "4d562ee63426"
+              }
+            },
+            {
+              "itemType": "topic",
+              "topic": {
+                "topicId": "95e38a3034fb"
+              }
+            }
+          ],
+          "layout": 11
+        },
+        "type": "StreamItem"
+      }
+    ]
+  },
+  "success": true,
+  "v": 3
+}

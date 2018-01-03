@@ -1,10 +1,11 @@
 import psycopg2
-from config import config
-from action2AuthorTable import *
-from action2ArticleTable import *
-from action2StnTable import *
-from action2CommentTable import *
-from action2HighlightTable import *
+from db.config import config
+from db.action2AuthorTable import *
+from db.action2ArticleTable import *
+from db.action2StnTable import *
+from db.action2CommentTable import *
+from db.action2HighlightTable import *
+from db.action2TopicTable import *
 
 def initdb():
 	createAuthorTable()
@@ -12,9 +13,10 @@ def initdb():
 	createCommentTable()
 	createArticleTable()
 	createHighlightTable()
+	createTopicTable()
 
 ###insert author if not exist into the author table
-def saveAuthor(author):
+def save_author(author):
 	authorName = author['name']
 	authorMediumID = author['mediumID']
 	username = author['username']
@@ -28,9 +30,24 @@ def saveAuthor(author):
 
 	return authorID
 
+###insert author if not exist into the author table
+def save_topic(topic):
+	name = topic['name']
+	mediumID = topic['mediumID']
+	description = topic['description']
+
+	topicID = insertTopic(name, mediumID, description)
+	return topicID
+
+def exist_topic(mediumID):
+	return queryTopicIDbyMediumID(mediumID) != -1
+
+def fetch_all_topic_mediumID():
+	mediumIDs = [result[0] for result in queryAllTopicMediumID()]
+	return mediumIDs
 
 ####insert article into article table
-def saveArticle(article, articleID=None, authorID=None):
+def save_article(article, articleID=None, authorID=None):
 	authorMediumID = article['authorMediumID']
 	articleMediumID = article['mediumID']
 	articleTitle = article['title']
@@ -62,14 +79,14 @@ def saveSratchArticle(articleMediumID):
 	return articleID
 
 ###insert sentence into stn table
-def saveSentence(sentence):
+def save_sentence(sentence):
 	stnMediumID = sentence['id']
 	stnContent = sentence['content']
 	articleID = sentence['articleID']
 	stnID = insertSTN(stnMediumID, articleID, stnContent)
 
 ###insert comment into comment table
-def saveComment(comment):
+def save_comment(comment):
 	selfArticleID = comment['selfArticleID']
 	corrHighlightID = comment['corrHighlightID']
 	corrArticleMediumID = comment['corrArticleMediumID']
@@ -78,7 +95,7 @@ def saveComment(comment):
 	insertComment(selfArticleID, corrHighlightID, corrArticleID)
 
 ###insert highlight into highlight table
-def saveHighlight(highlight, corrArticleID=None):
+def save_highlight(highlight, corrArticleID=None):
 	content = highlight['content']
 	numLikes = highlight['numLikes']
 	corrStnMediumIDs = highlight['corrStnMediumIDs']

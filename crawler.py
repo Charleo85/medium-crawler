@@ -1,78 +1,58 @@
-from parser import parse
+from parser import parse, parse_topicStream
 from insert2DB import *
 from utils import *
 from selenium import webdriver
 
-def concat(href):
-    n = len(href)
-    for i in range(n):
-        if (href[n-1-i] == '?'):
-            href = href[0:n-i-1]
-            m = len(href)
-            for j in range(m):
-                if (href[m-1-j] == '-'):
-                    return href, href[m-j: m]
-    return None, None
-
-re_article = re.compile(r'https:\/\/[\s\S]+-[\w]{12}\?source=[\s\S]+')
-re_tag = re.compile(r'https:\/\/[\w|.]+\/(tag|topic|tagged)\/[\s\S]+')
-
-def analyze(url, session):
-    global q
+def parse_topic_dict(topic_dict, topic_mediumID = None):
     global t
+    if topic_mediumID is None: topic_mediumID = topic_dict['topicId']
+    if exist_topic(topic_mediumID): return
+    try: name = topic_dict['name']
+    except KeyError: print("topic key error with url: "+href, file=sys.stderr)
+    description = topic_dict.get('description', '')
+    save_topic({
+        'name':name,
+        'description':description,
+        'mediumID': topic_mediumID
+    })
+    for topics_dict in topic_dict.get('relatedTopics', []):
+        parse_topic_dict(topics_dict)
 
-    s = set()
-    tree = load_html(session, url)
-    if tree is None: return
 
-    all_links = tree.xpath('//a/@href')
+def parse_topic(href, session):
+    resp_data = load_json(session, href, headers={"accept": "application/json"})
+    if resp_data is None: return
 
-    for href in all_links:
-        if re_tag.search(href): #find topic links
-            t.add(href)
-            continue
-        elif re_article.search(href): #find article links
-            link, uid = concat(href)
-            if not link or not uid or uid in s: continue
-            s.add(uid)
-            if exist_article(uid): continue #already crawled article
-            else: q.put((uid, link))
+    references = resp_data['references']
+    parse_topicStream(references, session)
 
-    return tree
+    topics = references.get('Topic', None)
+    if topics is None: topics = resp_data.get('topic', {})
+    for topic_mediumID, value in topics.items():
+        parse_topic_dict(value, topic_mediumID)
+
+    paging = resp_data.get('paging', {})
+    while 'next' in paging and 'path' in paging:
+        href='https://medium.com'+paging['path']
+        resp_data = load_json(session, href, params=paging['next'])
+        if resp_data is None: break
+        references = resp_data['references']
+        paging = resp_data['paging']
+        parse_topicStream(references, session)
 
 if __name__ == '__main__':
-    login_filepath = './objects/login.obj'
-    topic_filepath = './objects/topic.obj'
     initdb()
-    if os.path.exists(login_filepath): session = load_obj(login_filepath)
-    else: session = login()
+    session = login()
+    config_logger()
 
-    q = queue.Queue() #uid queue to analyze
-    t = set() #topic list to crawl
+    parse_topic('https://medium.com/topics', session)
 
-    logtime = datetime.datetime.fromtimestamp(int(time.time())).strftime('%Y-%m-%d-%H-%M-%S')
-    print('login and started parser at ' + logtime)
-    os.system('mkdir -p logs/'+logtime+'/')
-    sys.stdout = open('logs/'+logtime+'/std.log', 'w')
-    sys.stderr = open('logs/'+logtime+'/error.log', 'w')
+    while True:
+        logger('start to revisit all topics...')
+        topic_ids = fetch_all_topic_mediumID()
+        for topic_id in topic_ids:
+            href = 'https://medium.com/_/api/topics/'+topic_id+'/stream'
+            parse_topic(href, session)
 
-    if os.path.exists(topic_filepath):
-        t = load_obj(topic_filepath)
-    else:
-        t.add('https://medium.com')
-        t.add('https://medium.com/topics')
-    while True: #sleep for a while and load updates
-        for topic in list(t):
-            analyze(topic, session)
-            while not q.empty():
-                time.sleep(10)
-                uid, url = q.get()
-                # print(url, uid)
-                parse(url, session, uid)
-
-                sys.stdout.flush()
-                sys.stderr.flush()
-
-        write_obj(t, topic_filepath)
-        print("taking a rest...", file=sys.stderr)
-        time.sleep(60*3) # wait ten minutes to restart
+        logger('finished one loop, taking a rest...')
+        time.sleep(5*60)

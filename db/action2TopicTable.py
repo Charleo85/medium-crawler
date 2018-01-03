@@ -1,16 +1,15 @@
 # -*- coding: utf-8 -*-
 import psycopg2,sys
 
-from config import config
+from db.config import config
 
-def createAuthorTable():
+def createTopicTable():
 	command = ("""
-		CREATE TABLE author (
-			authorID SERIAL PRIMARY KEY,
-			name varchar(50),
+		CREATE TABLE topic (
+			topicID SERIAL PRIMARY KEY,
+			name text,
 			mediumID varchar(20),
-			username varchar(50),
-			bio text
+			description text
 		)
 		""")
 
@@ -37,18 +36,17 @@ def createAuthorTable():
 		if conn is not None:
 			conn.close()
 
-def insertAuthor(name, mediumID, username, bio):
+def insertTopic(name, mediumID, description):
 	command = ("""
-		INSERT INTO author (
+		INSERT INTO topic (
 			name,
 			mediumID,
-			username,
-			bio
+			description
 		)
 		VALUES(
-		%s, %s, %s, %s)
+		%s, %s, %s)
 
-		RETURNING authorID;
+		RETURNING topicID;
 		""")
 
 	conn = None
@@ -62,16 +60,16 @@ def insertAuthor(name, mediumID, username, bio):
 		# print("inserting into author:", file=sys.stderr)
 		# print(name, mediumID, sep=", ", file=sys.stderr)
 		# for command in commands:
-		cur.execute(command, (name, mediumID, username, bio, ))
+		cur.execute(command, (name, mediumID, description, ))
 		# print("after inserting into author table....")
 
-		authorID = cur.fetchone()[0]
+		topicID = cur.fetchone()[0]
 
 		cur.close()
 
 		conn.commit()
 
-		return authorID
+		return topicID
 
 	except(Exception, psycopg2.DatabaseError) as error:
 		print(error, file=sys.stderr)
@@ -79,42 +77,11 @@ def insertAuthor(name, mediumID, username, bio):
 		if conn is not None:
 			conn.close()
 
-def existAuthor(mediumID):
-	command = ("""
-		select exists(select 1 from author where mediumID=%s)""")
-
-	conn = None
-	try:
-		params = config()
-
-		conn = psycopg2.connect(**params)
-
-		cur = conn.cursor()
-		# print("exist author in the author table....")
-
-		# for command in commands:
-		cur.execute(command, (mediumID, ))
-		# print("after existing author in the table....")
-
-		existFlag = cur.fetchone()[0]
-
-		cur.close()
-
-		conn.commit()
-
-		return existFlag
-
-	except(Exception, psycopg2.DatabaseError) as error:
-		print(error, file=sys.stderr)
-	finally:
-		if conn is not None:
-			conn.close()
-
-def queryAuthorIDbyMediumID(mediumID):
+def queryTopicIDbyMediumID(mediumID):
 	command = ("""
 		SELECT
-			authorID
-		FROM author
+			topicID
+		FROM topic
 		WHERE mediumID = %s
 		""")
 
@@ -131,16 +98,46 @@ def queryAuthorIDbyMediumID(mediumID):
 		cur.execute(command, (mediumID,))
 		# print("after queryAuthorIDbyMediumID....")
 
-		authorID = cur.fetchone()
-		if authorID is None:
-			# print("no author fetched: " + mediumID)
+		topicID = cur.fetchone()
+		if topicID is None:
+			# print("no topic fetched: " + mediumID)
 			return -1;
 
 		cur.close()
 
 		conn.commit()
 
-		return authorID[0]
+		return topicID[0]
+
+	except(Exception, psycopg2.DatabaseError) as error:
+		print(error, file=sys.stderr)
+	finally:
+		if conn is not None:
+			conn.close()
+
+def queryAllTopicMediumID():
+	command = ("SELECT mediumID FROM topic")
+
+	conn = None
+	try:
+		params = config()
+
+		conn = psycopg2.connect(**params)
+
+		cur = conn.cursor()
+
+		# for command in commands:
+		cur.execute(command)
+
+		topicIDs = cur.fetchall()
+		if topicIDs is None:
+			return [];
+
+		cur.close()
+
+		conn.commit()
+
+		return topicIDs
 
 	except(Exception, psycopg2.DatabaseError) as error:
 		print(error, file=sys.stderr)

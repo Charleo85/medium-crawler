@@ -52,6 +52,15 @@ The detailed info of a comment is stored inside an article model as field **self
 | username| varchar(50)       |     |
 | bio     | text               |     |
 
+- topic
+
+| Field   | Type      | Info  |
+| :-------------:|:-------------:| :---- |
+| topicID      | SERIAL PRIMARY KEY |  |
+| name    | text       |    |
+| mediumID| varchar(20)       |     |
+| description   | text               |     |
+
 - sentence
 
 | Field   | Type      | Info  |
