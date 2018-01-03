@@ -54,12 +54,19 @@ def parse_uid(href):
         if (href[n-1-i] == '-'):
             return href[n-i:n]
 
-def load_page(session, href, timeout=15, allow_redirects=True, params=None, headers=None):
+def load_page(session, href, timeout=15, allow_redirects=True, params=None, headers=None, max_retry=3):
     try: page = session.get(href, allow_redirects=allow_redirects, timeout=timeout, params=params, headers=headers)
     except Exception as e:
-        print("error in loading page: "+str(e)+href, file=sys.stderr)
+        logger("error in loading page: "+str(e)+href, file=sys.stderr)
         return None
-    return page
+    if page.status_code != 200:
+        return page
+    else:
+        logger("getting status code: " + page.status_code+ "with url: "+href, file=sys.stderr)
+        time.sleep(30)
+        return load_page(session, href, timeout=timeout, allow_redirects=allow_redirects, params=params, headers=headers,
+                        max_retry=max_retry-1)
+
 
 def load_html(session, href, params=None, headers=None):
     page = load_page(session, href, params=params, headers=headers)
