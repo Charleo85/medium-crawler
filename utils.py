@@ -64,13 +64,22 @@ def load_page(session, href, timeout=15, allow_redirects=True, params=None, head
 def load_html(session, href, params=None, headers=None):
     page = load_page(session, href, params=params, headers=headers)
     if page is None: return None
-    tree = html.fromstring(page.content.decode('utf-8'))
+    try:
+        tree = html.fromstring(page.content.decode('utf-8'))
+    except Exception as e:
+        print("error in loading html tree: "+str(e)+href, file=sys.stderr)
+        return None
     return tree
 
 def load_json(session, href, params=None, headers=None):
     resp = load_page(session, href, params=params, headers=headers)
     if resp is None: return None
-    resp_data = json.loads(resp.content.decode('utf-8')[16:])
+    try:
+        resp_data = json.loads(resp.content.decode('utf-8')[16:])
+    except Exception as e:
+        print("error in loading json: "+str(e)+href, file=sys.stderr)
+        return None
+
     if 'success' in resp_data: return resp_data.get('payload', None)
 
     print("json request not successful with url: "+href, file=sys.stderr)
