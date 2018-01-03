@@ -25,7 +25,7 @@ def parse_topic(href, session):
     if resp_data is None: return
 
     references = resp_data['references']
-    parse_topicStream(references)
+    parse_topicStream(references, session)
 
     topics = references.get('Topic', None)
     if topics is None: topics = resp_data.get('topic', {})
@@ -39,7 +39,7 @@ def parse_topic(href, session):
         if resp_data is None: break
         references = resp_data['references']
         paging = resp_data['paging']
-        parse_topicStream(references)
+        parse_topicStream(references, session)
 
 if __name__ == '__main__':
     initdb()
@@ -47,9 +47,18 @@ if __name__ == '__main__':
     config_logger()
 
     t = queue.Queue() #topic list to crawl
-
     parse_topic('https://medium.com/topics', session)
+
     while not t.empty():
         topic_id = t.get()
         href = 'https://medium.com/_/api/topics/'+topic_id+'/stream'
         parse_topic(href, session)
+
+    while True:
+        print('start to revisit all topics...')
+        topic_ids = fetch_all_topic_mediumID()
+        for topic_id in topic_ids:
+            href = 'https://medium.com/_/api/topics/'+topic_id+'/stream'
+            parse_topic(href, session)
+        print('finished one loop, taking a rest...')
+        time.sleep(5*60)

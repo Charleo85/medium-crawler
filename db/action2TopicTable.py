@@ -114,3 +114,33 @@ def queryTopicIDbyMediumID(mediumID):
 	finally:
 		if conn is not None:
 			conn.close()
+
+def queryAllTopicMediumID():
+	command = ("SELECT mediumID FROM topic")
+
+	conn = None
+	try:
+		params = config()
+
+		conn = psycopg2.connect(**params)
+
+		cur = conn.cursor()
+
+		# for command in commands:
+		cur.execute(command)
+
+		topicIDs = cur.fetchall()
+		if topicIDs is None:
+			return [];
+
+		cur.close()
+
+		conn.commit()
+
+		return topicIDs
+
+	except(Exception, psycopg2.DatabaseError) as error:
+		print(error, file=sys.stderr)
+	finally:
+		if conn is not None:
+			conn.close()

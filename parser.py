@@ -182,7 +182,7 @@ def parse_comment(uid, session):
         paging = resp_data['paging']
         parse_stream(uid, session, href, references)
 
-def parse_topicStream(references):
+def parse_topicStream(references, session):
     for mediumID, value in references.get('Post', {}).items():
         if not exist_article(mediumID):
             parse_comment(mediumID, session)

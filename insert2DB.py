@@ -42,6 +42,9 @@ def save_topic(topic):
 def exist_topic(mediumID):
 	return queryTopicIDbyMediumID(mediumID) != -1
 
+def fetch_all_topic_mediumID():
+	mediumIDs = [result[0] for result in queryAllTopicMediumID()]
+	return mediumIDs
 
 ####insert article into article table
 def save_article(article, articleID=None, authorID=None):
