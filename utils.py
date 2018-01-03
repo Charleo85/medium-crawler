@@ -83,6 +83,15 @@ def config_logger():
     sys.stdout = open('logs/'+logtime+'/std.log', 'w')
     sys.stderr = open('logs/'+logtime+'/error.log', 'w')
 
+def flush_logger():
+    sys.stdout.flush()
+    sys.stderr.flush()
+
+def logger(message, file=sys.stdout):
+    print(message, file=file)
+    flush_logger()
+
+
 def login():
     login_filepath = './objects/login.obj'
     if os.path.exists(login_filepath): return load_obj(login_filepath)

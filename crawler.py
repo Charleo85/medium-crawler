@@ -7,7 +7,6 @@ def parse_topic_dict(topic_dict, topic_mediumID = None):
     global t
     if topic_mediumID is None: topic_mediumID = topic_dict['topicId']
     if exist_topic(topic_mediumID): return
-    t.put(topic_mediumID)
     try: name = topic_dict['name']
     except KeyError: print("topic key error with url: "+href, file=sys.stderr)
     description = topic_dict.get('description', '')
@@ -46,19 +45,14 @@ if __name__ == '__main__':
     session = login()
     config_logger()
 
-    t = queue.Queue() #topic list to crawl
     parse_topic('https://medium.com/topics', session)
 
-    while not t.empty():
-        topic_id = t.get()
-        href = 'https://medium.com/_/api/topics/'+topic_id+'/stream'
-        parse_topic(href, session)
-
     while True:
-        print('start to revisit all topics...')
+        logger('start to revisit all topics...')
         topic_ids = fetch_all_topic_mediumID()
         for topic_id in topic_ids:
             href = 'https://medium.com/_/api/topics/'+topic_id+'/stream'
             parse_topic(href, session)
-        print('finished one loop, taking a rest...')
+
+        logger('finished one loop, taking a rest...')
         time.sleep(5*60)
