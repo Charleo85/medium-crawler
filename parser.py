@@ -180,7 +180,7 @@ def parse_comment(uid, session):
         if resp_data is None: break
         references = resp_data['references']
         paging = resp_data['paging']
-        parse_stream(uid, session, href, references)
+        parse_responseStream(uid, session, href, references)
 
 def parse_topicStream(references, session):
     for mediumID, value in references.get('Post', {}).items():
