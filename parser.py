@@ -184,7 +184,7 @@ def parse_comment(uid, session):
 
 def parse_topicStream(references):
     for mediumID, value in references.get('Post', {}).items():
-        if not exist_article(self_article_mediumID):
+        if not exist_article(mediumID):
             parse_comment(mediumID, session)
 
 def parse(href, session, uid=None, articleID=None, tree=None):
