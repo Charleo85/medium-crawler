@@ -1,5 +1,7 @@
-# Medium Crawler
+# Medium Crawler 🐜
 This crawler has built up the following dataset based on Medium.com with ground truth sentence and review correspondence.
+
+#### Dataset Statistics
 
 You may contact Charlie Wu at jw7jb@virginia.edu to obtain the dataset
 
@@ -7,13 +9,13 @@ Crawler environment requirement
 - python 3.6
 - postgresql environment on MacOS/Linux
 
-Download chromedriver for your environment [here](https://github.com/SeleniumHQ/selenium/wiki/ChromeDriver) to project directory
+Define constant.py, Download chromedriver for your environment [here](https://github.com/SeleniumHQ/selenium/wiki/ChromeDriver) to project directory
 
 To query data:
 ```
 psql medium
 # \dt
-# select $field from $table;
+# select $field from $table where [conditions];
 ```
 
 Datebase Table Structure:
@@ -30,17 +32,6 @@ Datebase Table Structure:
 | postTime         |  timestamp        |                        |
 | numLikes         |   int           |                        |
 | corrAuthorID     | int      |    link to author |
-
-- comment
-
-| Field   | Type      |  Info                    |
-| :-------------:|:-------------:| :------------------------|
-| commentID     | SERIAL PRIMARY KEY |                          |
-| selfArticleID     | int      |  link to article   |
-| corrArticleID     | int      |  link to article   |
-| corrHighlightID   | int      |  link to highlight|
-
-The detailed info of a comment is stored inside an article model as field **selfArticleID**
 
 - author
 
@@ -61,7 +52,7 @@ The detailed info of a comment is stored inside an article model as field **self
 | mediumID| varchar(20)       |     |
 | description   | text               |     |
 
-- sentence
+- stn
 
 | Field   | Type      | Info  |
 | :-------------:|:-------------:| :---- |
@@ -78,7 +69,21 @@ The detailed info of a comment is stored inside an article model as field **self
 | content       |text               |     |
 | numLikes      |int               |     |
 | corrArticleID | int     |  link to article |
-| corrStnMediumIDs | varchar(300) |  list of highlighted sentence|
+| corrStnMediumIDs | varchar(300) |  list of highlighted sentences|
+
+- comment
+
+| Field   | Type      |  Info                    |
+| :-------------:|:-------------:| :------------------------|
+| commentID     | SERIAL PRIMARY KEY |                          |
+| selfArticleID     | int      |  link to article   |
+| corrArticleID     | int      |  link to article   |
+| corrHighlightID   | int      |  link to highlight|
+
+The detailed info of a comment is stored inside an article model as field **selfArticleID**, so it features a tree node structure:
+
+![tree graph](./documentation/tree_vis.png)
+
 
 Disclaimer: The development is for academic use only. The developer shall not be responsible for any consequence from the user behavior of this program.
 For the use of dataset, acknowledgement would be appreciated.
