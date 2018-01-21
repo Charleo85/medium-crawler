@@ -131,7 +131,7 @@ def queryAllTopicMediumID():
 
 		topicIDs = cur.fetchall()
 		if topicIDs is None:
-			return [];
+			return []
 
 		cur.close()
 

@@ -117,3 +117,66 @@ def existHighlight(corrArticleID, content):
 	finally:
 		if conn is not None:
 			conn.close()
+
+def updateHighlight(highlightID, paragraphID, startOffset, endOffset):
+	command = ("""
+		UPDATE highlight
+		SET
+			corrParagraphID = %s,
+			startOffset = %s,
+			endOffset = %s
+		WHERE highlightID = %s
+		""")
+
+	conn = None
+	try:
+		params = config()
+
+		conn = psycopg2.connect(**params)
+
+		cur = conn.cursor()
+
+		cur.execute(command, (paragraphID, startOffset, endOffset, highlightID, ))
+
+		cur.close()
+
+		conn.commit()
+
+	except(Exception, psycopg2.DatabaseError) as error:
+		print(error, file=sys.stderr)
+	finally:
+		if conn is not None:
+			conn.close()
+
+def queryAllHighlights():
+	command = ("""
+	SELECT highlightID, content, corrArticleID, corrStnMediumIDs
+	FROM highlight
+	""")
+
+	conn = None
+	try:
+		params = config()
+
+		conn = psycopg2.connect(**params)
+
+		cur = conn.cursor()
+
+		# for command in commands:
+		cur.execute(command)
+
+		highlightIDs = cur.fetchall()
+		if highlightIDs is None:
+			return []
+
+		cur.close()
+
+		conn.commit()
+
+		return highlightIDs
+
+	except(Exception, psycopg2.DatabaseError) as error:
+		print(error, file=sys.stderr)
+	finally:
+		if conn is not None:
+			conn.close()
