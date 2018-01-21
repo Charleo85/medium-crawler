@@ -14,8 +14,17 @@ Define constant.py, Download chromedriver for your environment [here](https://gi
 To query data:
 ```
 psql medium
-# \dt
-# select $field from $table where [conditions];
+\dt
+select $field from $table where [conditions];
+# select numLikes of highlights whose article is published before 2017 Dec 1.
+SELECT (highlight.numLikes, article.postTime) from highlight LEFT JOIN article ON highlight.corrArticleID = article.articleID WHERE (article.postTime <= timestamp '2017-12-01 00:00:00' AND highlight.numLikes >= 0);
+# select all paragraphs of an article
+SELECT * from stn where corrArticleID = $articleID
+# select number of comments associating with highlights
+SELECT count(*) from comment where corrHighlightID = $highlightID
+# select hightlight where number of comments associating with highlights is more than one
+SELECT * from highlight where (SELECT count(*) from comment where corrHighlightID = highlightID) > 1 limit 1;
+
 ```
 
 Datebase Table Structure:
@@ -52,14 +61,27 @@ Datebase Table Structure:
 | mediumID| varchar(20)       |     |
 | description   | text               |     |
 
+- paragraph
+
+| Field   | Type      | Info  |
+| :-------------:|:-------------:| :---- |
+| paragraphID         |SERIAL PRIMARY KEY |  |
+| mediumID      |varchar(10)       |    |
+| content       |text               |     |
+| corrArticleID     | int           |   link to article  |
+
+position in article ordered by its paragraphID
+
 - stn
 
 | Field   | Type      | Info  |
 | :-------------:|:-------------:| :---- |
 | stnID         |SERIAL PRIMARY KEY |  |
-| mediumID      |varchar(10)       |    |
+| paragraphID      | int       |  link to paragraph  |
 | content       |text               |     |
 | corrArticleID     | int           |   link to article  |
+
+position in paragraph ordered by its stnID
 
 - highlight
 
@@ -68,8 +90,11 @@ Datebase Table Structure:
 | highlightID         |SERIAL PRIMARY KEY |  |
 | content       |text               |     |
 | numLikes      |int               |     |
+| startOffset | int | |
+| endOffset | int | |
+| corrParagraphID | int |  link to paragraph |
 | corrArticleID | int     |  link to article |
-| corrStnMediumIDs | varchar(300) |  list of highlighted sentences|
+
 
 - comment
 

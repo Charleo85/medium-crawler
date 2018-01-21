@@ -6,10 +6,14 @@ from db.action2StnTable import *
 from db.action2CommentTable import *
 from db.action2HighlightTable import *
 from db.action2TopicTable import *
+from db.action2ParagraphTable import *
+
+from utils import *
 
 def initdb():
 	createAuthorTable()
 	createSTNTable()
+	createParagraphTable()
 	createCommentTable()
 	createArticleTable()
 	createHighlightTable()
@@ -110,3 +114,26 @@ def save_highlight(highlight, corrArticleID=None):
 def exist_highlight(articleMediumID, content):
 	corrArticleID = queryArticleIDbyMediumID(articleMediumID)
 	return existHighlight(corrArticleID, content)
+
+def migrate_highlight():
+	for highlightID, highlightContent, articleID, corrStnMediumIDs in queryAllHighlights():
+		mediumID = corrStnMediumIDs[1:-1]
+
+		paragraphID, paragraphContent = queryParagraphIDbyMediumID(mediumID, articleID)
+		if paragraphID is None and paragraphContent is None:
+			print("cannot find paragraph")
+			continue
+		# match = re.finditer(highlightContent, paragraphContent)
+		# match_value = next(match, None)
+		startOffset, endOffset = -1,-1
+		startOffset = paragraphContent.find(highlightContent)
+		endOffset = startOffset + len(highlightContent)
+		# if match_value:
+		# 	startOffset, endOffset = match_value.span()
+		# else:
+		# 	print(highlightContent, paragraphContent)
+		# print(highlightID, paragraphID, startOffset, endOffset)
+		updateHighlight(highlightID, paragraphID, startOffset, endOffset)
+
+if __name__ == '__main__':
+	migrate_highlight()
