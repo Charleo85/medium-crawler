@@ -72,11 +72,11 @@ Datebase Table Structure:
 
 position in article ordered by its paragraphID
 
-- stn
+- sentence
 
 | Field   | Type      | Info  |
 | :-------------:|:-------------:| :---- |
-| stnID         |SERIAL PRIMARY KEY |  |
+| sentenceID         |SERIAL PRIMARY KEY |  |
 | paragraphID      | int       |  link to paragraph  |
 | content       |text               |     |
 | corrArticleID     | int           |   link to article  |

@@ -9,8 +9,10 @@ def createHighlightTable():
 			highlightID SERIAL PRIMARY KEY,
 			content text,
 			numLikes int,
+			startoffset int,
+			endoffset int,
 			corrArticleID int,
-			corrStnMediumIDs varchar(300)
+			corrParagraphID int
 		)
 		""")
 
@@ -37,16 +39,18 @@ def createHighlightTable():
 		if conn is not None:
 			conn.close()
 
-def insertHighlight(content, numlikes, corrArticleID, corrStnMediumIDs):
+def insertHighlight(content, numLikes, startOffset, endOffset, corrArticleID, corrParagraphID):
 	command = ("""
 		INSERT INTO highlight (
 			content,
 			numLikes,
+			startOffset,
+			endOffset,
 			corrArticleID,
-			corrStnMediumIDs
+			corrParagraphID
 		)
 		VALUES(
-		%s, %s, %s, %s)
+		%s, %s, %s, %s, %s, %s)
 
 		RETURNING highlightID;
 		""")
@@ -61,7 +65,7 @@ def insertHighlight(content, numlikes, corrArticleID, corrStnMediumIDs):
 		# print("before inserting into article table....")
 
 		# for command in commands:
-		cur.execute(command, (content, numlikes, corrArticleID, corrStnMediumIDs,  ))
+		cur.execute(command, (content, numLikes, startOffset, endOffset, corrArticleID, corrParagraphID, ))
 		# print("after inserting into article table....")
 
 		highlightID = cur.fetchone()[0]

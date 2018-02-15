@@ -38,7 +38,7 @@ def createParagraphTable():
 
 def insertParagraph(mediumID, articleID, stnContent):
 	command = ("""
-		INSERT INTO stn (
+		INSERT INTO paragraph (
 			mediumID,
 			content,
 			corrArticleID

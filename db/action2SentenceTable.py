@@ -3,11 +3,11 @@ import psycopg2,sys
 
 from db.config import config
 
-def createSTNTable():
+def createSentenceTable():
 	command = ("""
-		CREATE TABLE stn (
-			stnID SERIAL PRIMARY KEY,
-			mediumID varchar(10),
+		CREATE TABLE sentence (
+			sentenceID SERIAL PRIMARY KEY,
+			paragraphID int,
 			content text,
 			corrArticleID int
 		)
@@ -36,17 +36,17 @@ def createSTNTable():
 		if conn is not None:
 			conn.close()
 
-def insertSTN(mediumID, articleID, stnContent):
+def insertSentence(paragraphID, articleID, stnContent):
 	command = ("""
-		INSERT INTO stn (
-			mediumID,
+		INSERT INTO sentence (
+			paragraphID,
 			content,
 			corrArticleID
 		)
 		VALUES(
 		%s, %s, %s)
 
-		RETURNING stnID;
+		RETURNING sentenceID;
 		""")
 
 	conn = None
@@ -59,7 +59,7 @@ def insertSTN(mediumID, articleID, stnContent):
 		# print("before inserting into stn table....")
 
 		# for command in commands:
-		cur.execute(command, (mediumID, stnContent, articleID, ))
+		cur.execute(command, (paragraphID, stnContent, articleID, ))
 
 		stnID = cur.fetchone()[0]
 		# print("after inserting into stn table....")
@@ -76,12 +76,12 @@ def insertSTN(mediumID, articleID, stnContent):
 		if conn is not None:
 			conn.close()
 
-def queryStnIDbyMediumID(mediumID, articleID):
+def querySentenceIDbyMediumID(mediumID, articleID):
 
 	command = ("""
 		SELECT
-			stnID
-		FROM stn
+			sentenceID
+		FROM sentence
 		WHERE mediumID = %s
 		AND corrArticleID = %s
 		""")

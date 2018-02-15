@@ -8,6 +8,12 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
+default_header = {
+    'user_agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_3) AppleWebKit/604.5.6 (KHTML, like Gecko) Version/11.0.3 Safari/604.5.6'
+}
+
+login_filepath = './objects/login.obj'
+
 
 def write_html(data, filename='sample.html'):
     with open(filename, 'w', encoding='utf-8') as f:
@@ -110,7 +116,6 @@ def logger(message, file=sys.stdout):
 
 
 def login():
-    login_filepath = './objects/login.obj'
     if os.path.exists(login_filepath): return load_obj(login_filepath)
 
     mail_address = "one2infinity1900@gmail.com"
@@ -119,14 +124,16 @@ def login():
     driver.get('https://www.google.com/accounts/Login')
     driver.find_element_by_id("identifierId").send_keys(mail_address)
     driver.find_element_by_id("identifierNext").click()
-    element = WebDriverWait(driver, 10).until(EC.visibility_of_element_located((By.XPATH, "//input[@type='password']")))
+    element = WebDriverWait(driver, 30).until(EC.visibility_of_element_located((By.XPATH, "//input[@type='password']")))
     element.send_keys(password)
-    element = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.ID, 'passwordNext')))
+    element = WebDriverWait(driver, 30).until(EC.element_to_be_clickable((By.ID, 'passwordNext')))
     element.click()
-    driver.get('https://medium.com')
-    driver.find_element(By.XPATH, "//a[contains(.,'Sign in')]").click()
-    element = WebDriverWait(driver, 10).until(EC.visibility_of_element_located((By.XPATH, "//button[@data-action='google-auth']")))
-    element = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, "//button[@data-action='google-auth']")))
+    driver.get('https://medium.com/m/signin?redirect=https%3A%2F%2Fmedium.com%2F&operation=login')
+    # element = WebDriverWait(driver, 60).until(EC.visibility_of_element_located((By.XPATH, "//a[@data-action='sign-in-prompt']")))
+    # element = WebDriverWait(driver, 60).until(EC.element_to_be_clickable((By.XPATH, "//a[@data-action='sign-in-prompt']")))
+    # element.click()
+    element = WebDriverWait(driver, 30).until(EC.visibility_of_element_located((By.XPATH, "//button[@data-action='google-auth']")))
+    element = WebDriverWait(driver, 30).until(EC.element_to_be_clickable((By.XPATH, "//button[@data-action='google-auth']")))
     element.click()
     WebDriverWait(driver, 30).until(EC.visibility_of_element_located((By.XPATH, "//button[@title='Notifications']")))
 
@@ -139,3 +146,19 @@ def login():
     driver.close()
     write_obj(s, 'login.obj')
     return s
+
+def verify_login():
+    if os.path.exists(login_filepath):
+        session = load_obj(login_filepath)
+        driver = webdriver.Chrome('./chromedriver')
+        for name, val in session.cookies.get_dict().items():
+            driver.add_cookie({'name': name, 'value': val, 'domain': None, 'secure': None, 'path':'/'})
+
+        driver.get('https://medium.com')
+        return
+    print('login session object file does not exist')
+
+
+if __name__ == '__main__':
+    # verify_login()
+    session = login()

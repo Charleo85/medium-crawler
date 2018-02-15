@@ -2,17 +2,17 @@ import psycopg2
 from db.config import config
 from db.action2AuthorTable import *
 from db.action2ArticleTable import *
-from db.action2StnTable import *
 from db.action2CommentTable import *
 from db.action2HighlightTable import *
-from db.action2TopicTable import *
 from db.action2ParagraphTable import *
+from db.action2SentenceTable import *
+from db.action2TopicTable import *
 
 from utils import *
 
 def initdb():
 	createAuthorTable()
-	createSTNTable()
+	createSentenceTable()
 	createParagraphTable()
 	createCommentTable()
 	createArticleTable()
@@ -82,12 +82,21 @@ def saveSratchArticle(articleMediumID):
 	articleID = insertArticle(articleMediumID)
 	return articleID
 
-###insert sentence into stn table
-def save_sentence(sentence):
+###insert paragraph into paragraph table
+def save_paragraph(sentence):
 	stnMediumID = sentence['id']
 	stnContent = sentence['content']
 	articleID = sentence['articleID']
-	stnID = insertSTN(stnMediumID, articleID, stnContent)
+	paragraphID = insertParagraph(stnMediumID, articleID, stnContent)
+	return paragraphID
+
+###insert sentence into stn table
+def save_sentence(sentence):
+	paragraphID = sentence['paragraphID']
+	stnContent = sentence['content']
+	articleID = sentence['articleID']
+	sentenceID = insertSentence(paragraphID, articleID, stnContent)
+	return sentenceID
 
 ###insert comment into comment table
 def save_comment(comment):
@@ -102,18 +111,23 @@ def save_comment(comment):
 def save_highlight(highlight, corrArticleID=None):
 	content = highlight['content']
 	numLikes = highlight['numLikes']
-	corrStnMediumIDs = highlight['corrStnMediumIDs']
+	corrParagraphID = highlight['corrParagraphID']
+	startOffset = highlight['startOffset']
+	endOffset = highlight['endOffset']
 
 	if corrArticleID is None:
 		articleMediumID = highlight['articleMediumID']
 		corrArticleID = queryArticleIDbyMediumID(articleMediumID)
 
-	highlightID = insertHighlight(content, numLikes, corrArticleID, corrStnMediumIDs)
+	highlightID = insertHighlight(content, numLikes, startOffset, endOffset, corrArticleID, corrParagraphID)
 	return highlightID
 
 def exist_highlight(articleMediumID, content):
 	corrArticleID = queryArticleIDbyMediumID(articleMediumID)
 	return existHighlight(corrArticleID, content)
+
+
+
 
 def migrate_highlight():
 	for highlightID, highlightContent, articleID, corrStnMediumIDs in queryAllHighlights():
