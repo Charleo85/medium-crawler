@@ -69,8 +69,9 @@ Datebase Table Structure:
 | mediumID      |varchar(10)       |    |
 | content       |text               |     |
 | corrArticleID     | int           |   link to article  |
+| prevParagraphID     | int           |   link to paragraph  |
 
-position in article ordered by its paragraphID
+position in article ordered by its prevParagraphID, first paragraph has its prevParagraphID = -1
 
 - sentence
 
@@ -80,8 +81,9 @@ position in article ordered by its paragraphID
 | paragraphID      | int       |  link to paragraph  |
 | content       |text               |     |
 | corrArticleID     | int           |   link to article  |
+| prevSentenceID     | int           |   link to sentence  |
 
-position in paragraph ordered by its stnID
+~~position in paragraph ordered by its prevSentenceID, first sentence has its prevSentenceID = -1
 
 - highlight
 

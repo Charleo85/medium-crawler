@@ -9,7 +9,8 @@ def createSentenceTable():
 			sentenceID SERIAL PRIMARY KEY,
 			paragraphID int,
 			content text,
-			corrArticleID int
+			corrArticleID int,
+			prevSentenceID int
 		)
 		""")
 
@@ -36,15 +37,16 @@ def createSentenceTable():
 		if conn is not None:
 			conn.close()
 
-def insertSentence(paragraphID, articleID, stnContent):
+def insertSentence(paragraphID, articleID, content, prevSentenceID):
 	command = ("""
 		INSERT INTO sentence (
 			paragraphID,
 			content,
-			corrArticleID
+			corrArticleID,
+			prevSentenceID
 		)
 		VALUES(
-		%s, %s, %s)
+		%s, %s, %s, %s)
 
 		RETURNING sentenceID;
 		""")
@@ -59,7 +61,7 @@ def insertSentence(paragraphID, articleID, stnContent):
 		# print("before inserting into stn table....")
 
 		# for command in commands:
-		cur.execute(command, (paragraphID, stnContent, articleID, ))
+		cur.execute(command, (paragraphID, content, articleID, prevSentenceID, ))
 
 		stnID = cur.fetchone()[0]
 		# print("after inserting into stn table....")

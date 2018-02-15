@@ -83,19 +83,23 @@ def saveSratchArticle(articleMediumID):
 	return articleID
 
 ###insert paragraph into paragraph table
-def save_paragraph(sentence):
-	stnMediumID = sentence['id']
-	stnContent = sentence['content']
-	articleID = sentence['articleID']
-	paragraphID = insertParagraph(stnMediumID, articleID, stnContent)
+def save_paragraph(paragraph):
+	mediumID = paragraph['id']
+	content = paragraph['content']
+	articleID = paragraph['articleID']
+	prevParagraphID = paragraph['prevParagraphID']
+
+	paragraphID = insertParagraph(mediumID, articleID, content, prevParagraphID)
 	return paragraphID
 
 ###insert sentence into stn table
 def save_sentence(sentence):
 	paragraphID = sentence['paragraphID']
-	stnContent = sentence['content']
+	content = sentence['content']
 	articleID = sentence['articleID']
-	sentenceID = insertSentence(paragraphID, articleID, stnContent)
+	prevSentenceID = sentence['prevSentenceID']
+
+	sentenceID = insertSentence(paragraphID, articleID, content, prevSentenceID)
 	return sentenceID
 
 ###insert comment into comment table
@@ -125,9 +129,6 @@ def save_highlight(highlight, corrArticleID=None):
 def exist_highlight(articleMediumID, content):
 	corrArticleID = queryArticleIDbyMediumID(articleMediumID)
 	return existHighlight(corrArticleID, content)
-
-
-
 
 def migrate_highlight():
 	for highlightID, highlightContent, articleID, corrStnMediumIDs in queryAllHighlights():

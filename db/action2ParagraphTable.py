@@ -9,7 +9,8 @@ def createParagraphTable():
 			paragraphID SERIAL PRIMARY KEY,
 			mediumID varchar(10),
 			content text,
-			corrArticleID int
+			corrArticleID int,
+			prevParagraphID int
 		)
 		""")
 
@@ -36,15 +37,16 @@ def createParagraphTable():
 		if conn is not None:
 			conn.close()
 
-def insertParagraph(mediumID, articleID, stnContent):
+def insertParagraph(mediumID, articleID, content, prevParagraphID):
 	command = ("""
 		INSERT INTO paragraph (
 			mediumID,
 			content,
-			corrArticleID
+			corrArticleID,
+			prevParagraphID
 		)
 		VALUES(
-		%s, %s, %s)
+		%s, %s, %s, %s)
 
 		RETURNING paragraphID;
 		""")
@@ -59,7 +61,7 @@ def insertParagraph(mediumID, articleID, stnContent):
 		# print("before inserting into stn table....")
 
 		# for command in commands:
-		cur.execute(command, (mediumID, stnContent, articleID, ))
+		cur.execute(command, (mediumID, content, articleID, prevParagraphID, ))
 
 		stnID = cur.fetchone()[0]
 		# print("after inserting into stn table....")

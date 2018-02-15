@@ -35,37 +35,47 @@ def parse_paragraph(uid, articleID, href, session, paragraph_map):
     tree = load_html(session, href)
     if tree is None: return
 
+    prevParagraphID = -1
     section = tree.xpath('//section/div[@class="section-content"]')
     for sec in section:
         body = sec.xpath('./div[contains(@class,"section-inner")]/*')
-        parse_para(body, uid, articleID, paragraph_map)
+        prevParagraphID = parse_para(body, uid, articleID, paragraph_map, prevParagraphID)
 
-def parse_para(body, uid, articleID, paragraph_map):
+def parse_para(body, uid, articleID, paragraph_map, prevParagraphID):
     for para in body:
         paragraph = para.text_content()
         try: key = para.xpath('@id')[0]
         except:
             sub_body = para.xpath('./*')
-            parse_para(sub_body, uid, articleID, paragraph_map)
+            prevParagraphID = parse_para(sub_body, uid, articleID, paragraph_map, prevParagraphID)
             continue
-        if paragraph == "" or not key: continue
+
+        if paragraph == '' or not key: continue
 
         paragraphID = save_paragraph({
             'content': paragraph,
             'id': key,
-            'articleID': articleID
+            'articleID': articleID,
+            'prevParagraphID': prevParagraphID
         })
         paragraph_map[key] = paragraphID
+        prevParagraphID = paragraphID
+
         parse_sentence(paragraph, paragraphID, articleID)
+
+    return prevParagraphID
 
 def parse_sentence(paragraph, paragraphID, articleID):
     sentences = sent_tokenize(paragraph)
+    prevSentenceID = -1
     for sentence in sentences:
-        save_sentence({
+        sentenceID = save_sentence({
+            'prevSentenceID':prevSentenceID,
             'content': sentence,
             'paragraphID': paragraphID,
             'articleID': articleID
         })
+        prevSentenceID = sentenceID
 
 def parse_highlight(uid, articleID, session, paragraph_map):
     href = 'https://medium.com/p/'+uid+'/quotes'
@@ -136,15 +146,18 @@ def parse_responseStream(uid, session, href, references):
         }, authorID=authorID)
 
         if comment_full:
+            prevParagraphID = -1
             for comm_para in comment_paras:
                 content = comm_para['text']
                 paragraph_mediumID = comm_para['name']
                 paragraphID = save_paragraph({
                     'content': content,
                     'id': paragraph_mediumID,
-                    'articleID': self_articleID
+                    'articleID': self_articleID,
+                    'prevParagraphID': prevParagraphID
                 })
                 paragraph_map[paragraph_mediumID] = paragraphID
+                prevParagraphID = paragraphID
 
                 parse_sentence(content, paragraphID, self_articleID)
 
