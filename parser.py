@@ -9,7 +9,7 @@ def parse_comment_tags(tag_dict_arr):
             tags_arr.append(tag_dict['name'])
     return tags_arr
 
-def parse_quotes(quote, href, paragraph_map):
+def parse_quotes(quote, href, articleID, aricleMediumID=None):
     try:
         start = quote['startOffset']
         end = quote['endOffset']
@@ -18,20 +18,25 @@ def parse_quotes(quote, href, paragraph_map):
         print("quote key error with url: "+href, file=sys.stderr)
         return None, None, None, None
 
-    content = ''
-    corrStnMediumIDs = []
-    for para in paras:
-        content += para['text']
-        corrStnMediumIDs.append(para['name'])
-    content = content[start:end]
+    if len(paras) > 1 or len(paras) == 0: print("highlight has multiple pargraph with url: "+href, file=sys.stderr)
+    para = paras[0]
+    paragraph_content = para['text']
+    content = paragraph_content[start:end]
 
-    if len(corrStnMediumIDs) > 1: print("highlight has multiple pargraph with url: "+href, file=sys.stderr)
-    corrParagraphID = paragraph_map.get(corrStnMediumIDs[0], -1)
-    if corrParagraphID == -1: print("paragraph_map error with url: "+href, file=sys.stderr)
+    corrStnMediumID = para['name']
+    corrParagraphID = exist_paragraph(corrStnMediumID, articleID, aricleMediumID)
+    if corrParagraphID == -1:
+        print("paragraph_map error with url: "+href, file=sys.stderr)
+        print(paragraph_map, file=sys.stderr)
+        # corrParagraphID = exist_paragraph(articleID, paragraph_content)
+        # if corrParagraphID == -1:
+        #     print("some paragraph never saved with url: "+href, file=sys.stderr)
+        #     save_paragraph(paragraph)
+
 
     return content, corrParagraphID, start, end
 
-def parse_paragraph(uid, articleID, href, session, paragraph_map):
+def parse_paragraph(uid, articleID, articleMediumID, href, session):
     tree = load_html(session, href)
     if tree is None: return
 
@@ -39,15 +44,15 @@ def parse_paragraph(uid, articleID, href, session, paragraph_map):
     section = tree.xpath('//section/div[@class="section-content"]')
     for sec in section:
         body = sec.xpath('./div[contains(@class,"section-inner")]/*')
-        prevParagraphID = parse_para(body, uid, articleID, paragraph_map, prevParagraphID)
+        prevParagraphID = parse_para(body, uid, articleID, articleMediumID, prevParagraphID)
 
-def parse_para(body, uid, articleID, paragraph_map, prevParagraphID):
+def parse_para(body, uid, articleID, articleMediumID, prevParagraphID):
     for para in body:
         paragraph = para.text_content()
         try: key = para.xpath('@id')[0]
         except:
             sub_body = para.xpath('./*')
-            prevParagraphID = parse_para(sub_body, uid, articleID, paragraph_map, prevParagraphID)
+            prevParagraphID = parse_para(sub_body, uid, articleID, prevParagraphID)
             continue
 
         if paragraph == '' or not key: continue
@@ -58,7 +63,6 @@ def parse_para(body, uid, articleID, paragraph_map, prevParagraphID):
             'articleID': articleID,
             'prevParagraphID': prevParagraphID
         })
-        paragraph_map[key] = paragraphID
         prevParagraphID = paragraphID
 
         parse_sentence(paragraph, paragraphID, articleID)
@@ -77,14 +81,17 @@ def parse_sentence(paragraph, paragraphID, articleID):
         })
         prevSentenceID = sentenceID
 
-def parse_highlight(uid, articleID, session, paragraph_map):
+def parse_highlight(uid, articleID, session):
     href = 'https://medium.com/p/'+uid+'/quotes'
     resp_data = load_json(session, href)
     if resp_data is None: return
 
     for highlight in resp_data['value']:
-        content, corrParagraphID, startOffset, endOffset = parse_quotes(highlight, href, paragraph_map)
+        content, corrParagraphID, startOffset, endOffset = parse_quotes(highlight, href, articleID)
         if content is None: continue
+
+        # highlightID = exist_highlight(None, content, articleID)
+        # if highlightID != -1: continue
         # if highlight['userId'] != "anon": continue
         # print(highlight)
 
@@ -156,7 +163,6 @@ def parse_responseStream(uid, session, href, references):
                     'articleID': self_articleID,
                     'prevParagraphID': prevParagraphID
                 })
-                paragraph_map[paragraph_mediumID] = paragraphID
                 prevParagraphID = paragraphID
 
                 parse_sentence(content, paragraphID, self_articleID)
@@ -164,9 +170,9 @@ def parse_responseStream(uid, session, href, references):
         else:
             unique_slug = value['uniqueSlug']
             comment_href = 'https://medium.com/@'+username+'/'+unique_slug
-            parse_paragraph(self_article_mediumID, self_articleID, comment_href, session, paragraph_map)
+            parse_paragraph(self_article_mediumID, self_articleID, self_article_mediumID, comment_href, session)
 
-        parse_highlight(self_article_mediumID, self_articleID, session, paragraph_map)
+        parse_highlight(self_article_mediumID, self_articleID, session)
 
         if num_responses > 0: parse_comment(self_article_mediumID, session)
 
@@ -177,7 +183,6 @@ def parse_responseStream(uid, session, href, references):
             'corrArticleMediumID':corr_article_mediumID,
             'corrHighlightID':-1
         }
-
     # parse quote
     if 'MediaResource' in references and 'Quote' in references:
         media_data=references['MediaResource']
@@ -191,7 +196,8 @@ def parse_responseStream(uid, session, href, references):
 
                 quote = quote_data[media['mediumQuote']['quoteId']]
                 corr_article_mediumID = quote['postId']
-                content, corrParagraphID, startOffset, endOffset = parse_quotes(quote, href, paragraph_map)
+
+                content, corrParagraphID, startOffset, endOffset = parse_quotes(quote, href, None, corr_article_mediumID)
                 if content is None: continue
 
                 highlightID = exist_highlight(corr_article_mediumID, content)
@@ -246,4 +252,4 @@ if __name__ == '__main__':
         session = load_obj('./objects/login.obj')
         # session = login()
         # parse('https://timeline.com/it-was-sex-all-the-time-at-this-1800s-commune-with-anyone-you-wanted-and-none-of-the-guilt-c7ea4734e9ca', session)
-        parse('https://medium.com/@beyondtherobot/my-real-life-superpower-c2a9b309cf7', session)
+        parse('https://medium.com/@idmodule/hey-brad-if-you-dont-like-it-that-s-cool-c9db3b7d990b', session)

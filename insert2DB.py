@@ -92,6 +92,11 @@ def save_paragraph(paragraph):
 	paragraphID = insertParagraph(mediumID, articleID, content, prevParagraphID)
 	return paragraphID
 
+def exist_paragraph(corrStnMediumID, corrArticleID, articleMediumID=None):
+	if corrArticleID==None:
+		corrArticleID = queryArticleIDbyMediumID(articleMediumID)
+	return queryParagraphIDbyMediumID(corrStnMediumID, corrArticleID)
+
 ###insert sentence into stn table
 def save_sentence(sentence):
 	paragraphID = sentence['paragraphID']
@@ -126,29 +131,30 @@ def save_highlight(highlight, corrArticleID=None):
 	highlightID = insertHighlight(content, numLikes, startOffset, endOffset, corrArticleID, corrParagraphID)
 	return highlightID
 
-def exist_highlight(articleMediumID, content):
-	corrArticleID = queryArticleIDbyMediumID(articleMediumID)
+def exist_highlight(articleMediumID, content, corrArticleID=None):
+	if corrArticleID==None:
+		corrArticleID = queryArticleIDbyMediumID(articleMediumID)
 	return existHighlight(corrArticleID, content)
 
-def migrate_highlight():
-	for highlightID, highlightContent, articleID, corrStnMediumIDs in queryAllHighlights():
-		mediumID = corrStnMediumIDs[1:-1]
-
-		paragraphID, paragraphContent = queryParagraphIDbyMediumID(mediumID, articleID)
-		if paragraphID is None and paragraphContent is None:
-			print("cannot find paragraph")
-			continue
-		# match = re.finditer(highlightContent, paragraphContent)
-		# match_value = next(match, None)
-		startOffset, endOffset = -1,-1
-		startOffset = paragraphContent.find(highlightContent)
-		endOffset = startOffset + len(highlightContent)
-		# if match_value:
-		# 	startOffset, endOffset = match_value.span()
-		# else:
-		# 	print(highlightContent, paragraphContent)
-		# print(highlightID, paragraphID, startOffset, endOffset)
-		updateHighlight(highlightID, paragraphID, startOffset, endOffset)
+# def migrate_highlight():
+# 	for highlightID, highlightContent, articleID, corrStnMediumIDs in queryAllHighlights():
+# 		mediumID = corrStnMediumIDs[1:-1]
+#
+# 		paragraphID, paragraphContent = queryParagraphIDbyMediumID(mediumID, articleID)
+# 		if paragraphID is None and paragraphContent is None:
+# 			print("cannot find paragraph")
+# 			continue
+# 		# match = re.finditer(highlightContent, paragraphContent)
+# 		# match_value = next(match, None)
+# 		startOffset, endOffset = -1,-1
+# 		startOffset = paragraphContent.find(highlightContent)
+# 		endOffset = startOffset + len(highlightContent)
+# 		# if match_value:
+# 		# 	startOffset, endOffset = match_value.span()
+# 		# else:
+# 		# 	print(highlightContent, paragraphContent)
+# 		# print(highlightID, paragraphID, startOffset, endOffset)
+# 		updateHighlight(highlightID, paragraphID, startOffset, endOffset)
 
 if __name__ == '__main__':
 	migrate_highlight()

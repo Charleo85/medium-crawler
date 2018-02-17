@@ -144,7 +144,7 @@ def login():
         c = {cookie['name']: cookie['value']}
         s.cookies.update(c)
     driver.close()
-    write_obj(s, 'login.obj')
+    write_obj(s, login_filepath)
     return s
 
 def verify_login():

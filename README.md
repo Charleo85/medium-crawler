@@ -83,7 +83,7 @@ position in article ordered by its prevParagraphID, first paragraph has its prev
 | corrArticleID     | int           |   link to article  |
 | prevSentenceID     | int           |   link to sentence  |
 
-~~position in paragraph ordered by its prevSentenceID, first sentence has its prevSentenceID = -1
+osition in paragraph ordered by its prevSentenceID, first sentence has its prevSentenceID = -1
 
 - highlight
 

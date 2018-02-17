@@ -82,7 +82,7 @@ def queryParagraphIDbyMediumID(mediumID, articleID):
 
 	command = ("""
 		SELECT
-			paragraphID, content
+			paragraphID
 		FROM paragraph
 		WHERE mediumID = %s
 		AND corrArticleID = %s
