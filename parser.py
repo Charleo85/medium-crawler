@@ -36,7 +36,7 @@ def parse_quotes(quote, href, articleID, aricleMediumID=None):
 
     return content, corrParagraphID, start, end
 
-def parse_paragraph(uid, articleID, articleMediumID, href, session):
+def parse_paragraph(uid, articleID, href, session):
     tree = load_html(session, href)
     if tree is None: return
 
@@ -44,9 +44,9 @@ def parse_paragraph(uid, articleID, articleMediumID, href, session):
     section = tree.xpath('//section/div[@class="section-content"]')
     for sec in section:
         body = sec.xpath('./div[contains(@class,"section-inner")]/*')
-        prevParagraphID = parse_para(body, uid, articleID, articleMediumID, prevParagraphID)
+        prevParagraphID = parse_para(body, uid, articleID, prevParagraphID)
 
-def parse_para(body, uid, articleID, articleMediumID, prevParagraphID):
+def parse_para(body, uid, articleID, prevParagraphID):
     for para in body:
         paragraph = para.text_content()
         try: key = para.xpath('@id')[0]
@@ -170,7 +170,7 @@ def parse_responseStream(uid, session, href, references):
         else:
             unique_slug = value['uniqueSlug']
             comment_href = 'https://medium.com/@'+username+'/'+unique_slug
-            parse_paragraph(self_article_mediumID, self_articleID, self_article_mediumID, comment_href, session)
+            parse_paragraph(self_article_mediumID, self_articleID, comment_href, session)
 
         parse_highlight(self_article_mediumID, self_articleID, session)
 
