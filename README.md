@@ -66,7 +66,7 @@ Datebase Table Structure:
 | Field   | Type      | Info  |
 | :-------------:|:-------------:| :---- |
 | paragraphID         |SERIAL PRIMARY KEY |  |
-| mediumID      |varchar(10)       |    |
+| mediumID      |varchar(20)       |    |
 | content       |text               |     |
 | corrArticleID     | int           |   link to article  |
 | prevParagraphID     | int           |   link to paragraph  |
@@ -78,7 +78,7 @@ position in article ordered by its prevParagraphID, first paragraph has its prev
 | Field   | Type      | Info  |
 | :-------------:|:-------------:| :---- |
 | sentenceID         |SERIAL PRIMARY KEY |  |
-| paragraphID      | int       |  link to paragraph  |
+| corrParagraphID      | int       |  link to paragraph  |
 | content       |text               |     |
 | corrArticleID     | int           |   link to article  |
 | prevSentenceID     | int           |   link to sentence  |

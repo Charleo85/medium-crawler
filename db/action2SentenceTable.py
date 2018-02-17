@@ -7,7 +7,7 @@ def createSentenceTable():
 	command = ("""
 		CREATE TABLE sentence (
 			sentenceID SERIAL PRIMARY KEY,
-			paragraphID int,
+			corrParagraphID int,
 			content text,
 			corrArticleID int,
 			prevSentenceID int
@@ -40,7 +40,7 @@ def createSentenceTable():
 def insertSentence(paragraphID, articleID, content, prevSentenceID):
 	command = ("""
 		INSERT INTO sentence (
-			paragraphID,
+			corrParagraphID,
 			content,
 			corrArticleID,
 			prevSentenceID
@@ -104,7 +104,7 @@ def querySentenceIDbyMediumID(mediumID, articleID):
 
 		stnID = cur.fetchone()
 		if stnID is None:
-			print("no stn fetched: " + mediumID + ' '+ str(articleID) )
+			print("no sentence fetched: " + mediumID + ' '+ str(articleID), file=sys.stderr)
 			return -1
 		cur.close()
 

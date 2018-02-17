@@ -24,14 +24,16 @@ def parse_quotes(quote, href, articleID, aricleMediumID=None):
     content = paragraph_content[start:end]
 
     corrStnMediumID = para['name']
-    corrParagraphID = exist_paragraph(corrStnMediumID, articleID, aricleMediumID)
+    corrParagraphID = exist_paragraph(corrStnMediumID, paragraph_content, articleID, aricleMediumID)
     if corrParagraphID == -1:
-        print("paragraph_map error with url: "+href, file=sys.stderr)
-        print(paragraph_map, file=sys.stderr)
-        # corrParagraphID = exist_paragraph(articleID, paragraph_content)
-        # if corrParagraphID == -1:
-        #     print("some paragraph never saved with url: "+href, file=sys.stderr)
-        #     save_paragraph(paragraph)
+        print("no corresponding paragraph is found: "+href, file=sys.stderr)
+        corrParagraphID = save_paragraph({
+            'content': paragraph_content,
+            'id': corrStnMediumID,
+            'articleID': articleID,
+            'prevParagraphID': -2
+        })
+        print("saved under paragraphid: %d"%(corrParagraphID), file=sys.stderr)
 
 
     return content, corrParagraphID, start, end
@@ -252,4 +254,4 @@ if __name__ == '__main__':
         session = load_obj('./objects/login.obj')
         # session = login()
         # parse('https://timeline.com/it-was-sex-all-the-time-at-this-1800s-commune-with-anyone-you-wanted-and-none-of-the-guilt-c7ea4734e9ca', session)
-        parse('https://medium.com/@idmodule/hey-brad-if-you-dont-like-it-that-s-cool-c9db3b7d990b', session)
+        parse('https://medium.com/message/37-up-and-coming-creative-job-titles-754fd5488688', session)

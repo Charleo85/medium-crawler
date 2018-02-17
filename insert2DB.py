@@ -92,10 +92,10 @@ def save_paragraph(paragraph):
 	paragraphID = insertParagraph(mediumID, articleID, content, prevParagraphID)
 	return paragraphID
 
-def exist_paragraph(corrStnMediumID, corrArticleID, articleMediumID=None):
+def exist_paragraph(corrStnMediumID, content, corrArticleID, articleMediumID=None):
 	if corrArticleID==None:
 		corrArticleID = queryArticleIDbyMediumID(articleMediumID)
-	return queryParagraphIDbyMediumID(corrStnMediumID, corrArticleID)
+	return existParagraphID(corrStnMediumID, corrArticleID, content)
 
 ###insert sentence into stn table
 def save_sentence(sentence):

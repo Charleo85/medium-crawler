@@ -7,7 +7,7 @@ def createParagraphTable():
 	command = ("""
 		CREATE TABLE paragraph (
 			paragraphID SERIAL PRIMARY KEY,
-			mediumID varchar(10),
+			mediumID varchar(20),
 			content text,
 			corrArticleID int,
 			prevParagraphID int
@@ -78,14 +78,15 @@ def insertParagraph(mediumID, articleID, content, prevParagraphID):
 		if conn is not None:
 			conn.close()
 
-def queryParagraphIDbyMediumID(mediumID, articleID):
-
+def existParagraphID(mediumID, articleID, content):
 	command = ("""
 		SELECT
 			paragraphID
 		FROM paragraph
 		WHERE mediumID = %s
-		AND corrArticleID = %s
+		AND (corrArticleID = %s
+		OR content = %s
+		)
 		""")
 
 	conn = None
@@ -99,18 +100,18 @@ def queryParagraphIDbyMediumID(mediumID, articleID):
 		# print("inserting into sentence:", file=sys.stderr)
 		# print(commentName, commentContent, authorID, commentTime, numLikes, corrStnID, articleID, sep=", ", file=sys.stderr)
 		# for command in commands:
-		cur.execute(command, (mediumID, articleID,))
+		cur.execute(command, (mediumID, articleID, content,))
 		# print("after querying sentence table....")
 
 		stnID = cur.fetchone()
 		if stnID is None:
-			print("no Paragraph fetched: " + mediumID + ' '+ str(articleID) )
-			return None, None
+			print("no paragraph fetched: " + mediumID + ' '+ str(articleID), file=sys.stderr)
+			return -1
 		cur.close()
 
 		conn.commit()
 
-		return stnID
+		return stnID[0]
 
 	except(Exception, psycopg2.DatabaseError) as error:
 		print(error, file=sys.stderr)
