@@ -147,18 +147,11 @@ def login():
     write_obj(s, login_filepath)
     return s
 
-def verify_login():
-    if os.path.exists(login_filepath):
-        session = load_obj(login_filepath)
-        driver = webdriver.Chrome('./chromedriver')
-        for name, val in session.cookies.get_dict().items():
-            driver.add_cookie({'name': name, 'value': val, 'domain': None, 'secure': None, 'path':'/'})
-
-        driver.get('https://medium.com')
-        return
-    print('login session object file does not exist')
+def verify_login(session):
+    page = load_page(session, 'https://medium.com/the-new-york-times/the-mass-shooting-survivor-network-cef55f1c71e')
+    write_html(page, 'test_login.html')
 
 
 if __name__ == '__main__':
-    # verify_login()
     session = login()
+    verify_login(session)
